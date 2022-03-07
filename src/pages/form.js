@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import CropsDistribution from "./CropsDistribution";
 import Form3 from "./Form3";
+import { message } from "antd";
 import FormScreen from "./formScreen";
 const steps = [{ id: "1" }, { id: "2" }, { id: "3" }];
 function Form() {
@@ -49,6 +50,32 @@ function Form() {
   function handleprev(id) {
     setSteps(id);
   }
+
+  function handleSubmit(){
+    
+    setInitialValues({ fname: "",
+    contact: "",
+    province: "",
+    district: "",
+    tehsil: "",
+    village: "",
+    crops: "",
+    cropstype: "",
+    cropsAmount: "",
+    cropsCycle: "",
+    cropscycleAmount: "",
+    cattles: "",
+    cattlesAmount: "",
+    date: "",
+    modeOfInvestment: "",
+    percentage: "",
+    cropsSale: "",
+    seed: "",
+    machinery: "",
+    cropAdvisory: "",})
+    message.success("Form Submitted Successfully");
+    handleStep("1")
+  }
   switch (Steps) {
     case "1":
       return (
@@ -79,6 +106,7 @@ function Form() {
           handleChange={handleChange}
           handleSelect={handleSelect}
           handleStep={handleStep}
+          handleSubmit={handleSubmit}
         />
       );
   }

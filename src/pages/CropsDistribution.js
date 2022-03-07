@@ -199,7 +199,7 @@ console.log(date,dateString)
       <Header/>
         <Row justify="center">
          
-         <Col xs={24}  lg={17} className="mb-24">
+         <Col xs={24}  lg={20} className="mb-24">
              <Form onFinish={handleSubmit}>
               <Card style={{background:"#e7e7e7",borderRadius:"20px"}} 
               // c  lassName="payment-method-card"
@@ -255,7 +255,7 @@ console.log(date,dateString)
                             defaultValue={crops.children}
                            
                           >
-                            <Option key="fruits">fruits</Option>
+                            <Option key="fruits">Fruits</Option>
 
                             <Option key="Sabziyaa"> Sabziyaat </Option>
                             {/* <Option value="Baghaat"> Baghaat </Option>
@@ -358,7 +358,7 @@ console.log(date,dateString)
                        <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
                       </label>
                       <Form.Item
-                      name={cropsAmount}
+                      name="cropsAmount"
                        rules={ !cropsAmount? [
                         {
                           required: true,
@@ -379,7 +379,8 @@ console.log(date,dateString)
                             // type="number"
                             size='large'
                             // onChange={onChange}
-                            /></Form.Item>
+                            />
+                          </Form.Item>
                   </Col>
                   <Col xs={24} span={7} lg={4} sm={6} md={4}>
                   <Button style={{marginTop:"30px" ,background:"#dc3545",border:"none"}}
@@ -437,7 +438,7 @@ console.log(date,dateString)
                               {cerealCrops.map((data) => (
                                 <Option key={data.value}>{data.lable}</Option>
                               ))}
-                              <Option value="potato">potato</Option>
+                              <Option value="potato">Potato</Option>
                             </Select>
                           </Form.Item>
                  

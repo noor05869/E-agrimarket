@@ -16,7 +16,7 @@ import {
 } from "antd";
 // import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import Header from "./header";
-function Form3({ handleStep, initialValues, handleChange, handleSelect }) {
+function Form3({ handleStep, initialValues, handleChange, handleSelect,handleSubmit }) {
   // const history = useHistory();
   const { Option } = Select;
   const {
@@ -27,11 +27,11 @@ function Form3({ handleStep, initialValues, handleChange, handleSelect }) {
     machinery,
     cropAdvisory,
   } = initialValues;
-  function handleSubmit() {
-    if (cropAdvisory.children) {
-      message.success("Form Submitted Successfully");
-    }
-  }
+  // function handleSubmit() {
+  //   if (cropAdvisory.children) {
+  //     message.success("Form Submitted Successfully");
+  //   }
+  // }
   return (
     <div>
       <Header />
@@ -101,7 +101,7 @@ function Form3({ handleStep, initialValues, handleChange, handleSelect }) {
                       defaultValue={modeOfInvestment.children}
                     >
                       <Option key="Aarhti"> Aarhti</Option>
-                      <Option key="personal "> personal </Option>
+                      <Option key="personal "> Personal </Option>
                     </Select>
                   </Form.Item>
                 </Col>

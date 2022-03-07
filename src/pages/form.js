@@ -3,6 +3,7 @@ import CropsDistribution from "./CropsDistribution";
 import Form3 from "./Form3";
 import { message } from "antd";
 import FormScreen from "./formScreen";
+import OTP from "./OTP";
 const steps = [{ id: "1" }, { id: "2" }, { id: "3" }];
 function Form() {
   const [Steps, setSteps] = useState("1");
@@ -89,7 +90,7 @@ function Form() {
       },
     });
     ;
-    handleStep("1")
+    handleStep("4")
   }
   switch (Steps) {
     case "1":
@@ -124,6 +125,10 @@ function Form() {
           handleSubmit={handleSubmit}
         />
       );
+      case "4":
+      return(
+           <OTP/>
+      )
   }
 
   return <div>{/* <FormScreen/> */}</div>;

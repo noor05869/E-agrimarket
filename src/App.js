@@ -26,6 +26,7 @@ import {
   Routes,
   BrowserRouter
 } from "react-router-dom";
+import OTP from "./pages/OTP";
 
 
 function App() {
@@ -40,13 +41,14 @@ function App() {
 
   return (
     <div className="App">
-      
+     {/* <OTP/> */}
      <Form/>
       <Routes>
        
         {/* <Main> */}
           <Route exact path="/" component={Form} />
           <Route exact path="/tables" component={Form} />
+          
      
           <Route exact path="/form" component={Form} />
           <Route exact path="/CropsDistribution" component={CropsDistribution} />

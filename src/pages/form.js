@@ -17,6 +17,7 @@ function Form() {
     tehsil: "",
     village: "",
     crops: "",
+    Land:"",
     cropstype: "",
     cropsAmount: "",
     cropsCycle: "",
@@ -35,8 +36,13 @@ function Form() {
 
   const handleChange = (e) => {
     const { value, name } = e.target;
+
+   
+
+
+      setInitialValues({ ...initialValues1, [name]: value });
+   
     console.log(value, name);
-    setInitialValues({ ...initialValues1, [name]: value });
 
     console.log("state", initialValues1);
   };
@@ -59,6 +65,8 @@ function Form() {
     district: "",
     tehsil: "",
     village: "",
+    Land:"",
+
     crops: "",
     cropstype: "",
     cropsAmount: "",

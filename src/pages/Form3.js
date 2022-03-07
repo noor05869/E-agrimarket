@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import {
   Row,
   Col,
@@ -32,6 +32,16 @@ function Form3({ handleStep, initialValues, handleChange, handleSelect,handleSub
   //     message.success("Form Submitted Successfully");
   //   }
   // }
+  const [mode, setmode] = useState(true)
+  function handleMode(value){
+if(value==="Aarhti"){
+  setmode(false)
+ 
+}
+else{
+  setmode(true)
+}
+  }
   return (
     <div>
       <Header />
@@ -102,6 +112,7 @@ function Form3({ handleStep, initialValues, handleChange, handleSelect,handleSub
                     }
                   >
                     <Select
+                    onChange={handleMode}
                       onSelect={(value, event) =>
                         handleSelect("modeOfInvestment", event)
                       }
@@ -133,7 +144,7 @@ function Form3({ handleStep, initialValues, handleChange, handleSelect,handleSub
                        Percentage % :
                        <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
                       </label>
-                  <Form.Item
+                  { mode===false? <Form.Item
                     name="percentage"
                     rules={
                       !percentage
@@ -161,10 +172,82 @@ function Form3({ handleStep, initialValues, handleChange, handleSelect,handleSub
                       }}
                       // onChange={onChange}
                     />
-                  </Form.Item>
+                  </Form.Item>:
+                  <Form.Item
+                    name="percentage"
+                  
+                  >
+                    <Input
+                     min={1}
+                      name="percentaage"
+                      disabled
+                      defaultValue="100"
+                     placeholder="100%"
+                    //  value={100}
+                      type="number"
+                      style={{
+                        width: "100%",
+                        fontWeight:"normal",
+                        color:"black",
+                        height: "40px",
+                      }}
+                      // onChange={onChange}
+                    />
+                  </Form.Item>}
                 </Col>
               </Row>
+              
+              <Row gutter={[24, 0]}>
+                <Col span={6} md={4}></Col>
+                <Col
+                  style={{ marginLeft: "10px" }}
+                  xs={20}
+                  span={7}
+                  lg={8}
+                  sm={20}
+                  md={6}
+                >
+                   <label
+                        htmlFor="contact"
+                        className="col-12 col-form-label fw-500"
+                        style={{fontWeight:"bold"}}
+                      >
+                       Target Mandi's :
+                       <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
+                      </label>
+                  <Form.Item
+                    className="username"
+                   
+                    name="TargetMandi's"
+                    // rules={
+                    //   !cropsSale.children
+                    //     ? [
+                    //         {
+                    //           required: true,
+                    //           message: "Please Select",
+                    //         },
+                    //       ]
+                    //     : ""
+                    // }
+                  >
+                    <Select
+                      onSelect={(value, event) =>
+                        handleSelect("cropsSale", event)
+                      }
+                      size="large"
+                      name="cropsSale"
+                      defaultValue={cropsSale.children}
+                    >
+                      {/* <Option key="On Farm">On Farm</Option>
+                      <Option key="Mandi ">Mandi </Option>
+                      <Option key="Company ">Company </Option>
+                      <Option key="Contract ">Contract </Option> */}
 
+                    </Select>
+                  </Form.Item>
+                </Col>
+                
+              </Row>
               <Row gutter={[24, 0]}>
                 <Col span={6} md={4}></Col>
                 <Col
@@ -209,6 +292,8 @@ function Form3({ handleStep, initialValues, handleChange, handleSelect,handleSub
                       <Option key="On Farm">On Farm</Option>
                       <Option key="Mandi ">Mandi </Option>
                       <Option key="Company ">Company </Option>
+                      <Option key="Contract ">Contract </Option>
+
                     </Select>
                   </Form.Item>
                 </Col>

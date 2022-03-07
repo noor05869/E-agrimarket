@@ -55,6 +55,15 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect }) {
     console.log(values);
     handleStep("2");
   }
+  function isNumberKey(evt)
+  {
+     var charCode = (evt.which) ? evt.which : evt.keyCode;
+     if (charCode != 46 && charCode > 31 
+       && (charCode < 48 || charCode > 57))
+        return false;
+
+     return true;
+  }
   return (
     <div>
       <Header />
@@ -140,7 +149,7 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect }) {
                   style={{ marginLeft: "10px" }}
                   xs={20}
                   span={7}
-                  lg={8}
+                  lg={4}
                   sm={20}
                   md={6}
                 >
@@ -167,7 +176,8 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect }) {
                   >
                     <Input
                       id="contact"
-                      // type="number"
+                      onKeyPress={isNumberKey}
+                      type="number"
                       defaultValue={contact}
                       name="contact"
                       maxLength="11"
@@ -184,6 +194,61 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect }) {
                       // onChange={onChange}
                     />
                   </Form.Item>
+                  
+                  {/* </Form.Item> */}
+                </Col>
+                <Col
+                  style={{ marginLeft: "10px" }}
+                  xs={20}
+                  span={7}
+                  lg={4}
+                  sm={20}
+                  md={6}
+                >
+                  <label
+                        htmlFor="contact"
+                        className="col-12 col-form-label fw-500"
+                        style={{fontWeight:"bold"}}
+                      >
+                       Contact :
+                       <span > (Optional) </span>
+                      </label>
+                  <Form.Item
+                    name="contact1"
+                    // rules={
+                    //   !contact
+                    //     ? [
+                    //         {
+                    //           required: true,
+                    //           message: "Please Fill",
+                    //         },
+                    //       ]
+                    //     : ""
+                    // }
+                  >
+                    <Input
+                      id="contact1"
+                      onKeyPress={isNumberKey}
+                      type="number"
+                      // type="number"
+                      defaultValue=""
+                      name="contact1"
+                      maxLength="11"
+                      placeholder="03xx-0000000"
+                      value=""
+                      onChange={handleChange}
+                      style={{
+                        color:"black",
+                        width: "100%",
+                        fontWeight:"normal",
+                        border: "rounded",
+                        marginTop:"5px",
+                        height: "40px",
+                      }}
+                      // onChange={onChange}
+                    />
+                  </Form.Item>
+                  
                   {/* </Form.Item> */}
                 </Col>
               </Row>

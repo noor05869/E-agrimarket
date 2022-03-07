@@ -332,6 +332,7 @@ console.log(date,dateString)
                           style={{
                               width: "100%",
                               color:"black",
+                              fontWeight:"normal",
                               border: "rounded",
                               height: "40px",
                             }}
@@ -410,7 +411,7 @@ console.log(date,dateString)
                       >
 
                             <Input
-                              style={{color:"black"}}
+                              style={{color:"black",fontWeight:"normal"}}
                             onChange={handleChange}
                             name="cropscycleAmount"
                             defaultValue={cropscycleAmount}
@@ -526,6 +527,7 @@ console.log(date,dateString)
                           style={{
                             width: "100%",
                             color:"black",
+                            fontWeight:"normal",
                             height: "40px",
                           }}
                           // onChange={onChange}

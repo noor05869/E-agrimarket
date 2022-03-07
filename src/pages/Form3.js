@@ -134,6 +134,7 @@ function Form3({ handleStep, initialValues, handleChange, handleSelect }) {
                       type="number"
                       style={{
                         width: "100%",
+                        fontWeight:"normal",
                         color:"black",
                         height: "40px",
                       }}

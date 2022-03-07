@@ -63,7 +63,7 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect }) {
           <Form onFinish={handleSubmit}>
             <Card
               style={{ background: "#e7e7e7", borderRadius: "20px" }}
-              className="payment-method-card"
+              // className="payment-method-card"
               className="header-solid h-full ant-card-p-0"
               title={
                 <>
@@ -111,7 +111,7 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect }) {
                     }
                   >
                     <Input
-                    style={{color:"black",}}
+                    style={{color:"black",fontWeight:"normal"}}
                       defaultValue={fname}
                       id="fname"
                       type="text"
@@ -163,6 +163,7 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect }) {
                       style={{
                         color:"black",
                         width: "100%",
+                        fontWeight:"normal",
                         border: "rounded",
                         height: "40px",
                       }}
@@ -308,7 +309,7 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect }) {
                     Village :
                   </label>
                   <Input
-                  style={{color:"black",}}
+                  style={{color:"black",fontWeight:"normal"}}
                     name="village"
                     value={village}
                     onChange={handleChange}

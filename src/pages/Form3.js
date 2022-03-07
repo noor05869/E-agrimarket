@@ -37,10 +37,10 @@ function Form3({ handleStep, initialValues, handleChange, handleSelect }) {
       <Header />
       <Row justify="center">
         <Col xs={24} lg={17} className="mb-24">
-          <Form>
+          <Form onFinish={handleSubmit}>
             <Card
               style={{ background: "#e7e7e7", borderRadius: "20px" }}
-              className="payment-method-card"
+              // className="payment-method-card"
               className="header-solid h-full ant-card-p-0"
               title={
                 <>
@@ -49,8 +49,8 @@ function Form3({ handleStep, initialValues, handleChange, handleSelect }) {
                     className="ant-row-flex ant-row-flex-middle"
                   >
                     <Col xs={24} md={7}></Col>
-                    <Col xs={14} md={6} className="d-flex">
-                      <h6 className="font-semibold m-0">Agri Form</h6>
+                    <Col xs={14} md={7} className="d-flex">
+                      <h2 className="font-semibold m-0">Agri Form</h2>
                     </Col>
                   </Row>
                 </>
@@ -68,9 +68,17 @@ function Form3({ handleStep, initialValues, handleChange, handleSelect }) {
                   sm={20}
                   md={6}
                 >
+                   <label
+                        htmlFor="contact"
+                        className="col-12 col-form-label fw-500"
+                        style={{fontWeight:"bold"}}
+                      >
+                       Mode Of Investment :
+                       <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
+                      </label>
                   <Form.Item
                     className="username"
-                    label={`Mode of Investment`}
+                   
                     name="modeOfInvestment"
                     rules={
                       !modeOfInvestment.children
@@ -107,12 +115,14 @@ function Form3({ handleStep, initialValues, handleChange, handleSelect }) {
                   sm={20}
                   md={6}
                 >
-                  <label
-                    htmlFor="contact"
-                    className="col-12 col-form-label fw-500"
-                  >
-                    Percentage %
-                  </label>
+                 <label
+                        htmlFor="contact"
+                        className="col-12 col-form-label fw-500"
+                        style={{fontWeight:"bold"}}
+                      >
+                       Percentage % :
+                       <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
+                      </label>
                   <Form.Item
                     name="percentage"
                     rules={
@@ -127,6 +137,7 @@ function Form3({ handleStep, initialValues, handleChange, handleSelect }) {
                     }
                   >
                     <Input
+                     min={1}
                       name="percentage"
                       defaultValue={percentage}
                       value={percentage}
@@ -154,9 +165,17 @@ function Form3({ handleStep, initialValues, handleChange, handleSelect }) {
                   sm={20}
                   md={6}
                 >
+                   <label
+                        htmlFor="contact"
+                        className="col-12 col-form-label fw-500"
+                        style={{fontWeight:"bold"}}
+                      >
+                       Crops Sale :
+                       <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
+                      </label>
                   <Form.Item
                     className="username"
-                    label="CropSale"
+                   
                     name="cropsSale"
                     rules={
                       !cropsSale.children
@@ -191,9 +210,17 @@ function Form3({ handleStep, initialValues, handleChange, handleSelect }) {
                   sm={20}
                   md={6}
                 >
+                   <label
+                        htmlFor="contact"
+                        className="col-12 col-form-label fw-500"
+                        style={{fontWeight:"bold"}}
+                      >
+                       Seed :
+                       <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
+                      </label>
                   <Form.Item
                     className="username"
-                    label="Seed"
+                    
                     name="seed"
                     rules={
                       !seed.children
@@ -229,9 +256,17 @@ function Form3({ handleStep, initialValues, handleChange, handleSelect }) {
                   sm={20}
                   md={6}
                 >
+                   <label
+                        htmlFor="contact"
+                        className="col-12 col-form-label fw-500"
+                        style={{fontWeight:"bold"}}
+                      >
+                       Machinery :
+                       <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
+                      </label>
                   <Form.Item
                     className="username"
-                    label="Machinery"
+                    
                     name="machinery"
                     rules={
                       !machinery.children
@@ -265,9 +300,17 @@ function Form3({ handleStep, initialValues, handleChange, handleSelect }) {
                   sm={20}
                   md={6}
                 >
+                   <label
+                        htmlFor="contact"
+                        className="col-12 col-form-label fw-500"
+                        style={{fontWeight:"bold"}}
+                      >
+                       Crop Advisory :
+                       <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
+                      </label>
                   <Form.Item
                     className="username"
-                    label="Crop Advisory "
+                  
                     name="cropAdvisory"
                     rules={
                       !cropAdvisory.children
@@ -323,7 +366,7 @@ function Form3({ handleStep, initialValues, handleChange, handleSelect }) {
                   <Button
                     type="primary"
                     htmlType="submit"
-                    onClick={handleSubmit}
+                   
                   >
                     Submit
                   </Button>

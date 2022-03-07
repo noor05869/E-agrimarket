@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from "react";
-
+import "./required.css"
 import {
     Row,
     Col,
@@ -34,7 +34,16 @@ function CropsDistribution({handleStep,initialValues,handleChange,handleSelect})
       
       ]);
   const { RangePicker } = DatePicker;
+ const  onBlur = () => {
+    const { value, onBlur, onChange } = this.props;
+    let valueTemp = value;
+    if (value.charAt(value.length - 1) === '.' || value === '-') {
+      valueTemp = value.slice(0, -1);
+    }
+   
     
+    }
+  
       const [cropDistribution, setcropDistribution] = useState([
         {
           cropDistribution: "",
@@ -192,7 +201,8 @@ console.log(date,dateString)
          
          <Col xs={24}  lg={17} className="mb-24">
              <Form onFinish={handleSubmit}>
-              <Card style={{background:"#e7e7e7",borderRadius:"20px"}} className="payment-method-card"
+              <Card style={{background:"#e7e7e7",borderRadius:"20px"}} 
+              // c  lassName="payment-method-card"
                 className="header-solid h-full ant-card-p-0"
                 title={
                   <>
@@ -204,8 +214,8 @@ console.log(date,dateString)
                       <Col xs={24} md={7}>
                         
                       </Col>
-                      <Col xs={16} md={6} className="d-flex">
-                      <h6 className="font-semibold m-0">Agri Form</h6>
+                      <Col xs={16} md={7} className="d-flex">
+                      <h2 className="font-semibold m-0" >  Agri Form</h2>
                       </Col>
                     </Row>
                   </>
@@ -215,9 +225,19 @@ console.log(date,dateString)
                 { cropDistribution.map((data,i)=>(<> 
                 <Col span={5} md={4}  ></Col>
                   <Col key={i} style={{marginLeft:"10px"}} xs={20} span={7} lg={5} sm={20} md={6}>
+                  <label
+                        htmlFor="contact"
+                        className="col-12 col-form-label fw-500"
+                        style={{fontWeight:"bold"}}
+                      >
+                       Crops :
+                       <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
+                      </label>
                     <Form.Item
                         className="username"
-                        label="Crops"
+                       
+                        style={{content:"*",color:"red"}}
+
                         name="Crops"
                         value={data.cropDistribution}
                         rules={!crops.children? [
@@ -246,10 +266,22 @@ console.log(date,dateString)
                  
                   </Col>
                   <Col style={{marginLeft:"10px"}} xs={20} span={7} lg={5} sm={20} md={6}>
-                  {Fruits ? (
-                            <Form.Item
-                              className="username"
-                              label="Fruits"
+                
+                    {Fruits ? (
+                          <>
+                           <label
+                        htmlFor="contact"
+                        className="col-12 col-form-label fw-500"
+                        style={{fontWeight:"bold"}}
+                      >
+                       Fruits :
+                       <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
+                      </label>
+                          <Form.Item
+                            style={{content:"*",color:"red"}}
+
+                              className="username "
+                              
                               name='cropstype'
                               rules={!cropstype.children?[
                                 {
@@ -259,6 +291,7 @@ console.log(date,dateString)
                               ]:""}
                             >
                               <Select
+                             
                                 size="large"
                           onSelect={(value, event) => handleSelect("cropstype", event)}
                                
@@ -272,14 +305,23 @@ console.log(date,dateString)
                                 ))}
                               </Select>
                             </Form.Item>
-                          ) : (
+                        </>) : (
                             ""
                           )}
 
                           {Sabziyaat ? (
+                            <>
+                             <label
+                        htmlFor="contact"
+                        className="col-12 col-form-label fw-500"
+                        style={{fontWeight:"bold"}}
+                      >
+                       Sabziyaa :
+                       <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
+                      </label>
                             <Form.Item
                               className="username"
-                              label="Sabziyaa"
+                              
                               name="cropstype"
                               rules={!cropstype.children?[
                                 {
@@ -302,16 +344,18 @@ console.log(date,dateString)
                                 ))}
                               </Select>
                             </Form.Item>
-                          ) : (
+                          </>) : (
                             ""
-                          )}
+                        )}
                   </Col>
                   <Col   xs={20} span={7} lg={4} sm={17} md={2}>
                   <label
                         htmlFor="contact"
                         className="col-12 col-form-label fw-500"
+                        style={{fontWeight:"bold"}}
                       >
                        Amount :
+                       <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
                       </label>
                       <Form.Item
                       name={cropsAmount}
@@ -322,20 +366,18 @@ console.log(date,dateString)
                         },
                       ]:""}
                       >
-                        <Input
-                        
-                        onChange={handleChange}
-                         defaultValue={cropsAmount}
-                        value={cropsAmount}
-                        name="cropsAmount"
-                        type="number"
-                          style={{
-                              width: "100%",
-                              color:"black",
-                              fontWeight:"normal",
-                              border: "rounded",
-                              height: "40px",
-                            }}
+                         <Input
+                              style={{color:"black",fontWeight:"normal",}}
+                            onChange={handleChange}
+                            name="cropsAmount"
+                            defaultValue={cropsAmount}
+                            min={1}
+                            // vale={data.Amount}
+                            value={cropsAmount}
+                            type="number"
+                            // onChange={handleCropDisChange}
+                            // type="number"
+                            size='large'
                             // onChange={onChange}
                             /></Form.Item>
                   </Col>
@@ -364,9 +406,17 @@ console.log(date,dateString)
                     
                 <Col span={5} md={4} ></Col>
                   <Col  style={{marginLeft:"10px"}} xs={20} span={7} lg={5} sm={20} md={6}>
+                  <label
+                        htmlFor="contact"
+                        className="col-12 col-form-label fw-500"
+                        style={{fontWeight:"bold"}}
+                      >
+                       Crops Cycle :
+                       <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
+                      </label>
                    <Form.Item
                             className="username"
-                            label="CropsCycle"
+                           
                             name="cropsCycle"
                             rules={!cropsCycle.children?[
                               {
@@ -397,8 +447,10 @@ console.log(date,dateString)
                   <label
                         htmlFor="contact"
                         className="col-12 col-form-label fw-500"
+                        style={{fontWeight:"bold"}}
                       >
                        Yield :
+                       <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
                       </label>
                       <Form.Item
                       name="cropscycleAmount"
@@ -411,15 +463,16 @@ console.log(date,dateString)
                       >
 
                             <Input
-                              style={{color:"black",fontWeight:"normal"}}
+                              style={{color:"black",fontWeight:"normal",}}
                             onChange={handleChange}
                             name="cropscycleAmount"
                             defaultValue={cropscycleAmount}
+                            min={1}
                             // vale={data.Amount}
                             value={cropscycleAmount}
                             type="number"
                             // onChange={handleCropDisChange}
-                            type="number"
+                            // type="number"
                             size='large'
                             // onChange={onChange}
                             />
@@ -427,8 +480,9 @@ console.log(date,dateString)
                             </Form.Item>
                   </Col>
                  
-                  <Col  xs={24} span={7} lg={4} sm={20} md={4}>
-                    <Space  style={{marginTop:"30px"}}  direction="vertical" size={10}>
+                  <Col  xs={24} span={7} lg={5} sm={20} md={4}>
+                    <Space  style={{marginTop:"28px"}}  direction="vertical" size={10}>
+                      
    <Form.Item
    name="date"
     rules={!date?[
@@ -470,10 +524,18 @@ console.log(date,dateString)
                 <Row gutter={[24, 0]}>
                 <Col span={5} md={4} ></Col>
                   <Col style={{marginLeft:"10px"}} xs={20} span={7} lg={5} sm={20} md={6}>
-                  
+                  <label
+                        htmlFor="contact"
+                        className="col-12 col-form-label fw-500"
+                        style={{fontWeight:"bold"}}
+                      >
+                       Cattles :
+                       <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
+                      </label>
                   <Form.Item
                         className="username"
-                        label="Cattles"
+                        
+                        
                         name="cattles"
                         rules={!cattles.children?[
                           {
@@ -482,6 +544,7 @@ console.log(date,dateString)
                           },
                         ]:""}
                       >
+                        
                         <Select
                           size="large"
                           name="cattles"
@@ -503,8 +566,10 @@ console.log(date,dateString)
                   <label
                         htmlFor="contact"
                         className="col-12 col-form-label fw-500"
+                        style={{fontWeight:"bold"}}
                       >
                        Amount :
+                       <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
                       </label>
                       <Form.Item
                       name="cattlesAmount"
@@ -521,6 +586,8 @@ console.log(date,dateString)
                           onChange={handleChange}
                           defaultValue={cattlesAmount}
                           // vale={data.Amount}
+                          min={1}
+
                           value={cattlesAmount}
                           // onChange={handleCropDisChange}
                           type="number"
@@ -528,6 +595,7 @@ console.log(date,dateString)
                             width: "100%",
                             color:"black",
                             fontWeight:"normal",
+                          
                             height: "40px",
                           }}
                           // onChange={onChange}

@@ -72,8 +72,8 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect }) {
                     className="ant-row-flex ant-row-flex-middle"
                   >
                     <Col xs={24} md={7}></Col>
-                    <Col xs={14} md={6} className="d-flex">
-                      <h6 className="font-semibold m-0">Agri Form</h6>
+                    <Col xs={14} md={7} className="d-flex">
+                      <h2 className="font-semibold m-0">Agri Form</h2>
                     </Col>
                   </Row>
                 </>
@@ -91,12 +91,14 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect }) {
                   sm={20}
                   md={6}
                 >
-                  <label
-                    htmlFor="fname"
-                    className="col-12 col-form-label fw-500"
-                  >
-                    Name :
-                  </label>
+                 <label
+                        htmlFor="contact"
+                        className="col-12 col-form-label fw-500"
+                        style={{fontWeight:"bold"}}
+                      >
+                       Name :
+                       <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
+                      </label>
                   <Form.Item
                     name="fname"
                     rules={
@@ -133,11 +135,13 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect }) {
                   md={6}
                 >
                   <label
-                    htmlFor="contact"
-                    className="col-12 col-form-label fw-500"
-                  >
-                    Contact :
-                  </label>
+                        htmlFor="contact"
+                        className="col-12 col-form-label fw-500"
+                        style={{fontWeight:"bold"}}
+                      >
+                       Contact :
+                       <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
+                      </label>
                   <Form.Item
                     name="contact"
                     rules={
@@ -183,9 +187,17 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect }) {
                   sm={20}
                   md={6}
                 >
+                   <label
+                        htmlFor="contact"
+                        className="col-12 col-form-label fw-500"
+                        style={{fontWeight:"bold"}}
+                      >
+                       Province :
+                       <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
+                      </label>
                   <Form.Item
                     className="username"
-                    label="Province"
+                    
                     name="Province"
                     defaultValue={province && province.children}
                     rules={
@@ -222,9 +234,17 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect }) {
                   sm={20}
                   md={6}
                 >
+                   <label
+                        htmlFor="contact"
+                        className="col-12 col-form-label fw-500"
+                        style={{fontWeight:"bold"}}
+                      >
+                       District :
+                       <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
+                      </label>
                   <Form.Item
                     className="username"
-                    label="District"
+                   
                     name="District"
                     rules={
                       !district.children
@@ -266,9 +286,17 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect }) {
                   sm={20}
                   md={6}
                 >
+                   <label
+                        htmlFor="contact"
+                        className="col-12 col-form-label fw-500"
+                        style={{fontWeight:"bold"}}
+                      >
+                       Tehsil :
+                       <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
+                      </label>
                   <Form.Item
                     className="username"
-                    label="Tehsil"
+                  
                     name="Tehsil"
                     rules={
                       !tehsil.children
@@ -301,13 +329,14 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect }) {
                   sm={20}
                   md={6}
                 >
-                  <label
-                    style={{ marginTop: "10px", }}
-                    htmlFor="village"
-                    // className="col-12 col-form-label fw-500"
-                  >
-                    Village :
-                  </label>
+                 <label
+                        htmlFor="contact"
+                        className="col-12 col-form-label fw-500"
+                        style={{fontWeight:"bold"}}
+                      >
+                       Village :
+                       <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > </span>
+                      </label>
                   <Input
                   style={{color:"black",fontWeight:"normal"}}
                     name="village"

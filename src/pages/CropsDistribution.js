@@ -55,8 +55,8 @@ function CropsDistribution({handleStep,initialValues,handleChange,handleSelect})
     const fruits = [
         { value: "Fruits", lable: "Fruits" },
         { value: "Citrus", lable: "Citrus" },
-        { value: "Mnago", lable: "Mnago" },
-        { value: "Banana", lable: "Banana" },
+        { value: "Mango", lable: "Mango" },
+        { value: "Bannana", lable: "Bannana" },
         { value: "Apple", lable: "Apple" },
         { value: "Grapes", lable: "Grapes" },
         { value: "Pomegranate", lable: "Pomegranate" },
@@ -199,7 +199,7 @@ console.log(date,dateString)
       <Header/>
         <Row justify="center">
          
-         <Col xs={24}  lg={20} className="mb-24">
+         <Col xs={24}  lg={21} className="mb-24">
              <Form onFinish={handleSubmit}>
               <Card style={{background:"#e7e7e7",borderRadius:"20px"}} 
               // c  lassName="payment-method-card"
@@ -243,7 +243,7 @@ console.log(date,dateString)
                         rules={!crops.children? [
                           {
                             required: true,
-                            message: "Please input your email!",
+                            message: "Please Select",
                           },
                         ]:""}
                       >
@@ -354,7 +354,7 @@ console.log(date,dateString)
                         className="col-12 col-form-label fw-500"
                         style={{fontWeight:"bold"}}
                       >
-                       Amount :
+                       Amount (PKR):
                        <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
                       </label>
                       <Form.Item
@@ -362,7 +362,7 @@ console.log(date,dateString)
                        rules={ !cropsAmount? [
                         {
                           required: true,
-                          message: "Please select",
+                          message: "Please Fill",
                         },
                       ]:""}
                       >
@@ -458,7 +458,7 @@ console.log(date,dateString)
                       rules={!cropscycleAmount ? [
                         {
                           required: true,
-                          message: "Please fill",
+                          message: "Please Fill",
                         },
                       ]:""}
                       >
@@ -481,15 +481,23 @@ console.log(date,dateString)
                             </Form.Item>
                   </Col>
                  
-                  <Col  xs={24} span={7} lg={5} sm={20} md={4}>
-                    <Space  style={{marginTop:"28px"}}  direction="vertical" size={10}>
-                      
+                  <Col  xs={20} span={7} lg={5} sm={20} md={4}>
+                    
+                    <label
+                        htmlFor="contact"
+                        className="col-12 col-form-label fw-500"
+                        style={{fontWeight:"bold"}}
+                      >
+                       Date :
+                       <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
+                      </label>                
    <Form.Item
    name="date"
+
     rules={!date?[
       {
         required: true,
-        message: "Please fill date!",
+        message: "Please Fill Date!",
       },
     ]:""}
    >
@@ -503,7 +511,7 @@ console.log(date,dateString)
     </Form.Item> 
     
     
-  </Space>
+  
  
                   </Col>
                   <Col xs={24} span={7} lg={4} sm={6} md={2}>
@@ -569,7 +577,7 @@ console.log(date,dateString)
                         className="col-12 col-form-label fw-500"
                         style={{fontWeight:"bold"}}
                       >
-                       Amount :
+                       Amount (PKR) :
                        <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
                       </label>
                       <Form.Item
@@ -577,7 +585,7 @@ console.log(date,dateString)
                       rules={ !cattlesAmount? [
                         {
                           required: true,
-                          message: "Please fill",
+                          message: "Please Fill",
                         },
                       ]:""}
                       >

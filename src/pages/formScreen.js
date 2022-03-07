@@ -106,7 +106,7 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect }) {
                         ? [
                             {
                               required: true,
-                              message: "Please select",
+                              message: "Please Fill",
                             },
                           ]
                         : ""
@@ -149,7 +149,7 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect }) {
                         ? [
                             {
                               required: true,
-                              message: "Please select",
+                              message: "Please Fill",
                             },
                           ]
                         : ""
@@ -205,7 +205,7 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect }) {
                         ? [
                             {
                               required: true,
-                              message: "Please select",
+                              message: "Please Select",
                             },
                           ]
                         : ""
@@ -303,7 +303,7 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect }) {
                         ? [
                             {
                               required: true,
-                              message: "Please input your email!",
+                              message: "Please Select",
                             },
                           ]
                         : ""

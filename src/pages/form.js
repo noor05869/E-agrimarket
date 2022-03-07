@@ -73,7 +73,14 @@ function Form() {
     seed: "",
     machinery: "",
     cropAdvisory: "",})
-    message.success("Form Submitted Successfully");
+    message.success({
+      content: 'Submitted Successfully',
+      className: 'custom-class',
+      style: {
+        marginTop: '74vh',
+      },
+    });
+    ;
     handleStep("1")
   }
   switch (Steps) {

@@ -130,7 +130,7 @@ function Form3({ handleStep, initialValues, handleChange, handleSelect,handleSub
                         ? [
                             {
                               required: true,
-                              message: "Please fill",
+                              message: "Please Fill",
                             },
                           ]
                         : ""
@@ -305,7 +305,7 @@ function Form3({ handleStep, initialValues, handleChange, handleSelect,handleSub
                         className="col-12 col-form-label fw-500"
                         style={{fontWeight:"bold"}}
                       >
-                       Crop Advisory :
+                       Crops Advisory :
                        <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
                       </label>
                   <Form.Item

@@ -53,7 +53,7 @@ function Form3({ handleStep, initialValues, handleChange, handleSelect,handleSub
                       <h2 className="font-semibold m-0">E-Agri Form</h2>
                     </Col>
                   </Row>
-                  <Row
+                  {/* <Row
                     gutter={[24, 0]}
                     className="ant-row-flex ant-row-flex-middle"
                   >
@@ -62,7 +62,7 @@ function Form3({ handleStep, initialValues, handleChange, handleSelect,handleSub
                      
                       <h4 style={{marginLeft:"180px"}} >Farmers Data</h4>
                     </Col>
-                  </Row>
+                  </Row> */}
                 </>
               }
             >

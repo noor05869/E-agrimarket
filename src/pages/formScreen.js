@@ -72,21 +72,20 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect }) {
                     className="ant-row-flex ant-row-flex-middle"
                   >
                     <Col xs={24} md={7}></Col>
-                    <Col xs={14} md={7} className="d-flex">
+                    <Col xs={14} md={7} lg={7} className="d-flex">
                       <h2 className="font-semibold m-0">E-Agri Form</h2>
                      
                     </Col>
                   </Row>
-                  <Row
-                    gutter={[24, 0]}
-                    className="ant-row-flex ant-row-flex-middle"
+                  {/* <Row
+                  justify="center"
                   >
                     <Col xs={24} md={7}></Col>
                     <Col xs={14} md={6} className="">
                      
-                      <h4 style={{marginLeft:"180px"}} >Farmers Data</h4>
+                      <h4  >Farmers Data</h4>
                     </Col>
-                  </Row>
+                  </Row> */}
                 </>
               }
             >

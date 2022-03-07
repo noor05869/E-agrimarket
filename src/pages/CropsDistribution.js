@@ -17,7 +17,7 @@ Space,
     Descriptions,
     Avatar,
   } from "antd";
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+  // import { useNavigate } from 'react-router-dom';
 import Header from './header';
 function CropsDistribution({handleStep,initialValues,handleChange,handleSelect}) {
 
@@ -41,7 +41,7 @@ function CropsDistribution({handleStep,initialValues,handleChange,handleSelect})
           Amount: "",
         },
       ]);
-    const history=useHistory()
+    // const history=useHistory()
     const { Option } = Select;
     const fruits = [
         { value: "Fruits", lable: "Fruits" },

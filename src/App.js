@@ -9,15 +9,9 @@
 =========================================================
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
-import { Switch, Route, Redirect } from "react-router-dom";
-import Home from "./pages/Home";
-import Tables from "./pages/Tables";
-import Billing from "./pages/Billing";
-import Rtl from "./pages/Rtl";
-import Profile from "./pages/Profile";
-import SignUp from "./pages/SignUp";
-import SignIn from "./pages/SignIn";
-import Main from "./components/layout/Main";
+
+
+
 import "antd/dist/antd.css";
 import "./assets/styles/main.css";
 import "./assets/styles/responsive.css";
@@ -25,6 +19,14 @@ import Form from "./pages/form";
 import CropsDistribution from "./pages/CropsDistribution";
 import Form3 from "./pages/Form3";
 import axios from 'axios'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Routes,
+  BrowserRouter
+} from "react-router-dom";
+
 
 function App() {
 
@@ -38,25 +40,23 @@ function App() {
 
   return (
     <div className="App">
-      <Switch>
-        <Route path="/sign-up" exact component={SignUp} />
-        <Route path="/sign-in" exact component={SignIn} />
+      
+     <Form/>
+      <Routes>
+       
         {/* <Main> */}
           <Route exact path="/" component={Form} />
           <Route exact path="/tables" component={Form} />
-          <Route exact path="/billing" component={Billing} />
-          <Route exact path="/rtl" component={Rtl} />
-          <Route exact path="/profile" component={Profile} />
+     
           <Route exact path="/form" component={Form} />
           <Route exact path="/CropsDistribution" component={CropsDistribution} />
           <Route exact path="/form3" component={Form3} />
 
 
-
-
           {/* <Redirect from="*" to="/dashboard" /> */}
         {/* </Main> */}
-      </Switch>
+      </Routes>
+    
     </div>
   );
 }

@@ -13,13 +13,13 @@ import {
   Descriptions,
   Avatar,
 } from "antd";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+// import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import Header from "./header";
 
 function FormScreen({ handleStep, initialValues, handleChange, handleSelect }) {
   const { fname, contact, province, district, tehsil, village } = initialValues;
   const { Option } = Select;
-  const history = useHistory();
+  // const history = useHistory();
   const Provinces = [
     { value: "06", label: "Fedral Capital", Province_code: "06" },
     { value: "03", label: "Punjab", Province_code: "03" },

@@ -14,10 +14,10 @@ import {
   Descriptions,
   Avatar,
 } from "antd";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+// import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import Header from "./header";
 function Form3({ handleStep, initialValues, handleChange, handleSelect }) {
-  const history = useHistory();
+  // const history = useHistory();
   const { Option } = Select;
   const {
     modeOfInvestment,

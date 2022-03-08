@@ -12,13 +12,17 @@
         /* margin-top: 30px; */
         margin-left: 130px;
     }
-   
+    .cropsdis{
+        margin-left: 120px;
+
+    }
  .land{
 
     margin-left: 50px;
  }   
+ 
  .Add2button{
-    margin-left: 100px;
+    margin-left: 40px;
 }
  }
 
@@ -33,6 +37,10 @@
      .farmer{
         /* margin-top: 30px; */
         margin-left: 60px;
+    }
+    .cropsdis{
+        margin-left: 85px;
+
     }
     .Addbutton{
         margin-top: 40px;

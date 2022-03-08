@@ -91,7 +91,7 @@ else{
                    <label
                         htmlFor="contact"
                         className="col-12 col-form-label fw-500"
-                        style={{fontWeight:"bold"}}
+                        // style={{fontWeight:"bold"}}
                       >
                        Mode Of Investment :
                        <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
@@ -139,7 +139,7 @@ else{
                  <label
                         htmlFor="contact"
                         className="col-12 col-form-label fw-500"
-                        style={{fontWeight:"bold"}}
+                        // style={{fontWeight:"bold"}}
                       >
                        Percentage % :
                        <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
@@ -206,7 +206,7 @@ else{
                    <label
                         htmlFor="contact"
                         className="col-12 col-form-label fw-500"
-                        style={{fontWeight:"bold"}}
+                        // style={{fontWeight:"bold"}}
                       >
                        Target Mandi's :
                        <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
@@ -261,7 +261,7 @@ else{
                    <label
                         htmlFor="contact"
                         className="col-12 col-form-label fw-500"
-                        style={{fontWeight:"bold"}}
+                        // style={{fontWeight:"bold"}}
                       >
                        Crops Sale :
                        <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
@@ -308,7 +308,7 @@ else{
                    <label
                         htmlFor="contact"
                         className="col-12 col-form-label fw-500"
-                        style={{fontWeight:"bold"}}
+                        // style={{fontWeight:"bold"}}
                       >
                        Seed :
                        <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
@@ -354,7 +354,7 @@ else{
                    <label
                         htmlFor="contact"
                         className="col-12 col-form-label fw-500"
-                        style={{fontWeight:"bold"}}
+                        // style={{fontWeight:"bold"}}
                       >
                        Machinery :
                        <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
@@ -398,7 +398,7 @@ else{
                    <label
                         htmlFor="contact"
                         className="col-12 col-form-label fw-500"
-                        style={{fontWeight:"bold"}}
+                        // style={{fontWeight:"bold"}}
                       >
                        Crops Advisory :
                        <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
@@ -461,7 +461,7 @@ else{
                   <Button
                     type="primary"
                     htmlType="submit"
-                   
+                
                   >
                     Submit
                   </Button>

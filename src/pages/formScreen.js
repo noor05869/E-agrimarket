@@ -303,7 +303,7 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect ,han
                       defaultValue={province.children}
                     >
                       {Provinces.map((data) => (
-                        <Option key={data.value}>{data.label}</Option>
+                        <Option key={data.value}><div> <p>{data.label}</p></div></Option>
                       ))}
                     </Select>
                   </Form.Item>
@@ -353,7 +353,7 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect ,han
                     >
                       {
                         Cities&&Cities.map((data) => (
-                            <Option key={data.value}>{data.label}</Option>
+                            <Option key={data.value}><div style={{display:"flex",justifyContent:"space-between"}} ><p>{data.label}</p><p>{data.ulabel}</p></div></Option>
                           )
                        
                           )}

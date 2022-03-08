@@ -36,6 +36,9 @@ else if(value==="04"){
     district: "",
     tehsil: "",
     village: "",
+    CropsDistribution:[{ crops: "",
+    cropstype: "",
+    cropsAmount: "",}],
     crops: "",
     Land:"",
     cropstype: "",
@@ -66,13 +69,23 @@ else if(value==="04"){
 
     console.log("state", initialValues1);
   };
-
+  function handleDisAdd(){
+    setInitialValues([...initialValues1.CropsDistribution,{crops: "",
+    cropstype: "",
+    cropsAmount: "",}])}
   const handleSelect = (name, value) => {
+    // handleDisAdd()
+if(name==="crops"|| name==="cropstype" ||name==="cropsAmount"){
+    console.log(initialValues1.CropsDistribution[0][name]=value)}
     console.log(name, value);
     // setInitialValues({...initialValues1,[name]:value})
     setInitialValues({ ...initialValues1, [name]: value });
     // console.log("state",initialValues1)
   };
+ 
+
+
+
   function handleprev(id) {
     setSteps(id);
   }
@@ -86,7 +99,7 @@ else if(value==="04"){
     tehsil: "",
     village: "",
     Land:"",
-
+ 
     crops: "",
     cropstype: "",
     cropsAmount: "",
@@ -133,6 +146,7 @@ else if(value==="04"){
           handleChange={handleChange}
           handleSelect={handleSelect}
           handleStep={handleStep}
+          handleDisAdd={handleDisAdd}
         />
       );
     case "3":
@@ -161,9 +175,9 @@ export default Form;
 
 
 const Punjab = [
-  { value: "Abdul Hakim", label: "Abdul Hakim لاہور"     },
-  { value: "Ahmadpur East", label: "Ahmadpur East" },
-  { value: "Attock Khurd", label: "Attock Khurd" },
+  { value: "Abdul Hakim", label: "Abdul Hakim ",ulabel:"لاہور" ,    },
+  { value: "Ahmadpur East", label: "Ahmadpur East",ulabel:"لاہور" },
+  { value: "Attock Khurd", label: "Attock Khurd",ulabel:"لاہور" },
   { value: "Bahawalpur", label: "Bahawalpur" },
   { value: "Bhakkar", label: "Bhakkar" },
   { value: "Bhalwal", label: "Bhalwal" },

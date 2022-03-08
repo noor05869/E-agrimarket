@@ -23,7 +23,7 @@ function CropsDistribution({
   handleStep,
   initialValues,
   handleChange,
-  handleSelect,
+  handleSelect,handleDisAdd
 }) {
   const {
     crops,
@@ -330,7 +330,7 @@ const removeCattle = (index) => {
     console.log(date, dateString);
   }
   return (
-    <div>
+    <div >
       <Header />
       <Row justify="center">
         <Col xs={24} lg={20} className="mb-24">
@@ -409,9 +409,16 @@ const removeCattle = (index) => {
                         />
                       </Form.Item>
                     </Col></Row>
-              <Row gutter={[24, 0]} justify="center">
+             {/* <Card
+              // style={{borderBottom:"outset",background:"initial"}}
+               bordered={false}  >
+             */}
                 {cropDistribution.map((data, i) => (
                   <>
+                   <Row>  <h5 className="cropsdis" >Crops Distribution</h5></Row>
+              <Row gutter={[24, 0] } span={24} style={{border:"black"}}  justify="center">
+                 
+                  
                     <Col span={5} md={1}></Col>
                     <Col
                       key={i}
@@ -460,7 +467,7 @@ const removeCattle = (index) => {
                     showSearch
                     filterOption={(input, option) =>
                       option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                    }
+                     }
                           name="crops"
                           onSelect={(value, event) =>
                             handleSelect("crops", event)
@@ -591,7 +598,7 @@ const removeCattle = (index) => {
                         />
                       </Form.Item>
                     </Col>
-                    <Col className="Addbutton" xs={12} span={7} lg={4} sm={6} md={4}>
+                    <Col className="Addbutton" xs={19} span={7} lg={4} sm={6} md={4}>
                      {cropDistribution.length>1?  <Button
                       style={{background:"#dc3545",border:"none"}}
                         onClick={() => handleDistributionRemove(i)}
@@ -612,15 +619,19 @@ const removeCattle = (index) => {
                         ADD
                       </Button>
                     </Col>
+              
+              </Row>
                   </>
                 ))}
-              </Row>
+              {/* </Card> */}
               <Row justify="center">
                 <Col sm={11} xs={11}></Col>
               </Row>
 
               {cropCycle.map((data, i) => (
                 <>
+                
+                <Row>  <h5 className="cropsdis" >Crops Cycle</h5></Row>
                   <Row justify="center" gutter={[24, 0]}>
                     <Col span={5} md={1}></Col>
                     <Col
@@ -827,7 +838,7 @@ const removeCattle = (index) => {
     </Form.Item> 
                 </Col>
                
-                    <Col className="Addbutton" xs={12} span={7} lg={4} sm={6} md={2}>
+                    <Col className="Addbutton" xs={19} span={7} lg={4} sm={6} md={2}>
                      { cropCycle.length>1? <Button
                         // style={{
                         //   marginTop: "40px",
@@ -844,7 +855,7 @@ const removeCattle = (index) => {
                       </Button>:""}
                       <Button
                         type="primary"
-                        style={{ marginLeft: "5px", border: "none" }}
+                        style={{ marginLeft: "5px", border: "none", marginBottom: "20px", }}
                         onClick={handleAdd}
                       >
                         ADD
@@ -858,6 +869,8 @@ const removeCattle = (index) => {
                
               </Row>
             { Cattles.map((data,i)=>(<>  
+              <Row>  <h5 className="cropsdis" >Cattles</h5></Row>
+
             <Row  justify="start" gutter={[24, 0]}>
                 <Col span={5} md={1}></Col>
                 <Col
@@ -974,7 +987,7 @@ const removeCattle = (index) => {
                   </Form.Item>
                 </Col>
                 
-                <Col className="Add2button"  xs={14} span={7} lg={4} sm={6} md={4}>
+                <Col className="Add2button"  xs={19} span={7} lg={4} sm={6} md={4}>
                    {Cattles.length>1?   <Button
                         style={{
                         

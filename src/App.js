@@ -40,7 +40,7 @@ function App() {
 // }
 
   return (
-    <div className="App">
+    <div  style={{background:"white"}} className="App">
      {/* <OTP/> */}
      <Form/>
       <Routes>

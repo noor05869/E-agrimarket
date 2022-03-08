@@ -46,7 +46,7 @@ else{
     <div>
       <Header />
       <Row justify="center">
-        <Col xs={24} lg={17} className="mb-24">
+        <Col xs={24} lg={16} className="mb-24">
           <Form onFinish={handleSubmit}>
             <Card
               style={{ background: "#e7e7e7", borderRadius: "20px" }}
@@ -76,15 +76,15 @@ else{
                 </>
               }
             >
-              <Row gutter={[24, 0]}>
-                <Col span={7} md={4}></Col>
+              <Row justify="center" gutter={[24, 0]}>
+                <Col span={7} md={0 }lg={0} ></Col>
 
                 {/* <Card style={{background:"#e7e7e7",border:"none"}} > */}
                 <Col
                   style={{ marginLeft: "10px" }}
                   xs={20}
                   span={7}
-                  lg={5}
+                  lg={9}
                   sm={20}
                   md={6}
                 >
@@ -132,7 +132,7 @@ else{
                   style={{ marginLeft: "10px" }}
                   xs={20}
                   span={7}
-                  lg={5}
+                  lg={6}
                   sm={20}
                   md={6}
                 >
@@ -199,7 +199,7 @@ else{
                   style={{ marginLeft: "10px" }}
                   xs={20}
                   span={7}
-                  lg={5}
+                  lg={6}
                   sm={20}
                   md={6}
                 >
@@ -248,13 +248,13 @@ else{
               </Row>
               
               
-              <Row gutter={[24, 0]}>
-                <Col span={6} md={4}></Col>
+              <Row justify="center" gutter={[24, 0]}>
+                <Col span={6} md={1} lg={0}></Col>
                 <Col
                   style={{ marginLeft: "10px" }}
                   xs={20}
                   span={7}
-                  lg={8}
+                  lg={9}
                   sm={20}
                   md={6}
                 >
@@ -301,7 +301,7 @@ else{
                   style={{ marginLeft: "10px" }}
                   xs={20}
                   span={7}
-                  lg={8}
+                  lg={12}
                   sm={20}
                   md={6}
                 >
@@ -341,13 +341,13 @@ else{
                   </Form.Item>
                 </Col>
               </Row>
-              <Row gutter={[24, 0]}>
-                <Col span={6} md={4}></Col>
+              <Row justify="center" gutter={[24, 0]}>
+                <Col span={6} md={1} lg={0}></Col>
                 <Col
                   style={{ marginLeft: "10px" }}
                   xs={20}
                   span={7}
-                  lg={8}
+                  lg={9}
                   sm={20}
                   md={6}
                 >
@@ -391,7 +391,7 @@ else{
                   style={{ marginLeft: "10px" }}
                   xs={20}
                   span={7}
-                  lg={8}
+                  lg={12}
                   sm={20}
                   md={6}
                 >

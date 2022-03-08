@@ -1,4 +1,5 @@
 import React,{useState} from "react";
+import "./required.css"
 import {
   Row,
   Col,
@@ -13,6 +14,14 @@ import {
   Descriptions,
   Avatar,
 } from "antd";
+import {
+  HomeOutlined,
+  SettingFilled,
+  SmileOutlined,
+  SyncOutlined,
+  LoadingOutlined,
+  PhoneOutlined,
+} from '@ant-design/icons';
 // import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import Header from "./header";
 
@@ -57,7 +66,7 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect ,han
     <div>
       <Header />
       <Row justify="center">
-        <Col xs={24} lg={17} className="mb-24">
+        <Col xs={24} lg={16} className="mb-24">
           <Form onFinish={handleSubmit}>
             <Card
               style={{ background: "#e7e7e7", borderRadius: "20px" }}
@@ -70,39 +79,42 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect ,han
                     className="ant-row-flex ant-row-flex-middle"
                   >
                     <Col xs={24} md={7}></Col>
-                    <Col xs={14} md={7} lg={7} className="d-flex">
+                    <Col xs={17} md={7} lg={7} className="d-flex">
                       <h2 className="font-semibold m-0">E-Agri Form</h2>
                      
                     </Col>
                   </Row>
-                  {/* <Row
-                  justify="center"
+                  <Row
+                  justify="start"
                   >
-                    <Col xs={24} md={7}></Col>
-                    <Col xs={14} md={6} className="">
+                    <Col lg={2} md={2} xs={8}></Col>
+                    <Col xs={14} md={4} lg={2}  >
                      
-                      <h4  >Farmers Data</h4>
+                      {/* <h5 className="farmer" >Farmers Data</h5> */}
                     </Col>
-                  </Row> */}
+                  </Row>
                 </>
               }
             >
-              <Row gutter={[24, 0]}>
-                <Col span={7} md={4}></Col>
-
+              <Row>  <h5 className="farmer" >Personal Info</h5></Row>
+              <Row gutter={[24, 0]}  justify="center">
+                
+                <Col span={7} md={2} lg={0}>  </Col>
+                  
                 {/* <Card style={{background:"#e7e7e7",border:"none"}} > */}
                 <Col
-                  style={{ marginLeft: "10px" }}
-                  xs={20}
+                  style={{ marginLeft: "12px" }}
+                  xs={19}
                   span={7}
-                  lg={8}
+                  lg={9}
                   sm={20}
                   md={6}
                 >
+                  
                  <label
                         htmlFor="contact"
                         className="col-12 col-form-label fw-500"
-                        style={{fontWeight:"bold"}}
+                        // style={{fontWeight:"bold"}}
                       >
                        Name :
                        <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
@@ -136,16 +148,16 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect ,han
 
                 <Col
                   style={{ marginLeft: "10px" }}
-                  xs={20}
+                  xs={19}
                   span={7}
-                  lg={4}
+                  lg={6}
                   sm={20}
                   md={6}
                 >
                   <label
                         htmlFor="contact"
                         className="col-12 col-form-label fw-500"
-                        style={{fontWeight:"bold"}}
+                        // style={{fontWeight:"bold"}}
                       >
                        Contact 1 :
                        <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
@@ -169,6 +181,7 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect ,han
                       type="number"
                       defaultValue={contact}
                       name="contact"
+                      // prefix={<PhoneOutlined/>}
                       maxLength="11"
                       placeholder="03xx-0000000"
                       value={contact}
@@ -188,16 +201,16 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect ,han
                 </Col>
                 <Col
                   style={{ marginLeft: "10px" }}
-                  xs={20}
+                  xs={19}
                   span={7}
-                  lg={4}
+                  lg={6}
                   sm={20}
                   md={6}
                 >
                   <label
                         htmlFor="contact"
                         className="col-12 col-form-label fw-500"
-                        style={{fontWeight:"bold"}}
+                        // style={{fontWeight:"bold"}}
                       >
                        Contact 2 :
                        <span > (Optional) </span>
@@ -241,20 +254,20 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect ,han
                   {/* </Form.Item> */}
                 </Col>
               </Row>
-              <Row gutter={[24, 0]}>
-                <Col span={6} md={4}></Col>
+              <Row gutter={[24, 0]}  justify="center">
+                <Col span={6} md={2} lg={0}></Col>
                 <Col
                   style={{ marginLeft: "10px" }}
-                  xs={20}
+                  xs={19}
                   span={7}
-                  lg={8}
+                  lg={9}
                   sm={20}
                   md={6}
                 >
                    <label
                         htmlFor="contact"
                         className="col-12 col-form-label fw-500"
-                        style={{fontWeight:"bold"}}
+                        // style={{fontWeight:"bold"}}
                       >
                        Province :
                        <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
@@ -297,16 +310,16 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect ,han
                 </Col>
                 <Col
                   style={{ marginLeft: "10px" }}
-                  xs={20}
+                  xs={19}
                   span={7}
-                  lg={8}
+                  lg={12}
                   sm={20}
                   md={6}
                 >
                    <label
                         htmlFor="contact"
                         className="col-12 col-form-label fw-500"
-                        style={{fontWeight:"bold"}}
+                        // style={{fontWeight:"bold"}}
                       >
                        District :
                        <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
@@ -348,22 +361,20 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect ,han
                   </Form.Item>
                 </Col>
               </Row>
-              <Row gutter={[24, 0]}>
-                <Col span={6} md={4}></Col>
+              <Row gutter={[24, 0]}  justify="center">
+                <Col span={6} md={1} lg={0}  ></Col>
                 <Col
                   style={{ marginLeft: "10px" }}
-                  xs={20}
+                  xs={19}
                   span={7}
-                  lg={8}
+                  lg={9}
                   sm={20}
                   md={6}
                 >
                    <label
                         htmlFor="contact"
                         className="col-12 col-form-label fw-500"
-                        style={{fontWeight:"bold"}}
-                      >
-                       Tehsil :
+                      >Tehsil :
                        <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
                       </label>
                   <Form.Item
@@ -397,14 +408,14 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect ,han
                   style={{ marginLeft: "10px" }}
                   xs={20}
                   span={7}
-                  lg={8}
+                  lg={12}
                   sm={20}
                   md={6}
                 >
                  <label
                         htmlFor="contact"
                         className="col-12 col-form-label fw-500"
-                        style={{fontWeight:"bold"}}
+                        // style={{fontWeight:"bold"}}
                       >
                        Village :
                        <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > </span>
@@ -425,7 +436,7 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect ,han
                 <Col xs={24} md={9}>
                   <h6 className="font-semibold m-0"></h6>
                 </Col>
-                <Col xs={24} md={11} className="d-flex">
+                <Col style={{marginTop:"10px"}} xs={22} md={11} className="d-flex">
                   <Button
                     // onClick={()=>history.push("/CropsDistribution")}
                     // onClick={handleSubmit}

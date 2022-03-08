@@ -333,7 +333,7 @@ const removeCattle = (index) => {
     <div>
       <Header />
       <Row justify="center">
-        <Col xs={24} lg={22} className="mb-24">
+        <Col xs={24} lg={20} className="mb-24">
           <Form onFinish={handleSubmit}>
             <Card
               style={{ background: "#e7e7e7", borderRadius: "20px" }}
@@ -362,11 +362,11 @@ const removeCattle = (index) => {
                 </>
               }
             >
-              <Row>  <Col span={5} md={3}></Col>  <Col style={{marginLeft:"12px"}} xs={20} span={7} lg={4} sm={20} md={4}>
+              <Row    >  <Col span={5} md={1}></Col>  <Col  className="land" xs={18} span={7} lg={5} sm={20} md={4}>
                       <label
                         htmlFor="land"
                         className="col-12 col-form-label fw-500"
-                        style={{ fontWeight: "bold" }}
+                        // style={{ fontWeight: "bold" }}
                       >
                         Total Land (Acers):
                         <span
@@ -409,23 +409,23 @@ const removeCattle = (index) => {
                         />
                       </Form.Item>
                     </Col></Row>
-              <Row gutter={[24, 0]}>
+              <Row gutter={[24, 0]} justify="center">
                 {cropDistribution.map((data, i) => (
                   <>
-                    <Col span={5} md={3}></Col>
+                    <Col span={5} md={1}></Col>
                     <Col
                       key={i}
-                      style={{ marginLeft: "10px" }}
+                      style={{ marginLeft: "15px" }}
                       xs={20}
                       span={7}
-                      lg={5}
+                      lg={6}
                       sm={20}
                       md={5}
                     >
                       <label
                         htmlFor="contact"
                         className="col-12 col-form-label fw-500"
-                        style={{ fontWeight: "bold" }}
+                        // style={{ fontWeight: "bold" }}
                       >
                         Crops :
                         <span
@@ -489,14 +489,14 @@ const removeCattle = (index) => {
                       style={{ marginLeft: "10px" }}
                       xs={20}
                       // span={7}
-                      lg={5}
+                      lg={6}
                       sm={20}
                       md={4}
                     >
                      <label
                         htmlFor="contact"
                         className="col-12 col-form-label fw-500"
-                        style={{ fontWeight: "bold" }}
+                        // style={{ fontWeight: "bold" }}
                       >
                        Commodities:
                         <span
@@ -510,7 +510,7 @@ const removeCattle = (index) => {
                           *
                         </span>
                       </label>  
- <Form.Item
+                       <Form.Item
                             style={{ content: "*", color: "red" }}
                             className="username "
                             name="cropstype"
@@ -544,13 +544,13 @@ const removeCattle = (index) => {
                           </Form.Item>
                    
                     </Col>
-                    <Col xs={20} span={7} lg={4} sm={17} md={4}>
+                    <Col xs={19} span={7} lg={6} sm={17} md={4}>
                       <label
                         htmlFor="contact"
                         className="col-12 col-form-label fw-500"
-                        style={{ fontWeight: "bold" }}
+                        // style={{ fontWeight: "bold" }}
                       >
-                        Amount (Acers):
+                        Area (Acers):
                         <span
                           style={{
                             color: "red",
@@ -591,19 +591,15 @@ const removeCattle = (index) => {
                         />
                       </Form.Item>
                     </Col>
-                    <Col xs={24} span={7} lg={4} sm={6} md={4}>
-                      <Button
-                        style={{
-                          marginTop: "40px",
-                          background: "#dc3545",
-                          border: "none",
-                        }}
+                    <Col className="Addbutton" xs={12} span={7} lg={4} sm={6} md={4}>
+                     {cropDistribution.length>1?  <Button
+                      style={{background:"#dc3545",border:"none"}}
                         onClick={() => handleDistributionRemove(i)}
                         disabled={cropDistribution.length > 1 ? false : true}
                         type="primary"
                       >
-                        -
-                      </Button>
+                        Remove
+                      </Button>:""}
                       <Button
                         type="primary"
                         onClick={handleDistributionAdd}
@@ -613,7 +609,7 @@ const removeCattle = (index) => {
                           border: "none",
                         }}
                       >
-                        +
+                        ADD
                       </Button>
                     </Col>
                   </>
@@ -625,20 +621,20 @@ const removeCattle = (index) => {
 
               {cropCycle.map((data, i) => (
                 <>
-                  <Row gutter={[24, 0]}>
-                    <Col span={5} md={3}></Col>
+                  <Row justify="center" gutter={[24, 0]}>
+                    <Col span={5} md={1}></Col>
                     <Col
                       style={{ marginLeft: "10px" }}
-                      xs={20}
+                      xs={19}
                       span={7}
-                      lg={3}
+                      lg={6}
                       sm={20}
                       md={4}
                     >
                       <label
                         htmlFor="contact"
                         className="col-12 col-form-label fw-500"
-                        style={{ fontWeight: "bold" }}
+                        // style={{ fontWeight: "bold" }}
                       >
                         Crops Cycle :
                         <span
@@ -684,8 +680,8 @@ const removeCattle = (index) => {
                     </Col>
 
                     <Col
-                      style={{ marginLeft: "20px " }}
-                      xs={20}
+                      // style={{ marginLeft: "20px " }}
+                      xs={19}
                       span={7}
                       lg={3}
                       sm={20}
@@ -694,7 +690,7 @@ const removeCattle = (index) => {
                       <label
                         htmlFor="contact"
                         className="col-12 col-form-label fw-500"
-                        style={{ fontWeight: "bold" }}
+                        // style={{ fontWeight: "bold" }}
                       >
                         Yield / Acer: (Max)
                         <span
@@ -738,8 +734,8 @@ const removeCattle = (index) => {
                       </Form.Item>
                     </Col>
                     <Col
-                      style={{ marginLeft: "10px " }}
-                      xs={20}
+                      // style={{ marginLeft: "10px " }}
+                      xs={19}
                       span={7}
                       lg={3}
                       sm={20}
@@ -748,7 +744,7 @@ const removeCattle = (index) => {
                       <label
                         htmlFor="contact"
                         className="col-12 col-form-label fw-500"
-                        style={{ fontWeight: "bold" }}
+                        // style={{ fontWeight: "bold" }}
                       >
                         Yield / Acer: (Min)
                         <span
@@ -791,11 +787,11 @@ const removeCattle = (index) => {
                       </Form.Item>
                     </Col>
                   
-                <Col   style={{ marginLeft: "40px" }} xs={20} span={7} lg={4} sm={20} md={4}>
+                <Col    xs={19} span={7} lg={6} sm={20} md={4}>
                   <label
                     htmlFor="contact"
                     className="col-12 col-form-label fw-500"
-                    style={{ fontWeight: "bold" }}
+                    // style={{ fontWeight: "bold" }}
                   >
                      Month :
                     <span
@@ -831,26 +827,27 @@ const removeCattle = (index) => {
     </Form.Item> 
                 </Col>
                
-                    <Col xs={24} span={7} lg={4} sm={6} md={2}>
-                      <Button
-                        style={{
-                          marginTop: "40px",
-                          background: "#dc3545",
-                          border: "none",
-                        }}
+                    <Col className="Addbutton" xs={12} span={7} lg={4} sm={6} md={2}>
+                     { cropCycle.length>1? <Button
+                        // style={{
+                        //   marginTop: "40px",
+                        //   background: "#dc3545",
+                        //   border: "none",
+                        // }}
                         onClick={() => handleRemoveClick(i)}
                         type="primary"
+                        style={{background:"#dc3545",border:"none"}}
                         //   type="secondary"
                         disabled={cropCycle.length > 1 ? false : true}
                       >
-                        -
-                      </Button>
+                        Remove
+                      </Button>:""}
                       <Button
                         type="primary"
                         style={{ marginLeft: "5px", border: "none" }}
                         onClick={handleAdd}
                       >
-                        +
+                        ADD
                       </Button>
                     </Col>
                   </Row>
@@ -860,26 +857,27 @@ const removeCattle = (index) => {
               <Row gutter={[24, 0]}>
                
               </Row>
-            { Cattles.map((data,i)=>(<>  <Row gutter={[24, 0]}>
-                <Col span={5} md={3}></Col>
+            { Cattles.map((data,i)=>(<>  
+            <Row  justify="start" gutter={[24, 0]}>
+                <Col span={5} md={1}></Col>
                 <Col
-                  style={{ marginLeft: "10px" }}
-                  xs={20}
+                  style={{ marginLeft: "38px" }}
+                  xs={19}
                   span={7}
-                  lg={5}
+                  lg={6}
                   sm={20}
                   md={6}
                 >
                   <label
                     htmlFor="contact"
                     className="col-12 col-form-label fw-500"
-                    style={{ fontWeight: "bold" }}
+                    // style={{ fontWeight: "bold" }}
                   >
                     Cattles :
                     <span
                       style={{
                         color: "red",
-                        fontWeight: "bold",
+                        // fontWeight: "bold",
                         fontSize: "large",
                       }}
                     >
@@ -915,17 +913,19 @@ const removeCattle = (index) => {
                   </Form.Item>
                 </Col>
                 <Col
-                  style={{ marginLeft: "10px" }}
-                  xs={20}
+           className="quantity"
+              // style={{marginLeft:"40px"}}
+                  xs={19}
                   span={7}
-                  lg={5}
+                  lg={6}
                   sm={20}
                   md={6}
-                >
+
+>
                   <label
                     htmlFor="contact"
                     className="col-12 col-form-label fw-500"
-                    style={{ fontWeight: "bold" }}
+                    // style={{ fontWeight: "bold" }}
                   >
                     Quantity :
                     <span
@@ -940,6 +940,7 @@ const removeCattle = (index) => {
                     </span>
                   </label>
                   <Form.Item
+
                     name="cattlesAmount"
                     rules={
                       !cattlesAmount
@@ -972,10 +973,11 @@ const removeCattle = (index) => {
                     />
                   </Form.Item>
                 </Col>
-                <Col xs={24} span={7} lg={4} sm={6} md={4}>
-                      <Button
+                
+                <Col className="Add2button"  xs={14} span={7} lg={4} sm={6} md={4}>
+                   {Cattles.length>1?   <Button
                         style={{
-                          marginTop: "40px",
+                        
                           background: "#dc3545",
                           border: "none",
                         }}
@@ -983,8 +985,8 @@ const removeCattle = (index) => {
                         disabled={Cattles.length > 1 ? false : true}
                         type="primary"
                       >
-                        -
-                      </Button>
+                        Remove
+                      </Button>:""}
                       <Button
                         type="primary"
                         onClick={addCattles}
@@ -994,7 +996,7 @@ const removeCattle = (index) => {
                           border: "none",
                         }}
                       >
-                        +
+                        ADD
                       </Button>
                     </Col>
               </Row></>))}

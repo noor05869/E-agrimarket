@@ -161,7 +161,7 @@ export default Form;
 
 
 const Punjab = [
-  { value: "Abdul Hakim", label: "Abdul Hakim" },
+  { value: "Abdul Hakim", label: "Abdul Hakim لاہور"     },
   { value: "Ahmadpur East", label: "Ahmadpur East" },
   { value: "Attock Khurd", label: "Attock Khurd" },
   { value: "Bahawalpur", label: "Bahawalpur" },

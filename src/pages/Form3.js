@@ -16,7 +16,7 @@ import {
 } from "antd";
 // import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import Header from "./header";
-function Form3({ handleStep, initialValues, handleChange, handleSelect,handleSubmit }) {
+function Form3({ handleStep, initialValues, handleChange, handleSelect,handleSubmit ,Cities}) {
   // const history = useHistory();
   const { Option } = Select;
   const {
@@ -84,7 +84,7 @@ else{
                   style={{ marginLeft: "10px" }}
                   xs={20}
                   span={7}
-                  lg={8}
+                  lg={5}
                   sm={20}
                   md={6}
                 >
@@ -132,7 +132,7 @@ else{
                   style={{ marginLeft: "10px" }}
                   xs={20}
                   span={7}
-                  lg={8}
+                  lg={5}
                   sm={20}
                   md={6}
                 >
@@ -195,15 +195,11 @@ else{
                     />
                   </Form.Item>}
                 </Col>
-              </Row>
-              
-              <Row gutter={[24, 0]}>
-                <Col span={6} md={4}></Col>
                 <Col
                   style={{ marginLeft: "10px" }}
                   xs={20}
                   span={7}
-                  lg={8}
+                  lg={5}
                   sm={20}
                   md={6}
                 >
@@ -231,6 +227,10 @@ else{
                     // }
                   >
                     <Select
+                    showSearch
+                    filterOption={(input, option) =>
+                      option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                    }
                       onSelect={(value, event) =>
                         handleSelect("cropsSale", event)
                       }
@@ -238,16 +238,16 @@ else{
                       name="cropsSale"
                       defaultValue={cropsSale.children}
                     >
-                      {/* <Option key="On Farm">On Farm</Option>
-                      <Option key="Mandi ">Mandi </Option>
-                      <Option key="Company ">Company </Option>
-                      <Option key="Contract ">Contract </Option> */}
+                      {Cities&&Cities.map(data=>(
+                      <Option key={data.value}>{data.label}</Option>
+                      ))}
 
                     </Select>
                   </Form.Item>
                 </Col>
-                
               </Row>
+              
+              
               <Row gutter={[24, 0]}>
                 <Col span={6} md={4}></Col>
                 <Col

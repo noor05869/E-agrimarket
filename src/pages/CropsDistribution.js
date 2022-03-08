@@ -362,7 +362,7 @@ const removeCattle = (index) => {
                 </>
               }
             >
-              <Row>  <Col span={5} md={3}></Col>  <Col style={{marginLeft:"12px"}} xs={20} span={7} lg={4} sm={17} md={4}>
+              <Row>  <Col span={5} md={3}></Col>  <Col style={{marginLeft:"12px"}} xs={20} span={7} lg={4} sm={20} md={4}>
                       <label
                         htmlFor="land"
                         className="col-12 col-form-label fw-500"
@@ -383,7 +383,7 @@ const removeCattle = (index) => {
                       <Form.Item
                         name="Land"
                         rules={
-                          !cropsAmount
+                          !Land
                             ? [
                                 {
                                   required: true,
@@ -396,7 +396,7 @@ const removeCattle = (index) => {
                         <Input
                           style={{ color: "black", fontWeight: "normal" }}
                           onChange={handleChange}
-                          name="cropsAmount"
+                          name="Land"
                           defaultValue={Land}
                           min={1}
                           // vale={data.Amount}
@@ -457,6 +457,10 @@ const removeCattle = (index) => {
                       >
                         <Select
                           onChange={handleCropChange}
+                    showSearch
+                    filterOption={(input, option) =>
+                      option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                    }
                           name="crops"
                           onSelect={(value, event) =>
                             handleSelect("crops", event)
@@ -522,7 +526,12 @@ const removeCattle = (index) => {
                             }
                           >
                             <Select
+                    showSearch
+
                               size="large"
+                              filterOption={(input, option) =>
+                                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                              }
                               onSelect={(value, event) =>
                                 handleSelect("cropstype", event)
                               }
@@ -585,7 +594,7 @@ const removeCattle = (index) => {
                     <Col xs={24} span={7} lg={4} sm={6} md={4}>
                       <Button
                         style={{
-                          marginTop: "30px",
+                          marginTop: "40px",
                           background: "#dc3545",
                           border: "none",
                         }}
@@ -741,14 +750,14 @@ const removeCattle = (index) => {
                         className="col-12 col-form-label fw-500"
                         style={{ fontWeight: "bold" }}
                       >
-                        Min
+                        Yield / Acer: (Min)
                         <span
                           style={{
                             color: "red",
                             fontWeight: "bold",
                             fontSize: "large",
                           }}
-                        >
+                        >*
                           {" "}
                         </span>
                       </label>
@@ -825,7 +834,7 @@ const removeCattle = (index) => {
                     <Col xs={24} span={7} lg={4} sm={6} md={2}>
                       <Button
                         style={{
-                          marginTop: "30px",
+                          marginTop: "40px",
                           background: "#dc3545",
                           border: "none",
                         }}
@@ -966,7 +975,7 @@ const removeCattle = (index) => {
                 <Col xs={24} span={7} lg={4} sm={6} md={4}>
                       <Button
                         style={{
-                          marginTop: "30px",
+                          marginTop: "40px",
                           background: "#dc3545",
                           border: "none",
                         }}

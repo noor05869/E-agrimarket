@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import {
   Row,
   Col,
@@ -16,41 +16,11 @@ import {
 // import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import Header from "./header";
 
-function FormScreen({ handleStep, initialValues, handleChange, handleSelect }) {
+function FormScreen({ handleStep, initialValues, handleChange, handleSelect ,handleCities,Cities}) {
   const { fname, contact, province, district, tehsil, village } = initialValues;
   const { Option } = Select;
   // const history = useHistory();
-  const Provinces = [
-    { value: "06", label: "Fedral Capital", Province_code: "06" },
-    { value: "03", label: "Punjab", Province_code: "03" },
-    { value: "02", label: "Sindh", Province_code: "02" },
-    { value: "05", label: "Balochistan", Province_code: "05" },
-    { value: "04", label: "Khyber Pakhtunkhwa", Province_code: "04" },
-    { value: "07", label: "Azad And Jamu Kashmir", Province_code: "07" },
-    { value: "01", label: "Fata / Fana", Province_code: "01" },
-  ];
-
-  const City = [
-    { value: "Lahore", label: "Lahore" },
-    { value: "Multan", label: "Multan" },
-    { value: "Rawalpindi", label: "Rawalpindi" },
-    { value: "Islamabad", label: "Islamabad" },
-  ];
-  const sindh = [
-    { value: "Hydrabad", label: "Hydrabad" },
-    { value: "KhairPur", label: "KhairPur" },
-    { value: "Karachi", label: "Karachi" },
-    { value: "Sukkhur", label: "Sukkhur" },
-  ];
-  const Tehsil = [
-    { value: "Pakpattan ", label: "Pakpattan Tehsil" },
-    { value: "Phalia", label: "Phalia" },
-    { value: "Pasrur ", label: "Pasrur Tehsil" },
-    { value: "PindDadan", label: "Pind Dadan Khan Tehsil" },
-    { value: "PindiBhattian", label: "Pindi Bhattian" },
-    { value: "Piplan ", label: "Piplan Tehsil" },
-  ];
-
+  
   function handleSubmit(values) {
     console.log(values);
     handleStep("2");
@@ -64,6 +34,25 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect }) {
 
      return true;
   }
+
+  const Provinces = [
+    { value: "06", label: "Fedral Capital", Province_code: "06" },
+    { value: "03", label: "Punjab", Province_code: "03" },
+    { value: "02", label: "Sindh", Province_code: "02" },
+    { value: "05", label: "Balochistan", Province_code: "05" },
+    { value: "04", label: "Khyber Pakhtunkhwa", Province_code: "04" },
+    { value: "07", label: "Azad And Jamu Kashmir", Province_code: "07" },
+    { value: "01", label: "Fata / Fana", Province_code: "01" },
+  ];
+  const Tehsil = [
+    { value: "Pakpattan ", label: "Pakpattan Tehsil" },
+    { value: "Phalia", label: "Phalia" },
+    { value: "Pasrur ", label: "Pasrur Tehsil" },
+    { value: "PindDadan", label: "Pind Dadan Khan Tehsil" },
+    { value: "PindiBhattian", label: "Pindi Bhattian" },
+    { value: "Piplan ", label: "Piplan Tehsil" },
+  ];
+  
   return (
     <div>
       <Header />
@@ -158,7 +147,7 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect }) {
                         className="col-12 col-form-label fw-500"
                         style={{fontWeight:"bold"}}
                       >
-                       Contact :
+                       Contact 1 :
                        <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
                       </label>
                   <Form.Item
@@ -210,7 +199,7 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect }) {
                         className="col-12 col-form-label fw-500"
                         style={{fontWeight:"bold"}}
                       >
-                       Contact :
+                       Contact 2 :
                        <span > (Optional) </span>
                       </label>
                   <Form.Item
@@ -227,12 +216,12 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect }) {
                     // }
                   >
                     <Input
-                      id="contact1"
+                      id="optionalContact"
                       onKeyPress={isNumberKey}
                       type="number"
                       // type="number"
                       defaultValue=""
-                      name="contact1"
+                      name="optionalContact"
                       maxLength="11"
                       placeholder="03xx-0000000"
                       value=""
@@ -287,6 +276,11 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect }) {
                     }
                   >
                     <Select
+                    showSearch
+                      onChange={handleCities}
+                      filterOption={(input, option) =>
+                        option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                      }
                       // onChange={handleSelect("province")}
                       onSelect={(value, event) =>
                         handleSelect("province", event)
@@ -333,6 +327,10 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect }) {
                     }
                   >
                     <Select
+                      showSearch
+                      filterOption={(input, option) =>
+                        option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                      }
                       name="district"
                       size="large"
                       onSelect={(value, event) =>
@@ -340,13 +338,12 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect }) {
                       }
                       defaultValue={district.children}
                     >
-                      {province.children === "Punjab"
-                        ? City.map((data) => (
+                      {
+                        Cities&&Cities.map((data) => (
                             <Option key={data.value}>{data.label}</Option>
-                          ))
-                        : sindh.map((data) => (
-                            <Option key={data.value}>{data.label}</Option>
-                          ))}
+                          )
+                       
+                          )}
                     </Select>
                   </Form.Item>
                 </Col>

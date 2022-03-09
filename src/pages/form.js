@@ -144,30 +144,30 @@ const [index, setindex] = useState()
     // }
   }
   function handleSubmit() {
-    setInitialValues({
-      fname: "",
-      contact: "",
-      province: "",
-      district: "",
-      tehsil: "",
-      village: "",
-      Land: "",
+    // setInitialValues({
+    //   fname: "",
+    //   contact: "",
+    //   province: "",
+    //   district: "",
+    //   tehsil: "",
+    //   village: "",
+    //   Land: "",
 
-      crops: "",
-      cropstype: "",
-      cropsAmount: "",
-      cropsCycle: "",
-      cropscycleAmount: "",
-      cattles: "",
-      cattlesAmount: "",
-      date: "",
-      modeOfInvestment: "",
-      percentage: "",
-      cropsSale: "",
-      seed: "",
-      machinery: "",
-      cropAdvisory: "",
-    });
+    //   crops: "",
+    //   cropstype: "",
+    //   cropsAmount: "",
+    //   cropsCycle: "",
+    //   cropscycleAmount: "",
+    //   cattles: "",
+    //   cattlesAmount: "",
+    //   date: "",
+    //   modeOfInvestment: "",
+    //   percentage: "",
+    //   cropsSale: "",
+    //   seed: "",
+    //   machinery: "",
+    //   cropAdvisory: "",
+    // });
     message.success({
       content: "Submitted Successfully",
       className: "custom-class",
@@ -220,7 +220,9 @@ const [index, setindex] = useState()
         />
       );
     case "4":
-      return <OTP />;
+      return <OTP 
+      number={initialValues1.contact}
+      />;
   }
 
   return <div>{/* <FormScreen/> */}</div>;

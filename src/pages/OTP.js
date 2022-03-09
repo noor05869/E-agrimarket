@@ -1,7 +1,7 @@
 import { Row,Col } from 'antd'
 import React from 'react'
 import "./otp.css"
-function OTP() {
+function OTP({number}) {
   return (
       <Row justify='center' style={{marginTop:"200px"}}>
           <Col lg={12}>
@@ -20,7 +20,9 @@ function OTP() {
         <div class="form-group login-label">
             {/* <label for="inputnumber">One Time Password</label> */}
             <input type="number" class="form-control input-edit" placeholder='Enter OTP' id="number"/>
-            <label class="pull-right resend-otp">Resend otp</label>
+            <label class="pull-right resend-otp">OTP Send to this Number {number}
+            <button className='btn btn-primary' style={{marginLeft:"12px"}}>Resend otp</button>
+            </label>
         </div>
         <button type="button" class="btn btn-primary ">Verify</button>
     </div>

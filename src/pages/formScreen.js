@@ -1,5 +1,5 @@
-import React,{useState} from "react";
-import "./required.css"
+import React, { useState } from "react";
+import "./required.css";
 import {
   Row,
   Col,
@@ -21,27 +21,32 @@ import {
   SyncOutlined,
   LoadingOutlined,
   PhoneOutlined,
-} from '@ant-design/icons';
+} from "@ant-design/icons";
 // import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import Header from "./header";
 
-function FormScreen({ handleStep, initialValues, handleChange, handleSelect ,handleCities,Cities}) {
+function FormScreen({
+  handleStep,
+  initialValues,
+  handleChange,
+  handleSelect,
+  handleCities,
+  Cities,
+}) {
   const { fname, contact, province, district, tehsil, village } = initialValues;
   const { Option } = Select;
   // const history = useHistory();
-  
+
   function handleSubmit(values) {
     console.log(values);
     handleStep("2");
   }
-  function isNumberKey(evt)
-  {
-     var charCode = (evt.which) ? evt.which : evt.keyCode;
-     if (charCode != 46 && charCode > 31 
-       && (charCode < 48 || charCode > 57))
-        return false;
+  function isNumberKey(evt) {
+    var charCode = evt.which ? evt.which : evt.keyCode;
+    if (charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57))
+      return false;
 
-     return true;
+    return true;
   }
 
   const Provinces = [
@@ -61,7 +66,7 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect ,han
     { value: "PindiBhattian", label: "Pindi Bhattian" },
     { value: "Piplan ", label: "Piplan Tehsil" },
   ];
-  
+
   return (
     <div>
       <Header />
@@ -81,26 +86,26 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect ,han
                     <Col xs={24} md={7}></Col>
                     <Col xs={17} md={7} lg={7} className="d-flex">
                       <h2 className="font-semibold m-0">E-Agri Form</h2>
-                     
                     </Col>
                   </Row>
-                  <Row
-                  justify="start"
-                  >
+                  <Row justify="start">
                     <Col lg={2} md={2} xs={8}></Col>
-                    <Col xs={14} md={4} lg={2}  >
-                     
+                    <Col xs={14} md={4} lg={2}>
                       {/* <h5 className="farmer" >Farmers Data</h5> */}
                     </Col>
                   </Row>
                 </>
               }
             >
-              <Row>  <h5 className="farmer" >Personal Info</h5></Row>
-              <Row gutter={[24, 0]}  justify="center">
-                
-                <Col span={7} md={2} lg={0}>  </Col>
-                  
+              <Row>
+                {" "}
+                <h5 className="farmer">Personal Info</h5>
+              </Row>
+              <Row gutter={[24, 0]} justify="center">
+                <Col span={7} md={2} lg={0}>
+                  {" "}
+                </Col>
+
                 {/* <Card style={{background:"#e7e7e7",border:"none"}} > */}
                 <Col
                   style={{ marginLeft: "12px" }}
@@ -110,15 +115,23 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect ,han
                   sm={20}
                   md={6}
                 >
-                  
-                 <label
-                        htmlFor="contact"
-                        className="col-12 col-form-label fw-500"
-                        // style={{fontWeight:"bold"}}
-                      >
-                       Name :
-                       <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
-                      </label>
+                  <label
+                    htmlFor="contact"
+                    className="col-12 col-form-label fw-500"
+                    // style={{fontWeight:"bold"}}
+                  >
+                    Name :
+                    <span
+                      style={{
+                        color: "red",
+                        fontWeight: "bold",
+                        fontSize: "large",
+                      }}
+                    >
+                      {" "}
+                      *
+                    </span>
+                  </label>
                   <Form.Item
                     name="fname"
                     rules={
@@ -133,7 +146,7 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect ,han
                     }
                   >
                     <Input
-                    style={{color:"black",fontWeight:"normal"}}
+                      style={{ color: "black", fontWeight: "normal" }}
                       defaultValue={fname}
                       id="fname"
                       type="text"
@@ -155,13 +168,22 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect ,han
                   md={6}
                 >
                   <label
-                        htmlFor="contact"
-                        className="col-12 col-form-label fw-500"
-                        // style={{fontWeight:"bold"}}
-                      >
-                       Contact 1 :
-                       <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
-                      </label>
+                    htmlFor="contact"
+                    className="col-12 col-form-label fw-500"
+                    // style={{fontWeight:"bold"}}
+                  >
+                    Contact 1 :
+                    <span
+                      style={{
+                        color: "red",
+                        fontWeight: "bold",
+                        fontSize: "large",
+                      }}
+                    >
+                      {" "}
+                      *
+                    </span>
+                  </label>
                   <Form.Item
                     name="contact"
                     rules={
@@ -187,16 +209,16 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect ,han
                       value={contact}
                       onChange={handleChange}
                       style={{
-                        color:"black",
+                        color: "black",
                         width: "100%",
-                        fontWeight:"normal",
+                        fontWeight: "normal",
                         border: "rounded",
                         height: "40px",
                       }}
                       // onChange={onChange}
                     />
                   </Form.Item>
-                  
+
                   {/* </Form.Item> */}
                 </Col>
                 <Col
@@ -208,13 +230,12 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect ,han
                   md={6}
                 >
                   <label
-                        htmlFor="contact"
-                        className="col-12 col-form-label fw-500"
-                        // style={{fontWeight:"bold"}}
-                      >
-                       Contact 2 :
-                       <span > (Optional) </span>
-                      </label>
+                    htmlFor="contact"
+                    className="col-12 col-form-label fw-500"
+                    // style={{fontWeight:"bold"}}
+                  >
+                    Contact 2 :<span> (Optional) </span>
+                  </label>
                   <Form.Item
                     name="contact1"
                     // rules={
@@ -240,21 +261,21 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect ,han
                       value=""
                       onChange={handleChange}
                       style={{
-                        color:"black",
+                        color: "black",
                         width: "100%",
-                        fontWeight:"normal",
+                        fontWeight: "normal",
                         border: "rounded",
-                        marginTop:"5px",
+                        marginTop: "5px",
                         height: "40px",
                       }}
                       // onChange={onChange}
                     />
                   </Form.Item>
-                  
+
                   {/* </Form.Item> */}
                 </Col>
               </Row>
-              <Row gutter={[24, 0]}  justify="center">
+              <Row gutter={[24, 0]} justify="center">
                 <Col span={6} md={2} lg={0}></Col>
                 <Col
                   style={{ marginLeft: "10px" }}
@@ -264,17 +285,25 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect ,han
                   sm={20}
                   md={6}
                 >
-                   <label
-                        htmlFor="contact"
-                        className="col-12 col-form-label fw-500"
-                        // style={{fontWeight:"bold"}}
-                      >
-                       Province :
-                       <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
-                      </label>
+                  <label
+                    htmlFor="contact"
+                    className="col-12 col-form-label fw-500"
+                    // style={{fontWeight:"bold"}}
+                  >
+                    Province :
+                    <span
+                      style={{
+                        color: "red",
+                        fontWeight: "bold",
+                        fontSize: "large",
+                      }}
+                    >
+                      {" "}
+                      *
+                    </span>
+                  </label>
                   <Form.Item
                     className="username"
-                    
                     name="Province"
                     defaultValue={province && province.children}
                     rules={
@@ -289,10 +318,12 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect ,han
                     }
                   >
                     <Select
-                    showSearch
+                      showSearch
                       onChange={handleCities}
                       filterOption={(input, option) =>
-                        option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                        option.children
+                          .toLowerCase()
+                          .indexOf(input.toLowerCase()) >= 0
                       }
                       // onChange={handleSelect("province")}
                       onSelect={(value, event) =>
@@ -303,7 +334,12 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect ,han
                       defaultValue={province.children}
                     >
                       {Provinces.map((data) => (
-                        <Option key={data.value}><div> <p>{data.label}</p></div></Option>
+                        <Option key={data.value}>
+                          <div>
+                            {" "}
+                            <p>{data.label}</p>
+                          </div>
+                        </Option>
                       ))}
                     </Select>
                   </Form.Item>
@@ -316,17 +352,25 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect ,han
                   sm={20}
                   md={6}
                 >
-                   <label
-                        htmlFor="contact"
-                        className="col-12 col-form-label fw-500"
-                        // style={{fontWeight:"bold"}}
-                      >
-                       District :
-                       <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
-                      </label>
+                  <label
+                    htmlFor="contact"
+                    className="col-12 col-form-label fw-500"
+                    // style={{fontWeight:"bold"}}
+                  >
+                    District :
+                    <span
+                      style={{
+                        color: "red",
+                        fontWeight: "bold",
+                        fontSize: "large",
+                      }}
+                    >
+                      {" "}
+                      *
+                    </span>
+                  </label>
                   <Form.Item
                     className="username"
-                   
                     name="District"
                     rules={
                       !district.children
@@ -342,7 +386,9 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect ,han
                     <Select
                       showSearch
                       filterOption={(input, option) =>
-                        option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                        option.children
+                          .toLowerCase()
+                          .indexOf(input.toLowerCase()) >= 0
                       }
                       name="district"
                       size="large"
@@ -351,18 +397,26 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect ,han
                       }
                       defaultValue={district.children}
                     >
-                      {
-                        Cities&&Cities.map((data) => (
-                            <Option key={data.value}><div style={{display:"flex",justifyContent:"space-between"}} ><p>{data.label}</p><p>{data.ulabel}</p></div></Option>
-                          )
-                       
-                          )}
+                      {Cities &&
+                        Cities.map((data) => (
+                          <Option key={data.value}>
+                            <div
+                              style={{
+                                display: "flex",
+                                justifyContent: "space-between",
+                              }}
+                            >
+                              <p>{data.label}</p>
+                              <p>{data.ulabel}</p>
+                            </div>
+                          </Option>
+                        ))}
                     </Select>
                   </Form.Item>
                 </Col>
               </Row>
-              <Row gutter={[24, 0]}  justify="center">
-                <Col span={6} md={1} lg={0}  ></Col>
+              <Row gutter={[24, 0]} justify="center">
+                <Col span={6} md={1} lg={0}></Col>
                 <Col
                   style={{ marginLeft: "10px" }}
                   xs={19}
@@ -371,15 +425,24 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect ,han
                   sm={20}
                   md={6}
                 >
-                   <label
-                        htmlFor="contact"
-                        className="col-12 col-form-label fw-500"
-                      >Tehsil :
-                       <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
-                      </label>
+                  <label
+                    htmlFor="contact"
+                    className="col-12 col-form-label fw-500"
+                  >
+                    Tehsil :
+                    <span
+                      style={{
+                        color: "red",
+                        fontWeight: "bold",
+                        fontSize: "large",
+                      }}
+                    >
+                      {" "}
+                      *
+                    </span>
+                  </label>
                   <Form.Item
                     className="username"
-                  
                     name="Tehsil"
                     rules={
                       !tehsil.children
@@ -412,16 +475,24 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect ,han
                   sm={20}
                   md={6}
                 >
-                 <label
-                        htmlFor="contact"
-                        className="col-12 col-form-label fw-500"
-                        // style={{fontWeight:"bold"}}
-                      >
-                       Village :
-                       <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > </span>
-                      </label>
+                  <label
+                    htmlFor="contact"
+                    className="col-12 col-form-label fw-500"
+                    // style={{fontWeight:"bold"}}
+                  >
+                    Village :
+                    <span
+                      style={{
+                        color: "red",
+                        fontWeight: "bold",
+                        fontSize: "large",
+                      }}
+                    >
+                      {" "}
+                    </span>
+                  </label>
                   <Input
-                  style={{color:"black",fontWeight:"normal"}}
+                    style={{ color: "black", fontWeight: "normal" }}
                     name="village"
                     value={village}
                     onChange={handleChange}
@@ -436,7 +507,12 @@ function FormScreen({ handleStep, initialValues, handleChange, handleSelect ,han
                 <Col xs={24} md={9}>
                   <h6 className="font-semibold m-0"></h6>
                 </Col>
-                <Col style={{marginTop:"10px"}} xs={22} md={11} className="d-flex">
+                <Col
+                  style={{ marginTop: "10px" }}
+                  xs={22}
+                  md={11}
+                  className="d-flex"
+                >
                   <Button
                     // onClick={()=>history.push("/CropsDistribution")}
                     // onClick={handleSubmit}

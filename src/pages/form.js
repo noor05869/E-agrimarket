@@ -10,37 +10,31 @@ function Form() {
   function handleStep(id) {
     setSteps(id);
   }
-  const [Cities, setCities] = useState([])
-  function handleCities(value){
-
-if(value==="03"){
-  setCities(Punjab)
-}
-else if(value==="02"){
-  setCities(sindh)
-}
-else if(value==="05"){
-  setCities(Blochistan)
-}
-else if(value==="04"){
-  setCities(KPK)
-}else if(value==="07"){
-  setCities(Kashmir)
-}
+  const [Cities, setCities] = useState([]);
+  function handleCities(value) {
+    if (value === "03") {
+      setCities(Punjab);
+    } else if (value === "02") {
+      setCities(sindh);
+    } else if (value === "05") {
+      setCities(Blochistan);
+    } else if (value === "04") {
+      setCities(KPK);
+    } else if (value === "07") {
+      setCities(Kashmir);
+    }
   }
   const [initialValues1, setInitialValues] = useState({
     fname: "",
     contact: "",
-    optionalContact:"",
+    optionalContact: "",
     province: "",
     district: "",
     tehsil: "",
     village: "",
-    CropsDistribution:[{ crops: "",
-    cropstype: "",
-    cropsAmount: "",}],
+    cropsDiss: "",
+    Land: "",
     crops: "",
-    Land:"",
     cropstype: "",
     cropsAmount: "",
     cropsCycle: "",
@@ -57,73 +51,133 @@ else if(value==="04"){
   });
   console.log("state22", initialValues1);
 
+  function handleSelectChange(i, event, name) {
+    //  console.log(event.target.value,i,name)
+    handleCropChange(event);
+    const values = [...cropDistribution];
+
+    if (name === "crops") {
+      values[i].crops = event;
+    } else if (name === "cropstype") {
+      values[i].cropstype = event;
+    } else if (name === "Area") {
+      values[i].Area = event.target.value;
+    }
+    initialValues1.cropsDiss = values;
+    setcropDistribution(values);
+    console.log("cropsdis", cropDistribution);
+  }
+
   const handleChange = (e) => {
-    const { value, name } = e.target;
+    const { value, name, id } = e.target;
 
-   
+    setInitialValues({ ...initialValues1, [name]: value });
 
-
-      setInitialValues({ ...initialValues1, [name]: value });
-   
     console.log(value, name);
 
     console.log("state", initialValues1);
   };
-  function handleDisAdd(){
-    setInitialValues([...initialValues1.CropsDistribution,{crops: "",
-    cropstype: "",
-    cropsAmount: "",}])}
-  const handleSelect = (name, value) => {
+  const [cropDistribution, setcropDistribution] = useState([
+    {
+      crops: "",
+      cropstype: "",
+      Area: "0",
+    },
+  ]);
+  const handleDistributionRemove = (index) => {
+    // alert(index)
+    const list = [...cropDistribution];
+    list.splice(index, 1);
+    setcropDistribution(list);
+  };
+  function handleDistributionAdd() {
+    setcropDistribution([
+      ...cropDistribution,
+      { crops: "", cropsAmount: "", Area: "" },
+    ]);
+  }
+  const handleSelect = (name, value, i) => {
+    //  if(value.target.name==="Area"){
+    //   values[value.target.id].Area=value.target.value
+    // }
+
     // handleDisAdd()
-if(name==="crops"|| name==="cropstype" ||name==="cropsAmount"){
-    console.log(initialValues1.CropsDistribution[0][name]=value)}
-    console.log(name, value);
+
     // setInitialValues({...initialValues1,[name]:value})
     setInitialValues({ ...initialValues1, [name]: value });
     // console.log("state",initialValues1)
   };
- 
-
-
 
   function handleprev(id) {
     setSteps(id);
   }
+  const [valuues, setvaluues] = useState();
+  
+const [index, setindex] = useState()
+  function handleCropChange(value, index) {
+    console.log("first", value);
+    if (value === "Fruits") {
+      // setFruits(true);
+      setvaluues(fruits);
+      // setSabziyaat(false);
+    } else if (value === "Vegetables") {
+      // setSabziyaat(true);
+      setvaluues(Vegitables);
+      // setFruits(false);
+    } else if (value === "FoodLegumes") {
+      setvaluues(FoodLegumes);
+    } else if (value === "CEREALCROPS") {
+      setvaluues(CEREALCROPS);
+    } else if (value === "OilSeedCrops") {
+      setvaluues(OilSeedCrops);
+    } else if (value === "FiberCrops") {
+      setvaluues(FiberCrops);
+    } else if (value === "ForageCrops") {
+      setvaluues(ForageCrops);
+    } else if (value === "SugarCrops") {
+      setvaluues(sugarCrops);
+    }
 
-  function handleSubmit(){
-    
-    setInitialValues({ fname: "",
-    contact: "",
-    province: "",
-    district: "",
-    tehsil: "",
-    village: "",
-    Land:"",
- 
-    crops: "",
-    cropstype: "",
-    cropsAmount: "",
-    cropsCycle: "",
-    cropscycleAmount: "",
-    cattles: "",
-    cattlesAmount: "",
-    date: "",
-    modeOfInvestment: "",
-    percentage: "",
-    cropsSale: "",
-    seed: "",
-    machinery: "",
-    cropAdvisory: "",})
+    // else {
+    //   setFruits(false);
+    //   setSabziyaat(false);
+    // }
+  }
+  function handleSubmit() {
+    setInitialValues({
+      fname: "",
+      contact: "",
+      province: "",
+      district: "",
+      tehsil: "",
+      village: "",
+      Land: "",
+
+      crops: "",
+      cropstype: "",
+      cropsAmount: "",
+      cropsCycle: "",
+      cropscycleAmount: "",
+      cattles: "",
+      cattlesAmount: "",
+      date: "",
+      modeOfInvestment: "",
+      percentage: "",
+      cropsSale: "",
+      seed: "",
+      machinery: "",
+      cropAdvisory: "",
+    });
     message.success({
-      content: 'Submitted Successfully',
-      className: 'custom-class',
+      content: "Submitted Successfully",
+      className: "custom-class",
       style: {
-        marginTop: '74vh',
+        marginTop: "74vh",
       },
     });
-    ;
-    handleStep("4")
+    handleStep("4");
   }
+
   switch (Steps) {
     case "1":
       return (
@@ -142,11 +196,15 @@ if(name==="crops"|| name==="cropstype" ||name==="cropsAmount"){
       return (
         <CropsDistribution
           steps={Steps}
+          cropDistribution={cropDistribution}
           initialValues={initialValues1}
           handleChange={handleChange}
           handleSelect={handleSelect}
           handleStep={handleStep}
-          handleDisAdd={handleDisAdd}
+          handleDistributionAdd={handleDistributionAdd}
+          handleDistributionRemove={handleDistributionRemove}
+          valuues={valuues}
+          handleSelectChange={handleSelectChange}
         />
       );
     case "3":
@@ -159,13 +217,10 @@ if(name==="crops"|| name==="cropstype" ||name==="cropsAmount"){
           handleStep={handleStep}
           handleSubmit={handleSubmit}
           Cities={Cities}
-
         />
       );
-      case "4":
-      return(
-           <OTP/>
-      )
+    case "4":
+      return <OTP />;
   }
 
   return <div>{/* <FormScreen/> */}</div>;
@@ -173,11 +228,10 @@ if(name==="crops"|| name==="cropstype" ||name==="cropsAmount"){
 
 export default Form;
 
-
 const Punjab = [
-  { value: "Abdul Hakim", label: "Abdul Hakim ",ulabel:"لاہور" ,    },
-  { value: "Ahmadpur East", label: "Ahmadpur East",ulabel:"لاہور" },
-  { value: "Attock Khurd", label: "Attock Khurd",ulabel:"لاہور" },
+  { value: "Abdul Hakim", label: "Abdul Hakim ", ulabel: "لاہور" },
+  { value: "Ahmadpur East", label: "Ahmadpur East", ulabel: "لاہور" },
+  { value: "Attock Khurd", label: "Attock Khurd", ulabel: "لاہور" },
   { value: "Bahawalpur", label: "Bahawalpur" },
   { value: "Bhakkar", label: "Bhakkar" },
   { value: "Bhalwal", label: "Bhalwal" },
@@ -236,11 +290,6 @@ const Punjab = [
   { value: "Shekhupura", label: "Shekhupura" },
   { value: "Shujaabad", label: "Shujaabad" },
   { value: "Sialkot City", label: "Sialkot City" },
-
-
-
-
-
 ];
 const sindh = [
   { value: "Dadu", label: "Dadu" },
@@ -257,8 +306,6 @@ const sindh = [
   { value: "Sukkur", label: "Sukkur" },
   { value: "Tando Allahyar", label: "Tando Allahyar" },
   { value: "Umarkot", label: "Umarkot" },
- 
-
 ];
 const KPK = [
   { value: "Abbottabad", label: "Abbottabad" },
@@ -280,10 +327,6 @@ const KPK = [
   { value: "Saidu Sharif", label: "Saidu Sharif" },
   { value: "Swabi", label: "Swabi" },
   { value: "Timargara", label: "Timargara" },
-
-  
- 
-
 ];
 const Blochistan = [
   { value: "Chaman", label: "Chaman" },
@@ -292,11 +335,210 @@ const Blochistan = [
   { value: "Khuzdar", label: "Khuzdar" },
   { value: "Turbat", label: "Turbat" },
   { value: "Zhob", label: "Zhob" },
-
-]
+];
 const Kashmir = [
   { value: "Kotli", label: "Kotli" },
   { value: "Muzaffarabad", label: "Muzaffarabad" },
   { value: "New Mirpur", label: "New Mirpur" },
+];
+const fruits = [
+  { value: "Citrus", lable: "Citrus", ulabel: "مالٹے" },
+  { value: "Mango", lable: "Mango", ulabel: "آم" },
+  { value: "Bannana", lable: "Bannana", ulabel: "کیلا" },
+  { value: "Apple", lable: "Apple", ulabel: "سیب" },
+  { value: "Grapes", lable: "Grapes", ulabel: "انگور" },
+  { value: "Pomegranate", lable: "Pomegranate", ulabel: "انار" },
+  { value: "Guava", lable: "Guava", ulabel: "امرود" },
+  { value: "Dates", lable: "Dates", ulabel: "کھجور" },
+  { value: "Apricots", lable: "Apricots", ulabel: "خوبانئ" },
+  { value: "Peach", lable: "Peach", ulabel: "آڑو" },
+  { value: "Pear", lable: "Pear", ulabel: "ناشپاتی" },
+  { value: "Plum", lable: "Plum", ulabel: "آلوبخارہ" },
+  { value: "Fig", lable: "Fig", ulabel: "انجیر" },
+  { value: "Almond", lable: "Almond", ulabel: "بادام" },
 
-]
+  { value: "Jaman", lable: "Jaman", ulabel: "جامن" },
+  { value: "Litche", lable: "Litche", ulabel: "لئچئ" },
+  { value: "Phalsa", lable: "Phalsa", ulabel: "فالسا" },
+  { value: "Walnut", lable: "Walnut", ulabel: "اخروٹ" },
+  { value: "Ber", lable: "Ber", ulabel: "بئر" },
+  { value: "Loquat", lable: "Loquat", ulabel: "لوکاٹ" },
+  { value: "Mulbery", lable: "Mulbery", ulabel: "شھتوت" },
+  { value: "Strawberry", lable: "Strawberry", ulabel: "اسٹرابیری" },
+  { value: "Chiko", lable: "Chiko", ulabel: "چیکو" },
+  { value: "Coconut", lable: "Coconut", ulabel: "ناریل" },
+  { value: "Cherry", lable: "Cherry", ulabel: "چیری" },
+  { value: "Pistachio", lable: "Pistachio", ulabel: "پستھ" },
+
+  { value: "Papaya", lable: "Papaya", ulabel: "پپیتا" },
+
+  { value: "Persimmon", lable: "Persimmon", ulabel: "جاپانی پھل" },
+
+  { value: "Melon", lable: "Melon", ulabel: "خربوزہ" },
+  { value: "Olive", lable: "Olive", ulabel: "زیتون" },
+  { value: "Pine", lable: "Pine", ulabel: "پائن نٹ" },
+  { value: "Imli", lable: "Imli", ulabel: "املی" },
+  { value: "Star fruit", lable: "Star fruit", ulabel: "سٹار فروٹ" },
+  { value: "Tangerine", lable: "Tangerine", ulabel: "ٹینجیرین" },
+  { value: "Rasp berry", lable: "Rasp berry", ulabel: "رس بھری" },
+  { value: "Quince", lable: "Quince", ulabel: "سفرجل" },
+];
+const Vegitables = [
+  { value: "Beans", lable: "Beans", ulabel: "پھلیاں" },
+  { value: "Beet", lable: "Beet", ulabel: "چقندر" },
+  { value: "Bitterground", lable: "Bitterground", ulabel: "کریلا" },
+  { value: "Brassica", lable: "Brassica", ulabel: "براسیکا" },
+  { value: "Brinjal", lable: "Brinjal", ulabel: "بئنگن" },
+  { value: "Cabbage", lable: "Cabbage", ulabel: "گوبھی" },
+  { value: "Carrot", lable: "Carrot", ulabel: "گاجر" },
+  { value: "Cauliflower", lable: "Cauliflower", ulabel: "گوبھی" },
+  { value: "Chilli", lable: "Chilli", ulabel: "مرچ" },
+  { value: "Coriander", lable: "Coriander", ulabel: "دھنیا" },
+  { value: "Cucumber", lable: "Cucumber", ulabel: "کھیرا" },
+  { value: "Garlic", lable: "Garlic", ulabel: "لہسن" },
+  { value: "Ginger", lable: "Ginger", ulabel: "ادرک" },
+  { value: "Gourd", lable: "Gourd", ulabel: "لوکئ" },
+  { value: "Knoikhol", lable: "Knoikhol", ulabel: "جنگلئ گوبھئ" },
+  { value: "Lemon", lable: "Lemon", ulabel: "لیموں" },
+  { value: "Luffa", lable: "Luffa", ulabel: "تورئ" },
+  { value: "Mint", lable: "Mint", ulabel: "پودئنھ" },
+  { value: "Okra", lable: "Okra ", ulabel: "بھنڈی" },
+  { value: "Onion", lable: "Onion", ulabel: "پیاز" },
+  { value: "Peas", lable: "Peas", ulabel: "مٹر" },
+  { value: "Potato", lable: "Potato", ulabel: "آلو" },
+  { value: "Pumpkin", lable: "Pumpkin", ulabel: "کدو" },
+  { value: "Radish", lable: "Radish", ulabel: "گاجر" },
+  { value: "Spinach", lable: "Spinach", ulabel: "پالک" },
+  { value: "Tomato", lable: "Tomato", ulabel: "ٹماٹر" },
+
+  { value: "Turnip", lable: "Turnip", ulabel: "شلجم" },
+
+  { value: "Yam", lable: "Yam", ulabel: "شکر قندی" },
+
+  { value: "Arum", lable: "Arum", ulabel: "اروئ" },
+  { value: "Bottle Gourd", lable: "Bottle Gourd", ulabel: "گئا کدو" },
+  { value: "Fenugreek", lable: "Fenugreek", ulabel: "میتھی" },
+  { value: "Sponge gourd", lable: "Sponge gourd", ulabel: "تورئ" },
+  { value: "Tinda gord", lable: "Tinda gord", ulabel: "ٹئنڈھ" },
+  { value: "Sweet potato", lable: "Sweet potato", ulabel: "شکر قندی" },
+  { value: "Turmeric", lable: "Turmeric", ulabel: "ھلدئ" },
+  { value: "Musk Melon", lable: "Musk Melon", ulabel: "کستورئ خربوزھ" },
+];
+
+const FiberCrops = [
+  { value: "Cotton", lable: "Cotton", ulabel: "کپاس" },
+  { value: "Jute", lable: "Jute", ulabel: "سٹیویا" },
+];
+const Months = [
+  { value: "January", lable: "Januaury" },
+  { value: "Faburary", lable: "Faburary" },
+  { value: "March", lable: "March" },
+  { value: "April", lable: "April" },
+  { value: "May", lable: "May" },
+  { value: "June", lable: "June" },
+
+  { value: "July", lable: "July" },
+  { value: "August", lable: "August" },
+  { value: "September", lable: "September" },
+  { value: "October", lable: "October" },
+  { value: "November", lable: "November" },
+  { value: "December", lable: "December" },
+];
+
+const FoodLegumes = [
+  {
+    value: "Kalay Chany/Chickpea",
+    lable: "Kalay Chany/Chickpea",
+    ulabel: "کالے چنی/چنا",
+  },
+  {
+    value: " White Channy/ White gram",
+    lable: " White Channy/ White gram",
+    ulabel: "سفید چنے/ سفید چنے",
+  },
+  { value: "Mung beans", lable: "Mung beans", ulabel: "مینگ پھلیاں" },
+  {
+    value: "Mash/Black gram",
+    lable: "Mash/Black gram",
+    ulabel: "میش / سیاہ گرام",
+  },
+  { value: "Moong", lable: "Moong", ulabel: "مونگ" },
+  { value: "Gram", lable: "Gram", ulabel: "گرام" },
+
+  { value: "Field pea", lable: "Field pea", ulabel: "فیلڈ پیا" },
+  { value: "Lentil", lable: "Lentil", ulabel: "دال" },
+  { value: "Pigeon pean", lable: "Pigeon pean", ulabel: "کبوتر پیان" },
+  { value: "Lobia/Cowpea", lable: "Lobia/Cowpea", ulabel: "لوبیا/کاؤپیا" },
+
+  { value: "Rawan/Cowpea", lable: "Rawan/Cowpea", ulabel: "راون / کاؤپیا" },
+];
+
+const CEREALCROPS = [
+  { value: "Wheat", lable: "Wheat", ulabel: "گندم" },
+  { value: "Barley", lable: "Barley", ulabel: "جلی" },
+  { value: "Rice", lable: "Rice", ulabel: "چاول" },
+  { value: "Maize", lable: "Maize", ulabel: "مکئی" },
+  { value: "GreatMillet", lable: "GreatMillet", ulabel: "عظیم باجرا" },
+  { value: "Pearl Millet", lable: "Pearl Millet", ulabel: "موتی باجرا" },
+];
+const OilSeedCrops = [
+  {
+    value: "Yellow sarsson/Rapseed",
+    lable: "Yellow sarsson/Rapseed",
+    ulabel: "پیلا سارسسن / ریپسیڈ۔",
+  },
+  {
+    value: " Ghobi sarsoon/Rapseed",
+    lable: " Ghobi sarsoon/Rapseed",
+    ulabel: "پیلا سارسسن / ریپسیڈ۔",
+  },
+  {
+    value: "Raya/ Indian mustard",
+    lable: "Raya/ Indian mustard",
+    ulabel: "غیبی سرسون/ ریپسیڈ۔",
+  },
+  {
+    value: "Taranera mustard",
+    lable: "Taranera mustard",
+    ulabel: "ترانے سرسوں ",
+  },
+  { value: "Canola/ Rapseed", lable: "Canola/ Rapseed", ulabel: "کینولا" },
+
+  { value: "Peanut", lable: "Peanut", ulabel: "مونگفلی" },
+  { value: "Sunflower", lable: "Sunflower", ulabel: "سورج فلو" },
+  { value: "Maize", lable: "Maize", ulabel: "مکئی" },
+  { value: "Olive", lable: "Olive", ulabel: "زیتون" },
+  { value: "Kala till", lable: "Kala till", ulabel: "کلا تک تک" },
+
+  {
+    value: "Sufaid till/ sesame",
+    lable: "Sufaid till/ sesame",
+    ulabel: "سوفڈ تک / سیسم",
+  },
+  { value: "Alsi/Linseed", lable: "Alsi/Linseed", ulabel: "السی / السی" },
+  {
+    value: "Guar/ Cluster bean",
+    lable: "Guar/ Cluster bean",
+    ulabel: "گار / کلسٹر بین",
+  },
+  { value: "Cotton", lable: "Cotton", ulabel: "کپاس" },
+];
+const ForageCrops = [
+  { value: "Barseem", lable: "Barseem", ulabel: "باریسیم" },
+  { value: " Persian Clover", lable: " Persian Clover", ulabel: "فارسی  " },
+  { value: "Cluster bean", lable: "Cluster bean", ulabel: "کلسٹر بین" },
+  { value: "Chari/Shorgum", lable: "Chari/Shorgum", ulabel: "چرئ" },
+  { value: "Taranera mustard", lable: "Taranera mustard", ulabel: "ایٹ" },
+  { value: "Oat", lable: "Oat", ulabel: "مکئی" },
+
+  { value: "Haloon", lable: "Haloon", ulabel: "ہیلو" },
+  { value: "Cheena", lable: "Cheena", ulabel: "سینہ" },
+  { value: "Jantar", lable: "Jantar", ulabel: "جنانت" },
+  { value: "Mott. Grass", lable: "Mott. Grass", ulabel: "مٹ. گھاس" },
+  { value: "Maize", lable: "Maize", ulabel: "جلی" },
+];
+const sugarCrops = [
+  { value: "Sugarcane", lable: "Sugarcane", ulabel: "گنا" },
+  { value: "Sugarbeat", lable: "Sugarbeat", ulabel: "چکندر" },
+  { value: "Stevia", lable: "Stevia", ulabel: "سٹیویا" },
+];

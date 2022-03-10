@@ -267,7 +267,7 @@ function FormScreen({
                       }}
                     >
                       {" "}
-                      *
+                      
                     </span> </span><span style={{fontSize:"1rem",marginRight:"5px"}}> <span
                       style={{
                         color: "red",
@@ -602,22 +602,24 @@ function FormScreen({
                 gutter={[24, 0]}
                 className="ant-row-flex ant-row-flex-middle"
               >
-                <Col xs={24} md={1}>
-                  <h6 className="font-semibold m-0"></h6>
-                </Col>
+                <Col  span={6} md={1} lg={1}></Col>
                 <Col
                   style={{ marginTop: "10px" }}
                   xs={22}
-                  md={1}
+                  span={7}
+                  lg={2}
+                  sm={20}
+                  md={6}
                   className="d-flex"
                 >
                   <Button
-                  style={{background:"#273A9E",border:"none"}}
+                  className="form1next"
+                  style={{background:"#273A9E",border:"none",marginRight:"38px"}}
                     // onClick={()=>history.push("/CropsDistribution")}
                     // onClick={handleSubmit}
                     type="primary"
                     htmlType="submit"
-                    className="btn btn-primary"
+                   
                     // type="primary"
                   >
                     Next

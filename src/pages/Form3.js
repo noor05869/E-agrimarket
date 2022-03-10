@@ -590,7 +590,9 @@ else if(value==="Personal"){
                 </Col>
                 <Col  style={{marginLeft:"10px"}}xs={24} md={2} className="d-flex">
                   <Button
-                    style={{ marginRight: "10px" }}
+                    style={{ marginRight: "10px",background: "white",
+                    color: "black",
+                    border: "none" }}
                     //  onClick={()=>history.push("/CropsDistribution")}
                     onClick={() => handleStep("2")}
                     type="primary"

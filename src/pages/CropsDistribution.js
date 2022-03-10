@@ -145,8 +145,8 @@ function CropsDistribution({
                     gutter={[24, 0]}
                     className="ant-row-flex ant-row-flex-middle"
                   >
-                    <Col xs={24} md={7}></Col>
-                    <Col xs={16} md={7} className="d-flex">
+                    <Col xs={24} md={6}></Col>
+                    <Col xs={18} md={8} className="d-flex">
                       <h2 className="font-semibold m-0"> E-Agri Form</h2>
                     </Col>
                   </Row>
@@ -164,8 +164,8 @@ function CropsDistribution({
             >
               <Row>
                 {" "}
-                <Col span={5} md={1}></Col>{" "}
-                <Col className="land" xs={18} span={7} lg={5} sm={20} md={5}>
+                <Col span={7} md={1}></Col>{" "}
+                <Col className="land" xs={18} span={7} lg={6} sm={20} md={5}>
                 <div style={{display:"flex",justifyContent:"space-between"}}>
                    {/* <label
                     htmlFor="contact"
@@ -244,7 +244,7 @@ function CropsDistribution({
                       style={{ border: "black" }}
                       justify="center"
                     >
-                      <Col span={5} md={1}></Col>
+                      <Col span={7} md={1}></Col>
                       <Col
                         key={i}
                         style={{ marginLeft: "15px" }}
@@ -343,7 +343,7 @@ function CropsDistribution({
                       <Col
                         style={{ marginLeft: "10px" }}
                         xs={20}
-                        // span={7}
+                        span={7}
                         lg={6}
                         sm={20}
                         md={4}
@@ -531,7 +531,7 @@ function CropsDistribution({
 
                     {/* <Row>  <h5 className="cropsdis" >Crops Cycle</h5></Row> */}
                     <Row justify="center" gutter={[24, 0]}>
-                      <Col span={5} md={1}></Col>
+                      <Col span={7} md={1}></Col>
                       <Col
                         style={{ marginLeft: "10px" }}
                         xs={19}
@@ -785,10 +785,10 @@ function CropsDistribution({
                 <>
                 
 
-                  <Row justify="start" gutter={[24, 0]}>
-                    <Col span={5} md={1}></Col>
+                  <Row justify="center" gutter={[24, 0]}>
+                    <Col span={7} md={1}></Col>
                     <Col
-                      style={{ marginLeft: "30px" }}
+                      // style={{ marginLeft: "30px" }}
                       xs={19}
                       span={7}
                       lg={6}
@@ -854,7 +854,7 @@ function CropsDistribution({
                     </Col>
                     <Col
                       className="quantity"
-                      // style={{marginLeft:"40px"}}
+                      style={{marginLeft:"5px"}}
                       xs={19}
                       span={7}
                       lg={6}
@@ -867,7 +867,7 @@ function CropsDistribution({
                      className="col-12 col-form-label fw-500"
                       style={{fontWeight:"bold"}}
                   >  */}
-                     <span>Qunatity  <span
+                     <span>Quantity  <span
                       style={{
                         color: "red",
                         fontWeight: "bold",
@@ -893,7 +893,7 @@ function CropsDistribution({
                       <Form.Item
                         name={`${i}quantity`}
                         rules={
-                          !data.qunatity
+                          !data.quantity
                             ? [
                                 {
                                   required: true,
@@ -977,8 +977,9 @@ function CropsDistribution({
                   <h6 className="font-semibold m-0"> </h6>
                 </Col>
 
-                <Col  xs={24} sm={5} md={5} lg={1} className="d-flex">
+                <Col  style={{marginLeft:"5px"}}xs={24} sm={5} md={5} lg={1} className="d-flex">
                   <Button
+                  
                     className="cropsRButton"
                     
                     onClick={() => handleStep("1")}

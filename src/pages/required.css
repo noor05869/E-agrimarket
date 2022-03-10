@@ -37,7 +37,7 @@
     margin-left: 40px;
 } */
  }
-
+ 
  
  @media (min-width: 992px) {
 .quantity{margin-left: 0px;}
@@ -64,14 +64,19 @@
 
 
     .cropsRButton{
-        margin-left: 20px;
+        margin-left: 22px;
         background-color: white;
         color: black;
         border: none;
         margin-right: 5px;
 
     }
-
+    .form1next{
+        margin-right: "50px";
+        background:"#273A9E";
+        border: none;
+    }
+       
     /* .Add2button{
         margin-top: 40px;;
     } */

@@ -12,9 +12,9 @@ function Form() {
   }
   const [Cities, setCities] = useState([]);
   function handleCities(value) {
-    if (value === "03") {
+    if (value === "Punjab") {
       setCities(Punjab);
-    } else if (value === "02") {
+    } else if (value === "Sindh") {
       setCities(sindh);
     } else if (value === "05") {
       setCities(Blochistan);

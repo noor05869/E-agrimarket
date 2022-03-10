@@ -70,8 +70,8 @@ function FormScreen({
   return (
     <div>
       <Header />
-      <Row justify="center">
-        <Col xs={24} lg={16} className="mb-24">
+      <Row style={{marginBottom:"100px"}} justify="center">
+        <Col xs={24} lg={17} className="mb-24">
           <Form onFinish={handleSubmit}>
             <Card
               style={{ background: "#e7e7e7", borderRadius: "20px" }}
@@ -97,7 +97,7 @@ function FormScreen({
                 </>
               }
             >
-              <Row>
+              <Row >
                 {" "}
                 <h5 className="farmer">Personal Info</h5>
               </Row>
@@ -111,17 +111,17 @@ function FormScreen({
                   style={{ marginLeft: "12px" }}
                   xs={19}
                   span={7}
-                  lg={9}
+                  lg={11}
                   sm={20}
                   md={6}
                 >
-                  <label
+                  <div style={{display:"flex",justifyContent:"space-between"}}>
+                   {/* <label
                     htmlFor="contact"
-                    className="col-12 col-form-label fw-500"
-                    // style={{fontWeight:"bold"}}
-                  >
-                    Name :
-                    <span
+                     className="col-12 col-form-label fw-500"
+                      style={{fontWeight:"bold"}}
+                  >  */}
+                     <span>Name  <span
                       style={{
                         color: "red",
                         fontWeight: "bold",
@@ -130,8 +130,20 @@ function FormScreen({
                     >
                       {" "}
                       *
-                    </span>
-                  </label>
+                    </span> </span><span style={{fontSize:"1rem",marginRight:"5px"}}> <span
+                      style={{
+                        color: "red",
+                        fontWeight: "bold",
+                        fontSize: "large",
+                      }}
+                    >
+                      {" "}
+                      *
+                    </span> نام</span>
+                     
+                    
+                    {/* </label>  */}
+                  </div> 
                   <Form.Item
                     name="fname"
                     rules={
@@ -146,7 +158,7 @@ function FormScreen({
                     }
                   >
                     <Input
-                      style={{ color: "black", fontWeight: "normal" }}
+                      style={{ color: "black", fontWeight: "normal", }}
                       defaultValue={fname}
                       id="fname"
                       type="text"
@@ -167,13 +179,13 @@ function FormScreen({
                   sm={20}
                   md={6}
                 >
-                  <label
+                    <div style={{display:"flex",justifyContent:"space-between"}}>
+                   {/* <label
                     htmlFor="contact"
-                    className="col-12 col-form-label fw-500"
-                    // style={{fontWeight:"bold"}}
-                  >
-                    Contact 1 :
-                    <span
+                     className="col-12 col-form-label fw-500"
+                      style={{fontWeight:"bold"}}
+                  >  */}
+                     <span>Contact 1  <span
                       style={{
                         color: "red",
                         fontWeight: "bold",
@@ -182,8 +194,20 @@ function FormScreen({
                     >
                       {" "}
                       *
-                    </span>
-                  </label>
+                    </span> </span><span style={{fontSize:"1rem",marginRight:"5px"}}> <span
+                      style={{
+                        color: "red",
+                        fontWeight: "bold",
+                        fontSize: "large",
+                      }}
+                    >
+                      {" "}
+                      *
+                    </span> رابطہ نمبر</span>
+                     
+                    
+                    {/* </label>  */}
+                  </div> 
                   <Form.Item
                     name="contact"
                     rules={
@@ -229,13 +253,35 @@ function FormScreen({
                   sm={20}
                   md={6}
                 >
-                  <label
+                 <div style={{display:"flex",justifyContent:"space-between"}}>
+                   {/* <label
                     htmlFor="contact"
-                    className="col-12 col-form-label fw-500"
-                    // style={{fontWeight:"bold"}}
-                  >
-                    Contact 2 :<span> (Optional) </span>
-                  </label>
+                     className="col-12 col-form-label fw-500"
+                      style={{fontWeight:"bold"}}
+                  >  */}
+                     <span>Contact 2  <span
+                      style={{
+                        color: "red",
+                        fontWeight: "bold",
+                        fontSize: "large",
+                      }}
+                    >
+                      {" "}
+                      *
+                    </span> </span><span style={{fontSize:"1rem",marginRight:"5px"}}> <span
+                      style={{
+                        color: "red",
+                        fontWeight: "bold",
+                        fontSize: "large",
+                      }}
+                    >
+                      {" "}
+                      
+                    </span>  رابطہ نمبر</span>
+                     
+                    
+                    {/* </label>  */}
+                  </div> 
                   <Form.Item
                     name="contact1"
                     // rules={
@@ -278,20 +324,20 @@ function FormScreen({
               <Row gutter={[24, 0]} justify="center">
                 <Col span={6} md={2} lg={0}></Col>
                 <Col
-                  style={{ marginLeft: "10px" }}
+                  
                   xs={19}
                   span={7}
-                  lg={9}
+                  lg={11}
                   sm={20}
                   md={6}
                 >
-                  <label
+                  <div style={{display:"flex",justifyContent:"space-between"}}>
+                   {/* <label
                     htmlFor="contact"
-                    className="col-12 col-form-label fw-500"
-                    // style={{fontWeight:"bold"}}
-                  >
-                    Province :
-                    <span
+                     className="col-12 col-form-label fw-500"
+                      style={{fontWeight:"bold"}}
+                  >  */}
+                     <span>Province  <span
                       style={{
                         color: "red",
                         fontWeight: "bold",
@@ -300,8 +346,20 @@ function FormScreen({
                     >
                       {" "}
                       *
-                    </span>
-                  </label>
+                    </span> </span><span style={{fontSize:"1rem",marginRight:"5px"}}> <span
+                      style={{
+                        color: "red",
+                        fontWeight: "bold",
+                        fontSize: "large",
+                      }}
+                    >
+                      {" "}
+                      *
+                    </span> صوبہ</span>
+                     
+                    
+                    {/* </label>  */}
+                  </div> 
                   <Form.Item
                     className="username"
                     name="Province"
@@ -352,13 +410,13 @@ function FormScreen({
                   sm={20}
                   md={6}
                 >
-                  <label
+                    <div style={{display:"flex",justifyContent:"space-between"}}>
+                   {/* <label
                     htmlFor="contact"
-                    className="col-12 col-form-label fw-500"
-                    // style={{fontWeight:"bold"}}
-                  >
-                    District :
-                    <span
+                     className="col-12 col-form-label fw-500"
+                      style={{fontWeight:"bold"}}
+                  >  */}
+                     <span>District  <span
                       style={{
                         color: "red",
                         fontWeight: "bold",
@@ -367,8 +425,20 @@ function FormScreen({
                     >
                       {" "}
                       *
-                    </span>
-                  </label>
+                    </span> </span><span style={{fontSize:"1rem",marginRight:"5px"}}> <span
+                      style={{
+                        color: "red",
+                        fontWeight: "bold",
+                        fontSize: "large",
+                      }}
+                    >
+                      {" "}
+                      *
+                    </span> ضلع</span>
+                     
+                    
+                    {/* </label>  */}
+                  </div> 
                   <Form.Item
                     className="username"
                     name="District"
@@ -421,16 +491,17 @@ function FormScreen({
                   style={{ marginLeft: "10px" }}
                   xs={19}
                   span={7}
-                  lg={9}
+                  lg={11}
                   sm={20}
                   md={6}
                 >
-                  <label
+                   <div style={{display:"flex",justifyContent:"space-between"}}>
+                   {/* <label
                     htmlFor="contact"
-                    className="col-12 col-form-label fw-500"
-                  >
-                    Tehsil :
-                    <span
+                     className="col-12 col-form-label fw-500"
+                      style={{fontWeight:"bold"}}
+                  >  */}
+                     <span>Tehsil  <span
                       style={{
                         color: "red",
                         fontWeight: "bold",
@@ -439,8 +510,20 @@ function FormScreen({
                     >
                       {" "}
                       *
-                    </span>
-                  </label>
+                    </span> </span><span style={{fontSize:"1rem",marginRight:"5px"}}> <span
+                      style={{
+                        color: "red",
+                        fontWeight: "bold",
+                        fontSize: "large",
+                      }}
+                    >
+                      {" "}
+                      *
+                    </span> تحصیل</span>
+                     
+                    
+                    {/* </label>  */}
+                  </div> 
                   <Form.Item
                     className="username"
                     name="Tehsil"
@@ -475,13 +558,13 @@ function FormScreen({
                   sm={20}
                   md={6}
                 >
-                  <label
+                  <div style={{display:"flex",justifyContent:"space-between"}}>
+                   {/* <label
                     htmlFor="contact"
-                    className="col-12 col-form-label fw-500"
-                    // style={{fontWeight:"bold"}}
-                  >
-                    Village :
-                    <span
+                     className="col-12 col-form-label fw-500"
+                      style={{fontWeight:"bold"}}
+                  >  */}
+                     <span>Village  <span
                       style={{
                         color: "red",
                         fontWeight: "bold",
@@ -489,8 +572,21 @@ function FormScreen({
                       }}
                     >
                       {" "}
-                    </span>
-                  </label>
+                      
+                    </span> </span><span style={{fontSize:"1rem",marginRight:"5px"}}> <span
+                      style={{
+                        color: "red",
+                        fontWeight: "bold",
+                        fontSize: "large",
+                      }}
+                    >
+                      {" "}
+                      
+                    </span> گاؤں</span>
+                     
+                    
+                    {/* </label>  */}
+                  </div> 
                   <Input
                     style={{ color: "black", fontWeight: "normal" }}
                     name="village"
@@ -504,16 +600,17 @@ function FormScreen({
                 gutter={[24, 0]}
                 className="ant-row-flex ant-row-flex-middle"
               >
-                <Col xs={24} md={9}>
+                <Col xs={24} md={1}>
                   <h6 className="font-semibold m-0"></h6>
                 </Col>
                 <Col
                   style={{ marginTop: "10px" }}
                   xs={22}
-                  md={11}
+                  md={1}
                   className="d-flex"
                 >
                   <Button
+                  style={{background:"#273A9E",border:"none"}}
                     // onClick={()=>history.push("/CropsDistribution")}
                     // onClick={handleSubmit}
                     type="primary"

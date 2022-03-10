@@ -20,10 +20,22 @@
 
     margin-left: 50px;
  }   
- 
- .Add2button{
-    margin-left: 40px;
+ .cropsRButton{
+    margin-left: 20px;
+    background-color: white;
+    color: black;
+    border: none;
+    margin-right: 5px;
+
 }
+ .Add1button{
+    margin-top: 30px;
+    /* margin-left: 30px; */
+}
+ 
+ /* .Add2button{
+    margin-left: 40px;
+} */
  }
 
  
@@ -36,16 +48,31 @@
      }    
      .farmer{
         /* margin-top: 30px; */
-        margin-left: 60px;
+        margin-left: 40px;
+       
     }
     .cropsdis{
         margin-left: 85px;
 
     }
     .Addbutton{
-        margin-top: 40px;
+        margin-top: 30px;
     }
-    .Add2button{
+    .Add1button{
+        margin-top: 30px;
+    }
+
+
+    .cropsRButton{
+        margin-left: 20px;
+        background-color: white;
+        color: black;
+        border: none;
+        margin-right: 5px;
+
+    }
+
+    /* .Add2button{
         margin-top: 40px;;
-    }
+    } */
    }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import CropsDistribution from "./CropsDistribution";
 import Form3 from "./Form3";
 import { message } from "antd";
@@ -34,14 +34,10 @@ function Form() {
     village: "",
     cropsDiss: "",
     Land: "",
-    crops: "",
-    cropstype: "",
-    cropsAmount: "",
-    cropsCycle: "",
+   
     cropscycleAmount: "",
     cattles: "",
-    cattlesAmount: "",
-    date: "",
+    
     modeOfInvestment: "",
     percentage: "",
     cropsSale: "",
@@ -50,23 +46,65 @@ function Form() {
     cropAdvisory: "",
   });
   console.log("state22", initialValues1);
-
+ function handleSchange(i){
+   console.log(i)
+ }
+ 
+ const [cattless, setcattless] = useState([
+  {cattle:"",quantity:""}
+])
+console.log("CATTT",cattless)
+function addCattles() {
+  setcattless([
+    ...cattless,
+    {
+      cattle: "",
+      quantity: "",
+    },
+  ]);
+}
+const removeCattle = (index) => {
+  const List = [...cattless];
+  List.splice(index, 1);
+  setcattless(List);
+};
   function handleSelectChange(i, event, name) {
     //  console.log(event.target.value,i,name)
+    console.log("i",i,"eve",event,"nmae",name)
+    if(i<cropDistribution.length){
+      const val= cropDistribution[i].crops
+      handleCropChange(val)
+    }
     handleCropChange(event);
     const values = [...cropDistribution];
-
+  const catt=[...cattless]
     if (name === "crops") {
       values[i].crops = event;
     } else if (name === "cropstype") {
       values[i].cropstype = event;
     } else if (name === "Area") {
       values[i].Area = event.target.value;
+    }else if (name === "month") {
+      values[i].month = event;
+    }
+    else if (name === "yeildMin") {
+      values[i].yeildMin = event.target.value;
+    }
+    else if (name === "yeildMax") {
+      values[i].yeildMax = event.target.value;
+    }
+    else if (name === "cattle") {
+      catt[i].cattle = event;
+    }
+    else if (name === "quantity") {
+      catt[i].quantity = event.target.value;
     }
     initialValues1.cropsDiss = values;
+    initialValues1.cattles=catt
     setcropDistribution(values);
     console.log("cropsdis", cropDistribution);
   }
+
 
   const handleChange = (e) => {
     const { value, name, id } = e.target;
@@ -77,13 +115,20 @@ function Form() {
 
     console.log("state", initialValues1);
   };
+
+  
   const [cropDistribution, setcropDistribution] = useState([
     {
       crops: "",
       cropstype: "",
-      Area: "0",
+      Area: "",
+      yeildMax:"",
+      yeildMin:"",
+      month:""
     },
   ]);
+
+ 
   const handleDistributionRemove = (index) => {
     // alert(index)
     const list = [...cropDistribution];
@@ -93,7 +138,12 @@ function Form() {
   function handleDistributionAdd() {
     setcropDistribution([
       ...cropDistribution,
-      { crops: "", cropsAmount: "", Area: "" },
+      {  crops: "",
+      cropstype: "",
+      Area: "",
+      yeildMax:"",
+      yeildMin:"",
+      month:"" },
     ]);
   }
   const handleSelect = (name, value, i) => {
@@ -143,6 +193,11 @@ const [index, setindex] = useState()
     //   setSabziyaat(false);
     // }
   }
+  useEffect(() => {
+  
+
+ 
+  }, [cattless,cropDistribution])
   function handleSubmit() {
     // setInitialValues({
     //   fname: "",
@@ -205,6 +260,10 @@ const [index, setindex] = useState()
           handleDistributionRemove={handleDistributionRemove}
           valuues={valuues}
           handleSelectChange={handleSelectChange}
+          handleSchange={handleSchange}
+          addCattles={addCattles}
+          removeCattle={removeCattle}
+          cattless={cattless}
         />
       );
     case "3":

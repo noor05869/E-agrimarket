@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 import {
   Row,
   Col,
@@ -35,13 +35,24 @@ function Form3({ handleStep, initialValues, handleChange, handleSelect,handleSub
   const [mode, setmode] = useState(true)
   function handleMode(value){
 if(value==="Aarhti"){
-  setmode(false)
+  setmode(true)
+  console.log(mode)
  
 }
-else{
-  setmode(true)
+else if(value==="Personal"){
+  setmode(false)
+  console.log(mode)
+ 
 }
+
+
   }
+
+
+  useEffect(() => {
+
+  }, [mode])
+  
   return (
     <div>
       <Header />
@@ -88,14 +99,35 @@ else{
                   sm={20}
                   md={6}
                 >
-                   <label
-                        htmlFor="contact"
-                        className="col-12 col-form-label fw-500"
-                        // style={{fontWeight:"bold"}}
-                      >
-                       Mode Of Investment :
-                       <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
-                      </label>
+                 <div style={{display:"flex",justifyContent:"space-between"}}>
+                   {/* <label
+                    htmlFor="contact"
+                     className="col-12 col-form-label fw-500"
+                      style={{fontWeight:"bold"}}
+                  >  */}
+                     <span>Mod of Investment  <span
+                      style={{
+                        color: "red",
+                        fontWeight: "bold",
+                        fontSize: "large",
+                      }}
+                    >
+                      {" "}
+                      *
+                    </span> </span><span style={{fontSize:"1rem",marginRight:"5px"}}> <span
+                      style={{
+                        color: "red",
+                        fontWeight: "bold",
+                        fontSize: "large",
+                      }}
+                    >
+                      {" "}
+                      *
+                    </span>  سرمایہ کاری کا ذریعہ</span>
+                     
+                    
+                    {/* </label>  */}
+                  </div> 
                   <Form.Item
                     className="username"
                    
@@ -122,7 +154,7 @@ else{
                       defaultValue={modeOfInvestment.children}
                     >
                       <Option key="Aarhti"> Aarhti</Option>
-                      <Option key="personal "> Personal </Option>
+                      <Option key="Personal"> Personal </Option>
                     </Select>
                   </Form.Item>
                 </Col>
@@ -136,15 +168,36 @@ else{
                   sm={20}
                   md={6}
                 >
-                 <label
-                        htmlFor="contact"
-                        className="col-12 col-form-label fw-500"
-                        // style={{fontWeight:"bold"}}
-                      >
-                       Percentage % :
-                       <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
-                      </label>
-                  { mode===false? <Form.Item
+                <div style={{display:"flex",justifyContent:"space-between"}}>
+                   {/* <label
+                    htmlFor="contact"
+                     className="col-12 col-form-label fw-500"
+                      style={{fontWeight:"bold"}}
+                  >  */}
+                     <span>Percentage %  <span
+                      style={{
+                        color: "red",
+                        fontWeight: "bold",
+                        fontSize: "large",
+                      }}
+                    >
+                      {" "}
+                      *
+                    </span> </span><span style={{fontSize:"1rem",marginRight:"5px"}}> <span
+                      style={{
+                        color: "red",
+                        fontWeight: "bold",
+                        fontSize: "large",
+                      }}
+                    >
+                      {" "}
+                      *
+                    </span>  % فیصد</span>
+                     
+                    
+                    {/* </label>  */}
+                  </div> 
+                   <Form.Item
                     name="percentage"
                     rules={
                       !percentage
@@ -162,6 +215,7 @@ else{
                       name="percentage"
                       defaultValue={percentage}
                       value={percentage}
+                      disabled={mode===false? true:false}
                       onChange={handleChange}
                       type="number"
                       style={{
@@ -172,28 +226,8 @@ else{
                       }}
                       // onChange={onChange}
                     />
-                  </Form.Item>:
-                  <Form.Item
-                    name="percentage"
-                  
-                  >
-                    <Input
-                     min={1}
-                      name="percentaage"
-                      disabled
-                      defaultValue="100"
-                     placeholder="100%"
-                    //  value={100}
-                      type="number"
-                      style={{
-                        width: "100%",
-                        fontWeight:"normal",
-                        color:"black",
-                        height: "40px",
-                      }}
-                      // onChange={onChange}
-                    />
-                  </Form.Item>}
+                  </Form.Item>
+                
                 </Col>
                 <Col
                   style={{ marginLeft: "10px" }}
@@ -203,14 +237,35 @@ else{
                   sm={20}
                   md={6}
                 >
-                   <label
-                        htmlFor="contact"
-                        className="col-12 col-form-label fw-500"
-                        // style={{fontWeight:"bold"}}
-                      >
-                       Target Mandi's :
-                       <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
-                      </label>
+                    <div style={{display:"flex",justifyContent:"space-between"}}>
+                   {/* <label
+                    htmlFor="contact"
+                     className="col-12 col-form-label fw-500"
+                      style={{fontWeight:"bold"}}
+                  >  */}
+                     <span>Target Mandi <span
+                      style={{
+                        color: "red",
+                        fontWeight: "bold",
+                        fontSize: "large",
+                      }}
+                    >
+                      {" "}
+                      *
+                    </span> </span><span style={{fontSize:"1rem",marginRight:"5px"}}> <span
+                      style={{
+                        color: "red",
+                        fontWeight: "bold",
+                        fontSize: "large",
+                      }}
+                    >
+                      {" "}
+                      *
+                    </span> ٹارگٹ  منڈی</span>
+                     
+                    
+                    {/* </label>  */}
+                  </div> 
                   <Form.Item
                     className="username"
                    
@@ -258,14 +313,35 @@ else{
                   sm={20}
                   md={6}
                 >
-                   <label
-                        htmlFor="contact"
-                        className="col-12 col-form-label fw-500"
-                        // style={{fontWeight:"bold"}}
-                      >
-                       Crops Sale :
-                       <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
-                      </label>
+                  <div style={{display:"flex",justifyContent:"space-between"}}>
+                   {/* <label
+                    htmlFor="contact"
+                     className="col-12 col-form-label fw-500"
+                      style={{fontWeight:"bold"}}
+                  >  */}
+                     <span>Crop Sale <span
+                      style={{
+                        color: "red",
+                        fontWeight: "bold",
+                        fontSize: "large",
+                      }}
+                    >
+                      {" "}
+                      *
+                    </span> </span><span style={{fontSize:"1rem",marginRight:"5px"}}> <span
+                      style={{
+                        color: "red",
+                        fontWeight: "bold",
+                        fontSize: "large",
+                      }}
+                    >
+                      {" "}
+                      *
+                    </span> فصل کی فروخت</span>
+                     
+                    
+                    {/* </label>  */}
+                  </div> 
                   <Form.Item
                     className="username"
                    
@@ -305,14 +381,35 @@ else{
                   sm={20}
                   md={6}
                 >
-                   <label
-                        htmlFor="contact"
-                        className="col-12 col-form-label fw-500"
-                        // style={{fontWeight:"bold"}}
-                      >
-                       Seed :
-                       <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
-                      </label>
+                   <div style={{display:"flex",justifyContent:"space-between"}}>
+                   {/* <label
+                    htmlFor="contact"
+                     className="col-12 col-form-label fw-500"
+                      style={{fontWeight:"bold"}}
+                  >  */}
+                     <span>Seed <span
+                      style={{
+                        color: "red",
+                        fontWeight: "bold",
+                        fontSize: "large",
+                      }}
+                    >
+                      {" "}
+                      *
+                    </span> </span><span style={{fontSize:"1rem",marginRight:"5px"}}> <span
+                      style={{
+                        color: "red",
+                        fontWeight: "bold",
+                        fontSize: "large",
+                      }}
+                    >
+                      {" "}
+                      *
+                    </span>بیج</span>
+                     
+                    
+                    {/* </label>  */}
+                  </div> 
                   <Form.Item
                     className="username"
                     
@@ -351,14 +448,35 @@ else{
                   sm={20}
                   md={6}
                 >
-                   <label
-                        htmlFor="contact"
-                        className="col-12 col-form-label fw-500"
-                        // style={{fontWeight:"bold"}}
-                      >
-                       Machinery :
-                       <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
-                      </label>
+                    <div style={{display:"flex",justifyContent:"space-between"}}>
+                   {/* <label
+                    htmlFor="contact"
+                     className="col-12 col-form-label fw-500"
+                      style={{fontWeight:"bold"}}
+                  >  */}
+                     <span>Machinery <span
+                      style={{
+                        color: "red",
+                        fontWeight: "bold",
+                        fontSize: "large",
+                      }}
+                    >
+                      {" "}
+                      *
+                    </span> </span><span style={{fontSize:"1rem",marginRight:"5px"}}> <span
+                      style={{
+                        color: "red",
+                        fontWeight: "bold",
+                        fontSize: "large",
+                      }}
+                    >
+                      {" "}
+                      *
+                    </span>مشینری</span>
+                     
+                    
+                    {/* </label>  */}
+                  </div> 
                   <Form.Item
                     className="username"
                     
@@ -395,14 +513,35 @@ else{
                   sm={20}
                   md={6}
                 >
-                   <label
-                        htmlFor="contact"
-                        className="col-12 col-form-label fw-500"
-                        // style={{fontWeight:"bold"}}
-                      >
-                       Crops Advisory :
-                       <span style={{color:"red",fontWeight:"bold",fontSize:"large"}} > *</span>
-                      </label>
+                     <div style={{display:"flex",justifyContent:"space-between"}}>
+                   {/* <label
+                    htmlFor="contact"
+                     className="col-12 col-form-label fw-500"
+                      style={{fontWeight:"bold"}}
+                  >  */}
+                     <span>Crops Advisory <span
+                      style={{
+                        color: "red",
+                        fontWeight: "bold",
+                        fontSize: "large",
+                      }}
+                    >
+                      {" "}
+                      *
+                    </span> </span><span style={{fontSize:"1rem",marginRight:"5px"}}> <span
+                      style={{
+                        color: "red",
+                        fontWeight: "bold",
+                        fontSize: "large",
+                      }}
+                    >
+                      {" "}
+                      *
+                    </span>فصلوں کی ایڈوائزری</span>
+                     
+                    
+                    {/* </label>  */}
+                  </div> 
                   <Form.Item
                     className="username"
                   
@@ -446,10 +585,10 @@ else{
                 gutter={[24, 0]}
                 className="ant-row-flex ant-row-flex-middle"
               >
-                <Col xs={24} md={11}>
+                <Col xs={24} md={3}>
                   <h6 className="font-semibold m-0"></h6>
                 </Col>
-                <Col xs={24} md={9} className="d-flex">
+                <Col  style={{marginLeft:"10px"}}xs={24} md={2} className="d-flex">
                   <Button
                     style={{ marginRight: "10px" }}
                     //  onClick={()=>history.push("/CropsDistribution")}
@@ -461,7 +600,7 @@ else{
                   <Button
                     type="primary"
                     htmlType="submit"
-                
+                    style={{background:"#273A9E",border:"none"}}
                   >
                     Submit
                   </Button>

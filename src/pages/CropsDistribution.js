@@ -162,7 +162,7 @@ function CropsDistribution({
                 </>
               }
             >
-              <Row>
+              <Row gutter={[24, 0]}>
                 {" "}
                 <Col span={7} md={1}></Col>{" "}
                 <Col className="land" xs={18} span={7} lg={6} sm={20} md={5}>

@@ -246,7 +246,7 @@ function FormScreen({
                   {/* </Form.Item> */}
                 </Col>
                 <Col
-                  style={{ marginLeft: "8px" }}
+                  // style={{ marginLeft: "8px" }}
                   xs={19}
                   span={7}
                   lg={6}
@@ -311,7 +311,7 @@ function FormScreen({
                         width: "100%",
                         fontWeight: "normal",
                         border: "rounded",
-                        // marginTop: "5px",
+                        // marginTop: "5px",git
                         height: "40px",
                       }}
                       // onChange={onChange}
@@ -363,7 +363,7 @@ function FormScreen({
                   <Form.Item
                     className="username"
                     name="Province"
-                    defaultValue={province && province.children}
+                    defaultValue={ province.value}
                     rules={
                       !province.children
                         ? [
@@ -389,7 +389,7 @@ function FormScreen({
                       }
                       size="large"
                       name="province"
-                      defaultValue={province.children}
+                      defaultValue={province.value}
                     >
                       {Provinces.map((data) => (
                         <Option key={data.label}>
@@ -467,7 +467,7 @@ function FormScreen({
                       onSelect={(value, event) =>
                         handleSelect("district", event)
                       }
-                      defaultValue={district.children}
+                      defaultValue={district.value}
                     >
                       {Cities &&
                         Cities.map((data) => (
@@ -599,17 +599,18 @@ function FormScreen({
                 </Col>
               </Row>
               <Row
+              justify="start"
                 gutter={[24, 0]}
                 className="ant-row-flex ant-row-flex-middle"
               >
-                <Col  span={6} md={1} lg={1}></Col>
+                <Col  span={7} md={1} lg={1}></Col>
                 <Col
                   style={{ marginTop: "10px" }}
                   xs={22}
                   span={7}
                   lg={2}
                   sm={20}
-                  md={6}
+                  md={5}
                   className="d-flex"
                 >
                   <Button

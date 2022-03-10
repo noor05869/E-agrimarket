@@ -379,7 +379,7 @@ function FormScreen({
                       showSearch
                       onChange={handleCities}
                       filterOption={(input, option) =>
-                        option.children
+                        option.value
                           .toLowerCase()
                           .indexOf(input.toLowerCase()) >= 0
                       }
@@ -392,7 +392,7 @@ function FormScreen({
                       defaultValue={province.children}
                     >
                       {Provinces.map((data) => (
-                        <Option key={data.value}>
+                        <Option key={data.label}>
                           <div>
                             {" "}
                             <p>{data.label}</p>
@@ -455,10 +455,12 @@ function FormScreen({
                   >
                     <Select
                       showSearch
-                      filterOption={(input, option) =>
-                        option.children
-                          .toLowerCase()
-                          .indexOf(input.toLowerCase()) >= 0
+                      filterOption={
+                        (input, option) =>
+                          option.value
+                            .toLowerCase()
+                            .indexOf(input.toLowerCase()) >= 0
+                        // console.log(input,"-----",option)
                       }
                       name="district"
                       size="large"

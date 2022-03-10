@@ -246,7 +246,7 @@ function FormScreen({
                   {/* </Form.Item> */}
                 </Col>
                 <Col
-                  style={{ marginLeft: "10px" }}
+                  style={{ marginLeft: "8px" }}
                   xs={19}
                   span={7}
                   lg={6}
@@ -311,7 +311,7 @@ function FormScreen({
                         width: "100%",
                         fontWeight: "normal",
                         border: "rounded",
-                        marginTop: "5px",
+                        // marginTop: "5px",
                         height: "40px",
                       }}
                       // onChange={onChange}

@@ -290,9 +290,9 @@ const [index, setindex] = useState()
 export default Form;
 
 const Punjab = [
-  { value: "Abdul Hakim", label: "Abdul Hakim ", ulabel: "لاہور" },
-  { value: "Ahmadpur East", label: "Ahmadpur East", ulabel: "لاہور" },
-  { value: "Attock Khurd", label: "Attock Khurd", ulabel: "لاہور" },
+  { value: "Abdul Hakim", label: "Abdul Hakim ", ulabel: "" },
+  { value: "Ahmadpur East", label: "Ahmadpur East", ulabel: "" },
+  { value: "Attock Khurd", label: "Attock Khurd", ulabel: "" },
   { value: "Bahawalpur", label: "Bahawalpur" },
   { value: "Bhakkar", label: "Bhakkar" },
   { value: "Bhalwal", label: "Bhalwal" },

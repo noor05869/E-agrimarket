@@ -538,7 +538,7 @@ function CropsDistribution({
                         span={7}
                         lg={6}
                         sm={20}
-                        md={4}
+                        md={5}
                       >
                          <div style={{display:"flex",justifyContent:"space-between"}}>
                    {/* <label
@@ -608,7 +608,7 @@ function CropsDistribution({
                         span={7}
                         lg={6}
                         sm={20}
-                        md={4}
+                        md={5}
                       >
                           <div style={{display:"flex",justifyContent:"space-between"}}>
                    {/* <label

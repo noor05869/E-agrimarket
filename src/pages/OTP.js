@@ -21,10 +21,13 @@ function OTP({number}) {
             {/* <label for="inputnumber">One Time Password</label> */}
             <input type="number" class="form-control input-edit" placeholder='Enter OTP' id="number"/>
             <label class="pull-right resend-otp">OTP Send to this Number {number}
-            <button className='btn btn-primary' style={{marginLeft:"12px"}}>Resend otp</button>
+            <button className='btn btn-primary' style={{marginLeft:"12px",background:"#273A9E",border:"none"}}>Resend otp</button>
             </label>
         </div>
-        <button type="button" class="btn btn-primary ">Verify</button>
+        <button style={{background:"#273A9E",border:"none"}} type="button" class="btn btn-primary ">Verify</button>
+        <button
+        
+        style={{background:"white",color:"black",marginLeft:"5px"}} type="button" class="btn btn-primary ">Skip</button>
     </div>
 </div></Col></Row>
   )

@@ -4,6 +4,9 @@ import Form3 from "./Form3";
 import { message } from "antd";
 import FormScreen from "./formScreen";
 import OTP from "./OTP";
+import moment from "moment";
+
+import axios from "axios";
 const steps = [{ id: "1" }, { id: "2" }, { id: "3" }];
 function Form() {
   const [Steps, setSteps] = useState("1");
@@ -46,22 +49,113 @@ function Form() {
     machinery: "",
     cropAdvisory: "",
   });
+
+ 
+async function handleSubmit (){
+
+  const Crops=[{
+    crops:initialValues1.cropsDiss.crops,
+    commodities:initialValues1.cropsDiss.commodities,
+    area:initialValues1.cropsDiss.area,
+    min_yield:initialValues1.cropsDiss.min_yield,
+    max_yield:initialValues1.cropsDiss.max_yield,
+    startDate:"12/34/2022",
+    endDate:"12/23/3456"
+  }]
+  console.log("val",initialValues1)
+  const Params={
+    name:" initialValues1.fname",
+    phone:initialValues1.contact,
+    phone1:"",
+    Province:initialValues1.province.value,
+    District:initialValues1.district.value,
+    Tehsil:initialValues1.tehsil.value,
+    Village:initialValues1.village,
+    acre:initialValues1.Land,
+    ModeOfInvestment:initialValues1.modeOfInvestment.value,
+    investmentPercentage:initialValues1.percentage,
+    targetedmandi:"asd",
+    cropSale:initialValues1.cropsSale.value,
+    Seed:initialValues1.seed.value,
+    CropsAdvisory:initialValues1.cropAdvisory.value,
+    crops:initialValues1.cropsDiss,
+    cattle:initialValues1.cattles
+
+  }
+  // let personalinof
+  let abcss = {
+    "personalInfo": {
+        "name": "Wahid",
+        "phone":"03234475980",
+        "phone1":"",
+        "Province":"Peshawar",
+        "District":"Peshawar",
+        "Tehsil":"Mattani",
+        "Village":"Mattani",
+        "acre":"23",
+        "ModeOfInvestment":"xyz",
+        "investmentPercentage":"100%",
+        "targetedmandi":"Nothing",
+        "cropSale":"345",
+        "Seed":"own",
+        "CropsAdvisory":"345"
+    },
+    "crops":[{
+      "crops":"tyu",
+      "commodities":"34",
+      "area":"34",
+      "min_yield":"45",
+      "max_yield":"567",
+      "startDate":"12/34/2022",
+      "endDate":"12/23/3456"
+    }],
+    "cattle":[
+        {
+            "Cattles":"23",
+             "qt":"45"
+        }
+    ]
+}
+ console.log("params",Params)
+const personalInfo= JSON.stringify( Params)
+const test={"personalInfo":Params}
+
+console.log("test",test)
+  try{
+    const {data}=await axios.post("http://13.228.234.94:8080/v1/personalinof", test )
+ 
+    message.success({
+      content: "Submitted Successfully",
+      className: "custom-class",
+      style: {
+        marginTop: "74vh",
+      },
+    });
+    // handleStep("4");
+    console.log("res",data)
+  }
+  catch{
+
+  }
+}
   console.log("state22", initialValues1);
  function handleSchange(i){
    console.log(i)
  }
  
  const [cattless, setcattless] = useState([
-  {cattle:"",quantity:""}
+  { Cattles: "",
+  qt: "",}
 ])
 console.log("CATTT",cattless)
 function addCattles() {
   setcattless([
     ...cattless,
     {
-      cattle: "",
-      quantity: "",
+      Cattles: "",
+      qt: "",
     },
+
   ]);
 }
 const removeCattle = (index) => {
@@ -71,7 +165,7 @@ const removeCattle = (index) => {
 };
   function handleSelectChange(i, event, name) {
     //  console.log(event.target.value,i,name)
-    console.log("i",i,"eve",event,"nmae",name)
+    // console.log("i",i,"eve",moment(event[0]._d).format('MM/DD/YYYY'),"nmae",name)
     if(i<cropDistribution.length){
       const val= cropDistribution[i].crops
       handleCropChange(val)
@@ -81,24 +175,25 @@ const removeCattle = (index) => {
   const catt=[...cattless]
     if (name === "crops") {
       values[i].crops = event;
-    } else if (name === "cropstype") {
-      values[i].cropstype = event;
-    } else if (name === "Area") {
-      values[i].Area = event.target.value;
+    } else if (name === "commodities") {
+      values[i].commodities = event;
+    } else if (name === "area") {
+      values[i].area = event.target.value;
     }else if (name === "month") {
-      values[i].month = event;
+      values[i].startDate = moment(event[0]._d).format('MM/DD/YYYY');
+      values[i].endDate=moment(event[1]._d).format('MM/DD/YYYY')
     }
-    else if (name === "yeildMin") {
-      values[i].yeildMin = event.target.value;
+    else if (name === "min_yield") {
+      values[i].min_yield = event.target.value;
     }
-    else if (name === "yeildMax") {
-      values[i].yeildMax = event.target.value;
+    else if (name === "max_yield") {
+      values[i].max_yield = event.target.value;
     }
-    else if (name === "cattle") {
-      catt[i].cattle = event;
+    else if (name === "Cattles") {
+      catt[i].Cattles = event;
     }
-    else if (name === "quantity") {
-      catt[i].quantity = event.target.value;
+    else if (name === "qt") {
+      catt[i].qt = event.target.value;
     }
     initialValues1.cropsDiss = values;
     initialValues1.cattles=catt
@@ -121,11 +216,13 @@ const removeCattle = (index) => {
   const [cropDistribution, setcropDistribution] = useState([
     {
       crops: "",
-      cropstype: "",
-      Area: "",
-      yeildMax:"",
-      yeildMin:"",
-      month:""
+      commodities: "",
+      area: "",
+      max_yield:"",
+      min_yield:"",
+      startDate:"",
+      endDate:""
+
     },
   ]);
 
@@ -140,16 +237,17 @@ const removeCattle = (index) => {
     setcropDistribution([
       ...cropDistribution,
       {  crops: "",
-      cropstype: "",
-      Area: "",
-      yeildMax:"",
-      yeildMin:"",
-      month:"" },
+      commodities: "",
+      area: "",
+      max_yield:"",
+      min_yield:"",
+      startDate:"",
+      endDate:""},
     ]);
   }
   const handleSelect = (name, value, i) => {
-    //  if(value.target.name==="Area"){
-    //   values[value.target.id].Area=value.target.value
+    //  if(value.target.name==="area"){
+    //   values[value.target.id].area=value.target.value
     // }
 
     // handleDisAdd()
@@ -199,7 +297,7 @@ const [index, setindex] = useState()
 
  
   }, [cattless,cropDistribution])
-  function handleSubmit() {
+  // function handleSubmit() {
     // setInitialValues({
     //   fname: "",
     //   contact: "",
@@ -210,7 +308,7 @@ const [index, setindex] = useState()
     //   Land: "",
 
     //   crops: "",
-    //   cropstype: "",
+    //   commodities: "",
     //   cropsAmount: "",
     //   cropsCycle: "",
     //   cropscycleAmount: "",
@@ -224,15 +322,15 @@ const [index, setindex] = useState()
     //   machinery: "",
     //   cropAdvisory: "",
     // });
-    message.success({
-      content: "Submitted Successfully",
-      className: "custom-class",
-      style: {
-        marginTop: "74vh",
-      },
-    });
-    handleStep("4");
-  }
+  //   message.success({
+  //     content: "Submitted Successfully",
+  //     className: "custom-class",
+  //     style: {
+  //       marginTop: "74vh",
+  //     },
+  //   });
+  //   handleStep("4");
+  // }
 
   switch (Steps) {
     case "1":

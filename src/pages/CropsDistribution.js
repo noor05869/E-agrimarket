@@ -1,9 +1,11 @@
 import React from "react";
 import { useState } from "react";
+import moment from "moment";
 import "./required.css";
 import {
   Row,
   Col,
+
   Card,
   Statistic,
   Input,
@@ -38,7 +40,7 @@ function CropsDistribution({
   const {
     crops,
     cropsAmount,
-    cropstype,
+    commodities,
     cropsCycle,
     cropscycleType,
     cropscycleAmount,
@@ -130,6 +132,13 @@ const handleEndOpenChange = (open) => {
       ...cropCycle,
       { Commodity: "", Maize: "", Maize2: "", Potato: "" },
     ]);
+  }
+
+  function onChange1(value, dateString) {
+    console.log('Selected Time: ', value[0]._d);
+   let abc =  moment(value[0]._d).format('MM/DD/YYYY');
+   console.log('Selected Time =========: ', abc);
+    console.log('Formatted Selected Time: ', dateString);
   }
   const Crops = [
     { value: "Fruits", lable: "Fruits", ulabel: "پھل" },
@@ -417,9 +426,9 @@ const handleEndOpenChange = (open) => {
                         <Form.Item
                           style={{ content: "*", color: "red" }}
                           className="username "
-                          name={`${i}cropstype`}
+                          name={`${i}commodities`}
                           rules={
-                            !data.cropstype
+                            !data.commodities
                               ? [
                                   {
                                     required: true,
@@ -430,9 +439,9 @@ const handleEndOpenChange = (open) => {
                           }
                         >
                           <Select
-                            name={`${i}cropstype`}
+                            name={`${i}commodities`}
                             onChange={(event) =>
-                              handleSelectChange(i, event, "cropstype")
+                              handleSelectChange(i, event, "commodities")
                             }
                             showSearch
                             
@@ -443,9 +452,9 @@ const handleEndOpenChange = (open) => {
                                 .indexOf(input.toLowerCase()) >= 0
                             }
                             // onSelect={(value, event) =>
-                            //   handleSelect("cropstype", event)
+                            //   handleSelect("commodities", event)
                             // }
-                            defaultValue={data.cropstype}
+                            defaultValue={data.commodities}
                           >
                             {valuues &&
                               valuues.map((data) => (
@@ -495,11 +504,11 @@ const handleEndOpenChange = (open) => {
                     {/* </label>  */}
                   </div> 
                         <Form.Item
-                              name={`${i}Area`}
+                              name={`${i}area`}
 
                           id={i}
                           rules={
-                            !data.Area
+                            !data.area
                               ? [
                                   {
                                     required: true,
@@ -512,19 +521,20 @@ const handleEndOpenChange = (open) => {
                           <Input
                             style={{ color: "black", fontWeight: "normal" }}
                             onChange={(event) =>
-                              handleSelectChange(i, event, "Area")
+                              handleSelectChange(i, event, "area")
                             }
-                            name={`${i}Area`}
+                            name={`${i}area`}
                             id={i}
-                            defaultValue={data.Area}
+                            defaultValue={data.area}
                             min={1}
-                            vale={data.Area}
+                            value={data.area}
                             
                             type="number"
                             
                             size="large"
                             // onChange={onChange}
                           />
+                          
                         </Form.Item>
                       </Col>
                       <Col
@@ -590,9 +600,9 @@ const handleEndOpenChange = (open) => {
                     {/* </label>  */}
                   </div> 
                         <Form.Item
-                           name={`${i}yeildMax`}
+                           name={`${i}max_yield`}
                           rules={
-                            !data.yeildMax
+                            !data.max_yield
                               ? [
                                   {
                                     required: true,
@@ -605,10 +615,10 @@ const handleEndOpenChange = (open) => {
                           <Input
                             style={{ color: "black", fontWeight: "normal" }}
                             onChange={(event) =>
-                              handleSelectChange(i, event, "yeildMax")
+                              handleSelectChange(i, event, "max_yield")
                             }
-                            name={`${i}yeildMax`}
-                            defaultValue={data.yeildMax}
+                            name={`${i}max_yield`}
+                            defaultValue={data.max_yield}
                             min={1}
                             // vale={data.Amount}
                             // value={cropscycleAmount}
@@ -661,9 +671,9 @@ const handleEndOpenChange = (open) => {
                     {/* </label>  */}
                   </div> 
                         <Form.Item
-                          name={`${i}yeildMin`}
+                          name={`${i}min_yield`}
                           rules={
-                            !data.yeildMin
+                            !data.min_yield
                               ? [
                                   {
                                     required: true,
@@ -676,10 +686,10 @@ const handleEndOpenChange = (open) => {
                           <Input
                             style={{ color: "black", fontWeight: "normal" }}
                             onChange={(event) =>
-                              handleSelectChange(i, event, "yeildMin")
+                              handleSelectChange(i, event, "min_yield")
                             }
-                            name={`${i}yeildMin`}
-                            defaultValue={data.yeildMin}
+                            name={`${i}min_yield`}
+                            defaultValue={data.min_yield}
                             min={1}
                             // vale={data.Amount}
                             value=""
@@ -747,7 +757,8 @@ const handleEndOpenChange = (open) => {
                             size="large"
                             name={`${i}month`}
                             picker="month"
-                            onChange={(event) =>
+                            format="YYYY/MM/DD"
+                            onChange={(event)=>
                               handleSelectChange( i, event,"month")
                             }
                            
@@ -856,7 +867,7 @@ const handleEndOpenChange = (open) => {
                         className="username"
                         name={`${i}cattle`}
                         rules={
-                          !data.cattle
+                          !data.Cattles
                             ? [
                                 {
                                   required: true,
@@ -871,9 +882,9 @@ const handleEndOpenChange = (open) => {
                           name={`${i}cattle`}
 
                           onChange={(event) =>
-                            handleSelectChange(i, event, "cattle")
+                            handleSelectChange(i, event, "Cattles")
                           }
-                          defaultValue={data.cattle}
+                          defaultValue={data.Cattles}
                         >
                           <Option key="Buffalo">Buffalo</Option>
                           <Option key="Goat">Goat</Option>
@@ -917,7 +928,7 @@ const handleEndOpenChange = (open) => {
                       <Form.Item
                         name={`${i}quantity`}
                         rules={
-                          !data.quantity
+                          !data.qt
                             ? [
                                 {
                                   required: true,
@@ -931,9 +942,9 @@ const handleEndOpenChange = (open) => {
                              name={`${i}quantity`}
                            
                              onChange={(event) =>
-                              handleSelectChange(i, event, "quantity")
+                              handleSelectChange(i, event, "qt")
                             }
-                          defaultValue={data.quantity}
+                          defaultValue={data.qt}
                           // vale={data.Amount}
                           min={1}
                           

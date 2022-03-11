@@ -74,16 +74,7 @@ else if(value==="Personal"){
                       <h2 className="font-semibold m-0">E-Agri Form</h2>
                     </Col>
                   </Row>
-                  {/* <Row
-                    gutter={[24, 0]}
-                    className="ant-row-flex ant-row-flex-middle"
-                  >
-                    <Col xs={24} md={7}></Col>
-                    <Col xs={14} md={6} className="">
-                     
-                      <h4 style={{marginLeft:"180px"}} >Farmers Data</h4>
-                    </Col>
-                  </Row> */}
+                 
                 </>
               }
             >

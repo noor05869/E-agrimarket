@@ -33,7 +33,7 @@ function FormScreen({
   handleCities,
   Cities,
 }) {
-  const { fname, contact, province, district, tehsil, village } = initialValues;
+  const { fname, contact, province, district, tehsil, village,contact2 } = initialValues;
   const { Option } = Select;
   // const history = useHistory();
 
@@ -108,7 +108,7 @@ function FormScreen({
 
                 {/* <Card style={{background:"#e7e7e7",border:"none"}} > */}
                 <Col
-                  style={{ marginLeft: "12px" }}
+                  // style={{ marginLeft: "12px" }}
                   xs={19}
                   span={7}
                   lg={11}
@@ -116,11 +116,7 @@ function FormScreen({
                   md={6}
                 >
                   <div style={{display:"flex",justifyContent:"space-between"}}>
-                   {/* <label
-                    htmlFor="contact"
-                     className="col-12 col-form-label fw-500"
-                      style={{fontWeight:"bold"}}
-                  >  */}
+                 
                      <span>Name  <span
                       style={{
                         color: "red",
@@ -224,11 +220,13 @@ function FormScreen({
                     <Input
                       id="contact"
                       onKeyPress={isNumberKey}
-                      type="number"
+                      // type="number"
                       defaultValue={contact}
                       name="contact"
-                      // prefix={<PhoneOutlined/>}
                       maxLength="11"
+                      minLength="11"
+                      // prefix={<PhoneOutlined/>}
+                      
                       placeholder="03xx-0000000"
                       value={contact}
                       onChange={handleChange}
@@ -283,7 +281,7 @@ function FormScreen({
                     {/* </label>  */}
                   </div> 
                   <Form.Item
-                    name="contact1"
+                    name="contact2"
                     // rules={
                     //   !contact
                     //     ? [
@@ -298,13 +296,13 @@ function FormScreen({
                     <Input
                       id="optionalContact"
                       onKeyPress={isNumberKey}
-                      type="number"
                       // type="number"
                       defaultValue=""
-                      name="optionalContact"
+                      name="contact2"
                       maxLength="11"
+                      minLength="11"
                       placeholder="03xx-0000000"
-                      value=""
+                      value={contact2}
                       onChange={handleChange}
                       style={{
                         color: "black",

@@ -162,7 +162,7 @@ const handleEndOpenChange = (open) => {
     <div>
       <Header />
       <Row style={{marginBottom:"100px"}} justify="center">
-        <Col xs={24} lg={22}  className="mb-24">
+        <Col xs={24} lg={22} xl={18} className="mb-24">
           <Form onFinish={handleSubmit}>
             <Card
               style={{ background: "#e7e7e7", borderRadius: "20px" }}
@@ -175,7 +175,7 @@ const handleEndOpenChange = (open) => {
                     className="ant-row-flex ant-row-flex-middle"
                   >
                     <Col xs={24} md={6}></Col>
-                    <Col xs={17} md={9}  className="d-flex">
+                    <Col xs={17} md={9} xl={8}  className="d-flex">
                       <h2 className="font-semibold m-0"> E-Agri Form</h2>
                     </Col>
                   </Row>
@@ -191,10 +191,10 @@ const handleEndOpenChange = (open) => {
                 </>
               }
             >
-              <Row gutter={[24, 0]}>
+              <Row justify="center" gutter={[24, 0]}>
                 {" "}
-                <Col span={7} md={1}></Col>{" "}
-                <Col  xs={19} span={7} lg={7} sm={20} md={9}>
+                <Col span={7} md={1} xs={0} xl={0}></Col>{" "}
+                <Col  xs={19} span={7} lg={7} sm={20} md={9} xl={6}>
                 <div style={{display:"flex",justifyContent:"space-between"}}>
                    
                      <span>Total Land (Acers)  <span
@@ -250,6 +250,16 @@ const handleEndOpenChange = (open) => {
                     />
                   </Form.Item>
                 </Col>
+                <Col
+                        // style={{ marginLeft: "10px" }}
+                        xs={19}
+                        span={7}
+                        lg={7}
+                        sm={20}
+                        md={6}
+                        xl={9}
+                      ></Col>
+                       <Col xs={19} span={7} lg={4} sm={20} md={6}xl={6}></Col>
               </Row>
               {/* <Card
               // style={{borderBottom:"outset",background:"initial"}}
@@ -278,6 +288,7 @@ const handleEndOpenChange = (open) => {
                         lg={7}
                         sm={20}
                         md={6}
+                        xl={6}
                       >
                           <div style={{display:"flex",justifyContent:"space-between"}}>
                    {/* <label
@@ -372,6 +383,7 @@ const handleEndOpenChange = (open) => {
                         lg={7}
                         sm={20}
                         md={6}
+                        xl={6}
                       >
                            <div style={{display:"flex",justifyContent:"space-between"}}>
                    {/* <label
@@ -452,7 +464,7 @@ const handleEndOpenChange = (open) => {
                           </Select>
                         </Form.Item>
                       </Col>
-                      <Col xs={19} span={7} lg={4} sm={20} md={6}>
+                      <Col xs={19} span={7} lg={4} sm={20} md={6}xl={5}>
                       <div style={{display:"flex",justifyContent:"space-between"}}>
                    {/* <label
                     htmlFor="contact"
@@ -522,6 +534,7 @@ const handleEndOpenChange = (open) => {
                         lg={5}
                         sm={6}
                         md={2}
+                        
                       >
                       </Col>
                     </Row>
@@ -545,6 +558,7 @@ const handleEndOpenChange = (open) => {
                         lg={7}
                         sm={20}
                         md={9}
+                        xl={6}
                       >
                          <div style={{display:"flex",justifyContent:"space-between"}}>
                    {/* <label
@@ -615,6 +629,7 @@ const handleEndOpenChange = (open) => {
                         lg={7}
                         sm={20}
                         md={9}
+                        xl={6}
                       >
                           <div style={{display:"flex",justifyContent:"space-between"}}>
                    {/* <label
@@ -683,7 +698,8 @@ const handleEndOpenChange = (open) => {
                         span={7}
                         lg={4}
                         sm={20}
-                        md={4}>
+                        md={4}
+                        xl={5}>
                       <div style={{display:"flex",justifyContent:"space-between"}}>
                   
                      <span>Month  <span
@@ -797,7 +813,7 @@ const handleEndOpenChange = (open) => {
                 
 
                   <Row justify="center" gutter={[24, 0]}>
-                    <Col span={7} md={0} lg={0}></Col>
+                    <Col span={7} md={0} lg={0} xl={0}></Col>
                     <Col
                       // style={{ marginLeft: "30px" }}
                       xs={19}
@@ -805,6 +821,7 @@ const handleEndOpenChange = (open) => {
                       lg={7}
                       sm={20}
                       md={6}
+                      xl={6}
                     >
                     <div style={{display:"flex",justifyContent:"space-between"}}>
                    {/* <label
@@ -870,6 +887,7 @@ const handleEndOpenChange = (open) => {
                       lg={7}
                       sm={20}
                       md={6}
+                      xl={6}
                     >
                        <div style={{display:"flex",justifyContent:"space-between"}}>
                
@@ -932,7 +950,7 @@ const handleEndOpenChange = (open) => {
                         />
                       </Form.Item>
                     </Col>
-                    <Col xs={19} span={7} lg={4} sm={20} md={4}></Col>
+                    <Col xs={19} span={7} lg={4} sm={20} md={4} xl={5}></Col>
                     <Col
                         className="Add1button"
                         xs={19}
@@ -979,11 +997,11 @@ const handleEndOpenChange = (open) => {
                 gutter={[24, 0]}
                 className="ant-row-flex ant-row-flex-middle"
               >
-                <Col xs={24} sm={5} md={5} lg={3}>
+                <Col  xs={24} sm={5} md={5} lg={0} xl={3}>
                   <h6 className="font-semibold m-0"> </h6>
                 </Col>
 
-                <Col  style={{marginLeft:"5px"}}xs={24} sm={5} md={5} lg={1} className="d-flex">
+                <Col style={{marginLeft:"20px"}} xs={24} sm={5} md={5} lg={1} xl={0} className="d-flex">
                   <Button
                   
                     className="cropsRButton"
@@ -1002,6 +1020,7 @@ const handleEndOpenChange = (open) => {
                     Next
                   </Button>
                 </Col>
+               
                 
               </Row>
             </Card>

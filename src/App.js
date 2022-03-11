@@ -31,7 +31,7 @@ import OTP from "./pages/OTP";
 
 function App() {
 
-// axios.defaults.baseURL = 'https://aofbackend.nextventures.com.pk/api/v1/'
+axios.defaults.baseURL = '13.228.234.94:8080/v1/'
 
 // axios.defaults.headers =
 // {

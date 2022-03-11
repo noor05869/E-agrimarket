@@ -27,6 +27,7 @@ function Form() {
   const [initialValues1, setInitialValues] = useState({
     fname: "",
     contact: "",
+    contact2:"",
     optionalContact: "",
     province: "",
     district: "",
@@ -35,7 +36,7 @@ function Form() {
     cropsDiss: "",
     Land: "",
    
-    cropscycleAmount: "",
+    
     cattles: "",
     
     modeOfInvestment: "",

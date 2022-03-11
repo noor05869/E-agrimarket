@@ -64,7 +64,7 @@ async function handleSubmit (){
   }]
   console.log("val",initialValues1)
   const Params={
-    name:" initialValues1.fname",
+    name:initialValues1.fname,
     phone:initialValues1.contact,
     phone1:"",
     Province:initialValues1.province.value,
@@ -82,40 +82,7 @@ async function handleSubmit (){
     cattle:initialValues1.cattles
 
   }
-  // let personalinof
-  let abcss = {
-    "personalInfo": {
-        "name": "Wahid",
-        "phone":"03234475980",
-        "phone1":"",
-        "Province":"Peshawar",
-        "District":"Peshawar",
-        "Tehsil":"Mattani",
-        "Village":"Mattani",
-        "acre":"23",
-        "ModeOfInvestment":"xyz",
-        "investmentPercentage":"100%",
-        "targetedmandi":"Nothing",
-        "cropSale":"345",
-        "Seed":"own",
-        "CropsAdvisory":"345"
-    },
-    "crops":[{
-      "crops":"tyu",
-      "commodities":"34",
-      "area":"34",
-      "min_yield":"45",
-      "max_yield":"567",
-      "startDate":"12/34/2022",
-      "endDate":"12/23/3456"
-    }],
-    "cattle":[
-        {
-            "Cattles":"23",
-             "qt":"45"
-        }
-    ]
-}
+ 
  console.log("params",Params)
 const personalInfo= JSON.stringify( Params)
 const test={"personalInfo":Params}
@@ -131,7 +98,7 @@ console.log("test",test)
         marginTop: "74vh",
       },
     });
-    // handleStep("4");
+    handleStep("4");
     console.log("res",data)
   }
   catch{
@@ -380,6 +347,7 @@ const [index, setindex] = useState()
       );
     case "4":
       return <OTP 
+      handleStep={handleStep}
       number={initialValues1.contact}
       />;
   }

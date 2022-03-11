@@ -70,7 +70,7 @@ else if(value==="Personal"){
                     className="ant-row-flex ant-row-flex-middle"
                   >
                     <Col xs={24} md={7}></Col>
-                    <Col xs={14} md={7} className="d-flex">
+                    <Col xs={17} md={7} className="d-flex">
                       <h2 className="font-semibold m-0">E-Agri Form</h2>
                     </Col>
                   </Row>
@@ -188,7 +188,7 @@ else if(value==="Personal"){
                     
                     {/* </label>  */}
                   </div> 
-                   <Form.Item
+                  { mode===true?<Form.Item
                     name="percentage"
                     rules={
                       !percentage
@@ -206,7 +206,7 @@ else if(value==="Personal"){
                       name="percentage"
                       defaultValue={percentage}
                       value={percentage}
-                      disabled={mode===false? true:false}
+                      // disabled={mode===false? true:false}
                       onChange={handleChange}
                       type="number"
                       style={{
@@ -217,7 +217,27 @@ else if(value==="Personal"){
                       }}
                       // onChange={onChange}
                     />
-                  </Form.Item>
+                  </Form.Item>:<Form.Item
+                    name="percentage"
+                    
+                  >
+                    <Input
+                     min={1}
+                      name="percentage"
+                      defaultValue={percentage}
+                      value={percentage}
+                      disabled={true}
+                      onChange={handleChange}
+                      type="number"
+                      style={{
+                        width: "100%",
+                        fontWeight:"normal",
+                        color:"black",
+                        height: "40px",
+                      }}
+                      // onChange={onChange}
+                    />
+                  </Form.Item>}
                 
                 </Col>
                 <Col

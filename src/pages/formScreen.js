@@ -102,7 +102,7 @@ function FormScreen({
                 <h5 className="farmer">Personal Info</h5>
               </Row>
               <Row gutter={[24, 0]} justify="center">
-                <Col span={7} md={2} lg={0}>
+                <Col span={7} md={0} lg={0}>
                   {" "}
                 </Col>
 
@@ -172,7 +172,7 @@ function FormScreen({
                 {/* </Card> */}
 
                 <Col
-                  style={{ marginLeft: "10px" }}
+                  // style={{ marginLeft: "10px" }}
                   xs={19}
                   span={7}
                   lg={6}
@@ -322,14 +322,14 @@ function FormScreen({
                 </Col>
               </Row>
               <Row gutter={[24, 0]} justify="center">
-                <Col span={6} md={2} lg={0}></Col>
+                <Col span={6} md={0} lg={0}></Col>
                 <Col
                   
                   xs={19}
                   span={7}
                   lg={11}
                   sm={20}
-                  md={6}
+                  md={9}
                 >
                   <div style={{display:"flex",justifyContent:"space-between"}}>
                    {/* <label
@@ -403,12 +403,12 @@ function FormScreen({
                   </Form.Item>
                 </Col>
                 <Col
-                  style={{ marginLeft: "10px" }}
+                  // style={{ marginLeft: "10px" }}
                   xs={19}
                   span={7}
                   lg={12}
                   sm={20}
-                  md={6}
+                  md={9}
                 >
                     <div style={{display:"flex",justifyContent:"space-between"}}>
                    {/* <label
@@ -488,14 +488,14 @@ function FormScreen({
                 </Col>
               </Row>
               <Row gutter={[24, 0]} justify="center">
-                <Col span={6} md={1} lg={0}></Col>
+                <Col span={6} md={0} lg={0}></Col>
                 <Col
-                  style={{ marginLeft: "10px" }}
+                  // style={{ marginLeft: "10px" }}
                   xs={19}
                   span={7}
                   lg={11}
                   sm={20}
-                  md={6}
+                  md={9}
                 >
                    <div style={{display:"flex",justifyContent:"space-between"}}>
                    {/* <label
@@ -553,12 +553,12 @@ function FormScreen({
                   </Form.Item>
                 </Col>
                 <Col
-                  style={{ marginLeft: "10px" }}
+                  // style={{ marginLeft: "10px" }}
                   xs={20}
                   span={7}
                   lg={12}
                   sm={20}
-                  md={6}
+                  md={9}
                 >
                   <div style={{display:"flex",justifyContent:"space-between"}}>
                    {/* <label
@@ -603,12 +603,14 @@ function FormScreen({
                 gutter={[24, 0]}
                 className="ant-row-flex ant-row-flex-middle"
               >
-                <Col  span={7} md={1} lg={1}></Col>
+                <Col  span={7} md={1} lg={0}></Col>
                 <Col
                   style={{ marginTop: "10px" }}
                   xs={22}
                   span={7}
-                  lg={2}
+                  lg={5}
+                  xl={4}
+                  xxl={3}
                   sm={20}
                   md={5}
                   className="d-flex"

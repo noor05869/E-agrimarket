@@ -77,8 +77,37 @@ function CropsDistribution({
     },
   ]);
   
+const [DATE, setDATE] = useState({
+  startValue: null,
+  endValue: null,
+  endOpen: false
+})
+const disabledStartDate = (startValue) => {
+  const { endValue } = DATE;
+  if (!startValue || !endValue) {
+    return false;
+  }
+  return startValue.valueOf() > endValue.valueOf();
+};
 
- 
+const disabledEndDate = (endValue) => {
+  const { startValue } = DATE;
+  if (!endValue || !startValue) {
+    return false;
+  }
+  return endValue.valueOf() <= startValue.valueOf();
+};
+
+const handleStartOpenChange = (open) => {
+  if (!open) {
+    setDATE({ endOpen: true });
+  }
+};
+
+const handleEndOpenChange = (open) => {
+  setDATE({ endOpen: open });
+};
+
   const monthchange = (i) => {
     alert(i);
   };
@@ -133,7 +162,7 @@ function CropsDistribution({
     <div>
       <Header />
       <Row style={{marginBottom:"100px"}} justify="center">
-        <Col xs={24} lg={20} className="mb-24">
+        <Col xs={24} lg={22}  className="mb-24">
           <Form onFinish={handleSubmit}>
             <Card
               style={{ background: "#e7e7e7", borderRadius: "20px" }}
@@ -146,7 +175,7 @@ function CropsDistribution({
                     className="ant-row-flex ant-row-flex-middle"
                   >
                     <Col xs={24} md={6}></Col>
-                    <Col xs={18} md={8} className="d-flex">
+                    <Col xs={17} md={9}  className="d-flex">
                       <h2 className="font-semibold m-0"> E-Agri Form</h2>
                     </Col>
                   </Row>
@@ -165,13 +194,9 @@ function CropsDistribution({
               <Row gutter={[24, 0]}>
                 {" "}
                 <Col span={7} md={1}></Col>{" "}
-                <Col className="land" xs={18} span={7} lg={6} sm={20} md={5}>
+                <Col  xs={19} span={7} lg={7} sm={20} md={9}>
                 <div style={{display:"flex",justifyContent:"space-between"}}>
-                   {/* <label
-                    htmlFor="contact"
-                     className="col-12 col-form-label fw-500"
-                      style={{fontWeight:"bold"}}
-                  >  */}
+                   
                      <span>Total Land (Acers)  <span
                       style={{
                         color: "red",
@@ -247,12 +272,12 @@ function CropsDistribution({
                       <Col span={7} md={1}></Col>
                       <Col
                         key={i}
-                        style={{ marginLeft: "15px" }}
-                        xs={20}
+                        // style={{ marginLeft: "15px" }}
+                        xs={19}
                         span={7}
-                        lg={6}
+                        lg={7}
                         sm={20}
-                        md={5}
+                        md={6}
                       >
                           <div style={{display:"flex",justifyContent:"space-between"}}>
                    {/* <label
@@ -341,12 +366,12 @@ function CropsDistribution({
                         </Form.Item>
                       </Col>
                       <Col
-                        style={{ marginLeft: "10px" }}
-                        xs={20}
+                        // style={{ marginLeft: "10px" }}
+                        xs={19}
                         span={7}
-                        lg={6}
+                        lg={7}
                         sm={20}
-                        md={4}
+                        md={6}
                       >
                            <div style={{display:"flex",justifyContent:"space-between"}}>
                    {/* <label
@@ -427,7 +452,7 @@ function CropsDistribution({
                           </Select>
                         </Form.Item>
                       </Col>
-                      <Col xs={19} span={7} lg={6} sm={17} md={4}>
+                      <Col xs={19} span={7} lg={4} sm={20} md={6}>
                       <div style={{display:"flex",justifyContent:"space-between"}}>
                    {/* <label
                     htmlFor="contact"
@@ -482,10 +507,9 @@ function CropsDistribution({
                             defaultValue={data.Area}
                             min={1}
                             vale={data.Area}
-                            // value={data.Area}
+                            
                             type="number"
-                            // onChange={handleCropDisChange}
-                            // type="number"
+                            
                             size="large"
                             // onChange={onChange}
                           />
@@ -495,29 +519,10 @@ function CropsDistribution({
                         className="Addbutton"
                         xs={19}
                         span={7}
-                        lg={4}
+                        lg={5}
                         sm={6}
-                        md={4}
+                        md={2}
                       >
-                        {/* {cropDistribution.length>1?  <Button
-                      style={{background:"#dc3545",border:"none"}}
-                        onClick={() => handleDistributionRemove(i)}
-                        disabled={cropDistribution.length > 1 ? false : true}
-                        type="primary"
-                      >
-                        Remove
-                      </Button>:""}
-                      <Button
-                        type="primary"
-                        onClick={handleDistributionAdd}
-                        style={{
-                          marginBottom: "20px",
-                          marginLeft: "5px",
-                          border: "none",
-                        }}
-                      >
-                        ADD
-                      </Button>] */}
                       </Col>
                     </Row>
 
@@ -530,15 +535,16 @@ function CropsDistribution({
                 <> */}
 
                     {/* <Row>  <h5 className="cropsdis" >Crops Cycle</h5></Row> */}
+                    
                     <Row justify="center" gutter={[24, 0]}>
-                      <Col span={7} md={1}></Col>
+                      <Col span={7} md={1} lg={0}></Col>
                       <Col
-                        style={{ marginLeft: "10px" }}
+                        // style={{ marginLeft: "10px" }}
                         xs={19}
                         span={7}
-                        lg={6}
+                        lg={7}
                         sm={20}
-                        md={5}
+                        md={9}
                       >
                          <div style={{display:"flex",justifyContent:"space-between"}}>
                    {/* <label
@@ -602,13 +608,13 @@ function CropsDistribution({
                       </Col>
 
                       <Col
-                        style={{ marginLeft: "10px " }}
+                        // style={{ marginLeft: "10px " }}
                         x
                         xs={19}
                         span={7}
-                        lg={6}
+                        lg={7}
                         sm={20}
-                        md={5}
+                        md={9}
                       >
                           <div style={{display:"flex",justifyContent:"space-between"}}>
                    {/* <label
@@ -672,13 +678,14 @@ function CropsDistribution({
                         </Form.Item>
                       </Col>
 
-                      <Col xs={19} span={7} lg={6} sm={20} md={4}>
+                      <Col 
+                       xs={19}
+                        span={7}
+                        lg={4}
+                        sm={20}
+                        md={4}>
                       <div style={{display:"flex",justifyContent:"space-between"}}>
-                   {/* <label
-                    htmlFor="contact"
-                     className="col-12 col-form-label fw-500"
-                      style={{fontWeight:"bold"}}
-                  >  */}
+                  
                      <span>Month  <span
                       style={{
                         color: "red",
@@ -704,6 +711,8 @@ function CropsDistribution({
                   </div> 
 
                         <Form.Item
+                     
+
                              name={`${i}month`}
                           rules={
                             !data.month
@@ -716,18 +725,20 @@ function CropsDistribution({
                               : ""
                           }
                         >
-                          <RangePicker
+                         
+                          <RangePicker style={{ width: '100%' }}
                             defaultValue={data.month}
+                            size="large"
                             name={`${i}month`}
                             picker="month"
                             onChange={(event) =>
                               handleSelectChange( i, event,"month")
                             }
-                            // onChange={(value, event) =>
-                            //   handleSelect("date", value)
-                            // }
-                            size="large"
+                           
+                            
                           />
+                           
+                        
                         </Form.Item>
                       </Col>
 
@@ -786,12 +797,12 @@ function CropsDistribution({
                 
 
                   <Row justify="center" gutter={[24, 0]}>
-                    <Col span={7} md={1}></Col>
+                    <Col span={7} md={0} lg={0}></Col>
                     <Col
                       // style={{ marginLeft: "30px" }}
                       xs={19}
                       span={7}
-                      lg={6}
+                      lg={7}
                       sm={20}
                       md={6}
                     >
@@ -853,20 +864,15 @@ function CropsDistribution({
                       </Form.Item>
                     </Col>
                     <Col
-                      className="quantity"
-                      style={{marginLeft:"5px"}}
+                   
                       xs={19}
                       span={7}
-                      lg={6}
+                      lg={7}
                       sm={20}
                       md={6}
                     >
                        <div style={{display:"flex",justifyContent:"space-between"}}>
-                   {/* <label
-                    htmlFor="contact"
-                     className="col-12 col-form-label fw-500"
-                      style={{fontWeight:"bold"}}
-                  >  */}
+               
                      <span>Quantity  <span
                       style={{
                         color: "red",
@@ -926,7 +932,7 @@ function CropsDistribution({
                         />
                       </Form.Item>
                     </Col>
-                    <Col xs={19} span={7} lg={6} sm={20} md={4}></Col>
+                    <Col xs={19} span={7} lg={4} sm={20} md={4}></Col>
                     <Col
                         className="Add1button"
                         xs={19}
@@ -996,6 +1002,7 @@ function CropsDistribution({
                     Next
                   </Button>
                 </Col>
+                
               </Row>
             </Card>
           </Form>

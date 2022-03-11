@@ -570,7 +570,7 @@ function FormScreen({
                         fontWeight: "bold",
                         fontSize: "large",
                       }}
-                    >
+                    >*
                       {" "}
                       
                     </span> </span><span style={{fontSize:"1rem",marginRight:"5px"}}> <span
@@ -579,7 +579,7 @@ function FormScreen({
                         fontWeight: "bold",
                         fontSize: "large",
                       }}
-                    >
+                    >*
                       {" "}
                       
                     </span> گاؤں</span>
@@ -587,13 +587,27 @@ function FormScreen({
                     
                     {/* </label>  */}
                   </div> 
+                  <Form.Item
+                    name="village"
+                    rules={
+                      !village
+                        ? [
+                            {
+                              required: true,
+                              message: "Please Fill",
+                            },
+                          ]
+                        : ""
+                    }
+                  >
                   <Input
                     style={{ color: "black", fontWeight: "normal" }}
                     name="village"
                     value={village}
+                    defaultValue={village}
                     onChange={handleChange}
                     type="text"
-                  />
+                  /></Form.Item>
                 </Col>
               </Row>
               <Row

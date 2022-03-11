@@ -38,7 +38,7 @@ function Form() {
     village: "",
     cropsDiss: "",
     Land: "",
-   
+   month:"",
     
     cattles: "",
     
@@ -180,6 +180,7 @@ const removeCattle = (index) => {
     } else if (name === "area") {
       values[i].area = event.target.value;
     }else if (name === "month") {
+      initialValues1.month=event
       values[i].startDate = moment(event[0]._d).format('MM/DD/YYYY');
       values[i].endDate=moment(event[1]._d).format('MM/DD/YYYY')
     }

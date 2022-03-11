@@ -144,14 +144,14 @@ const handleEndOpenChange = (open) => {
     { value: "Fruits", lable: "Fruits", ulabel: "پھل" },
     { value: "Vegetables", lable: "Vegetables", ulabel: "سبزیاں" },
     { value: "FoodLegumes", lable: "Food Legumes", ulabel: "کھانے کی پھلیاں" },
-    { value: "CEREALCROPS", lable: "CEREAL CROPS", ulabel: "اناج کی فصلیں" },
+    { value: "CEREALCROPS", lable: "Cereal Crops", ulabel: "اناج کی فصلیں" },
     {
       value: "OilSeedCrops",
       lable: "Oil Seed Crops",
       ulabel: "تیل کے بیجوں کی فصلیں",
     },
     { value: "ForageCrops", lable: "Forage Crops", ulabel: "چارے کی فصل" },
-    { value: "SugarCrops", lable: "Fiber Crops", ulabel: "چینی کی فصلیں" },
+    { value: "SugarCrops", lable: "Sugar Crops", ulabel: "چینی کی فصلیں" },
   ];
   function handleSubmit(values) {
     console.log(values);
@@ -377,7 +377,7 @@ const handleEndOpenChange = (open) => {
                                     justifyContent: "space-between",
                                   }}
                                 >
-                                  <p>{data.value}</p>
+                                  <p>{data.lable}</p>
                                   <p>{data.ulabel}</p>
                                 </div>
                               </Option>
@@ -741,7 +741,7 @@ const handleEndOpenChange = (open) => {
 
                              name={`${i}month`}
                           rules={
-                            !data.month
+                            !initialValues.month
                               ? [
                                   {
                                     required: true,
@@ -753,7 +753,7 @@ const handleEndOpenChange = (open) => {
                         >
                          
                           <RangePicker style={{ width: '100%' }}
-                            defaultValue={data.month}
+                            defaultValue={initialValues.month}
                             size="large"
                             name={`${i}month`}
                             picker="month"

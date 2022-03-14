@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./required.css";
+import { Tehsils } from "./city";
 import {
   Row,
   Col,
@@ -33,10 +34,11 @@ function FormScreen({
   handleCities,
   Cities,
 }) {
-  const { fname, contact, province, district, tehsil, village,contact2 } = initialValues;
+  const { fname, contact, province, district, tehsil, village, contact2 } =
+    initialValues;
   const { Option } = Select;
   // const history = useHistory();
-
+  console.log("ttttt", Tehsils);
   function handleSubmit(values) {
     console.log(values);
     handleStep("2");
@@ -70,7 +72,7 @@ function FormScreen({
   return (
     <div>
       <Header />
-      <Row style={{marginBottom:"100px"}} justify="center">
+      <Row style={{ marginBottom: "100px" }} justify="center">
         <Col xs={24} lg={17} className="mb-24">
           <Form onFinish={handleSubmit}>
             <Card
@@ -84,7 +86,7 @@ function FormScreen({
                     className="ant-row-flex ant-row-flex-middle"
                   >
                     <Col xs={24} md={7}></Col>
-                    <Col xs={17} md={7} lg={7} className="d-flex">
+                    <Col xs={17} md={7} lg={8} className="d-flex">
                       <h2 className="font-semibold m-0">E-Agri Form</h2>
                     </Col>
                   </Row>
@@ -97,7 +99,7 @@ function FormScreen({
                 </>
               }
             >
-              <Row >
+              <Row>
                 {" "}
                 <h5 className="farmer">Personal Info</h5>
               </Row>
@@ -115,31 +117,39 @@ function FormScreen({
                   sm={20}
                   md={6}
                 >
-                  <div style={{display:"flex",justifyContent:"space-between"}}>
-                 
-                     <span>Name  <span
-                      style={{
-                        color: "red",
-                        fontWeight: "bold",
-                        fontSize: "large",
-                      }}
-                    >
+                  <div
+                    style={{ display: "flex", justifyContent: "space-between" }}
+                  >
+                    <span>
+                      Name{" "}
+                      <span
+                        style={{
+                          color: "red",
+                          fontWeight: "bold",
+                          fontSize: "large",
+                        }}
+                      >
+                        {" "}
+                        *
+                      </span>{" "}
+                    </span>
+                    <span style={{ fontSize: "1rem", marginRight: "5px" }}>
                       {" "}
-                      *
-                    </span> </span><span style={{fontSize:"1rem",marginRight:"5px"}}> <span
-                      style={{
-                        color: "red",
-                        fontWeight: "bold",
-                        fontSize: "large",
-                      }}
-                    >
-                      {" "}
-                      *
-                    </span> نام</span>
-                     
-                    
+                      <span
+                        style={{
+                          color: "red",
+                          fontWeight: "bold",
+                          fontSize: "large",
+                        }}
+                      >
+                        {" "}
+                        *
+                      </span>{" "}
+                      نام
+                    </span>
+
                     {/* </label>  */}
-                  </div> 
+                  </div>
                   <Form.Item
                     name="fname"
                     rules={
@@ -154,7 +164,7 @@ function FormScreen({
                     }
                   >
                     <Input
-                      style={{ color: "black", fontWeight: "normal", }}
+                      style={{ color: "black", fontWeight: "normal" }}
                       defaultValue={fname}
                       id="fname"
                       type="text"
@@ -175,35 +185,44 @@ function FormScreen({
                   sm={20}
                   md={6}
                 >
-                    <div style={{display:"flex",justifyContent:"space-between"}}>
-                   {/* <label
+                  <div
+                    style={{ display: "flex", justifyContent: "space-between" }}
+                  >
+                    {/* <label
                     htmlFor="contact"
                      className="col-12 col-form-label fw-500"
                       style={{fontWeight:"bold"}}
                   >  */}
-                     <span>Contact 1  <span
-                      style={{
-                        color: "red",
-                        fontWeight: "bold",
-                        fontSize: "large",
-                      }}
-                    >
+                    <span>
+                      Primary{" "}
+                      <span
+                        style={{
+                          color: "red",
+                          fontWeight: "bold",
+                          fontSize: "large",
+                        }}
+                      >
+                        {" "}
+                        *
+                      </span>{" "}
+                    </span>
+                    <span style={{ fontSize: "1rem", marginRight: "5px" }}>
                       {" "}
-                      *
-                    </span> </span><span style={{fontSize:"1rem",marginRight:"5px"}}> <span
-                      style={{
-                        color: "red",
-                        fontWeight: "bold",
-                        fontSize: "large",
-                      }}
-                    >
-                      {" "}
-                      *
-                    </span> رابطہ نمبر</span>
-                     
-                    
+                      <span
+                        style={{
+                          color: "red",
+                          fontWeight: "bold",
+                          fontSize: "large",
+                        }}
+                      >
+                        {" "}
+                        *
+                      </span>{" "}
+                      فون نمبر
+                    </span>
+
                     {/* </label>  */}
-                  </div> 
+                  </div>
                   <Form.Item
                     name="contact"
                     rules={
@@ -226,7 +245,7 @@ function FormScreen({
                       maxLength="11"
                       minLength="11"
                       // prefix={<PhoneOutlined/>}
-                      
+
                       placeholder="03xx-0000000"
                       value={contact}
                       onChange={handleChange}
@@ -251,35 +270,42 @@ function FormScreen({
                   sm={20}
                   md={6}
                 >
-                 <div style={{display:"flex",justifyContent:"space-between"}}>
-                   {/* <label
+                  <div
+                    style={{ display: "flex", justifyContent: "space-between" }}
+                  >
+                    {/* <label
                     htmlFor="contact"
                      className="col-12 col-form-label fw-500"
                       style={{fontWeight:"bold"}}
                   >  */}
-                     <span>Contact 2  <span
-                      style={{
-                        color: "red",
-                        fontWeight: "bold",
-                        fontSize: "large",
-                      }}
-                    >
+                    <span>
+                     Secondary{" "}
+                      <span
+                        style={{
+                          color: "red",
+                          fontWeight: "bold",
+                          fontSize: "large",
+                        }}
+                      >
+                        {" "}
+                      </span>{" "}
+                    </span>
+                    <span style={{ fontSize: "1rem", marginRight: "5px" }}>
                       {" "}
-                      
-                    </span> </span><span style={{fontSize:"1rem",marginRight:"5px"}}> <span
-                      style={{
-                        color: "red",
-                        fontWeight: "bold",
-                        fontSize: "large",
-                      }}
-                    >
-                      {" "}
-                      
-                    </span>  رابطہ نمبر</span>
-                     
-                    
+                      <span
+                        style={{
+                          color: "red",
+                          fontWeight: "bold",
+                          fontSize: "large",
+                        }}
+                      >
+                        {" "}
+                      </span>{" "}
+                      فون نمبر
+                    </span>
+
                     {/* </label>  */}
-                  </div> 
+                  </div>
                   <Form.Item
                     name="contact2"
                     // rules={
@@ -321,47 +347,49 @@ function FormScreen({
               </Row>
               <Row gutter={[24, 0]} justify="center">
                 <Col span={6} md={0} lg={0}></Col>
-                <Col
-                  
-                  xs={19}
-                  span={7}
-                  lg={11}
-                  sm={20}
-                  md={9}
-                >
-                  <div style={{display:"flex",justifyContent:"space-between"}}>
-                   {/* <label
+                <Col xs={19} span={7} lg={11} sm={20} md={9}>
+                  <div
+                    style={{ display: "flex", justifyContent: "space-between" }}
+                  >
+                    {/* <label
                     htmlFor="contact"
                      className="col-12 col-form-label fw-500"
                       style={{fontWeight:"bold"}}
                   >  */}
-                     <span>Province  <span
-                      style={{
-                        color: "red",
-                        fontWeight: "bold",
-                        fontSize: "large",
-                      }}
-                    >
+                    <span>
+                      Province{" "}
+                      <span
+                        style={{
+                          color: "red",
+                          fontWeight: "bold",
+                          fontSize: "large",
+                        }}
+                      >
+                        {" "}
+                        *
+                      </span>{" "}
+                    </span>
+                    <span style={{ fontSize: "1rem", marginRight: "5px" }}>
                       {" "}
-                      *
-                    </span> </span><span style={{fontSize:"1rem",marginRight:"5px"}}> <span
-                      style={{
-                        color: "red",
-                        fontWeight: "bold",
-                        fontSize: "large",
-                      }}
-                    >
-                      {" "}
-                      *
-                    </span> صوبہ</span>
-                     
-                    
+                      <span
+                        style={{
+                          color: "red",
+                          fontWeight: "bold",
+                          fontSize: "large",
+                        }}
+                      >
+                        {" "}
+                        *
+                      </span>{" "}
+                      صوبہ
+                    </span>
+
                     {/* </label>  */}
-                  </div> 
+                  </div>
                   <Form.Item
                     className="username"
                     name="Province"
-                    defaultValue={ province.value}
+                    defaultValue={province.value}
                     rules={
                       !province.children
                         ? [
@@ -408,35 +436,44 @@ function FormScreen({
                   sm={20}
                   md={9}
                 >
-                    <div style={{display:"flex",justifyContent:"space-between"}}>
-                   {/* <label
+                  <div
+                    style={{ display: "flex", justifyContent: "space-between" }}
+                  >
+                    {/* <label
                     htmlFor="contact"
                      className="col-12 col-form-label fw-500"
                       style={{fontWeight:"bold"}}
                   >  */}
-                     <span>District  <span
-                      style={{
-                        color: "red",
-                        fontWeight: "bold",
-                        fontSize: "large",
-                      }}
-                    >
+                    <span>
+                      District{" "}
+                      <span
+                        style={{
+                          color: "red",
+                          fontWeight: "bold",
+                          fontSize: "large",
+                        }}
+                      >
+                        {" "}
+                        *
+                      </span>{" "}
+                    </span>
+                    <span style={{ fontSize: "1rem", marginRight: "5px" }}>
                       {" "}
-                      *
-                    </span> </span><span style={{fontSize:"1rem",marginRight:"5px"}}> <span
-                      style={{
-                        color: "red",
-                        fontWeight: "bold",
-                        fontSize: "large",
-                      }}
-                    >
-                      {" "}
-                      *
-                    </span> ضلع</span>
-                     
-                    
+                      <span
+                        style={{
+                          color: "red",
+                          fontWeight: "bold",
+                          fontSize: "large",
+                        }}
+                      >
+                        {" "}
+                        *
+                      </span>{" "}
+                      ضلع
+                    </span>
+
                     {/* </label>  */}
-                  </div> 
+                  </div>
                   <Form.Item
                     className="username"
                     name="District"
@@ -495,35 +532,44 @@ function FormScreen({
                   sm={20}
                   md={9}
                 >
-                   <div style={{display:"flex",justifyContent:"space-between"}}>
-                   {/* <label
+                  <div
+                    style={{ display: "flex", justifyContent: "space-between" }}
+                  >
+                    {/* <label
                     htmlFor="contact"
                      className="col-12 col-form-label fw-500"
                       style={{fontWeight:"bold"}}
                   >  */}
-                     <span>Tehsil  <span
-                      style={{
-                        color: "red",
-                        fontWeight: "bold",
-                        fontSize: "large",
-                      }}
-                    >
+                    <span>
+                      Tehsil{" "}
+                      <span
+                        style={{
+                          color: "red",
+                          fontWeight: "bold",
+                          fontSize: "large",
+                        }}
+                      >
+                        {" "}
+                        *
+                      </span>{" "}
+                    </span>
+                    <span style={{ fontSize: "1rem", marginRight: "5px" }}>
                       {" "}
-                      *
-                    </span> </span><span style={{fontSize:"1rem",marginRight:"5px"}}> <span
-                      style={{
-                        color: "red",
-                        fontWeight: "bold",
-                        fontSize: "large",
-                      }}
-                    >
-                      {" "}
-                      *
-                    </span> تحصیل</span>
-                     
-                    
+                      <span
+                        style={{
+                          color: "red",
+                          fontWeight: "bold",
+                          fontSize: "large",
+                        }}
+                      >
+                        {" "}
+                        *
+                      </span>{" "}
+                      تحصیل
+                    </span>
+
                     {/* </label>  */}
-                  </div> 
+                  </div>
                   <Form.Item
                     className="username"
                     name="Tehsil"
@@ -539,12 +585,18 @@ function FormScreen({
                     }
                   >
                     <Select
+                      showSearch
                       size="large"
                       name="tehsil"
                       defaultValue={tehsil.children}
                       onSelect={(value, event) => handleSelect("tehsil", event)}
+                      filterOption={(input, option) =>
+                        option.children
+                          .toLowerCase()
+                          .indexOf(input.toLowerCase()) >= 0
+                      }
                     >
-                      {Tehsil.map((data) => (
+                      {Tehsils.map((data) => (
                         <Option key={data.value}>{data.label}</Option>
                       ))}
                     </Select>
@@ -552,41 +604,48 @@ function FormScreen({
                 </Col>
                 <Col
                   // style={{ marginLeft: "10px" }}
-                  xs={20}
+                  xs={19}
                   span={7}
                   lg={12}
                   sm={20}
                   md={9}
                 >
-                  <div style={{display:"flex",justifyContent:"space-between"}}>
-                   {/* <label
+                  <div
+                    style={{ display: "flex", justifyContent: "space-between" }}
+                  >
+                    {/* <label
                     htmlFor="contact"
                      className="col-12 col-form-label fw-500"
                       style={{fontWeight:"bold"}}
                   >  */}
-                     <span>Village  <span
-                      style={{
-                        color: "red",
-                        fontWeight: "bold",
-                        fontSize: "large",
-                      }}
-                    >*
+                    <span>
+                      Village{" "}
+                      <span
+                        style={{
+                          color: "red",
+                          fontWeight: "bold",
+                          fontSize: "large",
+                        }}
+                      >
+                        *{" "}
+                      </span>{" "}
+                    </span>
+                    <span style={{ fontSize: "1rem", marginRight: "5px" }}>
                       {" "}
-                      
-                    </span> </span><span style={{fontSize:"1rem",marginRight:"5px"}}> <span
-                      style={{
-                        color: "red",
-                        fontWeight: "bold",
-                        fontSize: "large",
-                      }}
-                    >*
-                      {" "}
-                      
-                    </span> گاؤں</span>
-                     
-                    
+                      <span
+                        style={{
+                          color: "red",
+                          fontWeight: "bold",
+                          fontSize: "large",
+                        }}
+                      >
+                        *{" "}
+                      </span>{" "}
+                      گاؤں
+                    </span>
+
                     {/* </label>  */}
-                  </div> 
+                  </div>
                   <Form.Item
                     name="village"
                     rules={
@@ -600,22 +659,23 @@ function FormScreen({
                         : ""
                     }
                   >
-                  <Input
-                    style={{ color: "black", fontWeight: "normal" }}
-                    name="village"
-                    value={village}
-                    defaultValue={village}
-                    onChange={handleChange}
-                    type="text"
-                  /></Form.Item>
+                    <Input
+                      style={{ color: "black", fontWeight: "normal" }}
+                      name="village"
+                      value={village}
+                      defaultValue={village}
+                      onChange={handleChange}
+                      type="text"
+                    />
+                  </Form.Item>
                 </Col>
               </Row>
               <Row
-              justify="start"
+                justify="start"
                 gutter={[24, 0]}
                 className="ant-row-flex ant-row-flex-middle"
               >
-                <Col  span={7} md={1} lg={0}></Col>
+                <Col span={7} md={1} lg={0}></Col>
                 <Col
                   style={{ marginTop: "10px" }}
                   xs={22}
@@ -628,13 +688,17 @@ function FormScreen({
                   className="d-flex"
                 >
                   <Button
-                  className="form1next"
-                  style={{background:"#273A9E",border:"none",marginRight:"38px"}}
+                    className="form1next"
+                    style={{
+                      background: "#273A9E",
+                      border: "none",
+                      marginRight: "38px",
+                    }}
                     // onClick={()=>history.push("/CropsDistribution")}
                     // onClick={handleSubmit}
                     type="primary"
                     htmlType="submit"
-                   
+
                     // type="primary"
                   >
                     Next

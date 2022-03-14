@@ -1,11 +1,10 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import moment from "moment";
 import "./required.css";
 import {
   Row,
   Col,
-
   Card,
   Statistic,
   Input,
@@ -35,7 +34,8 @@ function CropsDistribution({
   handleSchange,
   addCattles,
   removeCattle,
-  cattless
+  cattless,
+  max,
 }) {
   const {
     crops,
@@ -61,54 +61,13 @@ function CropsDistribution({
     },
   ]);
   const { RangePicker } = DatePicker;
-  const onBlur = () => {
-    const { value, onBlur, onChange } = this.props;
-    let valueTemp = value;
-    if (value.charAt(value.length - 1) === "." || value === "-") {
-      valueTemp = value.slice(0, -1);
-    }
-  };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   // const history=useHistory()
   const { Option } = Select;
-
-  const [Cattles, setcattles] = useState([
-    {
-      cattles: "",
-      qunatity: "",
-    },
-  ]);
-  
-const [DATE, setDATE] = useState({
-  startValue: null,
-  endValue: null,
-  endOpen: false
-})
-const disabledStartDate = (startValue) => {
-  const { endValue } = DATE;
-  if (!startValue || !endValue) {
-    return false;
-  }
-  return startValue.valueOf() > endValue.valueOf();
-};
-
-const disabledEndDate = (endValue) => {
-  const { startValue } = DATE;
-  if (!endValue || !startValue) {
-    return false;
-  }
-  return endValue.valueOf() <= startValue.valueOf();
-};
-
-const handleStartOpenChange = (open) => {
-  if (!open) {
-    setDATE({ endOpen: true });
-  }
-};
-
-const handleEndOpenChange = (open) => {
-  setDATE({ endOpen: open });
-};
+  // console.log("max", cropDistribution[0].max_yield);
 
   const monthchange = (i) => {
     alert(i);
@@ -135,10 +94,10 @@ const handleEndOpenChange = (open) => {
   }
 
   function onChange1(value, dateString) {
-    console.log('Selected Time: ', value[0]._d);
-   let abc =  moment(value[0]._d).format('MM/DD/YYYY');
-   console.log('Selected Time =========: ', abc);
-    console.log('Formatted Selected Time: ', dateString);
+    console.log("Selected Time: ", value[0]._d);
+    let abc = moment(value[0]._d).format("MM/DD/YYYY");
+    console.log("Selected Time =========: ", abc);
+    console.log("Formatted Selected Time: ", dateString);
   }
   const Crops = [
     { value: "Fruits", lable: "Fruits", ulabel: "پھل" },
@@ -170,8 +129,8 @@ const handleEndOpenChange = (open) => {
   return (
     <div>
       <Header />
-      <Row style={{marginBottom:"100px"}} justify="center">
-        <Col xs={24} lg={22} xl={18} className="mb-24">
+      <Row style={{ marginBottom: "100px" }} justify="center">
+        <Col xs={24} lg={22} xl={20} className="mb-24">
           <Form onFinish={handleSubmit}>
             <Card
               style={{ background: "#e7e7e7", borderRadius: "20px" }}
@@ -184,7 +143,7 @@ const handleEndOpenChange = (open) => {
                     className="ant-row-flex ant-row-flex-middle"
                   >
                     <Col xs={24} md={6}></Col>
-                    <Col xs={17} md={9} xl={8}  className="d-flex">
+                    <Col xs={17} md={9} xl={9} className="d-flex">
                       <h2 className="font-semibold m-0"> E-Agri Form</h2>
                     </Col>
                   </Row>
@@ -203,33 +162,41 @@ const handleEndOpenChange = (open) => {
               <Row justify="center" gutter={[24, 0]}>
                 {" "}
                 <Col span={7} md={1} xs={0} xl={0}></Col>{" "}
-                <Col  xs={19} span={7} lg={7} sm={20} md={9} xl={6}>
-                <div style={{display:"flex",justifyContent:"space-between"}}>
-                   
-                     <span>Total Land (Acers)  <span
-                      style={{
-                        color: "red",
-                        fontWeight: "bold",
-                        fontSize: "large",
-                        width:"100%"
-                      }}
-                    >
+                <Col xs={19} span={7} lg={7} sm={20} md={9} xl={7}>
+                  <div
+                    style={{ display: "flex", justifyContent: "space-between" }}
+                  >
+                    <span>
+                      Total Land (Acers){" "}
+                      <span
+                        style={{
+                          color: "red",
+                          fontWeight: "bold",
+                          fontSize: "large",
+                          width: "100%",
+                        }}
+                      >
+                        {" "}
+                        *
+                      </span>{" "}
+                    </span>
+                    <span style={{ fontSize: "1rem", marginRight: "5px" }}>
                       {" "}
-                      *
-                    </span> </span><span style={{fontSize:"1rem",marginRight:"5px"}}> <span
-                      style={{
-                        color: "red",
-                        fontWeight: "bold",
-                        fontSize: "large",
-                      }}
-                    >
-                      {" "}
-                      *
-                    </span> (ایکڑ) کل زمین</span>
-                     
-                    
+                      <span
+                        style={{
+                          color: "red",
+                          fontWeight: "bold",
+                          fontSize: "large",
+                        }}
+                      >
+                        {" "}
+                        *
+                      </span>{" "}
+                        (ایکڑ) کل زمین
+                    </span>
+
                     {/* </label>  */}
-                  </div> 
+                  </div>
                   <Form.Item
                     name="Land"
                     rules={
@@ -244,7 +211,11 @@ const handleEndOpenChange = (open) => {
                     }
                   >
                     <Input
-                      style={{ color: "black", fontWeight: "normal" }}
+                      style={{
+                        color: "black",
+                        fontWeight: "normal",
+                        width: "100%",
+                      }}
                       onChange={handleChange}
                       name="Land"
                       defaultValue={Land}
@@ -260,27 +231,25 @@ const handleEndOpenChange = (open) => {
                   </Form.Item>
                 </Col>
                 <Col
-                        // style={{ marginLeft: "10px" }}
-                        xs={19}
-                        span={7}
-                        lg={7}
-                        sm={20}
-                        md={6}
-                        xl={9}
-                      ></Col>
-                       <Col xs={19} span={7} lg={4} sm={20} md={6}xl={6}></Col>
+                  // style={{ marginLeft: "10px" }}
+                  xs={19}
+                  span={7}
+                  lg={7}
+                  sm={20}
+                  md={6}
+                  xl={9}
+                ></Col>
+                <Col xs={19} span={7} lg={4} sm={20} md={6} xl={7}></Col>
               </Row>
               {/* <Card
               // style={{borderBottom:"outset",background:"initial"}}
                bordered={false}  >
              */}
-                      <h5 className="cropsdis">Crops Distribution / Cycle</h5>
+              <h5 className="cropsdis">Crops Distribution / Cycle</h5>
               {cropDistribution &&
                 cropDistribution.map((data, i) => (
                   <>
-                    <Row>
-                      {" "}
-                    </Row>
+                    <Row> </Row>
                     <Row
                       key={i}
                       gutter={[24, 0]}
@@ -288,7 +257,7 @@ const handleEndOpenChange = (open) => {
                       style={{ border: "black" }}
                       justify="center"
                     >
-                      <Col span={7} md={1}></Col>
+                      <Col span={7} md={1} lg={0}></Col>
                       <Col
                         key={i}
                         // style={{ marginLeft: "15px" }}
@@ -297,42 +266,56 @@ const handleEndOpenChange = (open) => {
                         lg={7}
                         sm={20}
                         md={6}
-                        xl={6}
+                        xl={7}
                       >
-                          <div style={{display:"flex",justifyContent:"space-between"}}>
-                   {/* <label
+                        <div
+                          style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                          }}
+                        >
+                          {/* <label
                     htmlFor="contact"
                      className="col-12 col-form-label fw-500"
                       style={{fontWeight:"bold"}}
                   >  */}
-                     <span>Crops  <span
-                      style={{
-                        color: "red",
-                        fontWeight: "bold",
-                        fontSize: "large",
-                      }}
-                    >
-                      {" "}
-                      *
-                    </span> </span><span style={{fontSize:"1rem",marginRight:"5px"}}> <span
-                      style={{
-                        color: "red",
-                        fontWeight: "bold",
-                        fontSize: "large",
-                      }}
-                    >
-                      {" "}
-                      *
-                    </span> فصلیں</span>
-                     
-                    
-                    {/* </label>  */}
-                  </div> 
+                          <span>
+                            Crops{" "}
+                            <span
+                              style={{
+                                color: "red",
+                                fontWeight: "bold",
+                                fontSize: "large",
+                              }}
+                            >
+                              {" "}
+                              *
+                            </span>{" "}
+                          </span>
+                          <span
+                            style={{ fontSize: "1rem", marginRight: "5px" }}
+                          >
+                            {" "}
+                            <span
+                              style={{
+                                color: "red",
+                                fontWeight: "bold",
+                                fontSize: "large",
+                              }}
+                            >
+                              {" "}
+                              *
+                            </span>{" "}
+                            فصلیں
+                          </span>
+
+                          {/* </label>  */}
+                        </div>
                         <Form.Item
                           id={i}
                           className="username"
                           style={{ content: "*", color: "red" }}
-                         name={`${i}crops`}
+                          name={`${i}crops`}
                           value={data.crops}
                           rules={
                             !data.crops
@@ -346,10 +329,9 @@ const handleEndOpenChange = (open) => {
                           }
                         >
                           <Select
-                          // onBlur={(event) =>
-                          //   handleSelectChange(i,)}
-                         
-                          
+                            // onBlur={(event) =>
+                            //   handleSelectChange(i,)}
+
                             onChange={(event) =>
                               handleSelectChange(i, event, "crops")
                             }
@@ -392,37 +374,51 @@ const handleEndOpenChange = (open) => {
                         lg={7}
                         sm={20}
                         md={6}
-                        xl={6}
+                        xl={7}
                       >
-                           <div style={{display:"flex",justifyContent:"space-between"}}>
-                   {/* <label
+                        <div
+                          style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                          }}
+                        >
+                          {/* <label
                     htmlFor="contact"
                      className="col-12 col-form-label fw-500"
                       style={{fontWeight:"bold"}}
                   >  */}
-                     <span>Commodities  <span
-                      style={{
-                        color: "red",
-                        fontWeight: "bold",
-                        fontSize: "large",
-                      }}
-                    >
-                      {" "}
-                      *
-                    </span> </span><span style={{fontSize:"1rem",marginRight:"5px"}}> <span
-                      style={{
-                        color: "red",
-                        fontWeight: "bold",
-                        fontSize: "large",
-                      }}
-                    >
-                      {" "}
-                      *
-                    </span> اشیاء</span>
-                     
-                    
-                    {/* </label>  */}
-                  </div> 
+                          <span>
+                            Commodities{" "}
+                            <span
+                              style={{
+                                color: "red",
+                                fontWeight: "bold",
+                                fontSize: "large",
+                              }}
+                            >
+                              {" "}
+                              *
+                            </span>{" "}
+                          </span>
+                          <span
+                            style={{ fontSize: "1rem", marginRight: "5px" }}
+                          >
+                            {" "}
+                            <span
+                              style={{
+                                color: "red",
+                                fontWeight: "bold",
+                                fontSize: "large",
+                              }}
+                            >
+                              {" "}
+                              *
+                            </span>{" "}
+                            اشیاء
+                          </span>
+
+                          {/* </label>  */}
+                        </div>
                         <Form.Item
                           style={{ content: "*", color: "red" }}
                           className="username "
@@ -444,7 +440,6 @@ const handleEndOpenChange = (open) => {
                               handleSelectChange(i, event, "commodities")
                             }
                             showSearch
-                            
                             size="large"
                             filterOption={(input, option) =>
                               option.value
@@ -473,39 +468,52 @@ const handleEndOpenChange = (open) => {
                           </Select>
                         </Form.Item>
                       </Col>
-                      <Col xs={19} span={7} lg={4} sm={20} md={6}xl={5}>
-                      <div style={{display:"flex",justifyContent:"space-between"}}>
-                   {/* <label
+                      <Col xs={19} span={7} lg={4} sm={20} md={6} xl={5}>
+                        <div
+                          style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                          }}
+                        >
+                          {/* <label
                     htmlFor="contact"
                      className="col-12 col-form-label fw-500"
                       style={{fontWeight:"bold"}}
                   >  */}
-                     <span>Area  <span
-                      style={{
-                        color: "red",
-                        fontWeight: "bold",
-                        fontSize: "large",
-                      }}
-                    >
-                      {" "}
-                      *
-                    </span> </span><span style={{fontSize:"1rem",marginRight:"5px"}}> <span
-                      style={{
-                        color: "red",
-                        fontWeight: "bold",
-                        fontSize: "large",
-                      }}
-                    >
-                      {" "}
-                      *
-                    </span>  (ایکڑ) رقبہ</span>
-                     
-                    
-                    {/* </label>  */}
-                  </div> 
-                        <Form.Item
-                              name={`${i}area`}
+                          <span>
+                            Area{" "}
+                            <span
+                              style={{
+                                color: "red",
+                                fontWeight: "bold",
+                                fontSize: "large",
+                              }}
+                            >
+                              {" "}
+                              *
+                            </span>{" "}
+                          </span>
+                          <span
+                            style={{ fontSize: "1rem", marginRight: "5px" }}
+                          >
+                            {" "}
+                            <span
+                              style={{
+                                color: "red",
+                                fontWeight: "bold",
+                                fontSize: "large",
+                              }}
+                            >
+                              {" "}
+                              *
+                            </span>{" "}
+                             (ایکڑ) رقبہ
+                          </span>
 
+                          {/* </label>  */}
+                        </div>
+                        <Form.Item
+                          name={`${i}area`}
                           id={i}
                           rules={
                             !data.area
@@ -518,8 +526,12 @@ const handleEndOpenChange = (open) => {
                               : ""
                           }
                         >
-                          <Input
-                            style={{ color: "black", fontWeight: "normal" }}
+                          <InputNumber
+                            style={{
+                              color: "black",
+                              fontWeight: "normal",
+                              width: "100%",
+                            }}
                             onChange={(event) =>
                               handleSelectChange(i, event, "area")
                             }
@@ -528,13 +540,10 @@ const handleEndOpenChange = (open) => {
                             defaultValue={data.area}
                             min={1}
                             value={data.area}
-                            
-                            type="number"
-                            
+                            // type="number"
                             size="large"
                             // onChange={onChange}
                           />
-                          
                         </Form.Item>
                       </Col>
                       <Col
@@ -544,9 +553,8 @@ const handleEndOpenChange = (open) => {
                         lg={5}
                         sm={6}
                         md={2}
-                        
-                      >
-                      </Col>
+                        xl={4}
+                      ></Col>
                     </Row>
 
                     {/* </Card> */}
@@ -558,7 +566,7 @@ const handleEndOpenChange = (open) => {
                 <> */}
 
                     {/* <Row>  <h5 className="cropsdis" >Crops Cycle</h5></Row> */}
-                    
+
                     <Row justify="center" gutter={[24, 0]}>
                       <Col span={7} md={1} lg={0}></Col>
                       <Col
@@ -568,39 +576,53 @@ const handleEndOpenChange = (open) => {
                         lg={7}
                         sm={20}
                         md={9}
-                        xl={6}
+                        xl={7}
                       >
-                         <div style={{display:"flex",justifyContent:"space-between"}}>
-                   {/* <label
+                        <div
+                          style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                          }}
+                        >
+                          {/* <label
                     htmlFor="contact"
                      className="col-12 col-form-label fw-500"
                       style={{fontWeight:"bold"}}
                   >  */}
-                     <span>Yield - Mound / Acer Max  <span
-                      style={{
-                        color: "red",
-                        fontWeight: "bold",
-                        fontSize: "large",
-                      }}
-                    >
-                      {" "}
-                      *
-                    </span> </span><span style={{fontSize:"1rem",marginRight:"5px"}}> <span
-                      style={{
-                        color: "red",
-                        fontWeight: "bold",
-                        fontSize: "large",
-                      }}
-                    >
-                      {" "}
-                      *
-                    </span>  پیداوار منڈ فی ایکڑ </span>
-                     
-                    
-                    {/* </label>  */}
-                  </div> 
+                          <span>
+                            Yield - Mound / Acer Max{" "}
+                            <span
+                              style={{
+                                color: "red",
+                                fontWeight: "bold",
+                                fontSize: "large",
+                              }}
+                            >
+                              {" "}
+                              *
+                            </span>{" "}
+                          </span>
+                          <span
+                            style={{ fontSize: "1rem", marginRight: "5px" }}
+                          >
+                            {" "}
+                            <span
+                              style={{
+                                color: "red",
+                                fontWeight: "bold",
+                                fontSize: "large",
+                              }}
+                            >
+                              {" "}
+                              *
+                            </span>{" "}
+                            پیداوار منڈ فی ایکڑ{" "}
+                          </span>
+
+                          {/* </label>  */}
+                        </div>
                         <Form.Item
-                           name={`${i}max_yield`}
+                          name={`${i}max_yield`}
                           rules={
                             !data.max_yield
                               ? [
@@ -612,8 +634,12 @@ const handleEndOpenChange = (open) => {
                               : ""
                           }
                         >
-                          <Input
-                            style={{ color: "black", fontWeight: "normal" }}
+                          <InputNumber
+                            style={{
+                              color: "black",
+                              fontWeight: "normal",
+                              width: "100%",
+                            }}
                             onChange={(event) =>
                               handleSelectChange(i, event, "max_yield")
                             }
@@ -622,7 +648,7 @@ const handleEndOpenChange = (open) => {
                             min={1}
                             // vale={data.Amount}
                             // value={cropscycleAmount}
-                            type="number"
+                            // type="number"
                             // onChange={handleCropDisChange}
                             // type="number"
                             size="large"
@@ -639,37 +665,51 @@ const handleEndOpenChange = (open) => {
                         lg={7}
                         sm={20}
                         md={9}
-                        xl={6}
+                        xl={7}
                       >
-                          <div style={{display:"flex",justifyContent:"space-between"}}>
-                   {/* <label
+                        <div
+                          style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                          }}
+                        >
+                          {/* <label
                     htmlFor="contact"
                      className="col-12 col-form-label fw-500"
                       style={{fontWeight:"bold"}}
                   >  */}
-                     <span>Yield - Mound / Acer Min  <span
-                      style={{
-                        color: "red",
-                        fontWeight: "bold",
-                        fontSize: "large",
-                      }}
-                    >
-                      {" "}
-                      *
-                    </span> </span><span style={{fontSize:"1rem",marginRight:"5px"}}> <span
-                      style={{
-                        color: "red",
-                        fontWeight: "bold",
-                        fontSize: "large",
-                      }}
-                    >
-                      {" "}
-                      *
-                    </span>  پیداوار منڈ فی ایکڑ </span>
-                     
-                    
-                    {/* </label>  */}
-                  </div> 
+                          <span>
+                            Yield - Mound / Acer Min{" "}
+                            <span
+                              style={{
+                                color: "red",
+                                fontWeight: "bold",
+                                fontSize: "large",
+                              }}
+                            >
+                              {" "}
+                              *
+                            </span>{" "}
+                          </span>
+                          <span
+                            style={{ fontSize: "1rem", marginRight: "5px" }}
+                          >
+                            {" "}
+                            <span
+                              style={{
+                                color: "red",
+                                fontWeight: "bold",
+                                fontSize: "large",
+                              }}
+                            >
+                              {" "}
+                              *
+                            </span>{" "}
+                            پیداوار منڈ فی ایکڑ{" "}
+                          </span>
+
+                          {/* </label>  */}
+                        </div>
                         <Form.Item
                           name={`${i}min_yield`}
                           rules={
@@ -683,63 +723,74 @@ const handleEndOpenChange = (open) => {
                               : ""
                           }
                         >
-                          <Input
-                            style={{ color: "black", fontWeight: "normal" }}
+                          <InputNumber
+                            style={{
+                              color: "black",
+                              fontWeight: "normal",
+                              width: "100%",
+                            }}
                             onChange={(event) =>
                               handleSelectChange(i, event, "min_yield")
                             }
                             name={`${i}min_yield`}
                             defaultValue={data.min_yield}
-                            min={1}
+                            // maxLength={data.max_yield.length - 1}
                             // vale={data.Amount}
-                            value=""
-                            type="number"
+                            value={data.min_yield}
                             // onChange={handleCropDisChange}
                             // type="number"
+                            // min={12}
+                            min={0}
+                            max={data.max_yield - 1}
                             size="large"
                             // onChange={onChange}
-                           
                           />
                         </Form.Item>
+                        {/* {max} */}
                       </Col>
 
-                      <Col 
-                       xs={19}
-                        span={7}
-                        lg={4}
-                        sm={20}
-                        md={4}
-                        xl={5}>
-                      <div style={{display:"flex",justifyContent:"space-between"}}>
-                  
-                     <span>Month  <span
-                      style={{
-                        color: "red",
-                        fontWeight: "bold",
-                        fontSize: "large",
-                      }}
-                    >
-                      {" "}
-                      *
-                    </span> </span><span style={{fontSize:"1rem",marginRight:"5px"}}> <span
-                      style={{
-                        color: "red",
-                        fontWeight: "bold",
-                        fontSize: "large",
-                      }}
-                    >
-                      {" "}
-                      *
-                    </span> مہینہ</span>
-                     
-                    
-                    {/* </label>  */}
-                  </div> 
+                      <Col xs={19} span={7} lg={4} sm={20} md={4} xl={5}>
+                        <div
+                          style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                          }}
+                        >
+                          <span>
+                            Month{" "}
+                            <span
+                              style={{
+                                color: "red",
+                                fontWeight: "bold",
+                                fontSize: "large",
+                              }}
+                            >
+                              {" "}
+                              *
+                            </span>{" "}
+                          </span>
+                          <span
+                            style={{ fontSize: "1rem", marginRight: "5px" }}
+                          >
+                            {" "}
+                            <span
+                              style={{
+                                color: "red",
+                                fontWeight: "bold",
+                                fontSize: "large",
+                              }}
+                            >
+                              {" "}
+                              *
+                            </span>{" "}
+                            مہینہ
+                          </span>
+
+                          {/* </label>  */}
+                        </div>
 
                         <Form.Item
-                     
-
-                             name={`${i}month`}
+                          name={`${i}month`}
                           rules={
                             !initialValues.month
                               ? [
@@ -751,21 +802,17 @@ const handleEndOpenChange = (open) => {
                               : ""
                           }
                         >
-                         
-                          <RangePicker style={{ width: '100%' }}
+                          <RangePicker
+                            style={{ width: "100%" }}
                             defaultValue={initialValues.month}
                             size="large"
                             name={`${i}month`}
                             picker="month"
                             format="YYYY/MM/DD"
-                            onChange={(event)=>
-                              handleSelectChange( i, event,"month")
+                            onChange={(event) =>
+                              handleSelectChange(i, event, "month")
                             }
-                           
-                            
                           />
-                           
-                        
                         </Form.Item>
                       </Col>
 
@@ -776,6 +823,7 @@ const handleEndOpenChange = (open) => {
                         lg={4}
                         sm={6}
                         md={2}
+                        xl={4}
                       >
                         <Button
                           type="primary"
@@ -784,18 +832,19 @@ const handleEndOpenChange = (open) => {
                             marginBottom: "20px",
                             marginLeft: "5px",
                             border: "none",
-                            background:"#273A9E",border:"none"
+                            background: "#273A9E",
+                            border: "none",
                           }}
                         >
                           ADD
                         </Button>
                         {cropDistribution.length > 1 ? (
                           <Button
+                            size="small"
                             style={{
                               background: "#dc3545",
                               border: "none",
                               marginLeft: "5px",
-                              
                             }}
                             onClick={() => handleDistributionRemove(i)}
                             disabled={
@@ -816,13 +865,11 @@ const handleEndOpenChange = (open) => {
                 ))}
               <Row gutter={[24, 0]}></Row>
               <Row>
-                    {" "}
-                    <h5 className="cropsdis">Cattles</h5>
-                  </Row>
+                {" "}
+                <h5 className="cropsdis">Cattles</h5>
+              </Row>
               {cattless.map((data, i) => (
                 <>
-                
-
                   <Row justify="center" gutter={[24, 0]}>
                     <Col span={7} md={0} lg={0} xl={0}></Col>
                     <Col
@@ -832,37 +879,49 @@ const handleEndOpenChange = (open) => {
                       lg={7}
                       sm={20}
                       md={6}
-                      xl={6}
+                      xl={7}
                     >
-                    <div style={{display:"flex",justifyContent:"space-between"}}>
-                   {/* <label
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        {/* <label
                     htmlFor="contact"
                      className="col-12 col-form-label fw-500"
                       style={{fontWeight:"bold"}}
                   >  */}
-                     <span>Cattles  <span
-                      style={{
-                        color: "red",
-                        fontWeight: "bold",
-                        fontSize: "large",
-                      }}
-                    >
-                      {" "}
-                      *
-                    </span> </span><span style={{fontSize:"1rem",marginRight:"5px"}}> <span
-                      style={{
-                        color: "red",
-                        fontWeight: "bold",
-                        fontSize: "large",
-                      }}
-                    >
-                      {" "}
-                      *
-                    </span> مویشی</span>
-                     
-                    
-                    {/* </label>  */}
-                  </div> 
+                        <span>
+                          Cattles{" "}
+                          <span
+                            style={{
+                              color: "red",
+                              fontWeight: "bold",
+                              fontSize: "large",
+                            }}
+                          >
+                            {" "}
+                            *
+                          </span>{" "}
+                        </span>
+                        <span style={{ fontSize: "1rem", marginRight: "5px" }}>
+                          {" "}
+                          <span
+                            style={{
+                              color: "red",
+                              fontWeight: "bold",
+                              fontSize: "large",
+                            }}
+                          >
+                            {" "}
+                            *
+                          </span>{" "}
+                          مویشی
+                        </span>
+
+                        {/* </label>  */}
+                      </div>
                       <Form.Item
                         className="username"
                         name={`${i}cattle`}
@@ -880,7 +939,6 @@ const handleEndOpenChange = (open) => {
                         <Select
                           size="large"
                           name={`${i}cattle`}
-
                           onChange={(event) =>
                             handleSelectChange(i, event, "Cattles")
                           }
@@ -891,40 +949,43 @@ const handleEndOpenChange = (open) => {
                         </Select>
                       </Form.Item>
                     </Col>
-                    <Col
-                   
-                      xs={19}
-                      span={7}
-                      lg={7}
-                      sm={20}
-                      md={6}
-                      xl={6}
-                    >
-                       <div style={{display:"flex",justifyContent:"space-between"}}>
-               
-                     <span>Quantity  <span
-                      style={{
-                        color: "red",
-                        fontWeight: "bold",
-                        fontSize: "large",
-                      }}
-                    >
-                      {" "}
-                      *
-                    </span> </span><span style={{fontSize:"1rem",marginRight:"5px"}}> <span
-                      style={{
-                        color: "red",
-                        fontWeight: "bold",
-                        fontSize: "large",
-                      }}
-                    >
-                      {" "}
-                      *
-                    </span> تعداد</span>
-                     
-                    
-                    {/* </label>  */}
-                  </div> 
+                    <Col xs={19} span={7} lg={7} sm={20} md={6} xl={7}>
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        <span>
+                          Quantity{" "}
+                          <span
+                            style={{
+                              color: "red",
+                              fontWeight: "bold",
+                              fontSize: "large",
+                            }}
+                          >
+                            {" "}
+                            *
+                          </span>{" "}
+                        </span>
+                        <span style={{ fontSize: "1rem", marginRight: "5px" }}>
+                          {" "}
+                          <span
+                            style={{
+                              color: "red",
+                              fontWeight: "bold",
+                              fontSize: "large",
+                            }}
+                          >
+                            {" "}
+                            *
+                          </span>{" "}
+                          تعداد
+                        </span>
+
+                        {/* </label>  */}
+                      </div>
                       <Form.Item
                         name={`${i}quantity`}
                         rules={
@@ -938,24 +999,23 @@ const handleEndOpenChange = (open) => {
                             : ""
                         }
                       >
-                        <Input
-                             name={`${i}quantity`}
-                           
-                             onChange={(event) =>
-                              handleSelectChange(i, event, "qt")
-                            }
+                        <InputNumber
+                          name={`${i}quantity`}
+                          onChange={(event) =>
+                            handleSelectChange(i, event, "qt")
+                          }
                           defaultValue={data.qt}
                           // vale={data.Amount}
                           min={1}
-                          
+                          size="large"
                           // onChange={handleCropDisChange}
-                          type="number"
+                          // type="number"
                           style={{
                             width: "100%",
                             color: "black",
                             fontWeight: "normal",
 
-                            height: "40px",
+                            // height: "40px",
                           }}
                           // onChange={onChange}
                         />
@@ -963,44 +1023,43 @@ const handleEndOpenChange = (open) => {
                     </Col>
                     <Col xs={19} span={7} lg={4} sm={20} md={4} xl={5}></Col>
                     <Col
-                        className="Add1button"
-                        xs={19}
-                        span={7}
-                        lg={4}
-                        sm={6}
-                        md={2}
+                      className="Add1button"
+                      xs={19}
+                      span={7}
+                      lg={4}
+                      sm={6}
+                      md={2}
+                    >
+                      <Button
+                        type="primary"
+                        onClick={addCattles}
+                        style={{
+                          marginBottom: "30px",
+                          marginLeft: "5px",
+                          border: "none",
+                          background: "#273A9E",
+                          border: "none",
+                        }}
                       >
+                        ADD
+                      </Button>
+                      {cattless.length > 1 ? (
                         <Button
-                          type="primary"
-                          onClick={addCattles}
                           style={{
-                            marginBottom: "30px",
-                            marginLeft: "5px",
+                            background: "#dc3545",
                             border: "none",
-                            background:"#273A9E",border:"none"
+                            marginLeft: "5px",
                           }}
+                          onClick={() => removeCattle(i)}
+                          disabled={cattless.length > 1 ? false : true}
+                          type="primary"
                         >
-                          ADD
+                          Remove
                         </Button>
-                        {cattless.length > 1 ? (
-                          <Button
-                            style={{
-                              background: "#dc3545",
-                              border: "none",
-                              marginLeft: "5px",
-                            }}
-                            onClick={() => removeCattle(i)}
-                            disabled={
-                              cattless.length > 1 ? false : true
-                            }
-                            type="primary"
-                          >
-                            Remove
-                          </Button>
-                        ) : (
-                          ""
-                        )}
-                      </Col>
+                      ) : (
+                        ""
+                      )}
+                    </Col>
                   </Row>
                 </>
               ))}
@@ -1008,15 +1067,21 @@ const handleEndOpenChange = (open) => {
                 gutter={[24, 0]}
                 className="ant-row-flex ant-row-flex-middle"
               >
-                <Col  xs={24} sm={5} md={5} lg={0} xl={3}>
+                <Col xs={24} sm={5} md={5} lg={0} xl={3}>
                   <h6 className="font-semibold m-0"> </h6>
                 </Col>
 
-                <Col style={{marginLeft:"20px"}} xs={24} sm={5} md={5} lg={1} xl={0} className="d-flex">
+                <Col
+                  // style={{ marginLeft: "20px" }}
+                  xs={24}
+                  sm={5}
+                  md={5}
+                  lg={1}
+                  xl={0}
+                  className="d-flex"
+                >
                   <Button
-                  
                     className="cropsRButton"
-                    
                     onClick={() => handleStep("1")}
                     type="primary"
                   >
@@ -1024,15 +1089,13 @@ const handleEndOpenChange = (open) => {
                   </Button>
                   <Button
                     //  onClick={()=>history.push("/form3")}
-                    style={{background:"#273A9E",border:"none"}}
+                    style={{ background: "#273A9E", border: "none" }}
                     htmlType="submit"
                     type="primary"
                   >
                     Next
                   </Button>
                 </Col>
-               
-                
               </Row>
             </Card>
           </Form>

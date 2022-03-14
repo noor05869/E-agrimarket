@@ -40,7 +40,7 @@ function App() {
 // }
 
   return (
-    
+    // <OTP/>
     <div  style={{background:"white"}} className="App">
      {/* <OTP/> */}
      <Form/>

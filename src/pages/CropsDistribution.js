@@ -192,7 +192,8 @@ function CropsDistribution({
                         {" "}
                         *
                       </span>{" "}
-                        (ایکڑ) کل زمین
+                      کل زمین - ایکڑ
+                  
                     </span>
 
                     {/* </label>  */}
@@ -507,7 +508,7 @@ function CropsDistribution({
                               {" "}
                               *
                             </span>{" "}
-                             (ایکڑ) رقبہ
+                             رقبہ - ایکڑ
                           </span>
 
                           {/* </label>  */}
@@ -866,7 +867,7 @@ function CropsDistribution({
               <Row gutter={[24, 0]}></Row>
               <Row>
                 {" "}
-                <h5 className="cropsdis">Cattles</h5>
+                <h5 className="cropsdiss">Cattles</h5>
               </Row>
               {cattless.map((data, i) => (
                 <>

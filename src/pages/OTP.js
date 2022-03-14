@@ -8,7 +8,7 @@ function OTP({ number, handleStep,handleOTPsubmit }) {
   console.log(number);
   const [first, setfirst] = useState();
   const otp = {
-    phone: "",
+    phone: number,
     code: "",
   };
   async function resend() {
@@ -35,8 +35,8 @@ function OTP({ number, handleStep,handleOTPsubmit }) {
   //   // handleStep("1")
   //   try {
   //     const {data} = await axios.post("http://13.228.234.94:8080/v1/verify", {
-  //       phone: "03218811324",
-  //       code: "484951",
+  //       phone: "03104739471",
+  //       code: "88735",
   //     });
   //     console.log(data);
   //   } catch (error) {
@@ -60,7 +60,7 @@ function OTP({ number, handleStep,handleOTPsubmit }) {
             className="header-solid h-full ant-card-p-0"
             title={
               <>
-                <Form onFinish={()=>handleOTPsubmit(number,otp.code)}>
+                <Form onFinish={()=>handleOTPsubmit(otp)}>
                   {" "}
                   <Row justify="center">
                     {" "}
@@ -92,6 +92,7 @@ function OTP({ number, handleStep,handleOTPsubmit }) {
                             name="code"
                             onChange={handleChange}
                             // type="number"
+                            value={otp.code}
                             class="form-control input-edit"
                             placeholder="Enter OTP"
                             id="number"

@@ -126,15 +126,16 @@ function Form() {
     console.log(i);
   }
   
-  async function handleOTPsubmit(phone,code) {
+  async function handleOTPsubmit(otp) {
     // handleStep("1")
-    console.log("oooooottttpp",phone,code)
+    // const otp={
+    //   p
+    // }
+    console.log("oooooottttpp",otp)
     try {
-      const {data} = await axios.post("http://13.228.234.94:8080/v1/verify", {
-        phone: phone,
-        code: code,
-      });
-      console.log(data);
+      const {data} = await axios.post("http://13.228.234.94:8080/v1/verify",otp
+      );
+      console.log("reesssss",data);
       message.success({
         content: "Verify succsessfully",
         className: "custom-class",

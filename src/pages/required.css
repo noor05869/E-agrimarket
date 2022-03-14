@@ -33,6 +33,10 @@
   /* .Add2button{
     margin-left: 40px;
 } */
+.cropsdiss{
+  margin-left: 170px;
+
+}
 }
 
 @media (min-width: 992px) {
@@ -50,6 +54,7 @@
   .cropsdis {
     margin-left: 28px;
   }
+  
   .Addbutton {
     margin-top: 30px;
   }

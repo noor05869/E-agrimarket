@@ -21,12 +21,11 @@ import Form3 from "./pages/Form3";
 import axios from 'axios'
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
   Routes,
-  BrowserRouter
 } from "react-router-dom";
 import OTP from "./pages/OTP";
+import LandingPage from "./pages/LandingPage";
 
 
 function App() {
@@ -40,27 +39,22 @@ function App() {
 // }
 
   return (
-    // <OTP/>
-    <div  style={{background:"white"}} className="App">
-     {/* <OTP/> */}
-     <Form/>
-      <Routes>
-       
-        {/* <Main> */}
-          <Route exact path="/" component={Form} />
-          <Route exact path="/tables" component={Form} />
-          
-     
-          <Route exact path="/form" component={Form} />
-          <Route exact path="/CropsDistribution" component={CropsDistribution} />
-          <Route exact path="/form3" component={Form3} />
-
-
-          {/* <Redirect from="*" to="/dashboard" /> */}
-        {/* </Main> */}
-      </Routes>
     
-    </div>
+     <>
+     <Router>
+     <Routes>
+          
+         
+            
+         
+          <Route path="/" element={<LandingPage/>}/>
+          <Route path="/farmerdata" element={<Form/>}/>
+
+            
+          
+        </Routes>
+        </Router>
+  </>
   );
 }
 

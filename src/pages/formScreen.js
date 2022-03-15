@@ -76,7 +76,7 @@ function FormScreen({
         <Col xs={24} lg={17} className="mb-24">
           <Form onFinish={handleSubmit}>
             <Card
-              style={{ background: "#e7e7e7", borderRadius: "20px" }}
+              style={{     background: "rgb(231, 231, 231)", borderRadius: "20px" }}
               // className="payment-method-card"
               className="header-solid h-full ant-card-p-0"
               title={
@@ -87,7 +87,7 @@ function FormScreen({
                   >
                     <Col xs={24} md={7}></Col>
                     <Col xs={17} md={7} lg={8} className="d-flex">
-                      <h2 className="font-semibold m-0">E-Agri Form</h2>
+                      <h2 className="font-semibold m-0 ">E-Agri Form</h2>
                     </Col>
                   </Row>
                   <Row justify="start">
@@ -194,7 +194,7 @@ function FormScreen({
                       style={{fontWeight:"bold"}}
                   >  */}
                     <span>
-                      Primary{" "}
+                      Primary Phone{" "}
                       <span
                         style={{
                           color: "red",
@@ -279,7 +279,7 @@ function FormScreen({
                       style={{fontWeight:"bold"}}
                   >  */}
                     <span>
-                     Secondary{" "}
+                     Secondary Phone{" "}
                       <span
                         style={{
                           color: "red",

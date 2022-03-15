@@ -58,8 +58,8 @@ function OTP({ number, handleStep,handleOTPsubmit }) {
             style={{ background: "#e7e7e7", borderRadius: "20px" }}
             // className="payment-method-card"
             className="header-solid h-full ant-card-p-0"
-            title={
-              <>
+            
+           >
                 <Form onFinish={()=>handleOTPsubmit(otp)}>
                   {" "}
                   <Row justify="center">
@@ -118,14 +118,14 @@ function OTP({ number, handleStep,handleOTPsubmit }) {
                       <button
                         onClick={skipOtp}
                         style={{
-                          background: "white",
-                          color: "black",
-                          marginLeft: "5px",
+                          marginLeft: "12px",
+                          background: "#273A9E",
+                          border: "none",
                         }}
                         type="button"
                         class="btn btn-primary "
                       >
-                        Skip OTP
+                        Not Now 
                       </button>
                       <button
                         onClick={resend}
@@ -141,9 +141,9 @@ function OTP({ number, handleStep,handleOTPsubmit }) {
                     </div>
                   </Row>
                 </Form>
-              </>
-            }
-          ></Card>
+              
+            
+          </Card>
         </Col>
       </Row>
     </>

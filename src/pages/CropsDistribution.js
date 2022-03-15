@@ -129,7 +129,7 @@ function CropsDistribution({
   return (
     <div>
       <Header />
-      <Row style={{ marginBottom: "100px" }} justify="center">
+      <Row style={{ marginBottom: "100px"}} justify="center">
         <Col xs={24} lg={22} xl={20} className="mb-24">
           <Form onFinish={handleSubmit}>
             <Card
@@ -250,8 +250,9 @@ function CropsDistribution({
               {cropDistribution &&
                 cropDistribution.map((data, i) => (
                   <>
-                    <Row> </Row>
+                    <Row > </Row>
                     <Row
+                    
                       key={i}
                       gutter={[24, 0]}
                       span={24}

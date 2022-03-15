@@ -143,6 +143,29 @@ function Form() {
           marginTop: "74vh",
         },
       });
+      setInitialValues({
+        fname: "",
+        contact: "",
+        contact2: "",
+        optionalContact: "",
+        province: "",
+        district: "",
+        tehsil: "",
+        village: "",
+        cropsDiss: "",
+        Land: "",
+        month: "",
+    
+        cattles: "",
+        targetedmandi: "",
+        modeOfInvestment: "",
+        percentage: "",
+        cropsSale: "",
+        seed: "",
+        machinery: "",
+        cropAdvisory: "",
+      })
+      handleStep("1")
     } catch (error) {
       console.log(error.message);
     }

@@ -15,7 +15,10 @@
   .cropsdis {
     margin-left: 90px;
   }
- 
+  /* .land{
+
+    margin-left: 50px;
+ }    */
   .cropsRButton {
     margin-left: 20px;
     background-color: white;
@@ -68,9 +71,43 @@
 
 }
 
-  
+  .cropsRButton {
+    /* margin-left: 22px; */
+    background-color: white;
+    color: black;
+    border: none;
+    margin-right: 5px;
+    height: 50px;
+    width: 100px;
+  }
+  .form1next {
+    margin-right: "50px";
+    background: "#273A9E";
+    border: none;
+  }
 
-
-  
+  /* .Add2button{
+        margin-top: 40px;;
+    } */
 }
 
+
+/* image style */
+/* element.style {
+  width: 177px;
+ 
+  margin-left: -19px;
+  display: flex;
+  align-content: center;
+
+  left: 0px !;
+} */
+/* iamge parent div */
+/* element.style {
+  background: aliceblue;
+  border-radius: 100%;
+  height: 138px;
+  width: 138px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+} */

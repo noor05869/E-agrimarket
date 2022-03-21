@@ -1,10 +1,30 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./required.css";
-import { Tehsils } from "../utility/tehsil";
-import { Row, Col, Card, Input, Select, Form, Button } from "antd";
-
+import { Tehsils } from "./city";
+import {
+  Row,
+  Col,
+  Card,
+  Statistic,
+  Input,
+  Select,
+  Form,
+  InputNumber,
+  Button,
+  List,
+  Descriptions,
+  Avatar,
+} from "antd";
+import {
+  HomeOutlined,
+  SettingFilled,
+  SmileOutlined,
+  SyncOutlined,
+  LoadingOutlined,
+  PhoneOutlined,
+} from "@ant-design/icons";
+// import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import Header from "./header";
-import Label from "../components/label";
 
 function FormScreen({
   handleStep,
@@ -17,14 +37,20 @@ function FormScreen({
   const { fname, contact, province, district, tehsil, village, contact2 } =
     initialValues;
   const { Option } = Select;
+  // const history = useHistory();
   console.log("ttttt", Tehsils);
   function handleSubmit(values) {
-    // console.log(values);
+    console.log(values);
     handleStep("2");
   }
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  function isNumberKey(evt) {
+    var charCode = evt.which ? evt.which : evt.keyCode;
+    if (charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57))
+      return false;
+
+    return true;
+  }
+
   const Provinces = [
     { value: "06", label: "Fedral Capital", Province_code: "06" },
     { value: "03", label: "Punjab", Province_code: "03" },
@@ -34,6 +60,14 @@ function FormScreen({
     { value: "07", label: "Azad And Jamu Kashmir", Province_code: "07" },
     { value: "01", label: "Fata / Fana", Province_code: "01" },
   ];
+  const Tehsil = [
+    { value: "Pakpattan ", label: "Pakpattan Tehsil" },
+    { value: "Phalia", label: "Phalia" },
+    { value: "Pasrur ", label: "Pasrur Tehsil" },
+    { value: "PindDadan", label: "Pind Dadan Khan Tehsil" },
+    { value: "PindiBhattian", label: "Pindi Bhattian" },
+    { value: "Piplan ", label: "Piplan Tehsil" },
+  ];
 
   return (
     <div>
@@ -42,27 +76,76 @@ function FormScreen({
         <Col xs={24} lg={17} className="mb-24 ">
           <Form onFinish={handleSubmit}>
             <Card
+              
+             
               className=" formBody"
+              
               title={
                 <>
-                  <Row justify="" gutter={[0, 24]} className=" header title">
+                  <Row
+                    justify=""
+                    gutter={[0, 24]}
+                    className=" header title"
+                  >
                     <h2 className="font-semibold m-0 ">Personal Info</h2>
+                    {/* </Col> */}
                   </Row>
+                 
                 </>
               }
-              headStyle={{
-                backgroundColor: "#96CC5C",
-                borderRadius: " 20px 20px 0px 0px",
-              }}
+              headStyle={{backgroundColor: '#96CC5C', borderRadius:" 20px 20px 0px 0px" }}
             >
-              <Row> </Row>
+              <Row>
+                {" "}
+                {/* <h5 className="farmer">Personal Info</h5> */}
+              </Row>
               <Row gutter={[24, 0]} justify="center">
                 <Col span={7} md={0} lg={0}>
                   {" "}
                 </Col>
 
-                <Col xs={19} span={7} lg={11} sm={20} md={6}>
-                  <Label eLabel="Name" ulabel="نام" index={0} />
+                {/* <Card style={{background:"#e7e7e7",border:"none"}} > */}
+                <Col
+                  // style={{ marginLeft: "12px" }}
+                  xs={19}
+                  span={7}
+                  lg={11}
+                  sm={20}
+                  md={6}
+                >
+                  <div
+                    style={{ display: "flex", justifyContent: "space-between" }}
+                  >
+                    <span>
+                      Name{" "}
+                      <span
+                        style={{
+                          color: "red",
+                          fontWeight: "bold",
+                          fontSize: "large",
+                        }}
+                      >
+                        {" "}
+                        *
+                      </span>{" "}
+                    </span>
+                    <span style={{ fontSize: "1rem", marginRight: "5px" }}>
+                      {" "}
+                      <span
+                        style={{
+                          color: "red",
+                          fontWeight: "bold",
+                          fontSize: "large",
+                        }}
+                      >
+                        {" "}
+                        *
+                      </span>{" "}
+                      نام
+                    </span>
+
+                    {/* </label>  */}
+                  </div>
                   <Form.Item
                     name="fname"
                     rules={
@@ -77,7 +160,7 @@ function FormScreen({
                     }
                   >
                     <Input
-                      className="contact"
+                      style={{ color: "black", fontWeight: "normal" }}
                       defaultValue={fname}
                       id="fname"
                       type="text"
@@ -88,10 +171,54 @@ function FormScreen({
                     />
                   </Form.Item>
                 </Col>
+                {/* </Card> */}
 
-                <Col xs={19} span={7} lg={6} sm={20} md={6}>
-                  <Label eLabel="Primary Phone" ulabel="فون نمبر" index={0} />
+                <Col
+                  // style={{ marginLeft: "10px" }}
+                  xs={19}
+                  span={7}
+                  lg={6}
+                  sm={20}
+                  md={6}
+                >
+                  <div
+                    style={{ display: "flex", justifyContent: "space-between" }}
+                  >
+                    {/* <label
+                    htmlFor="contact"
+                     className="col-12 col-form-label fw-500"
+                      style={{fontWeight:"bold"}}
+                  >  */}
+                    <span>
+                      Primary Phone{" "}
+                      <span
+                        style={{
+                          color: "red",
+                          fontWeight: "bold",
+                          fontSize: "large",
+                        }}
+                      >
+                        {" "}
+                        *
+                      </span>{" "}
+                    </span>
+                    <span style={{ fontSize: "1rem", marginRight: "5px" }}>
+                      {" "}
+                      <span
+                        style={{
+                          color: "red",
+                          fontWeight: "bold",
+                          fontSize: "large",
+                        }}
+                      >
+                        {" "}
+                        *
+                      </span>{" "}
+                      فون نمبر
+                    </span>
 
+                    {/* </label>  */}
+                  </div>
                   <Form.Item
                     name="contact"
                     rules={
@@ -106,25 +233,92 @@ function FormScreen({
                     }
                   >
                     <Input
-                      className="contact"
                       id="contact"
+                      onKeyPress={isNumberKey}
+                      // type="number"
                       defaultValue={contact}
                       name="contact"
                       maxLength="11"
                       minLength="11"
+                      // prefix={<PhoneOutlined/>}
+
                       placeholder="03xx - 0000000"
                       value={contact}
                       onChange={handleChange}
+                      style={{
+                        color: "black",
+                        width: "100%",
+                        fontWeight: "normal",
+                        border: "rounded",
+                        height: "40px",
+                      }}
+                      // onChange={onChange}
                     />
                   </Form.Item>
-                </Col>
-                <Col xs={19} span={7} lg={6} sm={20} md={6}>
-                  <Label eLabel="Secondary Phone" ulabel="فون نمبر" index={1} />
 
-                  <Form.Item name="contact2">
+                  {/* </Form.Item> */}
+                </Col>
+                <Col
+                  // style={{ marginLeft: "8px" }}
+                  xs={19}
+                  span={7}
+                  lg={6}
+                  sm={20}
+                  md={6}
+                >
+                  <div
+                    style={{ display: "flex", justifyContent: "space-between" }}
+                  >
+                    {/* <label
+                    htmlFor="contact"
+                     className="col-12 col-form-label fw-500"
+                      style={{fontWeight:"bold"}}
+                  >  */}
+                    <span>
+                      Secondary Phone{" "}
+                      <span
+                        style={{
+                          color: "red",
+                          fontWeight: "bold",
+                          fontSize: "large",
+                        }}
+                      >
+                        {" "}
+                      </span>{" "}
+                    </span>
+                    <span style={{ fontSize: "1rem", marginRight: "5px" }}>
+                      {" "}
+                      <span
+                        style={{
+                          color: "red",
+                          fontWeight: "bold",
+                          fontSize: "large",
+                        }}
+                      >
+                        {" "}
+                      </span>{" "}
+                      فون نمبر
+                    </span>
+
+                    {/* </label>  */}
+                  </div>
+                  <Form.Item
+                    name="contact2"
+                    // rules={
+                    //   !contact
+                    //     ? [
+                    //         {
+                    //           required: true,
+                    //           message: "Please Fill",
+                    //         },
+                    //       ]
+                    //     : ""
+                    // }
+                  >
                     <Input
-                      className="contact"
                       id="optionalContact"
+                      onKeyPress={isNumberKey}
+                      // type="number"
                       defaultValue=""
                       name="contact2"
                       maxLength="11"
@@ -132,15 +326,62 @@ function FormScreen({
                       placeholder="03xx - 0000000"
                       value={contact2}
                       onChange={handleChange}
+                      style={{
+                        color: "black",
+                        width: "100%",
+                        fontWeight: "normal",
+                        border: "rounded",
+                        // marginTop: "5px",git
+                        height: "40px",
+                      }}
+                      // onChange={onChange}
                     />
                   </Form.Item>
+
+                  {/* </Form.Item> */}
                 </Col>
               </Row>
               <Row gutter={[24, 0]} justify="center">
                 <Col span={6} md={0} lg={0}></Col>
                 <Col xs={19} span={7} lg={11} sm={20} md={9}>
-                  <Label eLabel="Province" ulabel="صوبہ" index={0} />
+                  <div
+                    style={{ display: "flex", justifyContent: "space-between" }}
+                  >
+                    {/* <label
+                    htmlFor="contact"
+                     className="col-12 col-form-label fw-500"
+                      style={{fontWeight:"bold"}}
+                  >  */}
+                    <span>
+                      Province{" "}
+                      <span
+                        style={{
+                          color: "red",
+                          fontWeight: "bold",
+                          fontSize: "large",
+                        }}
+                      >
+                        {" "}
+                        *
+                      </span>{" "}
+                    </span>
+                    <span style={{ fontSize: "1rem", marginRight: "5px" }}>
+                      {" "}
+                      <span
+                        style={{
+                          color: "red",
+                          fontWeight: "bold",
+                          fontSize: "large",
+                        }}
+                      >
+                        {" "}
+                        *
+                      </span>{" "}
+                      صوبہ
+                    </span>
 
+                    {/* </label>  */}
+                  </div>
                   <Form.Item
                     className="username"
                     name="Province"
@@ -165,6 +406,7 @@ function FormScreen({
                           .toLowerCase()
                           .indexOf(input.toLowerCase()) >= 0
                       }
+                      // onChange={handleSelect("province")}
                       onSelect={(value, event) =>
                         handleSelect("province", event)
                       }
@@ -183,9 +425,52 @@ function FormScreen({
                     </Select>
                   </Form.Item>
                 </Col>
-                <Col xs={19} span={7} lg={12} sm={20} md={9}>
-                  <Label eLabel="District" ulabel="ضلع" index={0} />
+                <Col
+                  // style={{ marginLeft: "10px" }}
+                  xs={19}
+                  span={7}
+                  lg={12}
+                  sm={20}
+                  md={9}
+                >
+                  <div
+                    style={{ display: "flex", justifyContent: "space-between" }}
+                  >
+                    {/* <label
+                    htmlFor="contact"
+                     className="col-12 col-form-label fw-500"
+                      style={{fontWeight:"bold"}}
+                  >  */}
+                    <span>
+                      District{" "}
+                      <span
+                        style={{
+                          color: "red",
+                          fontWeight: "bold",
+                          fontSize: "large",
+                        }}
+                      >
+                        {" "}
+                        *
+                      </span>{" "}
+                    </span>
+                    <span style={{ fontSize: "1rem", marginRight: "5px" }}>
+                      {" "}
+                      <span
+                        style={{
+                          color: "red",
+                          fontWeight: "bold",
+                          fontSize: "large",
+                        }}
+                      >
+                        {" "}
+                        *
+                      </span>{" "}
+                      ضلع
+                    </span>
 
+                    {/* </label>  */}
+                  </div>
                   <Form.Item
                     className="username"
                     name="District"
@@ -220,7 +505,12 @@ function FormScreen({
                       {Cities &&
                         Cities.map((data) => (
                           <Option key={data.value}>
-                            <div className="optionaStyle">
+                            <div
+                              style={{
+                                display: "flex",
+                                justifyContent: "space-between",
+                              }}
+                            >
                               <p>{data.label}</p>
                               <p>{data.ulabel}</p>
                             </div>
@@ -232,9 +522,52 @@ function FormScreen({
               </Row>
               <Row gutter={[24, 0]} justify="center">
                 <Col span={6} md={0} lg={0}></Col>
-                <Col xs={19} span={7} lg={11} sm={20} md={9}>
-                  <Label eLabel="Tehsil" ulabel="تحصیل" index={0} />
+                <Col
+                  // style={{ marginLeft: "10px" }}
+                  xs={19}
+                  span={7}
+                  lg={11}
+                  sm={20}
+                  md={9}
+                >
+                  <div
+                    style={{ display: "flex", justifyContent: "space-between" }}
+                  >
+                    {/* <label
+                    htmlFor="contact"
+                     className="col-12 col-form-label fw-500"
+                      style={{fontWeight:"bold"}}
+                  >  */}
+                    <span>
+                      Tehsil{" "}
+                      <span
+                        style={{
+                          color: "red",
+                          fontWeight: "bold",
+                          fontSize: "large",
+                        }}
+                      >
+                        {" "}
+                        *
+                      </span>{" "}
+                    </span>
+                    <span style={{ fontSize: "1rem", marginRight: "5px" }}>
+                      {" "}
+                      <span
+                        style={{
+                          color: "red",
+                          fontWeight: "bold",
+                          fontSize: "large",
+                        }}
+                      >
+                        {" "}
+                        *
+                      </span>{" "}
+                      تحصیل
+                    </span>
 
+                    {/* </label>  */}
+                  </div>
                   <Form.Item
                     className="username"
                     name="Tehsil"
@@ -268,9 +601,50 @@ function FormScreen({
                     </Select>
                   </Form.Item>
                 </Col>
-                <Col xs={19} span={7} lg={12} sm={20} md={9}>
-                  <Label eLabel="Village" ulabel="گاؤں" index={0} />
+                <Col
+                  // style={{ marginLeft: "10px" }}
+                  xs={19}
+                  span={7}
+                  lg={12}
+                  sm={20}
+                  md={9}
+                >
+                  <div
+                    style={{ display: "flex", justifyContent: "space-between" }}
+                  >
+                    {/* <label
+                    htmlFor="contact"
+                     className="col-12 col-form-label fw-500"
+                      style={{fontWeight:"bold"}}
+                  >  */}
+                    <span>
+                      Village{" "}
+                      <span
+                        style={{
+                          color: "red",
+                          fontWeight: "bold",
+                          fontSize: "large",
+                        }}
+                      >
+                        *{" "}
+                      </span>{" "}
+                    </span>
+                    <span style={{ fontSize: "1rem", marginRight: "5px" }}>
+                      {" "}
+                      <span
+                        style={{
+                          color: "red",
+                          fontWeight: "bold",
+                          fontSize: "large",
+                        }}
+                      >
+                        *{" "}
+                      </span>{" "}
+                      گاؤں
+                    </span>
 
+                    {/* </label>  */}
+                  </div>
                   <Form.Item
                     name="village"
                     rules={
@@ -285,7 +659,7 @@ function FormScreen({
                     }
                   >
                     <Input
-                      className="contact"
+                      style={{ color: "black", fontWeight: "normal" }}
                       name="village"
                       placeholder="Village - گاؤں"
                       value={village}
@@ -303,7 +677,7 @@ function FormScreen({
               >
                 <Col span={7} xs={6} md={18} sm={18} lg={18} xl={20}></Col>
                 <Col
-                  style={{ marginTop: "10px" }}
+                  style={{ marginTop: "10px" ,marginLeft:"20px"}}
                   xs={12}
                   span={7}
                   lg={5}
@@ -314,11 +688,14 @@ function FormScreen({
                   className="d-flex"
                 >
                   <Button
-                    shape="round"
-                    size="large"
-                    className="nextbtn"
+                   shape="round"
+                   size="large"
+                   
+                   className="nextbtn"
                     type="primary"
                     htmlType="submit"
+
+                    // type="primary"
                   >
                     Next
                   </Button>

@@ -55,18 +55,6 @@
 .ant-picker-footer-extra > div {
   flex-wrap: wrap !important; 
 }
-.contact{
-  color: black !important;
-  width: 100%;
-  font-weight: normal !important;
-  border-radius: 6px;
-  height: 40px;
-  
-}
-.optionaStyle{
-  display: flex;
-  justify-content: space-between;
-}
 @media (min-width: 375px) {
   body {
     padding: 0 0 30px 0;
@@ -87,11 +75,6 @@
 .title{
   margin-left: 20px !important;
 }
-.cropsdiss{
-  margin-left: 170px;
-  font-weight: bold;
-
-}
 }
 @media (min-width: 992px) {
 body {
@@ -111,10 +94,7 @@ body {
   /* background-repeat: no-repeat; */
 }
 
-.cropsdiss{
-  margin-left: 120px;
 
-}
 }
 .icon{
   font-size: 1rem;
@@ -130,8 +110,8 @@ body {
 }
 
 .inputnumber{
-  color: black !important;
-    font-weight: normal !important;
+  color: black;
+    font-weight: normal;
     width: 100%;
     border-radius: 6px
 }
@@ -289,27 +269,11 @@ width: 100px !important;
 }
 .inpuStyle{
   color: black;
-       width: 100%;
-       font-weight: normal;
-        border-radius: 20px;
-       height: 40px;
+                        width: 100%;
+                        font-weight: normal;
+                        border-radius: 20px;
+                        height: 40px;
 }
-
-
-.inputLabel{
-  display: flex;
-  justify-content: space-between;
-}
-.labelStrric{
-  color: red;
-  font-size: large;
-  font-weight: bold;
-}
-.login-label label {
-  color: #c74032;
-  font-weight: 600;
-}
-
 
 
 

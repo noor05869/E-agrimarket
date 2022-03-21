@@ -9,6 +9,91 @@
 =========================================================
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
+
+@font-face {
+  font-family: "futura-medium";
+  src: url("../../font/futura/futura_now_text_md.woff2") format("woff");
+
+  src: url("../../font/futura/FuturaNowText-Md.otf");
+}
+
+@font-face {
+  font-family: "futura-light";
+  src: url("../../font/futura/futura_now_text_rg.woff2") format("woff");
+  src: url("../../font/futura/FuturaNowText-Rg.otf");
+}
+
+@font-face {
+  font-family: "futura-bold";
+  src: url("../../font/futura/futura_now_text_xbd.woff2") format("woff");
+  src: url("../../font/futura/FuturaNowText-XBd.otf");
+  font-weight: bold;
+}
+* {
+  font-family: "futura-light";
+}
+.Bold {
+  font-family: "futura-Bold" !important;
+}
+
+.ant-picker-panels > *:first-child button.ant-picker-header-next-btn {
+  visibility: visible !important;
+}
+
+.ant-picker-panels > *:first-child button.ant-picker-header-super-next-btn {
+  visibility: visible !important;
+}
+
+.ant-picker-panels > *:last-child {
+  display: none !important;
+}
+
+.ant-picker-panel-container, .ant-picker-footer {
+  width: 280px !important;
+}
+
+.ant-picker-footer-extra > div {
+  flex-wrap: wrap !important; 
+}
+.contact{
+  color: black !important;
+  width: 100%;
+  font-weight: normal !important;
+  border-radius: 6px;
+  height: 40px;
+  
+}
+.optionaStyle{
+  display: flex;
+  justify-content: space-between;
+}
+@media (min-width: 375px) {
+  body {
+    padding: 0 0 30px 0;
+    background-color: #fafafa;
+    letter-spacing: -0.3px;
+    color: rgba(0, 0, 0, 0.65);
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 400;
+    font-family: open sans, Helvetica, Arial, sans-serif;
+    background-image: url("../mobile.png" ) ;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    /* background-repeat: no-repeat; */
+  }
+.title{
+  margin-left: 20px !important;
+}
+.cropsdiss{
+  margin-left: 170px;
+  font-weight: bold;
+
+}
+}
+@media (min-width: 992px) {
 body {
   padding: 0 0 30px 0;
   background-color: #fafafa;
@@ -18,7 +103,161 @@ body {
   line-height: 1.6;
   font-weight: 400;
   font-family: open sans, Helvetica, Arial, sans-serif;
+  background-image: url("../background.jpg" ) ;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  /* background-repeat: no-repeat; */
 }
+
+.cropsdiss{
+  margin-left: 120px;
+
+}
+}
+.icon{
+  font-size: 1rem;
+  color:#96CC5C;
+  margin-right: 3px;
+}
+.ricon{
+  font-size: 1rem;
+  color:red;
+  margin-left: 10px;
+  margin-right: 3px;
+
+}
+
+.inputnumber{
+  color: black !important;
+    font-weight: normal !important;
+    width: 100%;
+    border-radius: 6px
+}
+
+.icondiv{
+justify-content: baseline;
+display: flex;
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+
+ .backbtnStyle{
+   color: black;
+   background-color:white ;
+   border: none;
+   margin-right: 5px;
+   height: 50px  !important;
+ width: 300px !important;
+  
+ }
+ .otpNotnowbtn{
+  color: black;
+  background-color:white ;
+  border: none;
+  margin-right: 10px;
+  /* height: 40px  !important; */
+  /* margin-left: 5px ; */
+  margin-top: 5px;
+width: 100px !important;
+ }
+ .otpNotnowbtn:hover{
+  background-color: white;
+  color: black;
+ }
+ .backbtnStyle:hover{
+   background-color: white;
+   color: black;
+ }
+ .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.nextbtn{
+  background-color:#96CC5C !important;
+  height: 50px  !important;
+ width: 300px !important;
+  border: none;
+}
+.otpVerifybtn{
+  background-color:#96CC5C !important;
+  height: 40px  !important;
+ width: 80px !important;
+  border: none;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+.Resendotp{
+  background-color:#96CC5C !important;
+  height: 40px  !important;
+ width: 90px !important;
+  border: none;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+.ant-btn-round.ant-btn-lg {
+  height: 40px;
+  padding: 6.4px 20px;
+  font-size: 16px;
+  border-radius: 40px;
+  color:black
+}
+.otpVerifybtn:hover{
+  color:black
+}
+.dflex{
+  display: flex !important;
+  }
+.header{
+  background: #96CC5C;
+    border-radius: 20px 20px 0px 0px;
+}
+.codeinput{
+  width: 320px;
+}
+
+.otpLabel{
+  margin-bottom: 10px;
+  margin-left: 15px;
+}
+.formBody{
+  background: #F5F5F5;
+  border-radius: 20px;
+}
+
+/* image style */
+.imageStyle {
+  width: 177px;
+  margin-top: 30px;
+ 
+  /* margin-left: -19px; */
+  display: flex;
+  align-content: center;
+
+  left: 0px !;
+}
+/* iamge parent div */
+.imagediv {
+  height: 788px;
+  /* background: aliceblue; */
+  /* background-image: url("https://saiplatform.org/wp-content/uploads/2019/02/project-efs-1920x705.jpg" ) ; */
+  
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  /* border-radius: 100%;
+  
+  height: 138px;
+  width: 138px;
+  margin-bottom: 10px;
+  margin-top: 30px; */
+}
+
 .ant-layout.ant-layout-has-sider {
   flex-direction: row;
 }
@@ -28,6 +267,52 @@ body {
   position: relative;
   overflow-x: hidden;
 }
+.line {
+  align-items: center;
+  /* margin: 1em -1em; */
+  
+ 
+    height: 1px;
+  }
+  .divider {
+    display: flex;
+    
+     
+        content: "";
+        flex: 1;
+      
+    } 
+.one-line {
+
+    background: #bfbfbf;
+  
+}
+.inpuStyle{
+  color: black;
+       width: 100%;
+       font-weight: normal;
+        border-radius: 20px;
+       height: 40px;
+}
+
+
+.inputLabel{
+  display: flex;
+  justify-content: space-between;
+}
+.labelStrric{
+  color: red;
+  font-size: large;
+  font-weight: bold;
+}
+.login-label label {
+  color: #c74032;
+  font-weight: 600;
+}
+
+
+
+
 @media (min-width: 992px) {
   .layout-dashboard {
     overflow: auto;
@@ -1928,7 +2213,7 @@ body {
   font-size: 12px;
   height: 40px;
   padding: 0 15px;
-  line-height: 40px;
+  /* line-height: 40px; */
 }
 .ant-btn {
   box-shadow: 0 2px 4px rgb(0 0 0 / 7%);
@@ -2127,6 +2412,9 @@ body {
   display: block;
 }
 
+.color-white {
+  color: #fff;
+}
 .ant-row.ant-form-item.username
   .ant-col.ant-form-item-label
   .ant-form-item-required:before {

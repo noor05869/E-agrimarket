@@ -3,7 +3,7 @@ import axios from "axios";
 import { message } from "antd";
 import Header from "./header";
 import React, { useState } from "react";
-import "./otp.css";
+// import "./otp.css";
 function OTP({ number, handleStep,handleOTPsubmit }) {
   console.log(number);
   const [first, setfirst] = useState();
@@ -14,7 +14,7 @@ function OTP({ number, handleStep,handleOTPsubmit }) {
   async function resend() {
     try {
       const { data } = await axios.get(
-        `http://13.228.234.94:8080/v1/otp?phone=${number}`
+        `https://backend.eagrimarket.com/v1/otp?phone=${number}`
       );
       console.log(data);
       message.success({
@@ -31,18 +31,7 @@ function OTP({ number, handleStep,handleOTPsubmit }) {
   function skipOtp() {
     handleStep("3");
   }
-  // async function handleOTPsubmit() {
-  //   // handleStep("1")
-  //   try {
-  //     const {data} = await axios.post("http://13.228.234.94:8080/v1/verify", {
-  //       phone: "03104739471",
-  //       code: "88735",
-  //     });
-  //     console.log(data);
-  //   } catch (error) {
-  //     console.log(error.message);
-  //   }
-  // }
+ 
   function handleChange(e) {
     console.log(e.target.value);
     otp.code = e.target.value;
@@ -73,8 +62,7 @@ function OTP({ number, handleStep,handleOTPsubmit }) {
                         <h3>Verify OTP</h3>
                       </Row>
                       <div class="form-group login-label">
-                        {/* <label for="inputnumber">One Time Password</label> */}
-
+                       
                         <Form.Item
                           name="code"
                           rules={
@@ -90,6 +78,7 @@ function OTP({ number, handleStep,handleOTPsubmit }) {
                         >
                           <Input
                             name="code"
+                            className="codeinput"
                             onChange={handleChange}
                             // type="number"
                             value={otp.code}
@@ -100,46 +89,45 @@ function OTP({ number, handleStep,handleOTPsubmit }) {
                           />
                         </Form.Item>
 
-                        <label class="pull-right resend-otp">
+                        <label class="otpLabel">
                           OTP Send to this Number {number} <span></span>
                         </label>
                       </div>
+                      
+                    </div>
+                  </Row>
+                  <Row justify="center">
                       <Button
+                      className="otpVerifybtn"
+
                         htmlType="submit"
-                        style={{
-                          background: "#273A9E",
-                          border: "none,",
-                          color: "white",
-                        }}
+                       size="large"
+                       shape="round"
                         type="button"
                       >
                         Verify
                       </Button>
-                      <button
+                      <Button
+                      className="otpNotnowbtn"
                         onClick={skipOtp}
-                        style={{
-                          marginLeft: "12px",
-                          background: "#273A9E",
-                          border: "none",
-                        }}
+                      size="large"
+                      shape="round"
                         type="button"
-                        class="btn btn-primary "
+                       
                       >
                         Not Now 
-                      </button>
-                      <button
+                      </Button>
+                      <Button
+                      size="large"
+                      shape="round"
                         onClick={resend}
-                        className="btn btn-primary"
-                        style={{
-                          marginLeft: "12px",
-                          background: "#273A9E",
-                          border: "none",
-                        }}
+                        className="Resendotp"
+                        
                       >
-                        Resend OTP
-                      </button>
-                    </div>
-                  </Row>
+                        Resend 
+                      </Button>
+                     
+                    </Row>
                 </Form>
               
             

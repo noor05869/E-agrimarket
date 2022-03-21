@@ -6,99 +6,50 @@ import {
   Row,
   Col,
   Card,
-  Statistic,
   Input,
   Select,
   Form,
   InputNumber,
   DatePicker,
-  Space,
   Button,
-  List,
-  Descriptions,
-  Avatar,
 } from "antd";
-// import { useNavigate } from 'react-router-dom';
 import Header from "./header";
+import { MinusCircleOutlined, PlusCircleOutlined } from "@ant-design/icons";
+import Label from "../components/label";
 function CropsDistribution({
   handleStep,
   initialValues,
   handleChange,
-  handleSelect,
-  handleDisAdd,
+
   cropDistribution,
   handleDistributionAdd,
   handleDistributionRemove,
   valuues,
   handleSelectChange,
-  handleSchange,
+
   addCattles,
   removeCattle,
   cattless,
-  max,
 }) {
-  const {
-    crops,
-    cropsAmount,
-    commodities,
-    cropsCycle,
-    cropscycleType,
-    cropscycleAmount,
-    cattles,
-    Land,
-    cattlesAmount,
-    date,
-  } = initialValues;
+  const { Land } = initialValues;
 
-  const [Fruits, setFruits] = useState(true);
-  const [Sabziyaat, setSabziyaat] = useState(false);
-  const [cropCycle, setcropCycle] = useState([
-    {
-      Commodity: "",
-      Maize: "",
-      Maize2: "",
-      Potato: "",
-    },
-  ]);
+  // const [Fruits, setFruits] = useState(true);
+  // const [Sabziyaat, setSabziyaat] = useState(false);
+  // const [cropCycle, setcropCycle] = useState([
+  //   {
+  //     Commodity: "",
+  //     Maize: "",
+  //     Maize2: "",
+  //     Potato: "",
+  //   },
+  // ]);
   const { RangePicker } = DatePicker;
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  // const history=useHistory()
   const { Option } = Select;
-  // console.log("max", cropDistribution[0].max_yield);
 
-  const monthchange = (i) => {
-    alert(i);
-  };
-  const handleRemoveClick = (index) => {
-    const list = [...cropCycle];
-    list.splice(index, 1);
-    setcropCycle(list);
-  };
-
-  function handleMode(value) {
-    if (value === "fruits") {
-      setFruits(true);
-    } else {
-      setFruits(false);
-    }
-  }
-
-  function handleAdd() {
-    setcropCycle([
-      ...cropCycle,
-      { Commodity: "", Maize: "", Maize2: "", Potato: "" },
-    ]);
-  }
-
-  function onChange1(value, dateString) {
-    console.log("Selected Time: ", value[0]._d);
-    let abc = moment(value[0]._d).format("MM/DD/YYYY");
-    console.log("Selected Time =========: ", abc);
-    console.log("Formatted Selected Time: ", dateString);
-  }
   const Crops = [
     { value: "Fruits", lable: "Fruits", ulabel: "پھل" },
     { value: "Vegetables", lable: "Vegetables", ulabel: "سبزیاں" },
@@ -114,90 +65,46 @@ function CropsDistribution({
   ];
   function handleSubmit(values) {
     console.log(values);
+    handleSelectChange();
     handleStep("3");
   }
-  function handleDate(date, dateString) {
-    console.log(date, dateString);
-  }
-  const cerealCrops = [
-    { value: "Wheat", lable: "Wheat" },
-    { value: "Barley", lable: "Barley" },
-    { value: "Maize", lable: "Maize" },
-    { value: "Great Millet", lable: "Great Millet" },
-    { value: "Pearl Millet", lable: "Pearl Millet" },
-  ];
+
   return (
     <div>
       <Header />
-      <Row style={{ marginBottom: "100px"}} justify="center">
-        <Col xs={24} lg={22} xl={20} className="mb-24">
+      <Row style={{ marginBottom: "100px" }} justify="center">
+        <Col xs={24} lg={22} xl={17} className="mb-24">
           <Form onFinish={handleSubmit}>
             <Card
-              style={{ background: "#e7e7e7", borderRadius: "20px" }}
-              // c  lassName="payment-method-card"
-              className="header-solid h-full ant-card-p-0"
+              className="formBody"
               title={
                 <>
-                  <Row
-                    gutter={[24, 0]}
-                    className="ant-row-flex ant-row-flex-middle"
-                  >
-                    <Col xs={24} md={6}></Col>
-                    <Col xs={17} md={9} xl={9} className="d-flex">
-                      <h2 className="font-semibold m-0"> E-Agri Form</h2>
-                    </Col>
+                  <Row className="title">
+                    <h2
+                      className="font-semibold m-0"
+                      style={{ marginLeft: "20px" }}
+                    >
+                      {" "}
+                      Crops Distribution / Cycle
+                    </h2>
                   </Row>
-                  {/* <Row
-                    justify='center'
-                  >
-                    <Col xs={24} md={7}></Col>
-                    <Col xs={16} md={7} className="">
-                     
-                      <h4  >Farmers Data</h4>
-                    </Col>
-                  </Row> */}
                 </>
               }
+              headStyle={{
+                backgroundColor: "#96CC5C",
+                borderRadius: " 20px 20px 0px 0px",
+              }}
             >
               <Row justify="center" gutter={[24, 0]}>
                 {" "}
                 <Col span={7} md={1} xs={0} xl={0}></Col>{" "}
                 <Col xs={19} span={7} lg={7} sm={20} md={9} xl={7}>
-                  <div
-                    style={{ display: "flex", justifyContent: "space-between" }}
-                  >
-                    <span>
-                      Total Land (Acers){" "}
-                      <span
-                        style={{
-                          color: "red",
-                          fontWeight: "bold",
-                          fontSize: "large",
-                          width: "100%",
-                        }}
-                      >
-                        {" "}
-                        *
-                      </span>{" "}
-                    </span>
-                    <span style={{ fontSize: "1rem", marginRight: "5px" }}>
-                      {" "}
-                      <span
-                        style={{
-                          color: "red",
-                          fontWeight: "bold",
-                          fontSize: "large",
-                        }}
-                      >
-                        {" "}
-                        *
-                      </span>{" "}
-                      کل زمین - ایکڑ
-                  
-                    </span>
+                  <Label
+                    eLabel=" Total Land (Acers)"
+                    ulabel="کل زمین - ایکڑ"
+                    index={0}
+                  />
 
-                    {/* </label>  */}
-                  </div>
                   <Form.Item
                     name="Land"
                     rules={
@@ -212,47 +119,27 @@ function CropsDistribution({
                     }
                   >
                     <Input
-                      style={{
-                        color: "black",
-                        fontWeight: "normal",
-                        width: "100%",
-                      }}
+                      placeholder="Total Land  -  کل زمین - ایکڑ"
+                      className="inputnumber"
                       onChange={handleChange}
                       name="Land"
                       defaultValue={Land}
                       min={1}
-                      // vale={data.Amount}
                       value={Land}
                       type="number"
-                      // onChange={handleCropDisChange}
-                      // type="number"
                       size="large"
-                      // onChange={onChange}
                     />
                   </Form.Item>
                 </Col>
-                <Col
-                  // style={{ marginLeft: "10px" }}
-                  xs={19}
-                  span={7}
-                  lg={7}
-                  sm={20}
-                  md={6}
-                  xl={9}
-                ></Col>
+                <Col xs={19} span={7} lg={5} sm={20} md={6} xl={5}></Col>
                 <Col xs={19} span={7} lg={4} sm={20} md={6} xl={7}></Col>
               </Row>
-              {/* <Card
-              // style={{borderBottom:"outset",background:"initial"}}
-               bordered={false}  >
-             */}
-              <h5 className="cropsdis">Crops Distribution / Cycle</h5>
+
               {cropDistribution &&
                 cropDistribution.map((data, i) => (
                   <>
-                    <Row > </Row>
+                    <Row> </Row>
                     <Row
-                    
                       key={i}
                       gutter={[24, 0]}
                       span={24}
@@ -262,65 +149,22 @@ function CropsDistribution({
                       <Col span={7} md={1} lg={0}></Col>
                       <Col
                         key={i}
-                        // style={{ marginLeft: "15px" }}
                         xs={19}
                         span={7}
                         lg={7}
                         sm={20}
-                        md={6}
+                        md={7}
                         xl={7}
                       >
-                        <div
-                          style={{
-                            display: "flex",
-                            justifyContent: "space-between",
-                          }}
-                        >
-                          {/* <label
-                    htmlFor="contact"
-                     className="col-12 col-form-label fw-500"
-                      style={{fontWeight:"bold"}}
-                  >  */}
-                          <span>
-                            Crops{" "}
-                            <span
-                              style={{
-                                color: "red",
-                                fontWeight: "bold",
-                                fontSize: "large",
-                              }}
-                            >
-                              {" "}
-                              *
-                            </span>{" "}
-                          </span>
-                          <span
-                            style={{ fontSize: "1rem", marginRight: "5px" }}
-                          >
-                            {" "}
-                            <span
-                              style={{
-                                color: "red",
-                                fontWeight: "bold",
-                                fontSize: "large",
-                              }}
-                            >
-                              {" "}
-                              *
-                            </span>{" "}
-                            فصلیں
-                          </span>
+                        <Label eLabel="Crops" ulabel="فصلیں" index={i} />
 
-                          {/* </label>  */}
-                        </div>
                         <Form.Item
                           id={i}
                           className="username"
-                          style={{ content: "*", color: "red" }}
                           name={`${i}crops`}
                           value={data.crops}
                           rules={
-                            !data.crops
+                            !data.crops && i === 0
                               ? [
                                   {
                                     required: true,
@@ -331,36 +175,23 @@ function CropsDistribution({
                           }
                         >
                           <Select
-                            // onBlur={(event) =>
-                            //   handleSelectChange(i,)}
-
                             onChange={(event) =>
                               handleSelectChange(i, event, "crops")
                             }
                             showSearch
-                            filterOption={
-                              (input, option) =>
-                                option.value
-                                  .toLowerCase()
-                                  .indexOf(input.toLowerCase()) >= 0
-                              // console.log(input,"-----",option)
+                            filterOption={(input, option) =>
+                              option.value
+                                .toLowerCase()
+                                .indexOf(input.toLowerCase()) >= 0
                             }
                             name={`${i}crops`}
-                            // id={i}
-                            // onSelect={(value, event,i) =>
-                            //   handleSelect("crops", event,i)
-                            // }
+                            placeholder="Select Crops -  فصلوں کو منتخب کریں"
                             size="large"
-                            defaultValue={data.crops}
+                            defaultValue={data.crops ? data.crops : undefined}
                           >
                             {Crops.map((data) => (
                               <Option id={i} key={data.value}>
-                                <div
-                                  style={{
-                                    display: "flex",
-                                    justifyContent: "space-between",
-                                  }}
-                                >
+                                <div className="optionaStyle">
                                   <p>{data.lable}</p>
                                   <p>{data.ulabel}</p>
                                 </div>
@@ -369,64 +200,14 @@ function CropsDistribution({
                           </Select>
                         </Form.Item>
                       </Col>
-                      <Col
-                        // style={{ marginLeft: "10px" }}
-                        xs={19}
-                        span={7}
-                        lg={7}
-                        sm={20}
-                        md={6}
-                        xl={7}
-                      >
-                        <div
-                          style={{
-                            display: "flex",
-                            justifyContent: "space-between",
-                          }}
-                        >
-                          {/* <label
-                    htmlFor="contact"
-                     className="col-12 col-form-label fw-500"
-                      style={{fontWeight:"bold"}}
-                  >  */}
-                          <span>
-                            Commodities{" "}
-                            <span
-                              style={{
-                                color: "red",
-                                fontWeight: "bold",
-                                fontSize: "large",
-                              }}
-                            >
-                              {" "}
-                              *
-                            </span>{" "}
-                          </span>
-                          <span
-                            style={{ fontSize: "1rem", marginRight: "5px" }}
-                          >
-                            {" "}
-                            <span
-                              style={{
-                                color: "red",
-                                fontWeight: "bold",
-                                fontSize: "large",
-                              }}
-                            >
-                              {" "}
-                              *
-                            </span>{" "}
-                            اشیاء
-                          </span>
+                      <Col xs={19} span={7} lg={7} sm={20} md={7} xl={7}>
+                        <Label eLabel="Commodities" ulabel=" اشیاء" index={i} />
 
-                          {/* </label>  */}
-                        </div>
                         <Form.Item
-                          style={{ content: "*", color: "red" }}
                           className="username "
                           name={`${i}commodities`}
                           rules={
-                            !data.commodities
+                            !data.commodities && i === 0
                               ? [
                                   {
                                     required: true,
@@ -437,6 +218,7 @@ function CropsDistribution({
                           }
                         >
                           <Select
+                            placeholder="Select Commodities - اشیاء "
                             name={`${i}commodities`}
                             onChange={(event) =>
                               handleSelectChange(i, event, "commodities")
@@ -448,20 +230,14 @@ function CropsDistribution({
                                 .toLowerCase()
                                 .indexOf(input.toLowerCase()) >= 0
                             }
-                            // onSelect={(value, event) =>
-                            //   handleSelect("commodities", event)
-                            // }
-                            defaultValue={data.commodities}
+                            defaultValue={
+                              data.commodities ? data.commodities : undefined
+                            }
                           >
                             {valuues &&
                               valuues.map((data) => (
                                 <Option id={i} key={data.value}>
-                                  <div
-                                    style={{
-                                      display: "flex",
-                                      justifyContent: "space-between",
-                                    }}
-                                  >
+                                  <div className="optionaStyle">
                                     <p>{data.value}</p>
                                     <p>{data.ulabel}</p>
                                   </div>
@@ -470,55 +246,13 @@ function CropsDistribution({
                           </Select>
                         </Form.Item>
                       </Col>
-                      <Col xs={19} span={7} lg={4} sm={20} md={6} xl={5}>
-                        <div
-                          style={{
-                            display: "flex",
-                            justifyContent: "space-between",
-                          }}
-                        >
-                          {/* <label
-                    htmlFor="contact"
-                     className="col-12 col-form-label fw-500"
-                      style={{fontWeight:"bold"}}
-                  >  */}
-                          <span>
-                            Area{" "}
-                            <span
-                              style={{
-                                color: "red",
-                                fontWeight: "bold",
-                                fontSize: "large",
-                              }}
-                            >
-                              {" "}
-                              *
-                            </span>{" "}
-                          </span>
-                          <span
-                            style={{ fontSize: "1rem", marginRight: "5px" }}
-                          >
-                            {" "}
-                            <span
-                              style={{
-                                color: "red",
-                                fontWeight: "bold",
-                                fontSize: "large",
-                              }}
-                            >
-                              {" "}
-                              *
-                            </span>{" "}
-                             رقبہ - ایکڑ
-                          </span>
-
-                          {/* </label>  */}
-                        </div>
+                      <Col xs={19} span={7} lg={4} sm={20} md={7} xl={5}>
+                        <Label eLabel="Area" ulabel="  رقبہ - ایکڑ" index={i} />
                         <Form.Item
                           name={`${i}area`}
                           id={i}
                           rules={
-                            !data.area
+                            !data.area && i === 0
                               ? [
                                   {
                                     required: true,
@@ -529,11 +263,8 @@ function CropsDistribution({
                           }
                         >
                           <InputNumber
-                            style={{
-                              color: "black",
-                              fontWeight: "normal",
-                              width: "100%",
-                            }}
+                            placeholder="Area - رقبہ"
+                            className="inputnumber"
                             onChange={(event) =>
                               handleSelectChange(i, event, "area")
                             }
@@ -548,85 +279,25 @@ function CropsDistribution({
                           />
                         </Form.Item>
                       </Col>
-                      <Col
-                        className="Addbutton"
-                        xs={19}
-                        span={7}
-                        lg={5}
-                        sm={6}
-                        md={2}
-                        xl={4}
-                      ></Col>
                     </Row>
 
-                    {/* </Card> */}
                     <Row justify="center">
                       <Col sm={11} xs={11}></Col>
                     </Row>
 
-                    {/* {cropCycle.map((data, i) => (
-                <> */}
-
-                    {/* <Row>  <h5 className="cropsdis" >Crops Cycle</h5></Row> */}
-
                     <Row justify="center" gutter={[24, 0]}>
                       <Col span={7} md={1} lg={0}></Col>
-                      <Col
-                        // style={{ marginLeft: "10px" }}
-                        xs={19}
-                        span={7}
-                        lg={7}
-                        sm={20}
-                        md={9}
-                        xl={7}
-                      >
-                        <div
-                          style={{
-                            display: "flex",
-                            justifyContent: "space-between",
-                          }}
-                        >
-                          {/* <label
-                    htmlFor="contact"
-                     className="col-12 col-form-label fw-500"
-                      style={{fontWeight:"bold"}}
-                  >  */}
-                          <span>
-                            Yield - Mound / Acer Max{" "}
-                            <span
-                              style={{
-                                color: "red",
-                                fontWeight: "bold",
-                                fontSize: "large",
-                              }}
-                            >
-                              {" "}
-                              *
-                            </span>{" "}
-                          </span>
-                          <span
-                            style={{ fontSize: "1rem", marginRight: "5px" }}
-                          >
-                            {" "}
-                            <span
-                              style={{
-                                color: "red",
-                                fontWeight: "bold",
-                                fontSize: "large",
-                              }}
-                            >
-                              {" "}
-                              *
-                            </span>{" "}
-                            پیداوار منڈ فی ایکڑ{" "}
-                          </span>
+                      <Col xs={19} span={7} lg={7} sm={20} md={9} xl={7}>
+                        <Label
+                          eLabel=" Yield - Mound / Acer Max"
+                          ulabel="  پیداوار  فی من ایکڑ"
+                          index={i}
+                        />
 
-                          {/* </label>  */}
-                        </div>
                         <Form.Item
                           name={`${i}max_yield`}
                           rules={
-                            !data.max_yield
+                            !data.max_yield && i === 0
                               ? [
                                   {
                                     required: true,
@@ -637,11 +308,8 @@ function CropsDistribution({
                           }
                         >
                           <InputNumber
-                            style={{
-                              color: "black",
-                              fontWeight: "normal",
-                              width: "100%",
-                            }}
+                            placeholder="Max Yeild - زیادہ سے زیادہ پیداوار"
+                            className="inputnumber"
                             onChange={(event) =>
                               handleSelectChange(i, event, "max_yield")
                             }
@@ -659,63 +327,17 @@ function CropsDistribution({
                         </Form.Item>
                       </Col>
 
-                      <Col
-                        // style={{ marginLeft: "10px " }}
-                        x
-                        xs={19}
-                        span={7}
-                        lg={7}
-                        sm={20}
-                        md={9}
-                        xl={7}
-                      >
-                        <div
-                          style={{
-                            display: "flex",
-                            justifyContent: "space-between",
-                          }}
-                        >
-                          {/* <label
-                    htmlFor="contact"
-                     className="col-12 col-form-label fw-500"
-                      style={{fontWeight:"bold"}}
-                  >  */}
-                          <span>
-                            Yield - Mound / Acer Min{" "}
-                            <span
-                              style={{
-                                color: "red",
-                                fontWeight: "bold",
-                                fontSize: "large",
-                              }}
-                            >
-                              {" "}
-                              *
-                            </span>{" "}
-                          </span>
-                          <span
-                            style={{ fontSize: "1rem", marginRight: "5px" }}
-                          >
-                            {" "}
-                            <span
-                              style={{
-                                color: "red",
-                                fontWeight: "bold",
-                                fontSize: "large",
-                              }}
-                            >
-                              {" "}
-                              *
-                            </span>{" "}
-                            پیداوار منڈ فی ایکڑ{" "}
-                          </span>
+                      <Col x xs={19} span={7} lg={7} sm={20} md={9} xl={7}>
+                        <Label
+                          eLabel="  Yield - Mound / Acer Min"
+                          ulabel="  پیداوار فی من ایکڑ"
+                          index={i}
+                        />
 
-                          {/* </label>  */}
-                        </div>
                         <Form.Item
                           name={`${i}min_yield`}
                           rules={
-                            !data.min_yield
+                            !data.min_yield && i === 0
                               ? [
                                   {
                                     required: true,
@@ -726,75 +348,31 @@ function CropsDistribution({
                           }
                         >
                           <InputNumber
-                            style={{
-                              color: "black",
-                              fontWeight: "normal",
-                              width: "100%",
-                            }}
+                            placeholder="Min Yeild - زیادہ سے زیادہ پیداوار"
+                            className="inputnumber"
                             onChange={(event) =>
                               handleSelectChange(i, event, "min_yield")
                             }
                             name={`${i}min_yield`}
                             defaultValue={data.min_yield}
-                            // maxLength={data.max_yield.length - 1}
-                            // vale={data.Amount}
-                            value={data.min_yield}
-                            // onChange={handleCropDisChange}
-                            // type="number"
-                            // min={12}
                             min={0}
-                            max={data.max_yield - 1}
+                            max={data.max_yield ? data.max_yield - 1 : 0}
                             size="large"
-                            // onChange={onChange}
                           />
                         </Form.Item>
                         {/* {max} */}
                       </Col>
 
                       <Col xs={19} span={7} lg={4} sm={20} md={4} xl={5}>
-                        <div
-                          style={{
-                            display: "flex",
-                            justifyContent: "space-between",
-                          }}
-                        >
-                          <span>
-                            Month{" "}
-                            <span
-                              style={{
-                                color: "red",
-                                fontWeight: "bold",
-                                fontSize: "large",
-                              }}
-                            >
-                              {" "}
-                              *
-                            </span>{" "}
-                          </span>
-                          <span
-                            style={{ fontSize: "1rem", marginRight: "5px" }}
-                          >
-                            {" "}
-                            <span
-                              style={{
-                                color: "red",
-                                fontWeight: "bold",
-                                fontSize: "large",
-                              }}
-                            >
-                              {" "}
-                              *
-                            </span>{" "}
-                            مہینہ
-                          </span>
-
-                          {/* </label>  */}
-                        </div>
-
+                        <Label
+                          eLabel="  Start Date- End Date"
+                          ulabel="  مہینہ"
+                          index={i}
+                        />
                         <Form.Item
                           name={`${i}month`}
                           rules={
-                            !initialValues.month
+                            !data.startDate && i === 0
                               ? [
                                   {
                                     required: true,
@@ -805,64 +383,90 @@ function CropsDistribution({
                           }
                         >
                           <RangePicker
+                            className="inputnumber"
                             style={{ width: "100%" }}
-                            defaultValue={initialValues.month}
+                            defaultValue={data.startDate}
+                            // defaultValue={initialValues.month}
+                            value={data.month}
                             size="large"
                             name={`${i}month`}
                             picker="month"
-                            format="YYYY/MM/DD"
+                            // format="YYYY/MM/DD"
                             onChange={(event) =>
                               handleSelectChange(i, event, "month")
                             }
                           />
                         </Form.Item>
                       </Col>
+                    </Row>
 
+                    {i === 0 ? (
+                      ""
+                    ) : (
+                      <Row justify="center">
+                        <Col span={7} md={0} lg={0} xl={2}></Col>
+                        <Col xs={24} span={7} lg={20} sm={20} md={20} xl={19}>
+                          {" "}
+                          <hr />
+                        </Col>
+                        <Col xs={24} span={7} lg={3} sm={3} md={3} xl={2}></Col>
+                      </Row>
+                    )}
+
+                    <Row justify="center" gutter={[24, 0]}>
+                      <Col span={7} md={0} lg={0} xl={0}></Col>
                       <Col
-                        className="Addbutton"
+                        // style={{ marginLeft: "30px" }}
                         xs={19}
                         span={7}
-                        lg={4}
-                        sm={6}
-                        md={2}
-                        xl={4}
-                      >
-                        <Button
-                          type="primary"
-                          onClick={handleDistributionAdd}
-                          style={{
-                            marginBottom: "20px",
-                            marginLeft: "5px",
-                            border: "none",
-                            background: "#273A9E",
-                            border: "none",
-                          }}
+                        lg={14}
+                        sm={20}
+                        md={15}
+                        xl={15}
+                      ></Col>
+                      {i === cropDistribution.length - 1 ? (
+                        <Col
+                          className="icondiv"
+                          xs={19}
+                          span={7}
+                          lg={6}
+                          sm={6}
+                          md={6}
+                          xl={4}
                         >
-                          ADD
-                        </Button>
-                        {cropDistribution.length > 1 ? (
-                          <Button
-                            size="small"
-                            style={{
-                              background: "#dc3545",
-                              border: "none",
-                              marginLeft: "5px",
-                            }}
-                            onClick={() => handleDistributionRemove(i)}
-                            disabled={
-                              cropDistribution.length > 1 ? false : true
-                            }
-                            type="primary"
-                          >
-                            Remove
-                          </Button>
-                        ) : (
-                          ""
-                        )}
-                      </Col>
+                          <PlusCircleOutlined
+                            onClick={handleDistributionAdd}
+                            size="large"
+                            className="icon"
+                          />{" "}
+                          <a onClick={handleDistributionAdd}>add more</a>
+                          {cropDistribution.length > 1 ? (
+                            <>
+                              <MinusCircleOutlined
+                                onClick={() => handleDistributionRemove(i)}
+                                fill="currentColor"
+                                className="ricon"
+                              />{" "}
+                              <a onClick={() => handleDistributionRemove(i)}>
+                                Remove{" "}
+                              </a>
+                            </>
+                          ) : (
+                            ""
+                          )}
+                        </Col>
+                      ) : (
+                        <Col
+                          className="Addbutton"
+                          xs={19}
+                          span={7}
+                          lg={4}
+                          sm={6}
+                          md={2}
+                          xl={4}
+                        ></Col>
+                      )}
                     </Row>
-                    {/* </>
-              ))} */}
                   </>
                 ))}
               <Row gutter={[24, 0]}></Row>
@@ -883,52 +487,13 @@ function CropsDistribution({
                       md={6}
                       xl={7}
                     >
-                      <div
-                        style={{
-                          display: "flex",
-                          justifyContent: "space-between",
-                        }}
-                      >
-                        {/* <label
-                    htmlFor="contact"
-                     className="col-12 col-form-label fw-500"
-                      style={{fontWeight:"bold"}}
-                  >  */}
-                        <span>
-                          Cattles{" "}
-                          <span
-                            style={{
-                              color: "red",
-                              fontWeight: "bold",
-                              fontSize: "large",
-                            }}
-                          >
-                            {" "}
-                            *
-                          </span>{" "}
-                        </span>
-                        <span style={{ fontSize: "1rem", marginRight: "5px" }}>
-                          {" "}
-                          <span
-                            style={{
-                              color: "red",
-                              fontWeight: "bold",
-                              fontSize: "large",
-                            }}
-                          >
-                            {" "}
-                            *
-                          </span>{" "}
-                          مویشی
-                        </span>
+                      <Label eLabel="Cattles " ulabel=" مویشی" index={i} />
 
-                        {/* </label>  */}
-                      </div>
                       <Form.Item
                         className="username"
                         name={`${i}cattle`}
                         rules={
-                          !data.Cattles
+                          !data.Cattles && i === 0
                             ? [
                                 {
                                   required: true,
@@ -939,12 +504,15 @@ function CropsDistribution({
                         }
                       >
                         <Select
+                          className="userName"
+                          placeholder="Select Cattles - مویشی"
+                          value={data.Cattles}
                           size="large"
                           name={`${i}cattle`}
+                          defaultValue={data.Cattles ? data.Cattles : undefined}
                           onChange={(event) =>
                             handleSelectChange(i, event, "Cattles")
                           }
-                          defaultValue={data.Cattles}
                         >
                           <Option key="Buffalo">Buffalo</Option>
                           <Option key="Goat">Goat</Option>
@@ -952,46 +520,12 @@ function CropsDistribution({
                       </Form.Item>
                     </Col>
                     <Col xs={19} span={7} lg={7} sm={20} md={6} xl={7}>
-                      <div
-                        style={{
-                          display: "flex",
-                          justifyContent: "space-between",
-                        }}
-                      >
-                        <span>
-                          Quantity{" "}
-                          <span
-                            style={{
-                              color: "red",
-                              fontWeight: "bold",
-                              fontSize: "large",
-                            }}
-                          >
-                            {" "}
-                            *
-                          </span>{" "}
-                        </span>
-                        <span style={{ fontSize: "1rem", marginRight: "5px" }}>
-                          {" "}
-                          <span
-                            style={{
-                              color: "red",
-                              fontWeight: "bold",
-                              fontSize: "large",
-                            }}
-                          >
-                            {" "}
-                            *
-                          </span>{" "}
-                          تعداد
-                        </span>
+                      <Label eLabel="Quantity " ulabel="  تعداد" index={i} />
 
-                        {/* </label>  */}
-                      </div>
                       <Form.Item
                         name={`${i}quantity`}
                         rules={
-                          !data.qt
+                          !data.qt && i === 0
                             ? [
                                 {
                                   required: true,
@@ -1002,98 +536,113 @@ function CropsDistribution({
                         }
                       >
                         <InputNumber
+                          className="inputnumber"
+                          placeholder="Quantity - مقدار"
                           name={`${i}quantity`}
                           onChange={(event) =>
                             handleSelectChange(i, event, "qt")
                           }
                           defaultValue={data.qt}
-                          // vale={data.Amount}
                           min={1}
                           size="large"
-                          // onChange={handleCropDisChange}
-                          // type="number"
-                          style={{
-                            width: "100%",
-                            color: "black",
-                            fontWeight: "normal",
-
-                            // height: "40px",
-                          }}
-                          // onChange={onChange}
                         />
                       </Form.Item>
                     </Col>
-                    <Col xs={19} span={7} lg={4} sm={20} md={4} xl={5}></Col>
+
                     <Col
                       className="Add1button"
                       xs={19}
                       span={7}
-                      lg={4}
+                      lg={5}
                       sm={6}
                       md={2}
-                    >
-                      <Button
-                        type="primary"
-                        onClick={addCattles}
-                        style={{
-                          marginBottom: "30px",
-                          marginLeft: "5px",
-                          border: "none",
-                          background: "#273A9E",
-                          border: "none",
-                        }}
+                    ></Col>
+                  </Row>
+
+                  {i === 0 ? (
+                    ""
+                  ) : (
+                    <Row justify="center">
+                      <Col span={7} md={0} lg={0} xl={0}></Col>
+                      <Col xs={24} span={7} lg={20} sm={20} md={20} xl={14}>
+                        {" "}
+                        <hr />
+                      </Col>
+                      <Col xs={24} span={7} lg={3} sm={3} md={3} xl={5}></Col>
+                    </Row>
+                  )}
+                  <Row justify="center" gutter={[24, 0]}>
+                    <Col span={7} md={0} lg={0} xl={0}></Col>
+                    <Col
+                      // style={{ marginLeft: "30px" }}
+                      xs={19}
+                      span={7}
+                      lg={7}
+                      sm={20}
+                      md={6}
+                      xl={6}
+                    ></Col>
+                    {i === cattless.length - 1 ? (
+                      <Col
+                        className="icondiv"
+                        xs={19}
+                        span={7}
+                        lg={4}
+                        sm={6}
+                        md={2}
                       >
-                        ADD
-                      </Button>
-                      {cattless.length > 1 ? (
-                        <Button
-                          style={{
-                            background: "#dc3545",
-                            border: "none",
-                            marginLeft: "5px",
-                          }}
-                          onClick={() => removeCattle(i)}
-                          disabled={cattless.length > 1 ? false : true}
-                          type="primary"
-                        >
-                          Remove
-                        </Button>
-                      ) : (
-                        ""
-                      )}
-                    </Col>
+                        <PlusCircleOutlined
+                          onClick={addCattles}
+                          size="large"
+                          className="icon"
+                        />{" "}
+                        <a onClick={addCattles}>add more</a>
+                        {cattless.length > 1 ? (
+                          <>
+                            <MinusCircleOutlined
+                              onClick={() => removeCattle(i)}
+                              fill="currentColor"
+                              className="ricon"
+                            />{" "}
+                            <a onClick={() => removeCattle(i)}>Remove </a>
+                          </>
+                        ) : (
+                          ""
+                        )}
+                      </Col>
+                    ) : (
+                      <Col
+                        className="Add1button"
+                        xs={19}
+                        span={7}
+                        lg={4}
+                        sm={6}
+                        md={2}
+                      ></Col>
+                    )}
                   </Row>
                 </>
               ))}
-              <Row
-                gutter={[24, 0]}
-                className="ant-row-flex ant-row-flex-middle"
-              >
-                <Col xs={24} sm={5} md={5} lg={0} xl={3}>
-                  <h6 className="font-semibold m-0"> </h6>
-                </Col>
 
-                <Col
-                  // style={{ marginLeft: "20px" }}
-                  xs={24}
-                  sm={5}
-                  md={5}
-                  lg={1}
-                  xl={0}
-                  className="d-flex"
-                >
+              <Row gutter={[0, 24]} className="">
+                <Col xs={2} sm={18} md={18} lg={20} xl={18}></Col>
+
+                <Col xs={20} sm={5} md={5} lg={1} xl={6} className="d-flex">
                   <Button
-                    className="cropsRButton"
+                    className="backbtnStyle"
                     onClick={() => handleStep("1")}
                     type="primary"
+                    shape="round"
+                    size="large"
                   >
                     Back
                   </Button>
                   <Button
-                    //  onClick={()=>history.push("/form3")}
-                    style={{ background: "#273A9E", border: "none" }}
+                    className="nextbtn"
                     htmlType="submit"
                     type="primary"
+                    shape="round"
+                    size="large"
                   >
                     Next
                   </Button>

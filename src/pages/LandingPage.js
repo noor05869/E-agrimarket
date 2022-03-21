@@ -8,30 +8,58 @@ import { Link } from 'react-router-dom'
 
 function LandingPage() {
   return (
-      <>
-      <div className=' imagediv '>
-          
-      <div >
-    <div >
       
-      <Row   justify='center'>
-        <Col >
-        <img className='imageStyle' src={logo}  />
+            <div className=' imagediv '>
+          
+          <div >
+        <div >
+          
+          <Row   justify='center'>
+            <Col >
+            <img className='imageStyle' src={logo}  />
+           
+           
+            </Col>
+            
+            </Row> 
+            <Row justify="center">
+            <Col xs={24} lg={10} className="mb-24">
+              <Card
+                style={{ background: "#e7e7e7", borderRadius: "20px" }}
+                // className="payment-method-card"
+                className="header-solid h-full ant-card-p-0 formBody"
+               
+                  
+                title={
+                  <>
+                    <Row
+                      justify="center"
+                      gutter={[0, 24]}
+                      className=" header"
+                    >
+                      <h2 className="font-semibold m-0 ">Coming Soon</h2>
+                      {/* </Col> */}
+                    </Row>
+                   
+                  </>
+                }
+                headStyle={{backgroundColor: '#96CC5C', borderRadius:" 20px 20px 0px 0px" }}
+                
+               >
+                 <Row justify="center">
+            <h5 style={{fontWeight:"bold",color:"black",marginTop:"48px",fontSize:"1.2rem"}} >We'll launch soon, please keep visiting the site  </h5></Row>
+         <Row justify="center">   <Link to="/farmerdata" ><h2 className='link Bold'  style={{color:"black", marginTop:"40px",fontSize:"0.6rem"}}>Go to Farmer Screen</h2></Link></Row>
+         <Row justify="center">
+     </Row></Card></Col></Row>
+        </div>
+        {/* <Row justify="center">
+            <h1 style={{fontWeight:"bold",color:"black",marginTop:"200px",fontSize:"4rem"}} >Thank You </h1></Row>
+         <Row justify="center">   <Link to="/farmerdata" ><h2 className='link'  style={{fontWeight:"bold",color:"black",marginTop:"40px",fontSize:"3rem"}}>Go to Home Screen</h2></Link></Row>
+         <Row justify="center">
+     </Row> */}
+     
+     </div></div>
        
-       
-        </Col>
-        
-        </Row> 
-    {/* <Row justify="center" >
-        <h1>Coming Soon</h1>
-        </Row> */}
-  
-    </div>
-    <Row justify="center">
-        <h1 style={{fontWeight:"bold",color:"white",marginTop:"200px",fontSize:"4rem"}} >Coming Soon </h1></Row>
-     <Row justify="center">
-     {/* <Link to="/Form"><h2 style={{fontWeight:"inherit",color:"white"}}> Click Here For Farmers Data Link</h2></Link> */}
- </Row></div></div></>
   )
 }
 

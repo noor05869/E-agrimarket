@@ -19,6 +19,7 @@ import Form from "./pages/form";
 import CropsDistribution from "./pages/CropsDistribution";
 import Form3 from "./pages/Form3";
 import axios from 'axios'
+
 import {
   BrowserRouter as Router,
   Route,
@@ -26,6 +27,7 @@ import {
 } from "react-router-dom";
 import OTP from "./pages/OTP";
 import LandingPage from "./pages/LandingPage";
+import ThankyouPage from "./pages/ThankyouPage";
 
 
 function App() {
@@ -41,6 +43,7 @@ function App() {
   return (
     
      <>
+     {/* <OTP/> */}
      <Router>
      <Routes>
           
@@ -49,11 +52,13 @@ function App() {
          
           <Route path="/" element={<LandingPage/>}/>
           <Route path="/farmerdata" element={<Form/>}/>
+          <Route path="/thankyou" element={<ThankyouPage/>}/>
+
 
             
           
         </Routes>
-        </Router>
+         </Router>
   </>
   );
 }

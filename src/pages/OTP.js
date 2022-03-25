@@ -3,7 +3,7 @@ import axios from "axios";
 import { message } from "antd";
 import Header from "./header";
 import React, { useState } from "react";
-import "./otp.css";
+// import "./otp.css";
 function OTP({ number, handleStep,handleOTPsubmit }) {
   console.log(number);
   const [first, setfirst] = useState();
@@ -31,18 +31,7 @@ function OTP({ number, handleStep,handleOTPsubmit }) {
   function skipOtp() {
     handleStep("3");
   }
-  // async function handleOTPsubmit() {
-  //   // handleStep("1")
-  //   try {
-  //     const {data} = await axios.post("https://backend.eagrimarket.com/v1/verify", {
-  //       phone: "03104739471",
-  //       code: "88735",
-  //     });
-  //     console.log(data);
-  //   } catch (error) {
-  //     console.log(error.message);
-  //   }
-  // }
+ 
   function handleChange(e) {
     console.log(e.target.value);
     otp.code = e.target.value;
@@ -53,7 +42,7 @@ function OTP({ number, handleStep,handleOTPsubmit }) {
     <>
       <Header />
       <Row justify="center">
-        <Col xs={24} lg={16} className="mb-24">
+        <Col xs={20} lg={16} className="mb-24">
           <Card
             style={{ background: "#e7e7e7", borderRadius: "20px" }}
             // className="payment-method-card"
@@ -73,8 +62,7 @@ function OTP({ number, handleStep,handleOTPsubmit }) {
                         <h3>Verify OTP</h3>
                       </Row>
                       <div class="form-group login-label">
-                        {/* <label for="inputnumber">One Time Password</label> */}
-
+                       
                         <Form.Item
                           name="code"
                           rules={
@@ -109,6 +97,17 @@ function OTP({ number, handleStep,handleOTPsubmit }) {
                     </div>
                   </Row>
                   <Row justify="center">
+                      
+                  <Button
+                      className="otpNotnowbtn"
+                        onClick={skipOtp}
+                      size="large"
+                      shape="round"
+                        type="button"
+                       
+                      >
+                        Back
+                      </Button>
                       <Button
                       className="otpVerifybtn"
 
@@ -119,16 +118,7 @@ function OTP({ number, handleStep,handleOTPsubmit }) {
                       >
                         Verify
                       </Button>
-                      <Button
-                      className="otpNotnowbtn"
-                        onClick={skipOtp}
-                      size="large"
-                      shape="round"
-                        type="button"
-                       
-                      >
-                        Not Now 
-                      </Button>
+                      
                       <Button
                       size="large"
                       shape="round"

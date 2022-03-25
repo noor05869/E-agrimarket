@@ -55,6 +55,31 @@
 .ant-picker-footer-extra > div {
   flex-wrap: wrap !important; 
 }
+.contact{
+  color: black !important;
+  width: 100%;
+  font-weight: normal !important;
+  border-radius: 6px;
+  height: 40px;
+  
+}
+.optionaStyle{
+  display: flex;
+  justify-content: space-between;
+}
+.homeScreenLink{
+  color: black;
+  margin-top: 40px;
+  font-size: 0.6rem;
+
+}
+.message{
+
+  font-weight: bold;
+  color:black;
+  margin-top: 48px;
+  font-size: 1.2rem
+}
 @media (min-width: 375px) {
   body {
     padding: 0 0 30px 0;
@@ -75,6 +100,11 @@
 .title{
   margin-left: 20px !important;
 }
+.cropsdiss{
+  margin-left: 170px;
+  font-weight: bold;
+
+}
 }
 @media (min-width: 992px) {
 body {
@@ -94,7 +124,10 @@ body {
   /* background-repeat: no-repeat; */
 }
 
+.cropsdiss{
+  margin-left: 120px;
 
+}
 }
 .icon{
   font-size: 1rem;
@@ -110,8 +143,8 @@ body {
 }
 
 .inputnumber{
-  color: black;
-    font-weight: normal;
+  color: black !important;
+    font-weight: normal !important;
     width: 100%;
     border-radius: 6px
 }
@@ -140,7 +173,7 @@ display: flex;
   /* height: 40px  !important; */
   /* margin-left: 5px ; */
   margin-top: 5px;
-width: 100px !important;
+width: 90px !important;
  }
  .otpNotnowbtn:hover{
   background-color: white;
@@ -237,6 +270,19 @@ width: 100px !important;
   margin-bottom: 10px;
   margin-top: 30px; */
 }
+.ant-spin-dot-item {
+  position: absolute;
+  display: block;
+  width: 9px;
+  height: 9px;
+  background-color: green;
+  border-radius: 100%;
+  transform: scale(0.75);
+  transform-origin: 50% 50%;
+  opacity: 0.3;
+  -webkit-animation: antSpinMove 1s infinite linear alternate;
+  animation: antSpinMove 1s infinite linear alternate;
+}
 
 .ant-layout.ant-layout-has-sider {
   flex-direction: row;
@@ -269,11 +315,27 @@ width: 100px !important;
 }
 .inpuStyle{
   color: black;
-                        width: 100%;
-                        font-weight: normal;
-                        border-radius: 20px;
-                        height: 40px;
+       width: 100%;
+       font-weight: normal;
+        border-radius: 20px;
+       height: 40px;
 }
+
+
+.inputLabel{
+  display: flex;
+  justify-content: space-between;
+}
+.labelStrric{
+  color: red;
+  font-size: large;
+  font-weight: bold;
+}
+.login-label label {
+  color: #c74032;
+  font-weight: 600;
+}
+
 
 
 

@@ -16,9 +16,6 @@ import "antd/dist/antd.css";
 import "./assets/styles/main.css";
 import "./assets/styles/responsive.css";
 import Form from "./pages/form";
-import CropsDistribution from "./pages/CropsDistribution";
-import Form3 from "./pages/Form3";
-import axios from 'axios'
 
 import {
   BrowserRouter as Router,
@@ -32,13 +29,7 @@ import ThankyouPage from "./pages/ThankyouPage";
 
 function App() {
 
-// axios.defaults.baseURL = '13.228.234.94:8080/v1/'
 
-// axios.defaults.headers =
-// {
-//   'x-auth-token': localStorage.getItem('token'),
-//   'Content-Type': 'application/json'
-// }
 
   return (
     

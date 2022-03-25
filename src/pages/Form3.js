@@ -31,18 +31,18 @@ function Form3({
     console.log(`selected`,value);
     handleSelect("targetedmandi",value)
   }
-  const [mode, setmode] = useState(true);
-  function handleMode(value) {
-    if (value === "Aarhti") {
-      setmode(true);
-      console.log(mode);
-    } else if (value === "Personal") {
-      setmode(false);
-      console.log(mode);
-    }
-  }
+  
+  // function handleMode(value) {
+  //   if (value === "Aarhti") {
+  //     setmode("Aarhti");
+  //     console.log(mode);
+  //   } else if (value === "Personal") {
+  //     setmode("Personal");
+  //     console.log(mode);
+  //   }
+  // }
 
-  useEffect(() => {}, [mode]);
+ 
 
   return (
     <div>
@@ -101,7 +101,7 @@ function Form3({
                   >
                     <Select
                       placeholder="Select Mode of Investment - سرمایہ کاری"
-                      onChange={handleMode}
+                      // onChange={handleMode}
                       onSelect={(value, event) =>
                         handleSelect("modeOfInvestment", event)
                       }
@@ -125,9 +125,9 @@ function Form3({
                   sm={20}
                   md={6}
                 >
+                  {initialValues.modeOfInvestment.value==="Aarhti" ? (<>
                   <Label eLabel="  Percentage %" ulabel=" % فیصد" index={0} />
 
-                  {mode === true ? (
                     <Form.Item
                       name="percentage"
                       rules={
@@ -151,7 +151,9 @@ function Form3({
                         type="number"
                       />
                     </Form.Item>
-                  ) : (
+                    </> ) : (<>
+                  <Label eLabel="  Percentage %" ulabel=" % فیصد" index={1} />
+
                     <Form.Item name="percentage1">
                       <Input
                         min={1}
@@ -166,7 +168,7 @@ function Form3({
                         // onChange={onChange}
                       />
                     </Form.Item>
-                  )}
+                    </>  )}
                 </Col>
                 <Col xs={20} span={7} lg={6} sm={20} md={6}>
                   <Label eLabel=" Crop Sale" ulabel=" فصل کی فروخت" index={0} />
@@ -240,7 +242,7 @@ function Form3({
                           .indexOf(input.toLowerCase()) >= 0
                       }
                       onChange={handleChangemandi}
-                      defaultValue={targetedmandi}
+                      defaultValue={targetedmandi?targetedmandi:undefined}
 
                       // onSelect={(value, event) =>
                       //   handleSelect("targetedmandi", event)

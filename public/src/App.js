@@ -25,7 +25,8 @@ import {
 import OTP from "./pages/OTP";
 import LandingPage from "./pages/LandingPage";
 import ThankyouPage from "./pages/ThankyouPage";
-import Login from "../../frontend/src/pages/Login";
+import ContactForm from "./pages/Contact.js";
+import ContactSubmissiom from "./pages/ContactSubmission";
 
 
 function App() {
@@ -36,7 +37,7 @@ function App() {
     
      <>
      {/* <OTP/> */}
-     {/* <Router>
+     <Router>
      <Routes>
           
          
@@ -44,16 +45,18 @@ function App() {
          
           <Route path="/" element={<LandingPage/>}/>
           <Route path="/farmerdata" element={<Form/>}/>
-
           <Route path="/thankyou" element={<ThankyouPage/>}/>
-          <Route path="/login" element={<Login/>} />
+          <Route path="/contactUs" element={<ContactForm/>}/>
+          <Route path="/contactSubmission" element={<ContactSubmissiom/>}/>
+
+
 
 
 
             
           
         </Routes>
-         </Router> */}
+         </Router>
   </>
   );
 }

@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import Label from "../components/label";
 import { Row, Col, Card, Input, Select, Form, Button, Alert, Space, Spin } from "antd";
 import { Tehsils } from "../utility/tehsil";
+import { useNavigate } from 'react-router-dom';
 
 import Header from "./header";
+import { PhoneOutlined } from "@ant-design/icons";
 function Form3({
   handleStep,
   initialValues,
@@ -42,10 +44,19 @@ function Form3({
   //   }
   // }
 
- 
+  let navigate = useNavigate();
+  function handlecontact(){
+navigate("/contactUs")
+  }
 
   return (
     <div>
+      <div className="setting-drwer"     onClick={handlecontact} >
+        {/* {setting} */}
+        <PhoneOutlined  className="hypericon"
+      
+         />
+      </div>
       <Header />
       <Spin size="large" spinning={loading} >
       
@@ -100,7 +111,7 @@ function Form3({
                     }
                   >
                     <Select
-                      placeholder="Select Mode of Investment - سرمایہ کاری"
+                      placeholder=" سرمایہ کاری"
                       // onChange={handleMode}
                       onSelect={(value, event) =>
                         handleSelect("modeOfInvestment", event)
@@ -143,7 +154,7 @@ function Form3({
                     >
                       <Input
                         className="inputnumber"
-                        placeholder="Percentage"
+                        placeholder="فیصد"
                         min={1}
                         name="percentage"
                         defaultValue={percentage}
@@ -188,7 +199,7 @@ function Form3({
                     }
                   >
                     <Select
-                      placeholder=" Select Crop Sale -  فصل کی فروخت "
+                      placeholder=" فصل کی فروخت "
                       onSelect={(value, event) =>
                         handleSelect("cropsSale", event)
                       }
@@ -232,7 +243,7 @@ function Form3({
                     }
                   >
                     <Select
-                      placeholder="Select Target Mandi- - منڈی "
+                      placeholder=" منڈی "
                       showSearch
                       mode="multiple"
 
@@ -282,7 +293,7 @@ function Form3({
                     }
                   >
                     <Select
-                      placeholder="Select  - بیج "
+                      placeholder="بیج "
                       size="large"
                       onSelect={(value, event) => handleSelect("seed", event)}
                       defaultValue={seed.children}
@@ -290,6 +301,8 @@ function Form3({
                       <Option key="Own">Own</Option>
 
                       <Option key="Market">Market</Option>
+                      <Option key="both">Both</Option>
+
                     </Select>
                   </Form.Item>
                 </Col>
@@ -321,7 +334,7 @@ function Form3({
                     }
                   >
                     <Select
-                      placeholder="Select Machinery - مشینری "
+                      placeholder=" مشینری "
                       size="large"
                       onSelect={(value, event) =>
                         handleSelect("machinery", event)
@@ -363,7 +376,7 @@ function Form3({
                     }
                   >
                     <Select
-                      placeholder="Select Crop Advisory - فصلوں کی ایڈوائزری"
+                      placeholder=" فصلوں کی ایڈوائزری"
                       size="large"
                       name="cropAdvisory"
                       onSelect={(value, event) =>

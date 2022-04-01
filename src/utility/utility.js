@@ -57,8 +57,6 @@ export const Punjab = [
     { value: "Sargodha", label: "Sargodha" },
     { value: "Shakargarh", label: "Shakargarh" },
     { value: "Shekhupura", label: "Shekhupura" },
-    { value: "Shakargarh", label: "Shakargarh" },
-    { value: "Shekhupura", label: "Shekhupura" },
     { value: "Shujaabad", label: "Shujaabad" },
     { value: "Sialkot City", label: "Sialkot City" },
   ];

@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import "./required.css";
 import { Tehsils } from "../utility/tehsil";
 import { Row, Col, Card, Input, Select, Form, Button } from "antd";
-
+import { useNavigate } from 'react-router-dom';
 import Header from "./header";
 import Label from "../components/label";
+import { ContactsFilled, ContactsOutlined, PhoneOutlined } from "@ant-design/icons";
 
 function FormScreen({
   handleStep,
@@ -34,9 +35,18 @@ function FormScreen({
     { value: "07", label: "Azad And Jamu Kashmir", Province_code: "07" },
     { value: "01", label: "Fata / Fana", Province_code: "01" },
   ];
-
+  let navigate = useNavigate();
+  function handlecontact(){
+navigate("/contactUs")
+  }
   return (
     <div>
+          <div className="setting-drwer"     onClick={handlecontact} >
+        {/* {setting} */}
+        <PhoneOutlined  className="hypericon"
+      
+         />
+      </div>
       <Header />
       <Row style={{ marginBottom: "100px" }} justify="center">
         <Col xs={24} lg={17} className="mb-24 ">
@@ -84,7 +94,7 @@ function FormScreen({
                       value={fname}
                       onChange={handleChange}
                       name="fname"
-                      placeholder="Name - نام"
+                      placeholder="نام"
                     />
                   </Form.Item>
                 </Col>
@@ -157,7 +167,7 @@ function FormScreen({
                     }
                   >
                     <Select
-                      placeholder="Select Province - صوبہ "
+                      placeholder="صوبہ "
                       showSearch
                       onChange={handleCities}
                       filterOption={(input, option) =>
@@ -201,7 +211,7 @@ function FormScreen({
                     }
                   >
                     <Select
-                      placeholder="Select District - ضلع "
+                      placeholder="ضلع "
                       showSearch
                       filterOption={
                         (input, option) =>
@@ -250,7 +260,7 @@ function FormScreen({
                     }
                   >
                     <Select
-                      placeholder="Select Tehsil - تحصیل"
+                      placeholder=" تحصیل"
                       showSearch
                       size="large"
                       name="tehsil"
@@ -287,7 +297,7 @@ function FormScreen({
                     <Input
                       className="contact"
                       name="village"
-                      placeholder="Village - گاؤں"
+                      placeholder="گاؤں"
                       value={village}
                       defaultValue={village}
                       onChange={handleChange}

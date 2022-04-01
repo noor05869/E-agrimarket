@@ -344,7 +344,11 @@ width: 90px !important;
   font-weight: 600;
 }
 
-
+.addresscol{
+display: grid;
+align-items: center;
+/* justify-content: center; */
+}
 
 
 @media (min-width: 992px) {
@@ -1791,20 +1795,40 @@ span.ismobile {
   text-align: center;
   margin-top: 25px;
 }
+@keyframes ball-bounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
 .setting-drwer {
-  background: #fff;
+  background: #fff ;
   border-radius: 50%;
   bottom: 42px;
   right: 30px;
   font-size: 1.25rem;
   z-index: 990;
   box-shadow: 0 2px 12px 0 rgb(0 0 0 / 16%);
-  width: 52px;
-  height: 52px;
+  width: 72px;
+  height: 72px;
   text-align: center;
   line-height: 60px;
   position: fixed;
   cursor: pointer;
+  animation-name: ball-bounce;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-delay: 2s;
+  animation-direction: alternate;
+}
+.setting-drwer:hover{
+  /* background-color: green; */
+}
+.hypericon{
+  display: flex;
+  margin-top: 20px;
+  font-size: 2rem;
+  justify-content: center;
 }
 
 ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav li:active {

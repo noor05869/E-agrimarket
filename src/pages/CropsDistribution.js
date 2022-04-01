@@ -1,6 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import moment from "moment";
+import { useNavigate } from 'react-router-dom';
+
 import "./required.css";
 import {
   Row,
@@ -14,7 +16,7 @@ import {
   Button,
 } from "antd";
 import Header from "./header";
-import { MinusCircleOutlined, PlusCircleOutlined } from "@ant-design/icons";
+import { MinusCircleOutlined, PhoneOutlined, PlusCircleOutlined } from "@ant-design/icons";
 import Label from "../components/label";
 function CropsDistribution({
   handleStep,
@@ -68,10 +70,21 @@ function CropsDistribution({
     handleSelectChange();
     handleStep("3");
   }
-
+  let navigate = useNavigate();
+  function handlecontact(){
+navigate("/contactUs")
+  }
   return (
     <div>
+     
+          <div className="setting-drwer"     onClick={handlecontact} >
+        {/* {setting} */}
+        <PhoneOutlined  className="hypericon"
+      
+         />
+      </div>
       <Header />
+      
       <Row style={{ marginBottom: "100px" }} justify="center">
         <Col xs={24} lg={22} xl={17} className="mb-24">
           <Form onFinish={handleSubmit}>
@@ -119,7 +132,7 @@ function CropsDistribution({
                     }
                   >
                     <Input
-                      placeholder="Total Land  -  کل زمین - ایکڑ"
+                      placeholder=" کل زمین - ایکڑ"
                       className="inputnumber"
                       onChange={handleChange}
                       name="Land"
@@ -185,7 +198,7 @@ function CropsDistribution({
                                 .indexOf(input.toLowerCase()) >= 0
                             }
                             name={`${i}crops`}
-                            placeholder="Select Crops -  فصلوں کو منتخب کریں"
+                            placeholder="  فصلوں کو منتخب کریں"
                             size="large"
                             defaultValue={data.crops ? data.crops : undefined}
                           >
@@ -218,7 +231,7 @@ function CropsDistribution({
                           }
                         >
                           <Select
-                            placeholder="Select Commodities - اشیاء "
+                            placeholder=" اشیاء "
                             name={`${i}commodities`}
                             onChange={(event) =>
                               handleSelectChange(i, event, "commodities")
@@ -263,7 +276,7 @@ function CropsDistribution({
                           }
                         >
                           <InputNumber
-                            placeholder="Area - رقبہ"
+                            placeholder=" رقبہ"
                             className="inputnumber"
                             onChange={(event) =>
                               handleSelectChange(i, event, "area")
@@ -308,7 +321,7 @@ function CropsDistribution({
                           }
                         >
                           <InputNumber
-                            placeholder="Max Yeild - زیادہ سے زیادہ پیداوار"
+                            placeholder=" زیادہ سے زیادہ پیداوار"
                             className="inputnumber"
                             onChange={(event) =>
                               handleSelectChange(i, event, "max_yield")
@@ -348,7 +361,7 @@ function CropsDistribution({
                           }
                         >
                           <InputNumber
-                            placeholder="Min Yeild - زیادہ سے زیادہ پیداوار"
+                            placeholder=" کم سے کم پیداوار"
                             className="inputnumber"
                             onChange={(event) =>
                               handleSelectChange(i, event, "min_yield")
@@ -439,7 +452,7 @@ function CropsDistribution({
                             size="large"
                             className="icon"
                           />{" "}
-                          <a onClick={handleDistributionAdd}>add more</a>
+                          <a onClick={handleDistributionAdd}>Add More</a>
                           {cropDistribution.length > 1 ? (
                             <>
                               <MinusCircleOutlined
@@ -505,7 +518,7 @@ function CropsDistribution({
                       >
                         <Select
                           className="userName"
-                          placeholder="Select Cattles - مویشی"
+                          placeholder=" مویشی"
                           value={data.Cattles}
                           size="large"
                           name={`${i}cattle`}
@@ -537,7 +550,7 @@ function CropsDistribution({
                       >
                         <InputNumber
                           className="inputnumber"
-                          placeholder="Quantity - مقدار"
+                          placeholder=" مقدار"
                           name={`${i}quantity`}
                           onChange={(event) =>
                             handleSelectChange(i, event, "qt")
@@ -596,7 +609,7 @@ function CropsDistribution({
                           size="large"
                           className="icon"
                         />{" "}
-                        <a onClick={addCattles}>add more</a>
+                        <a onClick={addCattles}>Add More</a>
                         {cattless.length > 1 ? (
                           <>
                             <MinusCircleOutlined

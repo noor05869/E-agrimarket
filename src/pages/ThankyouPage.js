@@ -23,7 +23,7 @@ function ThankyouPage() {
         
         </Row> 
         <Row justify="center">
-        <Col xs={24} lg={10} className="mb-24">
+        <Col xs={21} lg={10} className="mb-24">
           <Card
             style={{ background: "#e7e7e7", borderRadius: "20px" }}
             className="header-solid h-full ant-card-p-0 formBody"
@@ -47,7 +47,13 @@ function ThankyouPage() {
            >
              <Row justify="center">
         <h5 className='message'>Your data has been submitted successfully.  </h5></Row>
-     <Row justify="center">   <Link to="/farmerdata" ><h2 className='link Bold homeScreenLink'  >Go to Home Screen</h2></Link></Row>
+     <Row justify="center">  
+      <Link to="/" >
+        
+        <h2 className='link Bold homeScreenLink1'  >Go back to dashboard</h2></Link>
+      <Link to="/farmerdata" ><h2 className='link Bold homeScreenLink2'  >Go back to farmer page</h2></Link>
+
+      </Row>
      <Row justify="center">
  </Row></Card></Col></Row>
     </div>

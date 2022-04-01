@@ -46,8 +46,11 @@ function ContactSubmissiom() {
             
            >
              <Row justify="center">
-        <h5 className='message'>Your Query has been submitted successfully.  </h5></Row>
-     <Row justify="center">   <Link to="/farmerdata" ><h2 className='link Bold homeScreenLink'  >Go to Home Screen</h2></Link></Row>
+        <h5 className='message'>Your query has been submitted successfully.  </h5></Row>
+     <Row justify="center"> 
+       <Link to="/" ><h2 className='link Bold homeScreenLink'  >Go to back to dashboard</h2></Link>
+       
+       </Row>
      <Row justify="center">
  </Row></Card></Col></Row>
     </div>

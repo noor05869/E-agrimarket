@@ -23,7 +23,7 @@ function LandingPage() {
             
             </Row> 
             <Row justify="center">
-            <Col xs={24} lg={10} className="mb-24">
+            <Col xs={22} lg={10} className="mb-24">
               <Card
                 style={{ background: "#e7e7e7", borderRadius: "20px" }}
                 // className="payment-method-card"

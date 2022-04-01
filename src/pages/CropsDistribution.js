@@ -16,7 +16,7 @@ import {
   Button,
 } from "antd";
 import Header from "./header";
-import { MinusCircleOutlined, PhoneOutlined, PlusCircleOutlined } from "@ant-design/icons";
+import { MinusCircleFilled, MinusCircleOutlined, PhoneOutlined, PlusCircleFilled, PlusCircleOutlined } from "@ant-design/icons";
 import Label from "../components/label";
 function CropsDistribution({
   handleStep,
@@ -86,7 +86,7 @@ navigate("/contactUs")
       <Header />
       
       <Row style={{ marginBottom: "100px" }} justify="center">
-        <Col xs={24} lg={22} xl={17} className="mb-24">
+        <Col xs={22} lg={22} xl={17} className="mb-24">
           <Form onFinish={handleSubmit}>
             <Card
               className="formBody"
@@ -447,7 +447,7 @@ navigate("/contactUs")
                           md={6}
                           xl={4}
                         >
-                          <PlusCircleOutlined
+                          <PlusCircleFilled
                             onClick={handleDistributionAdd}
                             size="large"
                             className="icon"
@@ -455,7 +455,7 @@ navigate("/contactUs")
                           <a onClick={handleDistributionAdd}>Add More</a>
                           {cropDistribution.length > 1 ? (
                             <>
-                              <MinusCircleOutlined
+                              <MinusCircleFilled
                                 onClick={() => handleDistributionRemove(i)}
                                 fill="currentColor"
                                 className="ricon"
@@ -604,7 +604,7 @@ navigate("/contactUs")
                         sm={6}
                         md={2}
                       >
-                        <PlusCircleOutlined
+                        <PlusCircleFilled
                           onClick={addCattles}
                           size="large"
                           className="icon"
@@ -612,7 +612,7 @@ navigate("/contactUs")
                         <a onClick={addCattles}>Add More</a>
                         {cattless.length > 1 ? (
                           <>
-                            <MinusCircleOutlined
+                            <MinusCircleFilled
                               onClick={() => removeCattle(i)}
                               fill="currentColor"
                               className="ricon"

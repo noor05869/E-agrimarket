@@ -59,7 +59,7 @@ function ContactForm() {
                 title={
                   <>
                     <Row justify="" gutter={[0, 24]} className=" header title">
-                      <h2 className="font-semibold m-0 ">Contact us</h2>
+                      <h2 className="font-semibold m-0 ">Contact Us</h2>
                     </Row>
                   </>
                 }
@@ -139,7 +139,7 @@ function ContactForm() {
                   </Col>
 
                   <Col xs={19} span={7} lg={14} sm={20} md={6}>
-                    <Label eLabel="message" ulabel="نام" index={0} />
+                    <Label eLabel="Message" ulabel="نام" index={0} />
                     <Form.Item
                       name="message"
                       rules={

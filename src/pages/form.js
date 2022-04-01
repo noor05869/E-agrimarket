@@ -39,11 +39,11 @@ function Form() {
       setCities(Punjab);
     } else if (value === "Sindh") {
       setCities(sindh);
-    } else if (value === "05") {
+    } else if (value === "Balochistan") {
       setCities(Blochistan);
-    } else if (value === "04") {
+    } else if (value === "Khyber Pakhtunkhwa") {
       setCities(KPK);
-    } else if (value === "07") {
+    } else if (value === "Azad And Jamu Kashmir") {
       setCities(Kashmir);
     } else if (value === "Fedral Capital") {
       setCities(feralCapital);

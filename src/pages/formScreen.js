@@ -33,7 +33,7 @@ function FormScreen({
     { value: "05", label: "Balochistan", Province_code: "05" },
     { value: "04", label: "Khyber Pakhtunkhwa", Province_code: "04" },
     { value: "07", label: "Azad And Jamu Kashmir", Province_code: "07" },
-    { value: "01", label: "Fata / Fana", Province_code: "01" },
+    // { value: "01", label: "Fata / Fana", Province_code: "01" },
   ];
   let navigate = useNavigate();
   function handlecontact(){
@@ -49,7 +49,7 @@ navigate("/contactUs")
       </div>
       <Header />
       <Row style={{ marginBottom: "100px" }} justify="center">
-        <Col xs={24} lg={17} className="mb-24 ">
+        <Col xs={22} lg={17} className="mb-24 ">
           <Form onFinish={handleSubmit}>
             <Card
               className=" formBody"

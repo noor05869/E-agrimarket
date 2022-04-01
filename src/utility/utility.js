@@ -388,3 +388,44 @@ export const sugarCrops = [
   { value: "Sugarbeat", lable: "Sugarbeat", ulabel: "چکندر" },
   { value: "Stevia", lable: "Stevia", ulabel: "سٹیویا" },
 ];
+
+export const Cattles=[
+ 
+  { value: "Buffalos", lable: "Buffalos", ulabel: "بھینسیں" },
+  { value: "Goats", lable: "Goats", ulabel: "بکرے" },
+  { value: "Camels", lable: "Camels", ulabel: "اونٹ" },
+  { value: "Dumba", lable: "Dumba", ulabel: "دومبا" },
+  { value: "Chatra", lable: "Chatra", ulabel: "چھترا" },
+
+
+  
+]
+
+
+export const Machines=[
+  { value: "Tractors", lable: "Tractors", ulabel: "ٹریکٹر" },
+  { value: "Combine Harvesters", lable: "Combine Harvesters", ulabel: "کمبائن ہارویسٹر" },
+  { value: "Cultivators", lable: "Cultivators", ulabel: "کاشتکار" },
+  { value: "Cultipacker", lable: "Cultipacker", ulabel: "کلٹی پیکر" },
+  { value: "Harrow", lable: "Harrow", ulabel: "ہیرو" },
+  { value: "Subsoiler", lable: "Subsoiler", ulabel: "سب سوائلر" },
+  { value: "Rotator", lable: "Rotator", ulabel: "روٹیٹر" },
+  { value: "Broadcast seeder", lable: "Broadcast seeder", ulabel: "براڈکاسٹ سیڈر" },
+  { value: "Planter", lable: "Planter", ulabel: "پللاننٹر" },
+  { value: "Seed Driller", lable: "Seed Driller", ulabel: "بیج ڈرل" },
+  { value: "Fertilizer Spreader", lable: "Fertilizer Spreader", ulabel: "کھاد پھیلانے والا" },
+  { value: "Trans-planter", lable: "Trans-planter", ulabel: "ٹرانس پلانٹر" },
+  { value: "Drip Irrigation Systems", lable: "Drip Irrigation Systems", ulabel: "ڈرپ ایریگیشن سسٹم" },
+  { value: "Weight Sorter", lable: "Weight Sorter", ulabel: "وزن چھانٹنے والا" },
+  { value: "Round Baler", lable: "Round Baler", ulabel: "گول بیلر" },
+  { value: "Sprayers", lable: "Sprayers", ulabel: "سپریر" },
+  { value: "Irrigation Pumps", lable: "Irrigation Pumps", ulabel: "آبپاشی پمپس  " },
+  { value: "Pickers, Fruits, Hand, Base Metal", lable: "Pickers, Fruits, Hand, Base Metal", ulabel: "چننے والے، پھل، ہاتھ، بیس میٹل" },
+  { value: "Diggers, Seeders", lable: "Diggers, Seeders", ulabel: "کھودنے والا، بیج لگانے والا" },
+  { value: "Sprinklers", lable: "Sprinklers", ulabel: "چھڑکنے والے" },
+  { value: "Cotton Gins and Parts", lable: "Cotton Gins and Parts", ulabel: "کاٹن جنز اور پارٹس" },
+
+
+
+]
+

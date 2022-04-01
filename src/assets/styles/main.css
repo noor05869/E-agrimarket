@@ -68,18 +68,16 @@
   justify-content: space-between;
 }
 .homeScreenLink{
-  color: black;
+  color: rgb(150, 204, 92);;
   margin-top: 40px;
   font-size: 0.8rem;
   transition: all .3s ease-in-out;
   
 
 }
-.homeScreenLink:hover{
-  color:green;
-}
+
 .homeScreenLink1{
-  color: black;
+  color: rgb(150, 204, 92);;
   margin-top: 40px;
   font-size: 0.8rem;
   /* padding-left: 30px; */
@@ -88,21 +86,13 @@
 
 }
 .homeScreenLink2{
-  color: black;
+  color: rgb(150, 204, 92);;
   margin-top: 40px;
   font-size: 0.8rem;
   padding-left: 30px;
   transition: all .3s ease-in-out;
 
 
-}
-.homeScreenLink2:hover{
-  color:green;
-  /* box-shadow: -1px 6px 10px 0 rgba(120, 60, 20, .2); */
-  }
-.homeScreenLink1:hover{
-color:green;
-/* box-shadow: -1px 6px 10px 0 rgba(120, 60, 20, .2); */
 }
 
 .message{

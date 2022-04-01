@@ -14,7 +14,7 @@ import {
 } from "antd";
 import { Tehsils } from "../utility/tehsil";
 import { useNavigate } from "react-router-dom";
-
+import { Machines } from "../utility/utility";
 import Header from "./header";
 import { PhoneOutlined } from "@ant-design/icons";
 function Form3({
@@ -414,12 +414,14 @@ function Form3({
                         }
                         defaultValue={machinery.children}
                       >
-                        <Option value="Own">
+                        {Machines.map(data=>(<>  
+                         <Option key={data.value} >
                           <div className="optionaStyle">
-                            <p>Own</p>
-                            <p>اپنے</p>
+                            <p>{data.value}</p>
+                            <p>{data.ulabel}</p>
                           </div>
-                        </Option>
+                        </Option></>))}
+                      
 
                         <Option value="Rented">
                           <div className="optionaStyle">

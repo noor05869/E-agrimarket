@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import moment from "moment";
 import { useNavigate } from 'react-router-dom';
-
+import { Cattles } from "../utility/utility";
 import "./required.css";
 import {
   Row,
@@ -527,8 +527,11 @@ navigate("/contactUs")
                             handleSelectChange(i, event, "Cattles")
                           }
                         >
-                          <Option key="Buffalo">Buffalo</Option>
-                          <Option key="Goat">Goat</Option>
+                          {Cattles.map(data=>(<>  <Option key={data.value}> <div className="optionaStyle">
+                                    <p>{data.value}</p>
+                                    <p>{data.ulabel}</p>
+                                  </div></Option></>))}
+                        
                         </Select>
                       </Form.Item>
                     </Col>

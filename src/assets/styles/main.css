@@ -68,17 +68,21 @@
   justify-content: space-between;
 }
 .homeScreenLink{
-  color: rgb(150, 204, 92);;
+  color: black;
   margin-top: 40px;
   font-size: 0.8rem;
   transition: all .3s ease-in-out;
+  text-decoration: underline;
+
   
 
 }
 
 .homeScreenLink1{
-  color: rgb(150, 204, 92);;
+  color: black;
   margin-top: 40px;
+  text-decoration: underline;
+
   font-size: 0.8rem;
   /* padding-left: 30px; */
   transition: all .3s ease-in-out;
@@ -86,7 +90,8 @@
 
 }
 .homeScreenLink2{
-  color: rgb(150, 204, 92);;
+  color: black;
+  text-decoration: underline;
   margin-top: 40px;
   font-size: 0.8rem;
   padding-left: 30px;

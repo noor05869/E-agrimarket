@@ -50,8 +50,8 @@ function ThankyouPage() {
      <Row justify="center">  
       <Link to="/" >
         
-        <h2 className='link Bold homeScreenLink1'  >Go back to dashboard</h2></Link>
-      <Link to="/farmerdata" ><h2 className='link Bold homeScreenLink2'  >Go back to farmer page</h2></Link>
+        <h2 className='link Bold homeScreenLink1'  >Dashboard</h2></Link>
+      <Link to="/farmerdata" ><h2 className='link Bold homeScreenLink2'  >Add Another</h2></Link>
 
       </Row>
      <Row justify="center">

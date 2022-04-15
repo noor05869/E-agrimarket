@@ -10,14 +10,10 @@ import App from "../assets/Apps.png";
 import Gplay from "../assets/Gplay.png";
 import vimage from "../assets/vimage.png";
 
-
 import handimage from "../assets/Wood-Hand.png";
 import { Input } from "antd";
 function HeroSection() {
-
-
   const { TextArea } = Input;
-
 
   return (
     <div>
@@ -44,7 +40,7 @@ function HeroSection() {
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active navli">
               <a class="nav-link navlink" href="#">
-               Home{" "}
+                Home{" "}
               </a>
             </li>
             <li class="nav-item navli">
@@ -80,18 +76,18 @@ function HeroSection() {
         <div className="row">
           <div className="col-lg-6">
             <h2 className="serviceHead font-bold">
-              Our <span >Services</span>
+              Our <span>Services</span>
             </h2>
             <p className="serp">
+              eAgriMarket is smart trading platform for all Agriculture
+              stakeholders. <br />
+              We empower farmers with technology and provide all Agri
+              stakeholders a platform for trading.
+            </p>
+            {/* <p className="serp">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               <br /> Sed in tempus libero ornare nulla aenean vulputate
-              <br /> malesuada. Massa sodales urna sapien nunc in <br />
-              sem ipsum molestie diam.
-            </p>
-            <p className="serp">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              <br /> Sed in tempus libero ornare nulla aenean vulputate
-            </p>
+            </p> */}
             <button className="serbtn">Learn More</button>
           </div>
           <div className="col-lg-6">
@@ -100,42 +96,40 @@ function HeroSection() {
               <div className="paradiv">
                 <p className="grptext">E-Mandi</p>
                 <p className="serp2">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit .
-                  <br />
-                  Sed in tempus libero ornare
+                  Platform for Sale and Purchase of Agri commodities
                 </p>
               </div>
             </div>
             <div className="othergrp">
               <img className="grp1img" src={grp4} />
               <div className="paradiv">
-                <p className="grptext">E-Mandi</p>
+                <p className="grptext">Input Marketplace</p>
                 <p className="serp2">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit .
-                  <br />
-                  Sed in tempus libero ornare
+                  Online marketplace for Agro Chemicals and Fertilizers
+                  {/* <br />
+                  Sed in tempus libero ornare */}
                 </p>
               </div>
             </div>
             <div className="othergrp">
               <img className="grp1img" src={grp2} />
               <div className="paradiv">
-                <p className="grptext">E-Mandi</p>
+                <p className="grptext">Machinery Marketplace</p>
                 <p className="serp2">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit .
-                  <br />
-                  Sed in tempus libero ornare
+                  Online Marketplace for Agri Machinery and Tools
+                  {/* <br />
+                  Sed in tempus libero ornare */}
                 </p>
               </div>
             </div>
             <div className="othergrp">
               <img className="grp1img" src={grp3} />
               <div className="paradiv">
-                <p className="grptext">E-Mandi</p>
+                <p className="grptext">Crop Advisory</p>
                 <p className="serp2">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit .
-                  <br />
-                  Sed in tempus libero ornare
+                  Expert Agri advisory services for Farmers
+                  {/* <br />
+                  Sed in tempus libero ornare */}
                 </p>
               </div>
             </div>
@@ -149,66 +143,63 @@ function HeroSection() {
             <h2 className="prdhead">Our Products</h2>
           </div>
           <p className="prdp">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in
-            tempus libero ornare nulla aenean <br /> vulputate malesuada. Massa
-            sodales urna sapien nunc in sem ipsum molestie diam.
+            Online Trading and Information platform for all Agriculture
+            stakeholders.
+            <br /> Get market insights of all Agri products across country and{" "}
+            <br />
+            trade with ease by exploring your desired product on our platform.
           </p>
         </div>
         <div className="row justify-content-end">
           <div className="mainprod  ">
-            <div style={{display:'grid'}} className="row">
+            <div style={{ display: "grid" }} className="row">
               <div className="col-lg-9">
                 <div className="mobilecontent ">
                   <h2 className="mobileapph">E-Agri Mobile App</h2>
                   <p className="paragra">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    <br /> Sed in tempus libero ornare nulla aenean vulputate{" "}
-                    <br /> malesuada.Massa sodales urna sapien nunc in <br />
-                    sem ipsum molestie diam.
+                    Online Trading and Information platform for all Agriculture
+                    stakeholders. Get market insights of all Agri products
+                    across country and trade with ease by exploring your desired
+                    product on our platform.
                   </p>
                   <div className="markkk">
                     <div>
-                  <p className="ticksp">
-                    <img className="ticksimg" src={vector} />
-                    <p className="marking">Representative</p>
-                  </p>
-                  <p className="ticksp1">
-                    <img className="ticksimg" src={vector} />
-                    <p className="marking">Pharya</p>
-                  </p>{" "}
-                  <p className="ticksp1">
-                    <img className="ticksimg" src={vector} />
-                    <p className="marking">Arti</p>
-                  </p>
+                      <p className="ticksp">
+                        <img className="ticksimg" src={vector} />
+                        <p className="marking">e-Mandi</p>
+                      </p>
+                      <p className="ticksp1">
+                        <img className="ticksimg" src={vector} />
+                        <p className="marking">Farmers Portal </p>
+                      </p>{" "}
+                      <p className="ticksp1">
+                        <img className="ticksimg" src={vector} />
+                        <p className="marking">Input Marketplace </p>
+                      </p>
+                    </div>
+                    <div className="mark2">
+                      <p className="ticksp2">
+                        <img className="ticksimg" src={vector} />
+                        <p className="marking">Machinery Marketplace </p>
+                      </p>
+                      <p className="ticksp2">
+                        <img className="ticksimg" src={vector} />
+                        <p className="marking"> Advisory Portal</p>
+                      </p>
+                    </div>
                   </div>
-                  <div className="mark2">
-                  <p className="ticksp2">
-                    <img className="ticksimg" src={vector} />
-                    <p className="marking">Seed / Fertilizers </p>
-                  </p>
-                  <p className="ticksp2">
-                    <img className="ticksimg" src={vector} />
-                    <p className="marking">Machinery</p>
-                  </p>
-                  
-                  </div>
-                 
-                  </div>
-                 
                 </div>
               </div>
               <div className=" col-lg-2 playbtns">
-               <img className="playimg" src={Gplay} />
+                <img className="playimg" src={Gplay} />
                 <img src={App} />
-              </div> 
+              </div>
             </div>
 
             <div className="mobilediv">
               <img className="mobileimg" src={handimage} />
             </div>
-          
           </div>
-        
         </div>
       </div>
       <div className="Proposition">
@@ -218,72 +209,69 @@ function HeroSection() {
           </div>
           <p className="prdp">
             eAgriMarket help Farmers to directly market their produce to Traders
-            and Agro-Industry.<br/> All immediate supply chain stages are covered by
-            eAgriMarket and our partner network
+            and Agro-Industry. <br/>All immediate supply chain stages are covered by
+            eAgriMarket and our partner network.
           </p>
         </div>
         <div className=" vedios justify-content-center">
-
-      {/* <video width="80%" playsinline="true" autoplay="autoplay" muted="muted" loop="loop" type="video/mp4" src="https://agrimp-prod.s3.amazonaws.com/public/OVP_Video.mp4"></video> */}
-       <img className="vimage" src={vimage} />
+          {/* <video width="80%" playsinline="true" autoplay="autoplay" muted="muted" loop="loop" type="video/mp4" src="https://agrimp-prod.s3.amazonaws.com/public/OVP_Video.mp4"></video> */}
+          <img className="vimage" src={vimage} />
         </div>
-
       </div>
       <div className="Register">
         <div className="reginner">
-        <div className="head">
-          <div className="heading">
-            <h2 className="regcontent">Register Yourself</h2>
+          <div className="head">
+            <div className="heading">
+              <h2 className="regcontent">Register Yourself</h2>
+            </div>
+            <p className="regp">
+              eAgriMarket help Farmers to directly market their produce to
+              Traders and Agro-Industry.
+              <br /> All immediate supply chain stages are covered by
+              eAgriMarket and our partner network
+            </p>
           </div>
-          <p className="regp">
-            eAgriMarket help Farmers to directly market their produce to Traders
-            and Agro-Industry.<br/> All immediate supply chain stages are covered by
-            eAgriMarket and our partner network
-          </p>
+          <div className="regbtndiv">
+            <button className="regbtn">Farmer</button>
+            <button className="regbtn">Trader</button>
+          </div>
         </div>
-        <div className="regbtndiv">
-<button className="regbtn">Farmer</button>
-<button className="regbtn">Trader</button>
-
-        </div>
-
-        </div>
-
       </div>
 
       <div className="footer ">
-<div   className="row  ">
-  <div className="col-lg-5 ">
-    <div className="footerdiv">
-<img className="footerimg" src={logo} />
-{/* <p>Sustainable & Smart Agriculture Trading Platform</p>  */}
-<ul className="footerul">
-  <li className="footerli1">About </li>
-  <li className="footerli">Home </li>
-  <li className="footerli">Contact Us </li>
+        <div className="row  ">
+          <div className="col-lg-5 ">
+            <div className="footerdiv">
+              <img className="footerimg" src={logo} />
+              {/* <p>Sustainable & Smart Agriculture Trading Platform</p>  */}
+              <ul className="footerul">
+                <li className="footerli1">About </li>
+                <li className="footerli">Home </li>
+                <li className="footerli">Contact Us </li>
+              </ul>
+            </div>
+          </div>
+          <div className="col-lg-7">
+            <div className="footer1">
+              <div className="row ">
+                <div className="col-lg-5">
+                  <h3 className="foh">Get in touch</h3>
+                  <p className="fop">we have to hear from you</p>
 
-  </ul>
-  </div>
-  </div>
-  <div className="col-lg-7">
-    <div className="footer1">
-      <div className="row ">
-        <div className="col-lg-5">
-    <h3 className="foh">Get in touch</h3>
-    <p className="fop">we have to hear from you</p>
-    
-    <Input  placeholder="Enter Name Here" className="nameinput1"/>
-    <Input placeholder="Enter Phone Number" className="nameinput"/>
-
-    </div>
-    <div className="col-lg-5 textArea">
-      <TextArea rows={5} />
-      <button className="sendbtn">Send Message</button>
-    </div>
-    </div>
-    </div>
-  </div>
-</div>
+                  <Input placeholder="Enter Name Here" className="nameinput1" />
+                  <Input
+                    placeholder="Enter Phone Number"
+                    className="nameinput"
+                  />
+                </div>
+                <div className="col-lg-5 textArea">
+                  <TextArea rows={5} />
+                  <button className="sendbtn">Send Message</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

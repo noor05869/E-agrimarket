@@ -3443,7 +3443,7 @@ margin-right: 50px;
 }
 .navli{
   font-size: 20px;
-  margin-right: 80px;
+  margin-right: 46px;
 }
 
 .navlink{
@@ -3459,8 +3459,8 @@ margin-right: 50px;
   width: 430px;
 }
 .navbutton{
-  width: 126px;
-    height: 52px;
+  height: 48px;
+    width: 119px;
     /* color: green; */
     background: #256834;
     color: white;

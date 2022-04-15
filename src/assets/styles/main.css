@@ -3438,7 +3438,8 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile
   fill: #8c8c8c;
 }
 .navlidiv{
-  justify-content: space-around;
+justify-content: end;
+margin-right: 50px;
 }
 .navli{
   font-size: 20px;
@@ -3458,13 +3459,13 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile
   width: 430px;
 }
 .navbutton{
-  width: 149px;
-  height: 62px;
-  /* color: green; */
-  background: #256834;
-  color: white;
-  font-size: 20px;
-  border-radius: 40px
+  width: 126px;
+    height: 52px;
+    /* color: green; */
+    background: #256834;
+    color: white;
+    font-size: 17px;
+    border-radius: 40px
 
 }
 .carouseldiv{
@@ -3550,7 +3551,7 @@ font-size: 25px;
 line-height: 38px;
 margin-left: 40px;
 margin-bottom: 0 !important;
-color: #96CC5C;
+color: white;
 }
 .serp2{
   font-weight: 400;
@@ -3603,7 +3604,7 @@ color: #313131;
   display: flex;
   justify-content: center;
     right: 482px;
-    top: -522px;
+    top: -505px;
 }
 .mobileimg{
   height: 426px;
@@ -3643,12 +3644,25 @@ margin-bottom: 0 !important;
   align-items: center;
 
 }
+.ticksp2{
+  display:flex;
+  margin-left: 30px;
+  align-items: center;
+
+}
+.mark2{
+  margin-top: 60px;
+
+}
 .ticksp1{
   margin-top: 5px;
   display:flex;
   
   align-items: center;
 
+}
+.markkk{
+  display: flex;
 }
 .ticksimg{
   height: 25px;
@@ -3662,9 +3676,11 @@ margin-bottom: 0 !important;
   color: #F3F3F3;
 }
 .playbtns{
-margin-top: 400px;
 /* margin-bottom: 5px/; */
-padding-bottom: 5px;
+margin-left: 290px;
+    display: flex;
+    margin-top:42px
+
 }
 .vedios{
   display: flex;
@@ -3775,7 +3791,7 @@ color: black;
   margin-top: 190px;
 }
 .sendbtn{
-  width: 408px;
+  width: 100%;
   height: 66px;
   /* top: 5793px; */
   font-weight: 700;
@@ -3832,4 +3848,11 @@ background: white;
   justify-content: space-between;
   padding-top: 0rem;
   padding-bottom: 0rem;
+}
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding-right: 0 ;
+  padding-left: 0;
+}
+.playimg{
+margin-right: 40px;
 }

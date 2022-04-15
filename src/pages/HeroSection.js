@@ -80,7 +80,7 @@ function HeroSection() {
         <div className="row">
           <div className="col-lg-6">
             <h2 className="serviceHead font-bold">
-              Our <span style={{ color: "#96CC5C" }}>Services</span>
+              Our <span >Services</span>
             </h2>
             <p className="serp">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -156,7 +156,7 @@ function HeroSection() {
         </div>
         <div className="row justify-content-end">
           <div className="mainprod  ">
-            <div className="row">
+            <div style={{display:'grid'}} className="row">
               <div className="col-lg-9">
                 <div className="mobilecontent ">
                   <h2 className="mobileapph">E-Agri Mobile App</h2>
@@ -166,6 +166,8 @@ function HeroSection() {
                     <br /> malesuada.Massa sodales urna sapien nunc in <br />
                     sem ipsum molestie diam.
                   </p>
+                  <div className="markkk">
+                    <div>
                   <p className="ticksp">
                     <img className="ticksimg" src={vector} />
                     <p className="marking">Representative</p>
@@ -178,26 +180,35 @@ function HeroSection() {
                     <img className="ticksimg" src={vector} />
                     <p className="marking">Arti</p>
                   </p>
-                  <p className="ticksp1">
+                  </div>
+                  <div className="mark2">
+                  <p className="ticksp2">
                     <img className="ticksimg" src={vector} />
                     <p className="marking">Seed / Fertilizers </p>
                   </p>
-                  <p className="ticksp1">
+                  <p className="ticksp2">
                     <img className="ticksimg" src={vector} />
                     <p className="marking">Machinery</p>
                   </p>
+                  
+                  </div>
+                 
+                  </div>
+                 
                 </div>
               </div>
-              <div className="col-lg-2 playbtns">
-                <img src={Gplay} />
+              <div className=" col-lg-2 playbtns">
+               <img className="playimg" src={Gplay} />
                 <img src={App} />
-              </div>
+              </div> 
             </div>
 
             <div className="mobilediv">
               <img className="mobileimg" src={handimage} />
             </div>
+          
           </div>
+        
         </div>
       </div>
       <div className="Proposition">

@@ -2126,6 +2126,7 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav
 
 body {
   overflow: visible !important;
+  overflow-x: hidden !important;
   width: 100% !important;
 }
 
@@ -3822,4 +3823,13 @@ background: white;
 .footerrow{
   overflow-x: hidden;
   --bs-gutter-x: 0 !important;
+}
+.navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0rem;
+  padding-bottom: 0rem;
 }

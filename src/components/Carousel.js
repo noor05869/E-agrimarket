@@ -50,7 +50,7 @@ function Slider() {
 
 export default Slider;
 const contentStyle = {
-  height: "729px",
+  height: "700px",
   Width: "1920px",
   color: "#fff",
   lineHeight: "160px",

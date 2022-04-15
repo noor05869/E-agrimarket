@@ -505,11 +505,11 @@ function Form3({
                   </Col>
                 </Row>
 
-                {response?.success === false ? (
+                {response ? (
                   <Row justify="center">
                     <Alert
                       style={{ marginBottom: "10px" }}
-                      message={response?.message}
+                      message={response}
                       type="error"
                     />
                   </Row>

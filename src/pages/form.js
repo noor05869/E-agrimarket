@@ -145,7 +145,7 @@ setloading(true)
         },
         crops: newArray,
         cattle: ctdata,
-      });
+      })
       setRes(data);
       if (data.success === true) {
         message.success({
@@ -157,13 +157,16 @@ setloading(true)
         });
         handleStep("4");
       }
-    } catch (error) {
+  console.log("responese of api",data)
+
+    } catch  {
       console.log("error ==========================", error);
     }
     setloading(false)
   }
+
   console.log("state22", initialValues1);
-  console.log("rwspomse+++++", res);
+  console.log("rwspomse+++++", error?.data);
 
   async function handleOTPsubmit(otp) {
     console.log("oooooottttpp", otp);
@@ -384,7 +387,7 @@ setloading(true)
           handleStep={handleStep}
           handleSubmit={handleSubmit}
           Cities={Cities}
-          response={res}
+          // response={error?.data.message}
           loading={loading}
         />
       );

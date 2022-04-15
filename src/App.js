@@ -27,6 +27,7 @@ import LandingPage from "./pages/LandingPage";
 import ThankyouPage from "./pages/ThankyouPage";
 import ContactForm from "./pages/Contact.js";
 import ContactSubmissiom from "./pages/ContactSubmission";
+import HeroSection from "./pages/HeroSection";
 
 
 function App() {
@@ -48,6 +49,8 @@ function App() {
           <Route path="/thankyou" element={<ThankyouPage/>}/>
           <Route path="/contactUs" element={<ContactForm/>}/>
           <Route path="/contactSubmission" element={<ContactSubmissiom/>}/>
+          <Route path="/home" element={<HeroSection/>}/>
+
 
 
 

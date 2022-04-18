@@ -11,9 +11,9 @@ import Gplay from "../assets/Gplay.png";
 import vimage from "../assets/vimage.png";
 import { useState } from "react";
 import handimage from "../assets/Wood-Hand.png";
-import { Input ,Form, Button} from "antd";
+import { Input, Form, Button } from "antd";
 import { message } from "antd";
-
+import vedio from "../assets/vedios.mp4"
 import * as api from "../api/api";
 import useApi from "../Hooks/useApi";
 
@@ -48,16 +48,17 @@ function HeroSection() {
         },
       });
       // navigate("/contactSubmission");
-    } catch {}
+    } catch { }
 
     // setloading(false);
   }
-function handlefarmer(){
-navigate("/farmerdata")
-}
-function handleTrader(){
-  navigate("/Trader")
+  function handlefarmer() {
+    navigate("/farmerdata")
   }
+  function handleTrader() {
+    navigate("/Trader")
+  }
+  
   return (
     <div>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -104,9 +105,9 @@ function handleTrader(){
           </ul>
           {/* <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/> */}
           <button
-          onClick={()=>{
-            navigate("./contactUs")
-          }}
+            onClick={() => {
+              navigate("./contactUs")
+            }}
             class="btn btn-outline-success my-2 my-sm-0 navbutton font-bold"
             type="submit"
           >
@@ -114,16 +115,19 @@ function handleTrader(){
           </button>
         </div>
       </nav>
+      
       <Slider />
       {/* <video width="80%" playsinline="true" autoplay="autoplay" muted="muted" loop="loop" type="video/mp4" src="https://agrimp-prod.s3.amazonaws.com/public/OVP_Video.mp4"></video> */}
 
       {/* Services */}
-      <div className="servicesdiv">
+      <div className="servicesdiv p-3 p-md-4 p-lg-5">
+      
         <div className="row">
-          <div className="col-lg-6">
-            <h2 className="serviceHead font-bold">
-              Our <span>Services</span>
-            </h2>
+        
+          <div className="col-md-6">
+          <h2 className="serviceHead font-bold">
+          Our Services
+        </h2>
             <p className="serp">
               eAgriMarket is smart trading platform for all Agriculture
               stakeholders. <br />
@@ -136,12 +140,12 @@ function handleTrader(){
             </p> */}
             <button className="serbtn">Learn More</button>
           </div>
-          <div className="col-lg-6">
-            <div className="sergroup">
+          <div className="col-md-6 mt-3 mt-md-0">
+            <div className="d-flex">
               <img className="grp1img" src={grp1} />
               <div className="paradiv">
-                <p className="grptext">E-Mandi</p>
-                <p className="serp2">
+                <p className="grptext ms-3 ms-md-4">E-Mandi</p>
+                <p className="serp2 ms-3 ms-md-4">
                   Platform for Sale and Purchase of Agri commodities
                 </p>
               </div>
@@ -149,8 +153,8 @@ function handleTrader(){
             <div className="othergrp">
               <img className="grp1img" src={grp4} />
               <div className="paradiv">
-                <p className="grptext">Input Marketplace</p>
-                <p className="serp2">
+                <p className="grptext  ms-3 ms-md-4">Input Marketplace</p>
+                <p className="serp2 ms-3 ms-md-4">
                   Online marketplace for Agro Chemicals and Fertilizers
                   {/* <br />
                   Sed in tempus libero ornare */}
@@ -160,8 +164,8 @@ function handleTrader(){
             <div className="othergrp">
               <img className="grp1img" src={grp2} />
               <div className="paradiv">
-                <p className="grptext">Machinery Marketplace</p>
-                <p className="serp2">
+                <p className="grptext  ms-3 ms-md-4">Machinery Marketplace</p>
+                <p className="serp2 ms-3 ms-md-4">
                   Online Marketplace for Agri Machinery and Tools
                   {/* <br />
                   Sed in tempus libero ornare */}
@@ -171,8 +175,8 @@ function handleTrader(){
             <div className="othergrp">
               <img className="grp1img" src={grp3} />
               <div className="paradiv">
-                <p className="grptext">Crop Advisory</p>
-                <p className="serp2">
+                <p className="grptext  ms-3 ms-md-4">Crop Advisory</p>
+                <p className="serp2 ms-3 ms-md-4">
                   Expert Agri advisory services for Farmers
                   {/* <br />
                   Sed in tempus libero ornare */}
@@ -183,24 +187,22 @@ function handleTrader(){
         </div>
       </div>
       {/* Products */}
-      <div className="Products">
+      <div className="Products p-3 p-md-4 p-lg-5">
         <div className="head">
           <div className="heading">
             <h2 className="prdhead">Our Products</h2>
           </div>
-          <p className="prdp">
+          <p className="prdp  mb-3 mb-md-4 mb-lg-5">
             Online Trading and Information platform for all Agriculture
-            stakeholders.
-            <br /> Get market insights of all Agri products across country and{" "}
-            <br />
+            stakeholders. Get market insights of all Agri products across country and
             trade with ease by exploring your desired product on our platform.
           </p>
         </div>
         <div className="row justify-content-end">
-          <div className="mainprod  ">
+          <div className="mainprod ">
             <div style={{ display: "grid" }} className="row">
               <div className="col-lg-9">
-                <div className="mobilecontent ">
+                <div className="mobilecontent p-3 p-md-4 p-lg-3   ">
                   <h2 className="mobileapph">E-Agri Mobile App</h2>
                   <p className="paragra">
                     Online Trading and Information platform for all Agriculture
@@ -236,9 +238,9 @@ function handleTrader(){
                   </div>
                 </div>
               </div>
-              <div className=" col-lg-2 playbtns">
-                <img className="playimg" src={Gplay} />
-                <img src={App} />
+              <div className=" col-lg-2 playbtns p-3 p-md-4   ">
+                <img className="playimg" src={Gplay} width='100%' />
+                <img className="playimg"src={App} width='100%' />
               </div>
             </div>
 
@@ -255,17 +257,17 @@ function handleTrader(){
           </div>
           <p className="prdp">
             eAgriMarket help Farmers to directly market their produce to Traders
-            and Agro-Industry. <br/>All immediate supply chain stages are covered by
+            and Agro-Industry. <br />All immediate supply chain stages are covered by
             eAgriMarket and our partner network.
           </p>
         </div>
         <div className=" vedios justify-content-center">
-          {/* <video width="80%" playsinline="true" autoplay="autoplay" muted="muted" loop="loop" type="video/mp4" src="https://agrimp-prod.s3.amazonaws.com/public/OVP_Video.mp4"></video> */}
-          <img className="vimage" src={vimage} />
+          <video width="80%" playsinline="true" autoplay="autoplay" muted="muted" loop="loop" type="video/mp4" src={vedio}></video>
+          {/* <img className="vimage" src={vimage} /> */}
         </div>
       </div>
-      <div className="Register">
-        <div className="reginner">
+      <div className="Register ">
+        <div className="reginner p-2 p-md-4 p-lg-5">
           <div className="head">
             <div className="heading">
               <h2 className="regcontent">Register Yourself</h2>
@@ -277,22 +279,22 @@ function handleTrader(){
               eAgriMarket and our partner network
             </p>
           </div>
-          <div className="regbtndiv">
+          <div className="regbtndiv ">
             <button onClick={handlefarmer} className="regbtn">Farmer</button>
-            <button onClick={handleTrader} className="regbtn">
+            <button onClick={handleTrader} className="regbtn ">
               Trader
-              </button>
+            </button>
           </div>
         </div>
       </div>
 
-      <div className="footer ">
+      <div className="footer p-3 p-md-4 p-lg-5 ">
         <div className="row  ">
           <div className="col-lg-5 ">
-            <div className="footerdiv">
-              <img className="footerimg" src={logo} />
+            <div className="footerdiv row justify-content-center">
+              <img className="footerimg col-7 col-md-5 " src={logo} />
               {/* <p>Sustainable & Smart Agriculture Trading Platform</p>  */}
-              <ul className="footerul">
+              <ul className="footerul col-lg-6  p-3">
                 <li className="footerli1">Home </li>
                 <li className="footerli">About Us </li>
                 <li className="footerli">Our Services </li>
@@ -302,88 +304,89 @@ function handleTrader(){
             </div>
           </div>
           <div className="col-lg-7">
-                  <Form onFinish={handleSubmit}>
-            <div className="footer1">
-              <div className="row ">
-                <div className="col-lg-5">
-                  <h3 className="foh">Get in touch</h3>
-                  <p className="fop">we have to hear from you</p>
-<FormItem 
- name="name"
- rules={
-   !initialvalues.name
-     ? [
-         {
-           required: true,
-           message: "Please Fill",
-         },
-       ]
-     : ""
- } 
-className="formitem"
->
-                  <Input 
-                    //  className="contact"
+            <Form onFinish={handleSubmit}>
+              <div className="footer1">
+                <div className="row justify-content-center">
+                  <div className="col-lg-5">
+                    <div className="footerin">
+                    <h3 className="foh">Get in touch</h3>
+                    <p className="fop">we have to hear from you</p></div>
+                    <FormItem
+                      name="name"
+                      rules={
+                        !initialvalues.name
+                          ? [
+                            {
+                              required: true,
+                              message: "Please Fill",
+                            },
+                          ]
+                          : ""
+                      }
+                      className="formitem"
+                    >
+                      <Input
+                        //  className="contact"
 
-                     
-                     onChange={handleChange}
-                     id="name"
-                     type="text"
-                     value={initialvalues.name}
-                  placeholder="Enter Name Here" className="nameinput1" /></FormItem>
-                 <FormItem
-                  name="contact"
-                  rules={
-                    !initialvalues.contact
-                      ? [
-                          {
-                            required: true,
-                            message: "Please Fill",
-                          },
-                        ]
-                      : ""
-                  }
-                 
-                 >
-                  <Input
-                    id="fname"
-                    //   value={fname}
-                    onChange={handleChange}
-                    name="contact"
-                    maxLength="11"
-                    minLength="11"
-                    placeholder="03xx-0000000"
-                    // placeholder="Enter Phone Number"
-                    className="nameinput"
-                  /></FormItem>
-                </div>
-                <div className="col-lg-5 textArea">
-                  <FormItem
-                   name="message"
-                   rules={
-                     !initialvalues.message
-                       ? [
-                           {
-                             required: true,
-                             message: "Please Fill",
-                           },
-                         ]
-                       : ""
-                   }
-                  >
-                  <TextArea rows={5}
-                   name="message"
-                  
-                   onChange={handleChange} /></FormItem>
-                  <Button
+
+                        onChange={handleChange}
+                        id="name"
+                        type="text"
+                        value={initialvalues.name}
+                        placeholder="Enter Name Here" className="nameinput1" /></FormItem>
+                    <FormItem
+                      name="contact"
+                      rules={
+                        !initialvalues.contact
+                          ? [
+                            {
+                              required: true,
+                              message: "Please Fill",
+                            },
+                          ]
+                          : ""
+                      }
+
+                    >
+                      <Input
+                        id="fname"
+                        //   value={fname}
+                        onChange={handleChange}
+                        name="contact"
+                        maxLength="11"
+                        minLength="11"
+                        placeholder="03xx-0000000"
+                        // placeholder="Enter Phone Number"
+                        className="nameinput"
+                      /></FormItem>
+                  </div>
+                  <div className="col-lg-5 textArea">
+                    <FormItem
+                      name="message"
+                      rules={
+                        !initialvalues.message
+                          ? [
+                            {
+                              required: true,
+                              message: "Please Fill",
+                            },
+                          ]
+                          : ""
+                      }
+                    >
+                      <TextArea rows={5}
+                        name="message"
+
+                        onChange={handleChange} /></FormItem>
+                    <Button
                       htmlType="submit"
                       type="primary"
-                  // onClick={handleSubmit}
-                  className="sendbtn">Send Message</Button>
+                      // onClick={handleSubmit}
+                      className="sendbtn">Send Message</Button>
+                  </div>
                 </div>
               </div>
-            </div>
-                   </Form>
+            </Form>
           </div>
         </div>
       </div>

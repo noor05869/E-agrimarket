@@ -44,6 +44,10 @@ function Form3({
     console.log(`selected`, value);
     handleSelect("targetedmandi", value);
   }
+  function handleCropAdisory(value) {
+    console.log(`selected`, value);
+    handleSelect("cropAdvisory", value);
+  }
 
   // function handleMode(value) {
   //   if (value === "Aarhti") {
@@ -423,12 +427,7 @@ function Form3({
                         </Option></>))}
                       
 
-                        <Option value="Rented">
-                          <div className="optionaStyle">
-                            <p>Rented</p>
-                            <p>کرائے کے</p>
-                          </div>
-                        </Option>
+                     
                       </Select>
                     </Form.Item>
                   </Col>
@@ -461,13 +460,16 @@ function Form3({
                       }
                     >
                       <Select
+                        mode="multiple"
+
                         placeholder=" فصلوں کی ایڈوائزری"
                         size="large"
                         name="cropAdvisory"
-                        onSelect={(value, event) =>
-                          handleSelect("cropAdvisory", event)
-                        }
-                        defaultValue={cropAdvisory.children}
+                        // onSelect={(value, event) =>
+                        //   handleSelect("cropAdvisory", event)
+                        // }
+                        onChange={handleCropAdisory}
+                        defaultValue={cropAdvisory.children?cropAdvisory.children:undefined}
                       >
                         <Option value="Self-Experience">
                           <div className="optionaStyle">
@@ -505,11 +507,11 @@ function Form3({
                   </Col>
                 </Row>
 
-                {response ? (
+                {response.data ? (
                   <Row justify="center">
                     <Alert
                       style={{ marginBottom: "10px" }}
-                      message={response}
+                      message={response?.data?.message}
                       type="error"
                     />
                   </Row>

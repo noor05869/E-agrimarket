@@ -94,6 +94,8 @@ function Form() {
   });
 
   const [res, setRes] = useState();
+  const [Error, seterror] = useState()
+
   const { error, request } = useApi(api.postFarmerdata);
   const otpverify = useApi(api.postOtp);
 
@@ -141,7 +143,7 @@ setloading(true)
           targetedmandi: JSON.stringify( initialValues1.targetedmandi),
           cropSale: initialValues1.cropsSale.value,
           Seed: initialValues1.seed.value,
-          CropsAdvisory: initialValues1.cropAdvisory.value,
+          CropsAdvisory: JSON.stringify(initialValues1.cropAdvisory),
         },
         crops: newArray,
         cattle: ctdata,
@@ -160,13 +162,15 @@ setloading(true)
   console.log("responese of api",data)
 
     } catch  {
+      setloading(false)
       console.log("error ==========================", error);
+      seterror(error.data.message)
     }
     setloading(false)
   }
 
   console.log("state22", initialValues1);
-  console.log("rwspomse+++++", error?.data);
+  // console.log("rwspomse+++++", error?.data.message);
 
   async function handleOTPsubmit(otp) {
     console.log("oooooottttpp", otp);
@@ -224,7 +228,7 @@ setloading(true)
       });
       handleStep("1");
       navigate("/thankyou");
-      console.log("reesssss", data.message);
+      console.log("reesssss", data);
     } catch (error) {
       console.log("erorrr ==================", error);
     }
@@ -387,7 +391,7 @@ setloading(true)
           handleStep={handleStep}
           handleSubmit={handleSubmit}
           Cities={Cities}
-          // response={error?.data.message}
+          response={error}
           loading={loading}
         />
       );

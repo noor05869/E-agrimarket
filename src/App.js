@@ -16,7 +16,7 @@ import "antd/dist/antd.css";
 import "./assets/styles/main.css";
 import "./assets/styles/responsive.css";
 import Form from "./pages/form";
-
+import TraderForm from "./pages/TraderForm";
 import {
   BrowserRouter as Router,
   Route,
@@ -44,14 +44,14 @@ function App() {
          
             
          
-          <Route path="/" element={<LandingPage/>}/>
+          <Route path="/" element={<HeroSection/>}/>
           <Route path="/farmerdata" element={<Form/>}/>
           <Route path="/thankyou" element={<ThankyouPage/>}/>
           <Route path="/contactUs" element={<ContactForm/>}/>
           <Route path="/contactSubmission" element={<ContactSubmissiom/>}/>
           <Route path="/home" element={<HeroSection/>}/>
 
-
+          <Route path="/Trader" element={<TraderForm />} />
 
 
 

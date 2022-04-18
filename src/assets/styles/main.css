@@ -3439,7 +3439,7 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile
 }
 .navlidiv{
 justify-content: end;
-margin-right: 50px;
+margin-right: 66px;
 }
 .navli{
   font-size: 20px;
@@ -3688,7 +3688,7 @@ margin-left: 290px;
 }
 .Register{
   background-image: url("../Rectangle\ 11.png");
-  height: 540px;
+  height: 425px;
 }
 .reginner{
   background: rgba(137, 197, 66, 0.35);
@@ -3699,7 +3699,7 @@ margin-left: 290px;
   font-weight: 700;
   font-size: 50px;
   line-height: 75px;
-  margin-top: 100px;
+  margin-top: 55px;
   /* identical to box height */
   
   /* margin-left: 182px; */
@@ -3733,7 +3733,7 @@ color: white;
   color: #FFFFFF;
 }
 .footerimg{
-  height: 200px;
+  height: 180px;
   margin-left: 128px;
 }
 .footerdiv{
@@ -3795,7 +3795,7 @@ color: black;
   height: 66px;
   /* top: 5793px; */
   font-weight: 700;
-font-size: 25px;
+font-size: 20px;
 line-height: 38px;
 /* identical to box height */
 
@@ -3805,7 +3805,7 @@ border: none;
   margin-top: 13px;
   background: #96CC5C;
   border-radius: 10px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 .foh{
   font-weight: 700;
@@ -3834,7 +3834,7 @@ color: #256834;
 background: white;
 }
 .vimage{
-  height: 598px
+  height: 436px
 }
 .footerrow{
   overflow-x: hidden;
@@ -3855,4 +3855,7 @@ background: white;
 }
 .playimg{
 margin-right: 40px;
+}
+.formitem{
+  margin-bottom: 0!important;
 }

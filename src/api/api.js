@@ -19,3 +19,6 @@ export function postContact(data){
   return api.post("v1/contact",{...data})
 
 }
+export function postTraderdata(data){
+  return api.post("v1/trader/submit", {...data})
+}

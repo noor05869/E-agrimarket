@@ -9,12 +9,55 @@ import vector from "../assets/Vector.png";
 import App from "../assets/Apps.png";
 import Gplay from "../assets/Gplay.png";
 import vimage from "../assets/vimage.png";
-
+import { useState } from "react";
 import handimage from "../assets/Wood-Hand.png";
-import { Input } from "antd";
+import { Input ,Form, Button} from "antd";
+import { message } from "antd";
+
+import * as api from "../api/api";
+import useApi from "../Hooks/useApi";
+
+import { Navigate, useNavigate } from "react-router-dom";
+import FormItem from "antd/lib/form/FormItem";
 function HeroSection() {
   const { TextArea } = Input;
+  const navigate = useNavigate();
+  const [initialvalues, setinitialvalues] = useState({
+    name: "",
+    contact: "",
+    message: "",
+  });
+  const { error, request } = useApi(api.postContact);
 
+  const handleChange = (e) => {
+    const { value, name, id } = e.target;
+    console.log(e.target.value);
+    setinitialvalues({ ...initialvalues, [name]: value });
+  };
+  async function handleSubmit(values) {
+    console.log("submit", values);
+    // setloading(true);
+    try {
+      const { data } = await request(values);
+      console.log("ressssssss", data);
+      message.success({
+        content: "Form Submit succsessfully",
+        className: "custom-class",
+        style: {
+          marginTop: "74vh",
+        },
+      });
+      // navigate("/contactSubmission");
+    } catch {}
+
+    // setloading(false);
+  }
+function handlefarmer(){
+navigate("/farmerdata")
+}
+function handleTrader(){
+  navigate("/Trader")
+  }
   return (
     <div>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -61,6 +104,9 @@ function HeroSection() {
           </ul>
           {/* <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/> */}
           <button
+          onClick={()=>{
+            navigate("./contactUs")
+          }}
             class="btn btn-outline-success my-2 my-sm-0 navbutton font-bold"
             type="submit"
           >
@@ -232,8 +278,10 @@ function HeroSection() {
             </p>
           </div>
           <div className="regbtndiv">
-            <button className="regbtn">Farmer</button>
-            <button className="regbtn">Trader</button>
+            <button onClick={handlefarmer} className="regbtn">Farmer</button>
+            <button onClick={handleTrader} className="regbtn">
+              Trader
+              </button>
           </div>
         </div>
       </div>
@@ -245,31 +293,97 @@ function HeroSection() {
               <img className="footerimg" src={logo} />
               {/* <p>Sustainable & Smart Agriculture Trading Platform</p>  */}
               <ul className="footerul">
-                <li className="footerli1">About </li>
-                <li className="footerli">Home </li>
-                <li className="footerli">Contact Us </li>
+                <li className="footerli1">Home </li>
+                <li className="footerli">About Us </li>
+                <li className="footerli">Our Services </li>
+                <li className="footerli">Register </li>
+
               </ul>
             </div>
           </div>
           <div className="col-lg-7">
+                  <Form onFinish={handleSubmit}>
             <div className="footer1">
               <div className="row ">
                 <div className="col-lg-5">
                   <h3 className="foh">Get in touch</h3>
                   <p className="fop">we have to hear from you</p>
+<FormItem 
+ name="name"
+ rules={
+   !initialvalues.name
+     ? [
+         {
+           required: true,
+           message: "Please Fill",
+         },
+       ]
+     : ""
+ } 
+className="formitem"
+>
+                  <Input 
+                    //  className="contact"
 
-                  <Input placeholder="Enter Name Here" className="nameinput1" />
+                     
+                     onChange={handleChange}
+                     id="name"
+                     type="text"
+                     value={initialvalues.name}
+                  placeholder="Enter Name Here" className="nameinput1" /></FormItem>
+                 <FormItem
+                  name="contact"
+                  rules={
+                    !initialvalues.contact
+                      ? [
+                          {
+                            required: true,
+                            message: "Please Fill",
+                          },
+                        ]
+                      : ""
+                  }
+                 
+                 >
                   <Input
-                    placeholder="Enter Phone Number"
+                    id="fname"
+                    //   value={fname}
+                    onChange={handleChange}
+                    name="contact"
+                    maxLength="11"
+                    minLength="11"
+                    placeholder="03xx-0000000"
+                    // placeholder="Enter Phone Number"
                     className="nameinput"
-                  />
+                  /></FormItem>
                 </div>
                 <div className="col-lg-5 textArea">
-                  <TextArea rows={5} />
-                  <button className="sendbtn">Send Message</button>
+                  <FormItem
+                   name="message"
+                   rules={
+                     !initialvalues.message
+                       ? [
+                           {
+                             required: true,
+                             message: "Please Fill",
+                           },
+                         ]
+                       : ""
+                   }
+                  >
+                  <TextArea rows={5}
+                   name="message"
+                  
+                   onChange={handleChange} /></FormItem>
+                  <Button
+                      htmlType="submit"
+                      type="primary"
+                  // onClick={handleSubmit}
+                  className="sendbtn">Send Message</Button>
                 </div>
               </div>
             </div>
+                   </Form>
           </div>
         </div>
       </div>

@@ -3561,10 +3561,10 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile .header-
   height: 48px;
   width: 119px;
   /* color: green; */
-  background: #256834;
-  color: white;
-  font-size: 17px;
-  border-radius: 40px
+  background: #256834 !important;
+  color: white !important;
+  font-size: 17px !important;
+  border-radius: 40px !important
 }
 
 .carouseldiv {
@@ -4016,6 +4016,9 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile .header-
   .prdhead ,.marking,.regp{
     font-size: 20px;
     line-height: 25px;
+  }
+  .navlidiv{
+    margin-left: 30px !important;
   }
   .regcontent{
     font-size: 44px;

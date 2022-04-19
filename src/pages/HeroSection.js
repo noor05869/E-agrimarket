@@ -19,6 +19,7 @@ import useApi from "../Hooks/useApi";
 
 import { Navigate, useNavigate } from "react-router-dom";
 import FormItem from "antd/lib/form/FormItem";
+import { CaretUpOutlined } from "@ant-design/icons";
 function HeroSection() {
   const { TextArea } = Input;
   const navigate = useNavigate();
@@ -58,9 +59,20 @@ function HeroSection() {
   function handleTrader() {
     navigate("/Trader")
   }
-  
+  function handlescroll(){
+    window.scrollTo(0, 0);
+
+  }
   return (
     <div>
+        <div className="setting-drwer"    
+         onClick={handlescroll}
+          >
+        {/* {setting} */}
+        <CaretUpOutlined  className="hypericon"
+      
+         />
+      </div>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand navlogo" href="#">
           <img className="imageStylenav " src={logo} />
@@ -144,6 +156,8 @@ function HeroSection() {
           <div className="col-md-6 mt-3 mt-md-0">
             <div className="d-flex">
               <img className="grp1img" src={grp1} />
+              {/* <img className="grp1img" src={grp4} /> */}
+
               <div className="paradiv">
                 <p className="grptext ms-3 ms-md-4">E-Mandi</p>
                 <p className="serp2 ms-3 ms-md-4">
@@ -152,7 +166,8 @@ function HeroSection() {
               </div>
             </div>
             <div className="othergrp">
-              <img className="grp1img" src={grp4} />
+              <img className="grp1img" src={grp2} />
+              {/* <img className="grp1img" src={grp4} /> */}
               <div className="paradiv">
                 <p className="grptext  ms-3 ms-md-4">Input Marketplace</p>
                 <p className="serp2 ms-3 ms-md-4">
@@ -163,7 +178,8 @@ function HeroSection() {
               </div>
             </div>
             <div className="othergrp">
-              <img className="grp1img" src={grp2} />
+              <img className="grp1img" src={grp3} />
+              {/* <img className="grp1img" src={grp2} /> */}
               <div className="paradiv">
                 <p className="grptext  ms-3 ms-md-4">Machinery Marketplace</p>
                 <p className="serp2 ms-3 ms-md-4">
@@ -174,7 +190,8 @@ function HeroSection() {
               </div>
             </div>
             <div className="othergrp">
-              <img className="grp1img" src={grp3} />
+              <img className="grp1img" src={grp4} />
+
               <div className="paradiv">
                 <p className="grptext  ms-3 ms-md-4">Crop Advisory</p>
                 <p className="serp2 ms-3 ms-md-4">

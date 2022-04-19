@@ -13,10 +13,10 @@ function Slider() {
                 <br />
                 Trading Platform
               </h2>
-              <p className="carouselptag">
+              {/* <p className="carouselptag">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in{" "}
                 <br /> tempus libero ornare nulla aenean vulputate malesuada.
-              </p>
+              </p> */}
             </div>
           </div>
         </div>
@@ -27,10 +27,10 @@ function Slider() {
                 Empowering Farmers <br />
                 with Technology
               </h2>
-              <p className="carouselptag">
+              {/* <p className="carouselptag">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in{" "}
                 <br /> tempus libero ornare nulla aenean vulputate malesuada.
-              </p>
+              </p> */}
             </div>
           </div>
         </div>
@@ -42,10 +42,10 @@ function Slider() {
                 Making Farm to Fork a <br />
                 Reality
               </h2>
-              <p className="carouselptag">
+              {/* <p className="carouselptag">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in{" "}
                 <br /> tempus libero ornare nulla aenean vulputate malesuada.
-              </p>
+              </p> */}
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@ function Slider() {
 
 export default Slider;
 const contentStyle = {
-  Height: "700px",
+  Height: "auto",
   color: "#fff",
   lineHeight: "160px",
   // textAlign: 'center',

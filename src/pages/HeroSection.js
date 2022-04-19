@@ -65,8 +65,10 @@ function HeroSection() {
         <a class="navbar-brand navlogo" href="#">
           <img className="imageStylenav " src={logo} />
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
+      <span></span>
+      <span></span>
     </button>
 
         <div
@@ -95,6 +97,13 @@ function HeroSection() {
                 Register
               </a>
             </li>
+            <li class="nav-item dropdown navli Contact">
+              <a   onClick={() => {
+              navigate("./contactUs")
+            }} class="nav-link navlink " href="#">
+                Contact us
+              </a>
+            </li>
           </ul>
           <button
             onClick={() => {
@@ -107,44 +116,7 @@ function HeroSection() {
           </button>
         </div>
       </nav>
-      
-      {/* <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"/></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li>
-      </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-</nav>
-       */}
+  
       <Slider />
       {/* <video width="80%" playsinline="true" autoplay="autoplay" muted="muted" loop="loop" type="video/mp4" src="https://agrimp-prod.s3.amazonaws.com/public/OVP_Video.mp4"></video> */}
 
@@ -267,7 +239,7 @@ function HeroSection() {
                   </div>
                 </div>
               </div>
-              <div className=" col-lg-2 playbtns p-3 p-md-4   ">
+              <div className=" col-lg-2 col-md-3 playbtns p-3 p-md-4   ">
                 <img className="playimg" src={Gplay} width='100%' />
                 <img className="playimg"src={App} width='100%' />
               </div>
@@ -291,7 +263,7 @@ function HeroSection() {
           </p>
         </div>
         <div className=" vedios justify-content-center">
-          <video width="80%" playsinline="true" autoplay="autoplay" muted="muted" loop="loop" type="video/mp4" src={vedio}></video>
+          <video className="vedios" width="80%" playsinline="true" autoplay="autoplay" muted="muted" loop="loop" type="video/mp4" src={vedio}></video>
           {/* <img className="vimage" src={vimage} /> */}
         </div>
       </div>

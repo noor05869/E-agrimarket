@@ -112,7 +112,7 @@ function Form3({
                       className="username"
                       name="modeOfInvestment"
                       rules={
-                        !modeOfInvestment.children
+                        !modeOfInvestment
                           ? [
                               {
                                 required: true,
@@ -131,7 +131,7 @@ function Form3({
                         //   onChange={handleMode}
                         name="modeOfInvestment"
                         size="large"
-                        defaultValue={modeOfInvestment.children}
+                        defaultValue={modeOfInvestment}
                       >
                         <Option key="Aarhti">
                           {" "}
@@ -345,7 +345,7 @@ function Form3({
                       className="username"
                       name="seed"
                       rules={
-                        !seed.children
+                        !seed
                           ? [
                               {
                                 required: true,
@@ -359,7 +359,7 @@ function Form3({
                         placeholder="بیج "
                         size="large"
                         onSelect={(value, event) => handleSelect("seed", event)}
-                        defaultValue={seed.children}
+                        defaultValue={seed}
                       >
                         <Option key="Own">
                           <div className="optionaStyle">
@@ -400,7 +400,7 @@ function Form3({
                       className="username"
                       name="machinery"
                       rules={
-                        !machinery.children
+                        !machinery
                           ? [
                               {
                                 required: true,
@@ -416,7 +416,7 @@ function Form3({
                         onSelect={(value, event) =>
                           handleSelect("machinery", event)
                         }
-                        defaultValue={machinery.children}
+                        defaultValue={machinery}
                       >
                         {Machines.map(data=>(<>  
                          <Option key={data.value} >
@@ -449,7 +449,7 @@ function Form3({
                       className="username"
                       name="cropAdvisory"
                       rules={
-                        !cropAdvisory.children
+                        !cropAdvisory
                           ? [
                               {
                                 required: true,
@@ -469,7 +469,7 @@ function Form3({
                         //   handleSelect("cropAdvisory", event)
                         // }
                         onChange={handleCropAdisory}
-                        defaultValue={cropAdvisory.children?cropAdvisory.children:undefined}
+                        defaultValue={cropAdvisory?cropAdvisory:undefined}
                       >
                         <Option value="Self-Experience">
                           <div className="optionaStyle">

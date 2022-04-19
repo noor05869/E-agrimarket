@@ -74,6 +74,8 @@ function CropsDistribution({
   function handlecontact(){
 navigate("/contactUs")
   }
+
+
   return (
     <div>
      
@@ -231,6 +233,8 @@ navigate("/contactUs")
                           }
                         >
                           <Select
+                        mode="multiple"
+
                             placeholder=" اشیاء "
                             name={`${i}commodities`}
                             onChange={(event) =>

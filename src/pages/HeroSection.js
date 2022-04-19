@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import logo from "../assets/Group 100.png";
 import Slider from "../components/Carousel";
 import grp1 from "../assets/Group1.png";
@@ -53,6 +53,17 @@ function HeroSection() {
 
     // setloading(false);
   }
+  const [showButton, setShowButton] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.pageYOffset > 300) {
+        setShowButton(true);
+      } else {
+        setShowButton(false);
+      }
+    });
+  }, []);
   function handlefarmer() {
     navigate("/farmerdata")
   }
@@ -65,14 +76,14 @@ function HeroSection() {
   }
   return (
     <div>
-        <div className="setting-drwer"    
+        {showButton && ( <div className="setting-drwer"    
          onClick={handlescroll}
           >
         {/* {setting} */}
         <CaretUpOutlined  className="hypericon"
       
          />
-      </div>
+      </div> )}
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand navlogo" href="#">
           <img className="imageStylenav " src={logo} />

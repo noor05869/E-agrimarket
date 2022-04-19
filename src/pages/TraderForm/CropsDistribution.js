@@ -170,6 +170,8 @@ error,
                           }
                         >
                           <Select
+                        mode="multiple"
+
                             placeholder="Select Commodities - اشیاء "
                             name={`${i}commodities`}
                             onChange={(event) =>

@@ -73,7 +73,7 @@ function ContactForm() {
                   <Col className="" span={7} md={0} lg={0}></Col>
 
                   <Col xs={19} span={7} lg={14} sm={20} md={6}>
-                    <Label eLabel="Full Name" ulabel="نام" index={0} />
+                    <Label eLabel=" Name" ulabel="نام" index={0} />
                     <Form.Item
                       name="name"
                       rules={
@@ -154,6 +154,7 @@ function ContactForm() {
                       }
                     >
                       <TextArea
+                      placeholder="Message"
                         className="contact"
                         name="message"
                         rows={4}

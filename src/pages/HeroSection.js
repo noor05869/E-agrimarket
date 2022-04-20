@@ -339,7 +339,7 @@ function HeroSection() {
             </div>
 
             <div className="mobilediv">
-              <img className="mobileimg" src={handimage} />
+              <img className="mobileimg"  src={handimage} />
             </div>
           </div>
         </div>

@@ -90,10 +90,8 @@ setShownav(true)
       )}
        <header id="header" class={`fixed-top header-scrolled ${shownav&&"headerafter"}`}>
       <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand navlogo" href="#">
+        <a class="navbar-brand navlogo" >
         <img className="footerimg"   src={logo3}  />
-
-        </a>
         <button
           class="navbar-toggler collapsed"
           type="button"
@@ -107,6 +105,8 @@ setShownav(true)
           <span></span>
           <span></span>
         </button>
+        </a>
+       
 
         <div
           class="collapse navbar-collapse navlidiv "
@@ -218,18 +218,20 @@ setShownav(true)
       {/* <video width="80%" playsinline="true" autoplay="autoplay" muted="muted" loop="loop" type="video/mp4" src="https://agrimp-prod.s3.amazonaws.com/public/OVP_Video.mp4"></video> */}
 
       {/* Services */}
-      <div className="servicesdiv p-3 p-md-4 p-lg-5" id="ourServices">
+      {/* <div  className="container-fluid" > */}
+      <div className="servicesdiv  p-3 p-md-4 p-lg-5" id="ourServices">
         <div className="row">
           <div className="col-md-6 sercol">
             <div className="row serow justify-content-center">
-            <h2 className="serviceHead font-bold col-lg-4">Our Services</h2>
+              <div className="col-lg-4 col-sm-2 flexcenter ">
+            <h2 className="serviceHead font-bold ">Our Services</h2></div>
             <p className="serp col-lg-11">
               eAgriMarket is smart trading platform for all Agriculture
               stakeholders. 
               We empower farmers with technology and provide all Agri
               stakeholders a platform for trading.
             </p>
-            <button className="serbtn">Learn More</button>
+            {/* <button className="serbtn">Learn More</button> */}
             </div>
            
          
@@ -286,6 +288,7 @@ setShownav(true)
           </div>
         </div>
       </div>
+      {/* </div> */}
       {/* Products */}
       <div className="Products p-3 p-md-4 p-lg-5" id="Products">
         <div className="head">
@@ -340,7 +343,7 @@ setShownav(true)
                 </div>
               </div>
               <div className=" col-lg-2 col-md-3 playbtns p-3 p-md-4   ">
-                <img className="playimg" src={Gplay} width="100%" />
+                <img className="playimg " src={Gplay} width="100%" height="100%" />
                 <img className="playimg" src={App} width="100%" />
               </div>
             </div>
@@ -378,7 +381,7 @@ setShownav(true)
         </div>
       </div>
       <div className="Register " id="Register">
-        <div className="reginner p-2 p-md-4 p-lg-5">
+        <div className="reginner p-2 p-md-4 p-lg-3">
           <div className="head">
             <div className="heading">
               <h2 className="regcontent">Register Yourself</h2>
@@ -521,11 +524,16 @@ setShownav(true)
               <img className="footerimg  "  src={logo} width="96%" />
 
               <p className="footerp">
-                Sustainable & Smart Agriculture Trading Platform</p>
-               <p className="footerp">Empowering Farmers with Technology</p>
-              <p className="footerp">
-                Making Farm to Fork a Reality
-              </p>
+                Sustainable & Smart Agriculture Trading Platform
+               Empowering Farmers with Technology
+            
+                Making Farm to Fork a Reality</p>
+                <div class="credits">
+          {" "}
+        <a href="https://www.facebook.com/eagrimart"> <FacebookFilled className="footericon"   /></a>
+        <a className="footericon" href="https://www.instagram.com/eagrimart/"> <InstagramFilled /></a> 
+        <a className="footericon" href="https://www.linkedin.com/company/eagrimarket/">  <LinkedinFilled /></a> 
+        </div>
             </div>
             <div class="col-lg-3 col-md-6 footer-links footermargin">
               {/* <h4 className="footerh4">Useful Links</h4> */}
@@ -538,19 +546,19 @@ setShownav(true)
                 </li>
                 <li className="footerLi">
                   <i class="bx bx-chevron-right footeri"></i>{" "}
-                  <a className="footera" href="#">
+                  <a className="footera" href="#Products">
                     About Us
                   </a>
                 </li>
                 <li className="footerLi">
                   <i class="bx bx-chevron-right footeri"></i>{" "}
-                  <a className="footera" href="#">
+                  <a className="footera" href="#ourServices">
                     Our Services
                   </a>
                 </li>
                 <li className="footerLi">
                   <i class="bx bx-chevron-right footeri"></i>{" "}
-                  <a className="footera" href="#">
+                  <a className="footera" href="#Register">
                     Register
                   </a>
                 </li>
@@ -651,18 +659,13 @@ setShownav(true)
         <div className="container footerlastdiv">
         <div class="copyright">
           {" "}
-          © Copyright C 2022,{" "}
+          © Copyright  2022,{" "}
           <strong>
             <span>e-Agri Market</span>
           </strong>
           . All Rights Reserved
         </div>
-        <div class="credits">
-          {" "}
-        <a href="https://www.facebook.com/eagrimart"> <FacebookFilled className="footericon"   /></a>
-        <a className="footericon" href="https://www.facebook.com/eagrimart"> <InstagramFilled /></a> 
-        <a className="footericon" href="https://www.facebook.com/eagrimart">  <LinkedinFilled /></a> 
-        </div>
+       
       </div>
       </div>
     </div>

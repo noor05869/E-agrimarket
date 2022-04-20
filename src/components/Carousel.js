@@ -1,13 +1,17 @@
 import React from "react";
 import { Carousel } from "antd";
 import image from "../assets/Rectangle3.png";
+import image1 from "../assets/Rectangle2.png";
+import image2 from "../assets/Rectangle4.png";
+
 function Slider() {
   return (
     <div className="antCarousel">
-      <Carousel effect="fade" autoplay>
-        <div className="carouseldiv bg-wheat">
+      <Carousel effect="fade" >
+        <div className="carouseldiv bg-1 ">
           <div className="p-3 p-md-4 p-lg-5  contentstye " style={contentStyle}>
             <div>
+              <img className="bgimage1" src={image} />
               <h2 className="caruselp mb-3 ">
                 Sustainable & Smart Agriculture
                 <br />
@@ -20,9 +24,11 @@ function Slider() {
             </div>
           </div>
         </div>
-        <div className="carouseldiv bg-green">
+        <div className="carouseldiv bg-2">
           <div className="p-3 p-md-4 p-lg-5 contentstye" style={contentStyle}>
             <div>
+            <img className="bgimage1" src={image1} />
+
               <h2 style={{ color: "#256834" }} className="caruselp mb-3 ">
                 Empowering Farmers <br />
                 with Technology
@@ -35,10 +41,12 @@ function Slider() {
           </div>
         </div>
 
-        <div className="carouseldiv bg-wheat">
-          <div  className="p-3 p-md-4 p-lg-5 contentstye" style={contentStyle}>
+        <div className="carouseldiv bg-3">
+          <div  className="p-3 p-md-5 p-lg-5 contentstye" style={contentStyle}>
             <div>
-              <h2 className="caruselp mb-3 ">
+            <img className="bgimage1" src={image2} />
+              
+                            <h2 className="caruselp mb-3 ">
                 Making Farm to Fork a <br />
                 Reality
               </h2>

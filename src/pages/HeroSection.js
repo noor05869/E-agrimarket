@@ -56,15 +56,20 @@ function HeroSection() {
     // setloading(false);
   }
   const [showButton, setShowButton] = useState(false);
+  const [shownav, setShownav] = useState(false);
+
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.pageYOffset > 300) {
         setShowButton(true);
+setShownav(true)
       } else {
         setShowButton(false);
+        setShownav(false)
       }
     });
+    
   }, []);
   function handlefarmer() {
     navigate("/farmerdata");
@@ -83,10 +88,10 @@ function HeroSection() {
           <CaretUpOutlined className="hypericon" />
         </div>
       )}
-       <header id="header" class="fixed-top header-scrolled">
+       <header id="header" class={`fixed-top header-scrolled ${shownav&&"headerafter"}`}>
       <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand navlogo" href="#">
-        <img className="footerimg  "  src={logo3}  />
+        <img className="footerimg"   src={logo3}  />
 
         </a>
         <button
@@ -113,18 +118,19 @@ function HeroSection() {
                 Home{" "}
               </a>
             </li>
-            <li class="nav-item navli">
-              <a class="nav-link navlink" href="#">
-                About Us
-              </a>
-            </li>
             <li class="nav-item dropdown navli">
-              <a class="nav-link navlink" href="#">
+              <a class="nav-link navlink" href="#ourServices">
                 Our Services
               </a>
             </li>
+            <li class="nav-item navli">
+              <a class="nav-link navlink" href="#Products">
+                About Us
+              </a>
+            </li>
+            
             <li class="nav-item dropdown navli">
-              <a class="nav-link navlink" href="#">
+              <a class="nav-link navlink" href="#Register">
                 Register
               </a>
             </li>
@@ -134,7 +140,7 @@ function HeroSection() {
                   navigate("./contactUs");
                 }}
                 class="nav-link navlink "
-                href="#"
+                href="#Contact"
               >
                 Contact us
               </a>
@@ -212,21 +218,22 @@ function HeroSection() {
       {/* <video width="80%" playsinline="true" autoplay="autoplay" muted="muted" loop="loop" type="video/mp4" src="https://agrimp-prod.s3.amazonaws.com/public/OVP_Video.mp4"></video> */}
 
       {/* Services */}
-      <div className="servicesdiv p-3 p-md-4 p-lg-5">
+      <div className="servicesdiv p-3 p-md-4 p-lg-5" id="ourServices">
         <div className="row">
-          <div className="col-md-6">
-            <h2 className="serviceHead font-bold">Our Services</h2>
-            <p className="serp">
+          <div className="col-md-6 sercol">
+            <div className="row serow justify-content-center">
+            <h2 className="serviceHead font-bold col-lg-4">Our Services</h2>
+            <p className="serp col-lg-11">
               eAgriMarket is smart trading platform for all Agriculture
-              stakeholders. <br />
+              stakeholders. 
               We empower farmers with technology and provide all Agri
               stakeholders a platform for trading.
             </p>
-            {/* <p className="serp">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              <br /> Sed in tempus libero ornare nulla aenean vulputate
-            </p> */}
             <button className="serbtn">Learn More</button>
+            </div>
+           
+         
+           
           </div>
           <div className="col-md-6 mt-3 mt-md-0">
             <div className="d-flex">
@@ -280,7 +287,7 @@ function HeroSection() {
         </div>
       </div>
       {/* Products */}
-      <div className="Products p-3 p-md-4 p-lg-5">
+      <div className="Products p-3 p-md-4 p-lg-5" id="Products">
         <div className="head">
           <div className="heading">
             <h2 className="prdhead">Our Products</h2>
@@ -370,7 +377,7 @@ function HeroSection() {
           {/* <img className="vimage" src={vimage} /> */}
         </div>
       </div>
-      <div className="Register ">
+      <div className="Register " id="Register">
         <div className="reginner p-2 p-md-4 p-lg-5">
           <div className="head">
             <div className="heading">
@@ -506,22 +513,22 @@ function HeroSection() {
           </div>
         </div>
       </div> */}
-      <div class="footer-top">
+      <div class="footer-top" id="Contact">
         <div class="container">
           <Form onFinish={handleSubmit}>
           <div class="row">
             <div class="col-lg-3 col-md-6  footer-contact footermargin">
               <img className="footerimg  "  src={logo} width="96%" />
 
-              <p>
-                Sustainable & Smart Agriculture Trading Platform
-                <br /> Empowering Farmers with Technology
-                <br />
+              <p className="footerp">
+                Sustainable & Smart Agriculture Trading Platform</p>
+               <p className="footerp">Empowering Farmers with Technology</p>
+              <p className="footerp">
                 Making Farm to Fork a Reality
               </p>
             </div>
             <div class="col-lg-3 col-md-6 footer-links footermargin">
-              <h4 className="footerh4">Useful Links</h4>
+              {/* <h4 className="footerh4">Useful Links</h4> */}
               <ul className="footerUl">
                 <li className="footerLi">
                   <i class="bx bx-chevron-right footeri"></i>{" "}
@@ -641,7 +648,7 @@ function HeroSection() {
         </div>
       </div>
       <div class="container-fluid footer-bottom clearfix">
-        <div className="container">
+        <div className="container footerlastdiv">
         <div class="copyright">
           {" "}
           © Copyright C 2022,{" "}
@@ -652,9 +659,9 @@ function HeroSection() {
         </div>
         <div class="credits">
           {" "}
-         <FacebookFilled className="footericon"  />
-         <InstagramFilled className="footericon"/>
-         <LinkedinFilled className="footericon"/>
+        <a href="https://www.facebook.com/eagrimart"> <FacebookFilled className="footericon"   /></a>
+        <a className="footericon" href="https://www.facebook.com/eagrimart"> <InstagramFilled /></a> 
+        <a className="footericon" href="https://www.facebook.com/eagrimart">  <LinkedinFilled /></a> 
         </div>
       </div>
       </div>

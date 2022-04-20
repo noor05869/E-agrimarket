@@ -3555,10 +3555,19 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile .header-
 }
 
 .navli {
-  font-size: 20px;
-  margin-right: 46px;
+  font-size: 16px;
+  margin-right: 40px;
 }
-
+.headerafter{
+  background:white !important;
+}
+.serow{
+  margin-top: 30px;
+}
+.sercol{
+  display: grid;
+  align-items: center;
+}
 .navlink {
   color: black !important;
 }
@@ -3620,16 +3629,16 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile .header-
 
 .serviceHead {
   font-weight: 700;
-  font-size: 60px;
-  line-height: 106px;
+  font-size: 25px;
+  /* line-height: 106px; */
   /* margin-left: 140px; */
   color: #FFFFFF;
 }
 
 .serp {
   font-weight: 400;
-  font-size: 20px;
-  line-height: 34px;
+  font-size: 17px;
+  line-height: 30px;
   /* margin-left: 140px; */
 
   color: #FFFFFF;
@@ -3652,7 +3661,7 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile .header-
 .grp1img {
   /* margin-top: 120px; */
   height: 8vw;
-  max-height: 90px;
+  max-height: 75px;
 }
 
 .grptext {
@@ -3732,7 +3741,7 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile .header-
 
 .mobileapph {
   font-weight: 700;
-  font-size: 40px;
+  font-size: 30px;
   /* margin-top: 10px; */
   line-height: 69px;
   /* identical to box height */
@@ -3748,7 +3757,7 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile .header-
 
 .paragra {
   font-weight: 400;
-  font-size: 20px;
+  font-size: 17px;
   line-height: 34px;
 
   margin-bottom: 0 !important;
@@ -3814,7 +3823,7 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile .header-
 
 .Register {
   background-image: url("../Rectangle\ 11.png");
-  height: 441px;
+  height: 385px;
 }
 
 .reginner {
@@ -3825,9 +3834,9 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile .header-
 .regcontent {
 
   font-weight: 700;
-  font-size: 50px;
+  font-size: 40px;
   line-height: 75px;
-  margin-top: 55px;
+  /* margin-top: 55px; */
   /* identical to box height */
 
   /* margin-left: 182px; */
@@ -3851,13 +3860,13 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile .header-
 }
 
 .regbtn {
-  width: 158px;
-  height: 58px;
-  margin-left: 84px;
+  width: 127px;
+  height: 43px;
+  margin-left: 70px;
   background: #96CC5C;
   border-radius: 43.5px;
   font-weight: 700;
-  font-size: 25px;
+  font-size: 20px;
   line-height: 38px;
   border: none;
   padding-bottom: 7px;
@@ -3866,6 +3875,7 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile .header-
 
 .footerimg {
   /* height: 180px; */
+  width: 62% !important;
   /* margin-left: 128px; */
 }
 .Contact{
@@ -4036,6 +4046,9 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile .header-
   margin-right: 0px !important;
 
   }
+  .footerlastdiv{
+    display: grid !important;
+  }
   .Register{
     height: auto;
   }
@@ -4065,7 +4078,7 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile .header-
   }
   .serviceHead {
     font-weight: 700;
-    font-size: 44px;
+    font-size: 30px;
     line-height: 58px;
     /* margin-left: 140px; */
     color: #FFFFFF;
@@ -4080,6 +4093,33 @@ height: 481px !important;
   line-height: 45px;
   /* margin-top: 24px; */
   color: black;
+}
+.setting-drwer {
+  background: #fff;
+  border-radius: 50%;
+  bottom: 42px;
+  right: 30px;
+  font-size: 1.25rem;
+  z-index: 990;
+  box-shadow: 0 2px 12px 0 rgb(0 0 0 / 16%);
+  width: 62px;
+  height: 62px;
+  text-align: center;
+  line-height: 60px;
+  position: fixed;
+  cursor: pointer;
+  animation-name: ball-bounce;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-delay: 2s;
+  animation-direction: alternate;
+}
+
+.hypericon {
+  display: flex;
+  margin-top: 16px;
+  font-size: 2rem;
+  justify-content: center;
 }
 .foh{
   margin-top: 0px !important;
@@ -4142,21 +4182,20 @@ height: 481px !important;
   .caruselp,
   .grptext,
   .prdhead {
-    font-size: 40px;
+    font-size: 22px;
     line-height: 50px;
   }
 
   .carouselptag,
   .serp2,
   .prdp {
-    font-size: 22px;
+    font-size: 17px;
     line-height: 35px;
   }
 
 }
 .footerin{
-  display: grid;
-  justify-content: center;
+  margin-left: 29px;
 }
 
 .navbar-toggler span {
@@ -4230,12 +4269,13 @@ height: 481px !important;
 #header {
   transition: all 0.5s;
   z-index: 997;
-  /* padding: 15px 0; */
+  padding: 8px 0;
   /* background-color: transparent !important; */
 }
 #header.header-scrolled, #header.header-inner-pages {
   /* background: rgb(204 217 207 / 90%); */
-  background: rgba(137, 197, 66, 0.35);
+  /* background: rgba(137, 197, 66, 0.35); */
+  background:  rgb(0 0 0 / 4%)
 }
 .headerColor{
   background: rgba(137, 197, 66, 0.35);
@@ -4264,7 +4304,7 @@ height: 481px !important;
   align-items: center;
   justify-content: space-between;
   padding: 10px 0 10px 30px;
-  font-size:21px;
+  /* font-size:21px; */
   font-weight: 500;
   color: #fff;
   white-space: nowrap;
@@ -4374,6 +4414,10 @@ height: 481px !important;
 .footericon{
   font-size: 30px;
   padding: 10px;
+  color: white;
+}
+.footericon:hover{
+color: white;
 }
 .footer-top{
   
@@ -4382,16 +4426,27 @@ height: 481px !important;
 .footermargin{
   margin-top: 50px;
 }
+
+.footerp{
+  margin-top: 20px;
+  font-size: 15px;
+}
+.footerlastdiv{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
 @media (min-width: 1200px){
   .textArea{
     margin-top: 166px!important;
   }
   .mainprod {
     /* height: 645px; */
-    max-height: 627px !important;
+    max-height: 567px !important;
     background: #6AA044;
     width: 1070px !important;
 }
+
 .mobilediv {
   top: -516px !important; 
 }

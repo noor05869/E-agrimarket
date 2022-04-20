@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
-import logo from "../assets/Group 100.png";
+import logo from "../assets/LogoH.png";
+import logo3 from "../assets/LogoHeader.png";
+
 import Slider from "../components/Carousel";
 import grp1 from "../assets/Group1.png";
 import grp2 from "../assets/Group2.png";
@@ -81,9 +83,11 @@ function HeroSection() {
           <CaretUpOutlined className="hypericon" />
         </div>
       )}
-      {/* <nav class="navbar navbar-expand-lg navbar-light bg-light">
+       <header id="header" class="fixed-top header-scrolled">
+      <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand navlogo" href="#">
-          <img className="imageStylenav " src={logo} />
+        <img className="footerimg  "  src={logo3}  />
+
         </a>
         <button
           class="navbar-toggler collapsed"
@@ -124,7 +128,7 @@ function HeroSection() {
                 Register
               </a>
             </li>
-            <li class="nav-item dropdown navli Contact">
+            <li class="nav-item dropdown navli ">
               <a
                 onClick={() => {
                   navigate("./contactUs");
@@ -136,27 +140,37 @@ function HeroSection() {
               </a>
             </li>
           </ul>
-          <button
-            onClick={() => {
-              navigate("./contactUs");
-            }}
-            class="btn btn-outline-success my-2 my-sm-0 navbutton font-bold"
-            type="submit"
-          >
-            Contact Us
-          </button>
+        
         </div>
-      </nav> */}
-      <header id="header" class="fixed-top header-scrolled">
+      </nav></header>
+      {/* <header id="header" class="fixed-top header-scrolled">
         <div class="container d-flex align-items-center">
-          <h1 class="logo me-auto">
-            {/* <a class="navbar-brand navlogo" href="#">
-          <img className="imageStylenav " src={logo} />
-        </a> */}{" "}
-            E-Agri
-          </h1>
-          <nav id="navbar" class="navbar">
-            <ul>
+         
+          <nav id="navbar" class="navbar navbar-expand-lg navbar-light ">
+            <a class="navbar-brand navlogo" href="#">
+          <img className="footerimg  "  src={logo3}  />
+        </a>{" "}
+              
+         
+          <button
+          class="navbar-toggler collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse  "
+          id="navbarSupportedContent"
+        >
+            <ul class="navbar-nav mr-auto">
               <li class="nav-item active navli">
                 <a class="nav-link navlink" href="#">
                   Home{" "}
@@ -177,8 +191,8 @@ function HeroSection() {
                   Register
                 </a>
               </li>
-              <li class="nav-item dropdown navli Contact">
-                <a
+              <li class="nav-item dropdown navli ">
+                <a 
                   onClick={() => {
                     navigate("./contactUs");
                   }}
@@ -188,20 +202,12 @@ function HeroSection() {
                   Contact us
                 </a>
               </li>
-              <button
-                onClick={() => {
-                  navigate("./contactUs");
-                }}
-                class="btn btn-outline-success my-2 my-sm-0 navbutton font-bold"
-                type="submit"
-              >
-                Contact Us
-              </button>
+         
             </ul>{" "}
-            {/* <i class="bi bi-list mobile-nav-toggle"></i> */}
+        </div>
           </nav>
         </div>
-      </header>
+      </header> */}
       <Slider />
       {/* <video width="80%" playsinline="true" autoplay="autoplay" muted="muted" loop="loop" type="video/mp4" src="https://agrimp-prod.s3.amazonaws.com/public/OVP_Video.mp4"></video> */}
 
@@ -502,9 +508,10 @@ function HeroSection() {
       </div> */}
       <div class="footer-top">
         <div class="container">
+          <Form onFinish={handleSubmit}>
           <div class="row">
             <div class="col-lg-3 col-md-6  footer-contact footermargin">
-              <img className="footerimg col-7 col-md-5 " src={logo} />
+              <img className="footerimg  "  src={logo} width="96%" />
 
               <p>
                 Sustainable & Smart Agriculture Trading Platform
@@ -538,6 +545,12 @@ function HeroSection() {
                   <i class="bx bx-chevron-right footeri"></i>{" "}
                   <a className="footera" href="#">
                     Register
+                  </a>
+                </li>
+                <li className="footerLi">
+                  <i class="bx bx-chevron-right footeri"></i>{" "}
+                  <a className="footera" href="/contactUs">
+                    Contact Us
                   </a>
                 </li>
               </ul>
@@ -624,6 +637,7 @@ function HeroSection() {
               </Button>
             </div>
           </div>
+          </Form>
         </div>
       </div>
       <div class="container-fluid footer-bottom clearfix">

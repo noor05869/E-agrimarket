@@ -4230,11 +4230,16 @@ height: 481px !important;
 #header {
   transition: all 0.5s;
   z-index: 997;
-  padding: 15px 0;
+  /* padding: 15px 0; */
   /* background-color: transparent !important; */
 }
 #header.header-scrolled, #header.header-inner-pages {
-  background: rgb(204 217 207 / 90%);
+  /* background: rgb(204 217 207 / 90%); */
+  background: rgba(137, 197, 66, 0.35);
+}
+.headerColor{
+  background: rgba(137, 197, 66, 0.35);
+
 }
 #header .logo {
   font-size: 30px;
@@ -4251,8 +4256,8 @@ height: 481px !important;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-top: 0rem;
+  padding-bottom: 0rem;
 }
 .navbar a, .navbar a:focus {
   display: flex;

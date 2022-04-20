@@ -386,7 +386,7 @@ setShownav(true)
             type="video/mp4"
             src={vedio}
           ></video> */}
-          <img src={Final} alt="...loading"   />
+          <img src={Final} style={{paddingBottom:"40px"}} alt="...loading"   />
           {/* <img className="vimage" src={vimage} /> */}
         </div>
       </div>

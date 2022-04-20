@@ -3649,6 +3649,7 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile .header-
   font-weight: 700;
   font-size: 2.5vw;
   line-height: 6vw;
+  margin-left: 26px;
   /* margin-top: 320px */
   color: #256834;
 }
@@ -4240,7 +4241,7 @@ height: 481px !important;
     /* line-height: 50px; */
   }
   .caruselp{
-    font-size: 32px;
+    font-size: 50px;
     line-height: 50px;
 
   }
@@ -4368,11 +4369,13 @@ height: 481px !important;
   white-space: nowrap;
   transition: 0.3s;
 }
-
+.dropdown-item{
+  color: black !important;
+}
 .navbar ul {
   margin: 0;
   padding: 0;
-  display: flex;
+  /* display: flex; */
   list-style: none;
   align-items: center;
 }

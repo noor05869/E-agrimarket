@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import logo from "../assets/LogoH.png";
 import logo3 from "../assets/LogoHeader.png";
+import Final from "../assets/Final.gif";
+
 
 import Slider from "../components/Carousel";
 import grp1 from "../assets/Group1.png";
@@ -9,6 +11,7 @@ import grp3 from "../assets/Group3.png";
 import grp4 from "../assets/Group4.png";
 import vector from "../assets/Vector.png";
 import App from "../assets/Apps.png";
+
 import Gplay from "../assets/Gplay.png";
 import vimage from "../assets/vimage.png";
 import { useState } from "react";
@@ -130,9 +133,14 @@ setShownav(true)
             </li>
             
             <li class="nav-item dropdown navli">
-              <a class="nav-link navlink" href="#Register">
-                Register
-              </a>
+            <a class="nav-link navlink dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Register
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="">
+            <li><a class="dropdown-item" href="/Farmerdata">Farmer</a></li>
+            <li><a class="dropdown-item" href="/Trader">Trader</a></li>
+          
+          </ul>
             </li>
             <li class="nav-item dropdown navli ">
               <a
@@ -145,6 +153,7 @@ setShownav(true)
                 Contact us
               </a>
             </li>
+          
           </ul>
         
         </div>
@@ -307,7 +316,7 @@ setShownav(true)
             <div style={{ display: "grid" }} className="row">
               <div className="col-lg-9">
                 <div className="mobilecontent p-3 p-md-4 p-lg-3   ">
-                  <h2 className="mobileapph">E-Agri Mobile App</h2>
+                  <h2 className="mobileapph flexcenter">E-Agri Mobile App</h2>
                   <p className="paragra">
                     Online Trading and Information platform for all Agriculture
                     stakeholders. Get market insights of all Agri products
@@ -367,7 +376,7 @@ setShownav(true)
           </p>
         </div>
         <div className=" vedios justify-content-center">
-          <video
+          {/* <video
             className="vedios"
             width="80%"
             playsinline="true"
@@ -376,7 +385,8 @@ setShownav(true)
             loop="loop"
             type="video/mp4"
             src={vedio}
-          ></video>
+          ></video> */}
+          <img src={Final} alt="...loading"   />
           {/* <img className="vimage" src={vimage} /> */}
         </div>
       </div>
@@ -573,7 +583,7 @@ setShownav(true)
             <div class="col-lg-3 col-md-6 footer-links  footermargin">
               <div className="footerin">
                 <h3 className="foh">Get in touch</h3>
-                <p className="fop">we have to hear from you</p>
+                <p className="fop">We Love to hear from you</p>
               </div>
               <FormItem
                 name="name"

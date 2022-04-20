@@ -6,8 +6,8 @@ import image2 from "../assets/Rectangle4.png";
 
 function Slider() {
   return (
-    <div className="antCarousel">
-      <Carousel effect="fade" >
+    <div className="antCarousel" >
+      <Carousel effect="fade" autoplay >
         <div className="carouseldiv bg-1 ">
           <div className="p-3 p-md-4 p-lg-5  contentstye " style={contentStyle}>
             <div>

@@ -551,38 +551,39 @@ setShownav(true)
               <ul className="footerUl">
                 <li className="footerLi">
                   <i class="bx bx-chevron-right footeri"></i>{" "}
-                  <a className="footera" href="#">
+                  <a className="footera disText" href="#">
                     Home
                   </a>
                 </li>
                 <li className="footerLi">
                   <i class="bx bx-chevron-right footeri"></i>{" "}
-                  <a className="footera" href="#Products">
+                  <a className="footera disText" href="#Products">
                     About Us
                   </a>
                 </li>
                 <li className="footerLi">
                   <i class="bx bx-chevron-right footeri"></i>{" "}
-                  <a className="footera" href="#ourServices">
+                  <a className="footera disText" href="#ourServices">
                     Our Services
                   </a>
                 </li>
                 <li className="footerLi">
                   <i class="bx bx-chevron-right footeri"></i>{" "}
-                  <a className="footera" href="#Register">
+                  <a className="footera disText" href="#Register">
                     Register
                   </a>
                 </li>
                 <li className="footerLi">
                   <i class="bx bx-chevron-right footeri"></i>{" "}
-                  <a className="footera" href="/contactUs">
+                  <a className="footera disText" href="/contactUs">
                     Contact Us
                   </a>
                 </li>
               </ul>
             </div>
-            <div class="col-lg-3 col-md-6 footer-links  footermargin">
-              <div className="footerin">
+          
+            <div class="col-lg-3 col-md-6 footer-links footermargin  ">
+            <div className="footerin ">
                 <h3 className="foh">Get in touch</h3>
                 <p className="fop">We Love to hear from you</p>
               </div>
@@ -612,6 +613,24 @@ setShownav(true)
                 />
               </FormItem>
               <FormItem
+                name="message"
+                rules={
+                  !initialvalues.message
+                    ? [
+                        {
+                          required: true,
+                          message: "Please Fill",
+                        },
+                      ]
+                    : ""
+                }
+              >
+                <TextArea className="message" rows={2} name="message" onChange={handleChange} />
+              </FormItem>
+            </div>
+            <div class="col-lg-3 col-md-6 footer-links textArea ">
+             
+            <FormItem
                 name="contact"
                 rules={
                   !initialvalues.contact
@@ -636,23 +655,7 @@ setShownav(true)
                   className="nameinput"
                 />
               </FormItem>
-            </div>
-            <div class="col-lg-3 col-md-6 footer-links textArea ">
-              <FormItem
-                name="message"
-                rules={
-                  !initialvalues.message
-                    ? [
-                        {
-                          required: true,
-                          message: "Please Fill",
-                        },
-                      ]
-                    : ""
-                }
-              >
-                <TextArea rows={5} name="message" onChange={handleChange} />
-              </FormItem>
+              
               <Button
                 htmlType="submit"
                 type="primary"
@@ -662,7 +665,8 @@ setShownav(true)
                 Send Message
               </Button>
             </div>
-          </div>
+      </div>
+          
           </Form>
         </div>
       </div>

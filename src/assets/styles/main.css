@@ -116,7 +116,7 @@
 
   font-weight: bold;
   color: black;
-  margin-top: 48px;
+  margin-top: 20px;
   font-size: 1.2rem
 }
 
@@ -2638,7 +2638,7 @@ body {
     display: none !important;
   }
     .textArea{
-      margin-top: 188px !important;
+      margin-top: 180px !important;
     }
     .playimg {
       /* width: 20%; */
@@ -3756,7 +3756,7 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile .header-
 
 .grp1img {
   /* margin-top: 120px; */
-  height: 4vw;
+  height: 8vw;
   max-height: 75px;
 }
 
@@ -3969,7 +3969,7 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile .header-
   background: #96CC5C;
   border-radius: 43.5px;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 17px;
   line-height: 38px;
   border: none;
   padding-bottom: 7px;
@@ -4051,23 +4051,19 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile .header-
 } */
 
 .sendbtn {
-  width: 100%;
-  height: 66px;
+  width: 48%;
+  height: 55px;
   /* top: 5793px; */
   font-weight: 700;
-  font-size: 20px;
+  font-size: 15px;
   line-height: 38px;
-  /* identical to box height */
-
-
   color: #FFFFFF;
   border: none;
-  margin-top: 13px;
+  /* margin-top: 13px; */
   background: #96CC5C;
   border-radius: 10px;
   margin-bottom: 50px;
 }
-
 .foh {
   font-weight: 700;
   font-size: 25px;
@@ -4341,7 +4337,7 @@ height: 481px !important;
 }
 @media (min-width: 992px){
   .textArea{
-    margin-top: 188px!important;
+    margin-top: 180px!important;
   }
   .mainprod {
     /* height: 645px; */
@@ -4562,7 +4558,7 @@ color: #6AA044;
 }
 @media (min-width: 1200px){
   .textArea{
-    margin-top: 166px!important;
+    margin-top: 148px!important;
   }
 
   .mainprod {
@@ -4603,7 +4599,7 @@ color: #6AA044;
     width: 1070px !important;
 }
 .mobilediv {
-  top: -514px !important;
+  top: -475px !important;
   display: block !important;
 }
   .grptext,

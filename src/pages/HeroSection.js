@@ -230,31 +230,33 @@ setShownav(true)
       {/* <div  className="container-fluid" > */}
       <div className="servicesdiv  p-3 p-md-4 p-lg-5" id="ourServices">
         <div className="row justify-content-center">
-          <div className="col-md-6 sercol">
+          <div className="col-md-6 sercol servicesleft">
             <div className="row serow justify-content-center">
-              <div className="col-lg-4 col-sm-4 flexcenter ">
+              <div className="col-lg-6 col-sm-4 col-md-6 flexcenter ">
             <h2 className="serviceHead font-bold Headings ">Our Services</h2></div>
-            <div className="flexcenter">
-            <p className="serp col-lg-11  disText ">
+            <div className="heading">
+            <p className="serp col-lg-11  disText  ">
               eAgriMarket is smart trading platform for all Agriculture
               stakeholders. 
               We empower farmers with technology and provide all Agri
               stakeholders a platform for trading.
-            </p></div>
+            </p>
+            </div>
             {/* <button className="serbtn">Learn More</button> */}
             </div>
            
          
            
           </div>
-          <div className="col-md-6 mt-3 mt-md-0">
+        
+          <div className="col-md-5 mt-3 mt-md-0 servicesleft">
             <div className="d-flex">
               <img className="grp1img" src={grp1} />
               {/* <img className="grp1img" src={grp4} /> */}
 
               <div className="paradiv">
                 <p className="grptext ms-3 ms-md-4 Headings ">E-Mandi</p>
-                <p className="serp2 ms-3 ms-md-4 disText" >
+                <p className="serp2 ms-3 ms-md-4 disText " >
                   Platform for Sale and Purchase of Agri commodities
                 </p>
               </div>
@@ -305,7 +307,7 @@ setShownav(true)
           <div className="heading">
             <h2 className="prdhead Headings">Our Products</h2>
           </div>
-          <p className="prdp  mb-3 mb-md-4 mb-lg-5 disText">
+          <p className="prdp  mb-3 mb-md-4 mb-lg-5 disText ">
             Online Trading and Information platform for all Agriculture
             stakeholders. Get market insights of all Agri products across
             country and trade with ease by exploring your desired product on our
@@ -318,7 +320,7 @@ setShownav(true)
               <div className="col-lg-9">
                 <div className="mobilecontent p-3 p-md-4 p-lg-3   ">
                   <h2 className="mobileapph flexcenter Headings">E-Agri Mobile App</h2>
-                  <p className="paragra disText">
+                  <p className="paragra disText heading">
                     Online Trading and Information platform for all Agriculture
                     stakeholders. Get market insights of all Agri products
                     across country and trade with ease by exploring your desired
@@ -533,9 +535,10 @@ setShownav(true)
           <Form onFinish={handleSubmit}>
           <div class="row">
             <div class="col-lg-3 col-md-6  footer-contact footermargin">
-              <img className="footerimg  "  src={logo} width="96%" />
+              <div className="foimage flexcenter" >
+              <img className="  "  src={logo} width="96%" /></div>
 
-              <p className="footerp disText">
+              <p className="footerp disText heading">
                 Sustainable & Smart Agriculture Trading Platform
                Empowering Farmers with Technology
             
@@ -655,7 +658,7 @@ setShownav(true)
                     : ""
                 }
               >
-                <TextArea className="" rows={3} name="message" onChange={handleChange} />
+                <TextArea placeholder="Message" className="" rows={2} name="message" onChange={handleChange} />
               </FormItem></div>
               {/* <div class="col-lg-1 col-md-6 footer-links textArea "> */}
              

@@ -229,17 +229,18 @@ setShownav(true)
       {/* Services */}
       {/* <div  className="container-fluid" > */}
       <div className="servicesdiv  p-3 p-md-4 p-lg-5" id="ourServices">
-        <div className="row">
+        <div className="row justify-content-center">
           <div className="col-md-6 sercol">
             <div className="row serow justify-content-center">
-              <div className="col-lg-4 col-sm-2 flexcenter ">
+              <div className="col-lg-4 col-sm-4 flexcenter ">
             <h2 className="serviceHead font-bold Headings ">Our Services</h2></div>
-            <p className="serp col-lg-11 disText">
+            <div className="flexcenter">
+            <p className="serp col-lg-11  disText ">
               eAgriMarket is smart trading platform for all Agriculture
               stakeholders. 
               We empower farmers with technology and provide all Agri
               stakeholders a platform for trading.
-            </p>
+            </p></div>
             {/* <button className="serbtn">Learn More</button> */}
             </div>
            
@@ -539,16 +540,16 @@ setShownav(true)
                Empowering Farmers with Technology
             
                 Making Farm to Fork a Reality</p>
-                <div class="credits">
+                <div class="credits flexcenter">
           {" "}
-        <a href="https://www.facebook.com/eagrimart"> <FacebookFilled className="footericon"   /></a>
+        <a className="footericon" href="https://www.facebook.com/eagrimart"> <FacebookFilled className="footericon"   /></a>
         <a className="footericon" href="https://www.instagram.com/eagrimart/"> <InstagramFilled /></a> 
         <a className="footericon" href="https://www.linkedin.com/company/eagrimarket/">  <LinkedinFilled /></a> 
         </div>
             </div>
             <div class="col-lg-3 col-md-6 footer-links footermargin">
               {/* <h4 className="footerh4">Useful Links</h4> */}
-              <ul className="footerUl">
+              <ul className="footerUl ">
                 <li className="footerLi">
                   <i class="bx bx-chevron-right footeri"></i>{" "}
                   <a className="footera disText" href="#">
@@ -582,11 +583,13 @@ setShownav(true)
               </ul>
             </div>
           
-            <div class="col-lg-3 col-md-6 footer-links footermargin  ">
+            <div class="col-lg-5 col-md-6 footer-links footermargin  ">
             <div className="footerin ">
                 <h3 className="foh">Get in touch</h3>
                 <p className="fop">We Love to hear from you</p>
               </div>
+              <div className=" row d-flex">
+                <div className="col-lg-6">
               <FormItem
                 name="name"
                 rules={
@@ -611,26 +614,8 @@ setShownav(true)
                   placeholder="Enter Name Here"
                   className="nameinput1"
                 />
-              </FormItem>
-              <FormItem
-                name="message"
-                rules={
-                  !initialvalues.message
-                    ? [
-                        {
-                          required: true,
-                          message: "Please Fill",
-                        },
-                      ]
-                    : ""
-                }
-              >
-                <TextArea className="message" rows={2} name="message" onChange={handleChange} />
-              </FormItem>
-            </div>
-            <div class="col-lg-3 col-md-6 footer-links textArea ">
-             
-            <FormItem
+              </FormItem></div>
+              <div className="col-lg-6">  <FormItem
                 name="contact"
                 rules={
                   !initialvalues.contact
@@ -654,18 +639,43 @@ setShownav(true)
                   // placeholder="Enter Phone Number"
                   className="nameinput"
                 />
-              </FormItem>
-              
-              <Button
-                htmlType="submit"
-                type="primary"
-                // onClick={handleSubmit}
-                className="sendbtn"
+              </FormItem></div></div>
+              <div className="row">
+                <div className="col-lg-9">
+              <FormItem
+                name="message"
+                rules={
+                  !initialvalues.message
+                    ? [
+                        {
+                          required: true,
+                          message: "Please Fill",
+                        },
+                      ]
+                    : ""
+                }
               >
-                Send Message
-              </Button>
+                <TextArea className="" rows={3} name="message" onChange={handleChange} />
+              </FormItem></div>
+              {/* <div class="col-lg-1 col-md-6 footer-links textArea "> */}
+             
+          <div className="col-lg-3 col-sm-6">
+              
+             <Button
+               htmlType="submit"
+               type="primary"
+               // onClick={handleSubmit}
+               className="sendbtn"
+             >
+               Send Message
+             </Button>
+             </div>
+             </div>
+           {/* </div> */}
+     </div>
             </div>
-      </div>
+            
+           
           
           </Form>
         </div>

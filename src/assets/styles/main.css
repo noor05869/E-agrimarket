@@ -168,7 +168,14 @@
     overflow-x: hidden;
     /* background-repeat: no-repeat; */
   }
-
+  .bgimage1{
+    display: none !important;
+  }
+  .bgimage2{
+    display: none !important;
+  }.bgimage3{
+    display: none !important;
+  }
   .cropsdiss {
     margin-left: 120px;
 
@@ -2630,14 +2637,27 @@ body {
       /* height: -moz-fit-content; */
       height: fit-content;
   }
+  .caruselp{
+    font-size: 30px;
+    line-height: 50px;
+    position: relative;
+    bottom: 265px;
+    left: 29px;
+  
+  }
   .bgimage1{
     display: block !important;
+    margin-left: 50px;
   }
   .bgimage2{
     display: block !important;
+    margin-left: 50px;
+
   }
   .bgimage3{
     display: block !important;
+    margin-left: 50px;
+
   }
   .mobilecontent{margin-left: 0px !important;}
   .playbtns{
@@ -2654,6 +2674,29 @@ body {
 @media (min-width: 768px) {
   .sign-img img {
     margin: 0;
+  }
+  .bgimage1{
+    display: block !important;
+    margin-left: 50px;
+
+  }
+  .bgimage2{
+    display: block !important;
+    margin-left: 50px;
+
+  }
+  .caruselp{
+    font-size: 30px;
+    line-height: 50px;
+    position: relative;
+    bottom: 312px;
+    left: 29px;
+  
+  }
+  .bgimage3{
+    display: block !important;
+    margin-left: 50px;
+
   }
   /* .textArea{
     margin-top: 0px !important;
@@ -3637,19 +3680,14 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile .header-
   transition: all 0.5s;
 
 }
-.bgimage1{
-  display: none !important;
-}
-.bgimage2{
-  display: none !important;
-}.bgimage3{
-  display: none !important;
-}
+
 .caruselp {
   font-weight: 700;
   font-size: 2.5vw;
   line-height: 6vw;
   margin-left: 26px;
+  
+
   /* margin-top: 320px */
   color: #256834;
 }
@@ -4090,9 +4128,12 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile .header-
     line-height: 25px;
     display: grid;
     justify-content: center;
+    bottom: 0px;
+    left: 0px;
   }
   .bgimage1{
     display: block !important;
+    margin-left: 0px;
   }
   .navlidiv{
     margin-left: 62px !important;
@@ -4231,7 +4272,9 @@ height: 481px !important;
   margin-top: 22px;
 }
 }
-
+.antCarousel{
+  background: white;
+}
 @media (min-width: 1500px) {
 
   
@@ -4241,8 +4284,11 @@ height: 481px !important;
     /* line-height: 50px; */
   }
   .caruselp{
-    font-size: 50px;
+    font-size: 50px !important;
     line-height: 50px;
+    position: relative;
+    bottom: 400px !important;
+    left: 29px;
 
   }
   .carouselptag,
@@ -4306,6 +4352,14 @@ height: 481px !important;
     max-height: 799px !important;
     background: #6AA044;
     width: 609px !important;
+}
+.caruselp{
+  font-size: 30px;
+  line-height: 50px;
+  position: relative;
+  bottom: 312px;
+  left: 29px;
+
 }
 .mobilediv {
   top:-618px !important; 

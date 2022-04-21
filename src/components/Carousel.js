@@ -8,7 +8,7 @@ function Slider() {
   return (
     <div className="antCarousel" >
       <Carousel effect="fade" autoplay >
-        <div className="carouseldiv bg-1 ">
+        <div className="carouseldiv  ">
           <div className="p-3 p-md-4 p-lg-5  contentstye " style={contentStyle}>
             <div>
               <img className="bgimage1" src={image} />
@@ -24,7 +24,7 @@ function Slider() {
             </div>
           </div>
         </div>
-        <div className="carouseldiv bg-2">
+        <div className="carouseldiv ">
           <div className="p-3 p-md-4 p-lg-5 contentstye" style={contentStyle}>
             <div>
             <img className="bgimage1" src={image1} />
@@ -41,7 +41,7 @@ function Slider() {
           </div>
         </div>
 
-        <div className="carouseldiv bg-3">
+        <div className="carouseldiv ">
           <div  className="p-3 p-md-5 p-lg-5 contentstye" style={contentStyle}>
             <div>
             <img className="bgimage1" src={image2} />

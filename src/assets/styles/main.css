@@ -151,6 +151,7 @@
 }
 
 @media (min-width: 992px) {
+ 
   body {
     padding: 0 0 30px 0;
     background-color: #fafafa;
@@ -209,7 +210,9 @@
   align-items: baseline;
   margin-bottom: 10px;
 }
-
+.mobilediv{
+  display: block !important;
+}
 .backbtnStyle {
   color: black;
   background-color: white;
@@ -445,7 +448,9 @@
     overflow: auto;
   }
 }
-
+.mobilediv{
+  display: block !important;
+}
 .layout-dashboard .ant-layout-sider.sider-primary {
   width: 250px;
   position: fixed;
@@ -1698,7 +1703,9 @@ span.ismobile {
   .footer-menu ul {
     justify-content: center;
   }
-
+  .mobilediv{
+    display: block !important;
+  }
   footer.ant-layout-footer {
     padding: 0px 15px;
     text-align: center;
@@ -2628,7 +2635,8 @@ body {
 
 @media (max-width: 768px) {
   .mobilediv{
-    display: none !important;}
+    display: none !important;
+  }
     .textArea{
       margin-top: 188px !important;
     }
@@ -2675,6 +2683,13 @@ body {
   .sign-img img {
     margin: 0;
   }
+  .mobilecontent {
+    display: grid;
+    justify-content: center;
+    margin-left: 0px !important
+}
+  .mobilediv{
+    display: none !important;}
   .bgimage1{
     display: block !important;
     margin-left: 50px;
@@ -3903,16 +3918,20 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile .header-
 .vedios {
   display: flex;
   justify-content: center;
+  max-width: 1079px;
 }
-
+.vediocontainer{
+  display: flex;
+  justify-content: center;
+}
 .Register {
-  background-image: url("../Rectangle\ 11.png");
-  height: 319px;
+  background-image: url("https://eagri-images.s3.ap-southeast-1.amazonaws.com/Rectangle%2011.png");
+  /* height: 319px; */
 }
 
 .reginner {
   background: rgba(137, 197, 66, 0.35);
-  height: 319px;
+  /* height: 319px; */
 }
 
 .regcontent {
@@ -4275,30 +4294,7 @@ height: 481px !important;
 .antCarousel{
   background: white;
 }
-@media (min-width: 1500px) {
 
-  
-  .grptext,
-  .prdhead {
-    font-size: 17px;
-    /* line-height: 50px; */
-  }
-  .caruselp{
-    font-size: 50px !important;
-    line-height: 50px;
-    position: relative;
-    bottom: 400px !important;
-    left: 29px;
-
-  }
-  .carouselptag,
-  .serp2,
-  .prdp {
-    font-size: 14px;
-    line-height: 35px;
-  }
-
-}
 .footerin{
   margin-left: 29px;
 }
@@ -4349,7 +4345,7 @@ height: 481px !important;
   }
   .mainprod {
     /* height: 645px; */
-    max-height: 799px !important;
+    max-height: 719px !important;
     background: #6AA044;
     width: 609px !important;
 }
@@ -4363,8 +4359,13 @@ height: 481px !important;
 }
 .mobilediv {
   top:-618px !important; 
+  display: block !important;
 }
-
+.mobilecontent {
+  display: grid;
+  justify-content: center;
+  margin-left: 266px !important;
+}
 }
 .farmera{
   color: white;
@@ -4551,23 +4552,78 @@ color: #6AA044;
   justify-content: center;
   align-items: baseline;
 }
+
+.gif{
+  padding-bottom: 40px;
+    /* image-rendering: -webkit-optimize-contrast; */
+    image-rendering: auto;
+  /* image-rendering: crisp-edges;
+  image-rendering: pixelated; */
+}
 @media (min-width: 1200px){
   .textArea{
     margin-top: 166px!important;
   }
+
   .mainprod {
     /* height: 645px; */
-    max-height: 567px !important;
+    max-height: 679px !important;
     background: #6AA044;
-    width: 1070px !important;
+    width: 742px !important;
 }
-
 .mobilediv {
-  top: -516px !important; 
+  top: -621px !important; 
+  display: block !important;
+}
+.mobilecontent {
+  display: grid;
+  justify-content: center;
+  margin-left: 266px !important;
+}
+.Headings{
+  font-weight: 700 !important;
+    font-size: 25px !important;
+}
+.disText{
+  font-weight: 400 !important;
+  font-size: 17px !important;
+  line-height: 30px !important;
 }
 }
 .navbar-toggler:focus {
   text-decoration: none;
   outline: 0;
   box-shadow:none !important;
+}
+@media (min-width: 1500px) {
+  .mainprod {
+    /* height: 645px; */
+    max-height: 567px !important;
+    background: #6AA044;
+    width: 1070px !important;
+}
+.mobilediv {
+  top: -514px !important;
+  display: block !important;
+}
+  .grptext,
+  .prdhead {
+    font-size: 17px;
+    /* line-height: 50px; */
+  }
+  .caruselp{
+    font-size: 50px !important;
+    line-height: 50px;
+    position: relative;
+    bottom: 400px !important;
+    left: 29px;
+
+  }
+  .carouselptag,
+  .serp2,
+  .prdp {
+    font-size: 14px;
+    line-height: 35px;
+  }
+
 }

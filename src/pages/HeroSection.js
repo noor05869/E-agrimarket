@@ -233,8 +233,8 @@ setShownav(true)
           <div className="col-md-6 sercol">
             <div className="row serow justify-content-center">
               <div className="col-lg-4 col-sm-2 flexcenter ">
-            <h2 className="serviceHead font-bold ">Our Services</h2></div>
-            <p className="serp col-lg-11">
+            <h2 className="serviceHead font-bold Headings ">Our Services</h2></div>
+            <p className="serp col-lg-11 disText">
               eAgriMarket is smart trading platform for all Agriculture
               stakeholders. 
               We empower farmers with technology and provide all Agri
@@ -252,8 +252,8 @@ setShownav(true)
               {/* <img className="grp1img" src={grp4} /> */}
 
               <div className="paradiv">
-                <p className="grptext ms-3 ms-md-4">E-Mandi</p>
-                <p className="serp2 ms-3 ms-md-4">
+                <p className="grptext ms-3 ms-md-4 Headings ">E-Mandi</p>
+                <p className="serp2 ms-3 ms-md-4 disText" >
                   Platform for Sale and Purchase of Agri commodities
                 </p>
               </div>
@@ -262,8 +262,8 @@ setShownav(true)
               <img className="grp1img" src={grp2} />
               {/* <img className="grp1img" src={grp4} /> */}
               <div className="paradiv">
-                <p className="grptext  ms-3 ms-md-4">Input Marketplace</p>
-                <p className="serp2 ms-3 ms-md-4">
+                <p className="grptext  ms-3 ms-md-4 Headings">Input Marketplace</p>
+                <p className="serp2 ms-3 ms-md-4 disText">
                   Online marketplace for Agro Chemicals and Fertilizers
                   {/* <br />
                   Sed in tempus libero ornare */}
@@ -274,8 +274,8 @@ setShownav(true)
               <img className="grp1img" src={grp3} />
               {/* <img className="grp1img" src={grp2} /> */}
               <div className="paradiv">
-                <p className="grptext  ms-3 ms-md-4">Machinery Marketplace</p>
-                <p className="serp2 ms-3 ms-md-4">
+                <p className="grptext  ms-3 ms-md-4 Headings">Machinery Marketplace</p>
+                <p className="serp2 ms-3 ms-md-4 disText">
                   Online Marketplace for Agri Machinery and Tools
                   {/* <br />
                   Sed in tempus libero ornare */}
@@ -286,8 +286,8 @@ setShownav(true)
               <img className="grp1img" src={grp4} />
 
               <div className="paradiv">
-                <p className="grptext  ms-3 ms-md-4">Crop Advisory</p>
-                <p className="serp2 ms-3 ms-md-4">
+                <p className="grptext  ms-3 ms-md-4 Headings">Crop Advisory</p>
+                <p className="serp2 ms-3 ms-md-4 disText">
                   Expert Agri advisory services for Farmers
                   {/* <br />
                   Sed in tempus libero ornare */}
@@ -302,9 +302,9 @@ setShownav(true)
       <div className="Products p-3 p-md-4 p-lg-5" id="Products">
         <div className="head">
           <div className="heading">
-            <h2 className="prdhead">Our Products</h2>
+            <h2 className="prdhead Headings">Our Products</h2>
           </div>
-          <p className="prdp  mb-3 mb-md-4 mb-lg-5">
+          <p className="prdp  mb-3 mb-md-4 mb-lg-5 disText">
             Online Trading and Information platform for all Agriculture
             stakeholders. Get market insights of all Agri products across
             country and trade with ease by exploring your desired product on our
@@ -316,8 +316,8 @@ setShownav(true)
             <div style={{ display: "grid" }} className="row">
               <div className="col-lg-9">
                 <div className="mobilecontent p-3 p-md-4 p-lg-3   ">
-                  <h2 className="mobileapph flexcenter">E-Agri Mobile App</h2>
-                  <p className="paragra">
+                  <h2 className="mobileapph flexcenter Headings">E-Agri Mobile App</h2>
+                  <p className="paragra disText">
                     Online Trading and Information platform for all Agriculture
                     stakeholders. Get market insights of all Agri products
                     across country and trade with ease by exploring your desired
@@ -327,31 +327,31 @@ setShownav(true)
                     <div>
                       <p className="ticksp">
                         <img className="ticksimg" src={vector} />
-                        <p className="marking">e-Mandi</p>
+                        <p className="marking disText">e-Mandi</p>
                       </p>
                       <p className="ticksp1">
                         <img className="ticksimg" src={vector} />
-                        <p className="marking">Farmers Portal </p>
+                        <p className="marking disText">Farmers Portal </p>
                       </p>{" "}
                       <p className="ticksp1">
                         <img className="ticksimg" src={vector} />
-                        <p className="marking">Input Marketplace </p>
+                        <p className="marking disText">Input Marketplace </p>
                       </p>
                     </div>
                     <div className="mark2">
                       <p className="ticksp2">
                         <img className="ticksimg" src={vector} />
-                        <p className="marking">Machinery Marketplace </p>
+                        <p className="marking disText">Machinery Marketplace </p>
                       </p>
                       <p className="ticksp2">
                         <img className="ticksimg" src={vector} />
-                        <p className="marking"> Advisory Portal</p>
+                        <p className="marking disText"> Advisory Portal</p>
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className=" col-lg-2 col-md-3 playbtns p-3 p-md-4   ">
+              <div className=" col-lg-3 col-xl-2 col-sm-4 col-md-2 playbtns p-3 p-md-4   ">
                 <img className="playimg " src={Gplay} width="100%" height="100%" />
                 <img className="playimg" src={App} width="100%" />
               </div>
@@ -366,16 +366,17 @@ setShownav(true)
       <div className="Proposition">
         <div className="head">
           <div className="heading">
-            <h2 className="prdhead">Our Value Proposition</h2>
+            <h2 className="prdhead Headings">Our Value Proposition</h2>
           </div>
-          <p className="prdp">
+          <p className="prdp disText">
             eAgriMarket help Farmers to directly market their produce to Traders
             and Agro-Industry. <br />
             All immediate supply chain stages are covered by eAgriMarket and our
             partner network.
           </p>
         </div>
-        <div className=" vedios justify-content-center">
+        <div className="container vediocontainer">
+        <div className=" vedios  justify-content-center">
           {/* <video
             className="vedios"
             width="80%"
@@ -386,17 +387,17 @@ setShownav(true)
             type="video/mp4"
             src={vedio}
           ></video> */}
-          <img src={Final} style={{paddingBottom:"40px"}} alt="...loading"   />
+          <img src={Final} className="gif" alt="...loading"   />
           {/* <img className="vimage" src={vimage} /> */}
-        </div>
+        </div></div>
       </div>
       <div className="Register " id="Register">
         <div className="reginner p-2 p-md-4 p-lg-3">
           <div className="head">
             <div className="heading">
-              <h2 className="regcontent">Register Yourself</h2>
+              <h2 className="regcontent Headings">Register Yourself</h2>
             </div>
-            <p className="regp">
+            <p className="regp disText">
               eAgriMarket help Farmers to directly market their produce to
               Traders and Agro-Industry.
               <br /> All immediate supply chain stages are covered by
@@ -533,7 +534,7 @@ setShownav(true)
             <div class="col-lg-3 col-md-6  footer-contact footermargin">
               <img className="footerimg  "  src={logo} width="96%" />
 
-              <p className="footerp">
+              <p className="footerp disText">
                 Sustainable & Smart Agriculture Trading Platform
                Empowering Farmers with Technology
             

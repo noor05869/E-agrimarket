@@ -11,7 +11,7 @@ function Slider() {
         <div className="carouseldiv  ">
           <div className="p-3 p-md-4 p-lg-5  contentstye " style={contentStyle}>
             <div>
-              <img className="bgimage1" src={image} />
+              <img className="bgimage1" src="https://eagri-images.s3.ap-southeast-1.amazonaws.com/Group%2018398.png" />
               <h2 className="caruselp mb-3 ">
                 Sustainable & Smart Agriculture
                 <br />
@@ -27,7 +27,7 @@ function Slider() {
         <div className="carouseldiv ">
           <div className="p-3 p-md-4 p-lg-5 contentstye" style={contentStyle}>
             <div>
-            <img className="bgimage1" src={image1} />
+            <img className="bgimage1" src="https://eagri-images.s3.ap-southeast-1.amazonaws.com/Group%2018397.png" />
 
               <h2 style={{ color: "#256834" }} className="caruselp mb-3 ">
                 Empowering Farmers <br />
@@ -44,7 +44,7 @@ function Slider() {
         <div className="carouseldiv ">
           <div  className="p-3 p-md-5 p-lg-5 contentstye" style={contentStyle}>
             <div>
-            <img className="bgimage1" src={image2} />
+            <img className="bgimage1" src="https://eagri-images.s3.ap-southeast-1.amazonaws.com/Group%2018399.png" />
               
                             <h2 className="caruselp mb-3 ">
                 Making Farm to Fork a <br />

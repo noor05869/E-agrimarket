@@ -233,7 +233,7 @@ navigate("/contactUs")
                           }
                         >
                           <Select
-                        mode="multiple"
+                        // mode="multiple"
 
                             placeholder=" اشیاء "
                             name={`${i}commodities`}

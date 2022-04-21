@@ -170,7 +170,7 @@ error,
                           }
                         >
                           <Select
-                        mode="multiple"
+                        // mode="multiple"
 
                             placeholder="Select Commodities - اشیاء "
                             name={`${i}commodities`}

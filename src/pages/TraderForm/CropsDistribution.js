@@ -22,7 +22,7 @@ function CropsDistribution({
   handleStep,
   initialValues,
   handleChange,
-error,
+  error,
   cropDistribution,
   handleDistributionAdd,
   handleDistributionRemove,
@@ -106,7 +106,7 @@ error,
                       justify="center"
                     >
                       {/* <Col span={7} md={0} lg={0} xl={0}></Col> */}
-                      <Col key={i}  span={7} xs={23} sm={20} md={7} lg={7} xl={7}
+                      <Col key={i} span={7} xs={23} sm={20} md={7} lg={7} xl={7}
                       >
                         <Label eLabel="Crops" ulabel="فصلیں" index={i} />
 
@@ -152,7 +152,7 @@ error,
                           </Select>
                         </Form.Item>
                       </Col>
-                      <Col  span={7} xs={23} sm={20} md={7} lg={7} xl={7}>
+                      <Col span={7} xs={23} sm={20} md={7} lg={7} xl={7}>
                         <Label eLabel="Commodities" ulabel=" اشیاء" index={i} />
 
                         <Form.Item
@@ -170,7 +170,7 @@ error,
                           }
                         >
                           <Select
-                        // mode="multiple"
+                            // mode="multiple"
 
                             placeholder="Select Commodities - اشیاء "
                             name={`${i}commodities`}
@@ -219,7 +219,7 @@ error,
                     <Row justify="center" gutter={[24, 0]}>
                       <Col span={7} md={0} lg={0} xl={0}></Col>
                       {i === cropDistribution.length - 1 ? (
-                        <Col className="icondiv justify-content-end" xs={23} span={7} sm={20} md={14} lg={14}
+                        <Col className="icondiv justify-content-end p-0" xs={23} span={7} sm={20} md={14} lg={14}
                         >
                           <PlusCircleOutlined
                             onClick={handleDistributionAdd}
@@ -244,7 +244,7 @@ error,
                         </Col>
                       ) : (
                         <
-                        ></>
+                          ></>
                       )}
                       {/* <Col xs={23} span={7} sm={20} md={0} lg={9}
                       ></Col> */}
@@ -252,105 +252,111 @@ error,
                   </>
                 ))}
               <Row gutter={[24, 0]}></Row>
-              <Row justify="center">
-                <Col md={14} lg={23}>
-                <h5 className="text-center mt-4">Cattles</h5>
-                </Col>
-              </Row>
-              {cattless.map((data, i) => (
-                <>
-                  <Row justify="center" gutter={[24, 0]}>
-                    {/* <Col span={7} md={0} lg={0} xl={0}></Col> */}
-
-                    <Col xs={23} span={7} sm={20} md={7} lg={7} xl={7}>
-                      {i === 0 && <><Label eLabel="Quantity " ulabel="  تعداد" index={i} />
+              <div className="mt-5 mb-4">
+                <Row justify="center" className="">
+                  <Col span={14} xs={23} sm={20} md={14}>
+                    <div className="d-flex">
+                      <h5 className="text-center align-self-center mb-0">Cattles</h5>
+                      <div className='ms-5 d-flex'>
+                        <Label eLabel="Do you " ulabel="  تعداد" className="ms-3" />
 
 
-                        <Form.Item name='LiveStock'
+                        <Form.Item name='LiveStock' className='mb-0 ms-3'
                           valuePropName="checked">
                           <Switch
+                            className="ms-4"
                             name='LiveStock'
                             onChange={(e) => handleSelect('LiveStock', e)}
-                            value={data.LiveStock}
+                            value={initialValues.LiveStock}
                             min={1}
                             size="large" />
                         </Form.Item>
-                      </>}
+                      </div>
+                    </div>
+                  </Col>
+                </Row>
+                {initialValues.LiveStock && cattless.map((data, i) => (
+                  <>
+                    <Row justify="left" gutter={[24, 0]}>
 
+                      <Col xs={23} span={7} sm={2} md={5}></Col>
 
-                    </Col>
-                    <Col xs={23} span={7} sm={20} md={7} lg={7} xl={7}
-                    >
-                      <Label eLabel="Cattles " ulabel=" مویشی" index={i} />
-
-                      <Form.Item
-                        className="username"
-                        name={`${i}cattle`}
+                      <Col xs={23} span={7} sm={20} md={7} className="p-0"
                       >
-                        <Select
-                          className="userName"
-                          placeholder="Select Cattles - مویشی"
-                          value={data.Cattles}
-                          size="large"
+                        {i < 1 &&
+                          <Label eLabel="Cattles " ulabel=" مویشی" index={i} />
+                        }
+                        <Form.Item
+                          className="username"
                           name={`${i}cattle`}
-                          defaultValue={data.Cattles ? data.Cattles : undefined}
-                          onChange={(event) =>
-                            handleSelectChange(i, event, "Cattles")
-                          }
                         >
-                          <Option key="Buffalo">Buffalo</Option>
-                          <Option key="Goat">Goat</Option>
-                        </Select>
-                      </Form.Item>
-                    </Col>
-{/* 
+                          <Select
+                            className="userName"
+                            placeholder="Select Cattles - مویشی"
+                            value={data.Cattles}
+                            size="large"
+                            name={`${i}cattle`}
+                            defaultValue={data.Cattles ? data.Cattles : undefined}
+                            onChange={(event) =>
+                              handleSelectChange(i, event, "Cattles")
+                            }
+                          >
+                            <Option key="Buffalo">Buffalo</Option>
+                            <Option key="Goat">Goat</Option>
+                            <Option key="Goat">Sheep</Option>
+                            <Option key="Goat">Camel</Option>
+                            <Option key="Goat">Others</Option>
+                          </Select>
+                        </Form.Item>
+                      </Col>
+                      {/* 
                     <Col className="Add1button" xs={0} span={7} sm={0} lg={9}
                     ></Col> */}
-                  </Row>
+                    </Row>
 
                     <Row justify="center" gutter={[24, 0]}>
                       <Col span={7} md={0} lg={0} xl={0}></Col>
-                    <Col xs={24} span={7} sm={20} md={14} lg={14} xl={14}>
+                      <Col xs={24} span={7} sm={20} md={14} lg={14} xl={14}>
 
-                      <hr />
-                    </Col>
-                    {/* <Col xs={0} span={7} lg={9} sm={0} xl={9}></Col> */}
-                  </Row>
-                  <Row justify="center" gutter={[24, 0]}>
+                        <hr />
+                      </Col>
+                      {/* <Col xs={0} span={7} lg={9} sm={0} xl={9}></Col> */}
+                    </Row>
+                    <Row justify="center" gutter={[24, 0]}>
                       <Col span={7} md={0} lg={0} xl={0}></Col>
                       {i === cattless.length - 1 ? (
-                      <Col className="icondiv justify-content-end" xs={23} span={7} sm={20} md={14} lg={14}
-                      >
-                        <PlusCircleOutlined
-                          onClick={addCattles}
-                          size="large"
-                          className="icon"
-                        />
-                        <a onClick={addCattles}>add more</a>
-                        {cattless.length > 1 ? (
-                          <>
-                            <MinusCircleOutlined
-                              onClick={() => removeCattle(i)}
-                              fill="currentColor"
-                              className="ricon"
-                            />
-                            <a onClick={() => removeCattle(i)}>Remove </a>
-                          </>
-                        ) : (
-                          ""
-                        )}
-                      </Col>
-                    ) : (
-                      <></>
-                    )}
-                    {/* <Col xs={0} span={7} sm={0} lg={9}
+                        <Col className="icondiv justify-content-end p-0" xs={23} span={7} sm={20} md={14} lg={14}
+                        >
+                          <PlusCircleOutlined
+                            onClick={addCattles}
+                            size="large"
+                            className="icon"
+                          />
+                          <a onClick={addCattles}>add more</a>
+                          {cattless.length > 1 ? (
+                            <>
+                              <MinusCircleOutlined
+                                onClick={() => removeCattle(i)}
+                                fill="currentColor"
+                                className="ricon"
+                              />
+                              <a onClick={() => removeCattle(i)}>Remove </a>
+                            </>
+                          ) : (
+                            ""
+                          )}
+                        </Col>
+                      ) : (
+                        <></>
+                      )}
+                      {/* <Col xs={0} span={7} sm={0} lg={9}
                     ></Col> */}
-                  </Row>
-                </>
-              ))}
+                    </Row>
+                  </>
+                ))}
 
 
-                  {error.data ? (
+                {error.data ? (
                   <Row justify="center">
                     <Alert
                       style={{ marginBottom: "10px" }}
@@ -361,6 +367,7 @@ error,
                 ) : (
                   ""
                 )}
+              </div>
               <Row
                 gutter={[24, 0]}
                 className="ant-row-flex ant-row-flex-middle"

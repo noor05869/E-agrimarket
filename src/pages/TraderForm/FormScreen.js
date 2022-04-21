@@ -207,123 +207,90 @@ function FormScreen({
                       placeholder="City - شہر"
                     />
                   </Form.Item>
-
-                  {/* <Form.Item
-                    className="username"
-                    name="District"
-                    rules={
-                      !district.children
-                        ? [
-                          {
-                            required: true,
-                            message: "Please Select",
-                          },
-                        ]
-                        : ""
-                    }
-                  >
-                    <Select
-                      placeholder="Select District - ضلع "
-                      showSearch
-                      filterOption={
-                        (input, option) =>
-                          option.value
-                            .toLowerCase()
-                            .indexOf(input.toLowerCase()) >= 0
-                        // console.log(input,"-----",option)
-                      }
-                      name="district"
-                      size="large"
-                      onSelect={(value, event) =>
-                        handleSelect("district", event)
-                      }
-                      defaultValue={district.value}
-                    >
-                      {Cities &&
-                        Cities.map((data) => (
-                          <Option key={data.value}>
-                            <div className="optionaStyle">
-                              <p>{data.label}</p>
-                              <p>{data.ulabel}</p>
-                            </div>
-                          </Option>
-                        ))}
-                    </Select>
-                  </Form.Item> */}
                 </Col>
               </Row>
 
               <Row gutter={[24, 0]}></Row>
-              <Row justify="center" >
-                <Col lg={23} md={21}>
-                  <h5 className="">Commision shop</h5>
+              <Row justify="left" >
+                <Col xs={1} sm={2} lg={1}></Col>
+                <Col xs={22} lg={11} sm={20} md={14}>
+                  <Row justify="left">
+                    <Col xs={23} sm={23} md={22}>
+                      <div className="d-flex">
+
+                        <h5 className="align-self-center">Commision shop</h5>
+                        <div className="ms-auto">
+
+                          <Label eLabel="Do you Own?" ulabel="کیا آپ مالک ہیں؟" />
+                          <Form.Item name='commision'
+                            valuePropName="checked">
+                            <Switch
+                              name='commision'
+                              className="ms-auto d-block"
+                              onChange={(e) => handleSelect('commision', e)}
+                              value={commision}
+                              min={1}
+                              size="large" />
+                          </Form.Item>
+                        </div>
+                      </div>
+
+                      <Row justify="left" gutter={[24, 0]}>
+                        {/* <Col span={7} md={0} lg={0} xl={0}></Col> */}
+
+
+                        {/* <Col xs={0} span={0} lg={1} md={0}></Col> */}
+                        {commision && <>
+                          <Col xs={24} sm={12} span={7} className="px-0 pe-sm-3 ps-sm-0">
+                            <Label eLabel="Commision Shop Name" ulabel="دکان کا نام" index={0} />
+
+                            <Form.Item
+                              name="shop"
+                              rules={
+                                !shop
+                                  ? [
+                                    {
+                                      required: true,
+                                      message: "Please Fill",
+                                    },
+                                  ]
+                                  : ""
+                              }
+                            >
+                              <Input
+                                className="contact"
+                                id="shop"
+                                defaultValue={shop}
+                                name="shop"
+                                placeholder="abc123"
+                                value={shop}
+                                onChange={handleChange}
+                              />
+                            </Form.Item>
+                          </Col>
+                          <Col xs={24} sm={12} span={7} className="px-0 ps-sm-3 pe-sm-0">
+                            <Label eLabel="Mandi" ulabel="منڈی" />
+
+                            <Form.Item name="mandi">
+                              <Input
+                                className="contact"
+                                id="mandi"
+                                defaultValue=""
+                                name="mandi"
+                                placeholder="abc123"
+                                value={mandi}
+                                onChange={handleChange}
+                              />
+                            </Form.Item>
+                          </Col>
+                        </>}
+
+                      </Row>
+                    </Col>
+                  </Row>
                 </Col>
               </Row>
 
-              <Row justify="center" gutter={[24, 0]}>
-                {/* <Col span={7} md={0} lg={0} xl={0}></Col> */}
-
-
-                <Col xs={23} sm={20} span={7} lg={11} md={7}>
-                  <Label eLabel="Do you Own?" ulabel="کیا آپ مالک ہیں؟" />
-                  <Form.Item name='commision'
-                    valuePropName="checked">
-                    <Switch
-                      name='commision'
-                      onChange={(e) => handleSelect('commision', e)}
-                      value={commision}
-                      min={1}
-                      size="large" />
-                  </Form.Item>
-                </Col>
-                {/* <Col xs={0} span={0} lg={1} md={0}></Col> */}
-                {commision && <>
-                  <Col xs={23} sm={20} span={7} lg={6} md={7}>
-                    <Label eLabel="Commision Shop" ulabel="فون نمبر" index={0} />
-
-                    <Form.Item
-                      name="shop"
-                      rules={
-                        !shop
-                          ? [
-                            {
-                              required: true,
-                              message: "Please Fill",
-                            },
-                          ]
-                          : ""
-                      }
-                    >
-                      <Input
-                        type='number'
-                        className="contact"
-                        id="shop"
-                        defaultValue={shop}
-                        name="shop"
-                        placeholder="00000"
-                        value={shop}
-                        onChange={handleChange}
-                      />
-                    </Form.Item>
-                  </Col>
-                  <Col xs={23} sm={20} span={7} lg={6} md={7}>
-                    <Label eLabel="Mandi" ulabel="منڈی" />
-
-                    <Form.Item name="mandi">
-                      <Input
-                        className="contact"
-                        id="mandi"
-                        defaultValue=""
-                        name="mandi"
-                        placeholder="00000"
-                        value={mandi}
-                        onChange={handleChange}
-                      />
-                    </Form.Item>
-                  </Col>
-                </>}
-
-              </Row>
 
 
               <Row gutter={[24, 0]} justify="center">

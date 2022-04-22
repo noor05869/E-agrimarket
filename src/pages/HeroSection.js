@@ -18,7 +18,6 @@ import { useState } from "react";
 import handimage from "../assets/Wood-Hand.png";
 import { Input, Form, Button } from "antd";
 import { message } from "antd";
-import vedio from "../assets/vedios.mp4";
 import * as api from "../api/api";
 import useApi from "../Hooks/useApi";
 
@@ -118,27 +117,27 @@ function HeroSection() {
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active navli">
                 <a class="nav-link navlink" href="#">
-                  Home{" "}
+                  HOME
                 </a>
               </li>
               <li class="nav-item dropdown navli">
                 <a class="nav-link navlink" href="#ourServices">
-                  Our Services
+                  OUR SERVICES
                 </a>
               </li>
               <li class="nav-item navli">
                 <a class="nav-link navlink" href="#Products">
-                  About Us
+                  ABOUT US
                 </a>
               </li>
 
               <li class="nav-item dropdown navli">
                 <a class="nav-link navlink dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Register
+                  REGISTER
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="">
-                  <li><a class="dropdown-item" href="/Farmerdata">Farmer</a></li>
-                  <li><a class="dropdown-item" href="/Trader">Trader</a></li>
+                  <li><a class="dropdown-item" href="/Farmerdata">FARMER</a></li>
+                  <li><a class="dropdown-item" href="/Trader">TRADER</a></li>
 
                 </ul>
               </li>
@@ -150,7 +149,7 @@ function HeroSection() {
                   class="nav-link navlink "
                   href="#Contact"
                 >
-                  Contact us
+                  CONTACT US
                 </a>
               </li>
 
@@ -233,7 +232,7 @@ function HeroSection() {
           <div className="col-md-6 sercol servicesleft">
             <div className="row serow justify-content-center">
               <div className="col-lg-6 col-sm-4 col-md-6 flexcenter ">
-                <h2 className="serviceHead font-bold Headings ">Our Services</h2></div>
+                <h2 className="serviceHead font-bold Headings">Our Services</h2></div>
               <div className="heading">
                 <p className="serp col-lg-11  disText  ">
                   eAgriMarket is smart trading platform for all Agriculture
@@ -246,22 +245,22 @@ function HeroSection() {
             </div>
           </div>
           <div className="col-md-6 mt-3 mt-md-0">
-            <div className="d-flex">
+            <div className="d-flex align-items-center">
               <img className="grp1img" src={grp1} />
               {/* <img className="grp1img" src={grp4} /> */}
 
               <div className="paradiv">
-                <p className="grptext ms-3 ms-md-4 Headings ">E-Mandi</p>
+              <h2 className="serviceHead ms-3 ms-md-4 font-bold Headings f-23 mb-2 mb-md-0 ">E-Mandi</h2>
                 <p className="serp2 ms-3 ms-md-4 disText" >
                   Platform for Sale and Purchase of Agri commodities
                 </p>
               </div>
             </div>
-            <div className="othergrp">
+            <div className="othergrp align-items-center">
               <img className="grp1img" src={grp2} />
               {/* <img className="grp1img" src={grp4} /> */}
               <div className="paradiv">
-                <p className="grptext  ms-3 ms-md-4 Headings">Input Marketplace</p>
+              <h2 className="serviceHead ms-3 ms-md-4 font-bold Headings f-23 mb-2 mb-md-0 ">Input Marketplace</h2>
                 <p className="serp2 ms-3 ms-md-4 disText">
                   Online marketplace for Agro Chemicals and Fertilizers
                   {/* <br />
@@ -269,11 +268,11 @@ function HeroSection() {
                 </p>
               </div>
             </div>
-            <div className="othergrp">
+            <div className="othergrp align-items-center">
               <img className="grp1img" src={grp3} />
               {/* <img className="grp1img" src={grp2} /> */}
               <div className="paradiv">
-                <p className="grptext  ms-3 ms-md-4 Headings">Machinery Marketplace</p>
+              <h2 className="serviceHead ms-3 ms-md-4 font-bold Headings f-23 mb-2 mb-md-0 ">Machinery Marketplace</h2>
                 <p className="serp2 ms-3 ms-md-4 disText">
                   Online Marketplace for Agri Machinery and Tools
                   {/* <br />
@@ -281,11 +280,11 @@ function HeroSection() {
                 </p>
               </div>
             </div>
-            <div className="othergrp">
+            <div className="othergrp align-items-center">
               <img className="grp1img" src={grp4} />
 
               <div className="paradiv">
-                <p className="grptext  ms-3 ms-md-4 Headings">Crop Advisory</p>
+              <h2 className="serviceHead ms-3 ms-md-4 font-bold Headings f-23 mb-2 mb-md-0 ">Crop Advisory</h2>
                 <p className="serp2 ms-3 ms-md-4 disText">
                   Expert Agri advisory services for Farmers
                   {/* <br />
@@ -375,7 +374,7 @@ function HeroSection() {
           </p>
         </div>
         <div className="container vediocontainer">
-          <div className=" vedios  justify-content-center">
+          <div className="   justify-content-center">
             {/* <video
             className="vedios"
             width="80%"
@@ -426,7 +425,7 @@ function HeroSection() {
             <div className="footerdiv row justify-content-center">
               <img className="footerimg col-7 col-md-5 " src={logo} />
               <ul className="footerul col-lg-6  p-3">
-                <li className="footerli1">Home </li>
+                <li className="text-centerfooterli1">Home </li>
                 <li className="footerli">About Us </li>
                 <li className="footerli">Our Services </li>
                 <li className="footerli">Register </li>
@@ -533,46 +532,46 @@ function HeroSection() {
               <div class="col-lg-3 col-md-6  footer-contact footermargin">
                 <img className="  " src={logo} width="96%" />
 
-                <p className="footerp disText heading">
+                <p className="footerp disText heading mb-0">
                   Sustainable & Smart Agriculture Trading Platform
                   Empowering Farmers with Technology
 
                   Making Farm to Fork a Reality</p>
                 <div class="credits flexcenter">
                   {" "}
-                  <a className="footericon" href="https://www.facebook.com/eagrimart"> <FacebookFilled className="footericon" /></a>
+                  <a className="footericon" href="https://www.facebook.com/eagrimart"> <FacebookFilled /></a>
                   <a className="footericon" href="https://www.instagram.com/eagrimart/"> <InstagramFilled /></a>
                   <a className="footericon" href="https://www.linkedin.com/company/eagrimarket/">  <LinkedinFilled /></a>
                 </div>
               </div>
               <div class="col-lg-3 col-md-6 footer-links footermargin">
                 {/* <h4 className="footerh4">Useful Links</h4> */}
-                <ul className="footerUl ">
-                  <li className="footerLi">
+                <ul className="footerUl d-flex flex-column justify-content-around h-100 p-0">
+                  <li className="text-center">
                     <i class="bx bx-chevron-right footeri"></i>{" "}
                     <a className="footera disText" href="#">
                       Home
                     </a>
                   </li>
-                  <li className="footerLi">
+                  <li className="text-center">
                     <i class="bx bx-chevron-right footeri"></i>{" "}
                     <a className="footera disText" href="#Products">
                       About Us
                     </a>
                   </li>
-                  <li className="footerLi">
+                  <li className="text-center">
                     <i class="bx bx-chevron-right footeri"></i>{" "}
                     <a className="footera disText" href="#ourServices">
                       Our Services
                     </a>
                   </li>
-                  <li className="footerLi">
+                  <li className="text-center">
                     <i class="bx bx-chevron-right footeri"></i>{" "}
                     <a className="footera disText" href="#Register">
                       Register
                     </a>
                   </li>
-                  <li className="footerLi">
+                  <li className="text-center">
                     <i class="bx bx-chevron-right footeri"></i>{" "}
                     <a className="footera disText" href="/contactUs">
                       Contact Us
@@ -582,7 +581,7 @@ function HeroSection() {
               </div>
 
               <div class="col-lg-5 col-md-6 footer-links footermargin  ">
-                <div className="footerin ">
+                <div className=" ">
                   <h3 className="foh">Get in touch</h3>
                   <p className="fop">We Love to hear from you</p>
                 </div>
@@ -609,7 +608,7 @@ function HeroSection() {
                         id="name"
                         type="text"
                         value={initialvalues.name}
-                        placeholder="Enter Name Here"
+                        placeholder="Name - نام"
                         className="nameinput1"
                       />
                     </FormItem></div>
@@ -641,6 +640,7 @@ function HeroSection() {
                 <div className="row">
                   <div className="col-lg-9">
                     <FormItem
+                    className="mb-0"
                       name="message"
                       rules={
                         !initialvalues.message
@@ -653,19 +653,20 @@ function HeroSection() {
                           : ""
                       }
                     >
-                      <TextArea className="" rows={3} name="message" onChange={handleChange} />
+                      <TextArea className="resize-none" rows={2} name="message" onChange={handleChange} placeholder="Message - پیغام" />
                     </FormItem></div>
                   {/* <div class="col-lg-1 col-md-6 footer-links textArea "> */}
 
-                  <div className="col-lg-3 col-sm-6">
+                  <div className="col-lg-3 col-sm-6  my-3 my-lg-0">
 
                     <Button
                       htmlType="submit"
                       type="primary"
+                      
                       // onClick={handleSubmit}
-                      className="sendbtn"
+                      className="sendbtn h-100"
                     >
-                      Send Message
+                      Send
                     </Button>
                   </div>
                 </div>
@@ -684,7 +685,7 @@ function HeroSection() {
             {" "}
             © Copyright  2022,{" "}
             <strong>
-              <span>e-Agri Market</span>
+              <span>eAgriMarket</span>
             </strong>
             . All Rights Reserved
           </div>

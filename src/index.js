@@ -21,6 +21,7 @@ import App from "./App";
 
 
 ReactDOM.render(
-    <App />,
+  <BrowserRouter>
+    <App /></BrowserRouter>,
   document.getElementById("root"),
 );

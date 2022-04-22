@@ -242,27 +242,17 @@ function FormScreen({
                         {/* <Col xs={0} span={0} lg={1} md={0}></Col> */}
                         {commision && <>
                           <Col xs={24} sm={12} span={7} className="px-0 pe-sm-3 ps-sm-0">
-                            <Label eLabel="Commision Shop Name" ulabel="دکان کا نام" index={0} />
+                            <Label eLabel="Commision Shop Name" ulabel="دکان کا نام" />
 
                             <Form.Item
                               name="shop"
-                              rules={
-                                !shop
-                                  ? [
-                                    {
-                                      required: true,
-                                      message: "Please Fill",
-                                    },
-                                  ]
-                                  : ""
-                              }
                             >
                               <Input
                                 className="contact"
                                 id="shop"
                                 defaultValue={shop}
                                 name="shop"
-                                placeholder="abc123"
+                                placeholder="Shop - دکان"
                                 value={shop}
                                 onChange={handleChange}
                               />
@@ -277,7 +267,7 @@ function FormScreen({
                                 id="mandi"
                                 defaultValue=""
                                 name="mandi"
-                                placeholder="abc123"
+                                placeholder="Mandi - منڈی"
                                 value={mandi}
                                 onChange={handleChange}
                               />

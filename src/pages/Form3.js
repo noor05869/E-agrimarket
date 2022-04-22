@@ -63,15 +63,18 @@ function Form3({
   function handlecontact() {
     navigate("/contactUs");
   }
+  function handleChangeCrop(value) {
+    handleSelect("cropsSale", value);
 
+  }
   return (
     <div>
       <Header />
       <Spin size="large" spinning={loading}>
-      <div className="setting-drwer" onClick={handlecontact}>
-        {/* {setting} */}
-        <PhoneOutlined className="hypericon" />
-      </div>
+        <div className="setting-drwer" onClick={handlecontact}>
+          {/* {setting} */}
+          <PhoneOutlined className="hypericon" />
+        </div>
         <Row justify="center">
           <Col xs={22} lg={17} className="mb-24">
             <Form onFinish={handleSubmit}>
@@ -114,11 +117,11 @@ function Form3({
                       rules={
                         !modeOfInvestment
                           ? [
-                              {
-                                required: true,
-                                message: "Please Select",
-                              },
-                            ]
+                            {
+                              required: true,
+                              message: "Please Select",
+                            },
+                          ]
                           : ""
                       }
                     >
@@ -173,11 +176,11 @@ function Form3({
                           rules={
                             !percentage
                               ? [
-                                  {
-                                    required: true,
-                                    message: "Please Fill",
-                                  },
-                                ]
+                                {
+                                  required: true,
+                                  message: "Please Fill",
+                                },
+                              ]
                               : ""
                           }
                         >
@@ -211,7 +214,7 @@ function Form3({
                             // onChange={handleChange}
                             type="number"
 
-                            // onChange={onChange}
+                          // onChange={onChange}
                           />
                         </Form.Item>
                       </>
@@ -228,24 +231,27 @@ function Form3({
                       className="username"
                       name="cropsSale"
                       rules={
-                        !cropsSale.children
+                        !cropsSale
                           ? [
-                              {
-                                required: true,
-                                message: "Please Select",
-                              },
-                            ]
+                            {
+                              required: true,
+                              message: "Please Select",
+                            },
+                          ]
                           : ""
                       }
                     >
                       <Select
                         placeholder=" فصل کی فروخت "
-                        onSelect={(value, event) =>
-                          handleSelect("cropsSale", event)
-                        }
+                        // onSelect={(value, event) =>
+                        //   handleSelect("cropsSale", event)
+                        // }
+                        onChange={handleChangeCrop}
+
                         size="large"
                         name="cropsSale"
-                        defaultValue={cropsSale.children}
+                        defaultValue={cropsSale ? cropsSale : undefined}
+                        mode="multiple"
                       >
                         <Option key="On Farm">
                           <div className="optionaStyle">
@@ -266,7 +272,6 @@ function Form3({
                           </div>
                         </Option>
                         <Option key="Contract ">
-                          {" "}
                           <div className="optionaStyle">
                             <p>Contract</p>
                             <p>معاہدہ</p>
@@ -299,11 +304,11 @@ function Form3({
                       rules={
                         !targetedmandi
                           ? [
-                              {
-                                required: true,
-                                message: "Please Select",
-                              },
-                            ]
+                            {
+                              required: true,
+                              message: "Please Select",
+                            },
+                          ]
                           : ""
                       }
                     >
@@ -347,11 +352,11 @@ function Form3({
                       rules={
                         !seed
                           ? [
-                              {
-                                required: true,
-                                message: "Please Select",
-                              },
-                            ]
+                            {
+                              required: true,
+                              message: "Please Select",
+                            },
+                          ]
                           : ""
                       }
                     >
@@ -402,11 +407,11 @@ function Form3({
                       rules={
                         !machinery
                           ? [
-                              {
-                                required: true,
-                                message: "Please Select",
-                              },
-                            ]
+                            {
+                              required: true,
+                              message: "Please Select",
+                            },
+                          ]
                           : ""
                       }
                     >
@@ -418,16 +423,16 @@ function Form3({
                         }
                         defaultValue={machinery}
                       >
-                        {Machines.map(data=>(<>  
-                         <Option key={data.value} >
-                          <div className="optionaStyle">
-                            <p>{data.value}</p>
-                            <p>{data.ulabel}</p>
-                          </div>
-                        </Option></>))}
-                      
+                        {Machines.map(data => (<>
+                          <Option key={data.value} >
+                            <div className="optionaStyle">
+                              <p>{data.value}</p>
+                              <p>{data.ulabel}</p>
+                            </div>
+                          </Option></>))}
 
-                     
+
+
                       </Select>
                     </Form.Item>
                   </Col>
@@ -451,11 +456,11 @@ function Form3({
                       rules={
                         !cropAdvisory
                           ? [
-                              {
-                                required: true,
-                                message: "Please Select",
-                              },
-                            ]
+                            {
+                              required: true,
+                              message: "Please Select",
+                            },
+                          ]
                           : ""
                       }
                     >
@@ -469,7 +474,7 @@ function Form3({
                         //   handleSelect("cropAdvisory", event)
                         // }
                         onChange={handleCropAdisory}
-                        defaultValue={cropAdvisory?cropAdvisory:undefined}
+                        defaultValue={cropAdvisory ? cropAdvisory : undefined}
                       >
                         <Option value="Self-Experience">
                           <div className="optionaStyle">

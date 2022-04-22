@@ -59,15 +59,6 @@ function Form() {
       startDate: "",
       endDate: "",
     },
-    {
-      crops: "",
-      commodities: "",
-      area: "",
-      max_yield: "",
-      min_yield: "",
-      startDate: "",
-      endDate: "",
-    },
   ]);
   const navigate = useNavigate();
   const [initialValues1, setInitialValues] = useState({
@@ -123,13 +114,13 @@ function Form() {
           return element;
         }
       });
-setloading(true)
+      setloading(true)
 
       const { data } = await request({
         personalInfo: {
           name: initialValues1.fname,
           phone: initialValues1.contact,
-          phone1: initialValues1.contact2?initialValues1.contact2:"",
+          phone1: initialValues1.contact2 ? initialValues1.contact2 : "",
 
           Province: initialValues1.province.value,
           District: initialValues1.district.value,
@@ -140,8 +131,8 @@ setloading(true)
           investmentPercentage: initialValues1.percentage
             ? initialValues1.percentage
             : "0",
-          targetedmandi: JSON.stringify( initialValues1.targetedmandi),
-          cropSale: initialValues1.cropsSale.value,
+          targetedmandi: JSON.stringify(initialValues1.targetedmandi),
+          cropSale: JSON.stringify(initialValues1.cropsSale),
           Seed: initialValues1.seed.value,
           CropsAdvisory: JSON.stringify(initialValues1.cropAdvisory),
         },
@@ -159,9 +150,9 @@ setloading(true)
         });
         handleStep("4");
       }
-  console.log("responese of api",data)
+      console.log("responese of api", data)
 
-    } catch  {
+    } catch {
       setloading(false)
       console.log("error ==========================", error);
       seterror(error.data.message)
@@ -174,7 +165,7 @@ setloading(true)
 
   async function handleOTPsubmit(otp) {
     console.log("oooooottttpp", otp);
-setloading(true)
+    setloading(true)
 
     try {
       const { data } = await axios.post(
@@ -189,7 +180,7 @@ setloading(true)
         },
       });
       setInitialValues({
-        
+
         fname: "",
         contact: "",
         contact2: "",
@@ -237,13 +228,12 @@ setloading(true)
   }
   const [cattless, setcattless] = useState([
     { Cattles: "", qt: "" },
-    { Cattles: "", qt: "" },
   ]);
   console.log("CATTT", cattless);
 
   function handleSelectChange(i, event, name) {
     console.log("llllllllll", event);
-    
+
     if (i < cropDistribution.length) {
       const val = cropDistribution[i].crops;
       handleCropChange(val);
@@ -310,7 +300,7 @@ setloading(true)
     setInitialValues({ ...initialValues1, [name]: value });
   };
 
-  
+
   const [valuues, setvaluues] = useState();
 
   function handleCropChange(value, index) {
@@ -347,8 +337,8 @@ setloading(true)
     List.splice(index, 1);
     setcattless(List);
   };
-  useEffect(() => {}, [cropDistribution]);
-  useEffect(() => {}, [cattless]);
+  useEffect(() => { }, [cropDistribution]);
+  useEffect(() => { }, [cattless]);
 
   switch (Steps) {
     case "1":

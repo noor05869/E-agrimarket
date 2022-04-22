@@ -129,9 +129,9 @@ navigate("/contactUs")
                   </Form.Item>
                 </Col>
                 <Col xs={19} span={7} lg={6} sm={20} md={6}>
-                  <Label eLabel="Secondary Phone" ulabel="فون نمبر" index={1} />
+                  <Label eLabel="Secondary Phone" ulabel="فون نمبر" />
 
-                  <Form.Item name="contact2">
+                  <Form.Item name="contact">
                     <Input
                       className="contact"
                       id="optionalContact"

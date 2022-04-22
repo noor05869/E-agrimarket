@@ -80,6 +80,8 @@ function TraderForm() {
     const [res, setRes] = useState();
     const [Error, seterror] = useState()
     const { error, request } = useApi(api.postTraderdata);
+  const [loading, setloading] = useState(false)
+
     const otpverify = useApi(api.postOtp);
 
     async function handleSubmit() {
@@ -101,6 +103,8 @@ function TraderForm() {
                     return element;
                 }
             });
+      setloading(true)
+
             const { data } = await request({
                 trader: {
                     name: initialValues1.fname,
@@ -132,9 +136,13 @@ function TraderForm() {
                 handleStep("3");
             }
         } catch  {
+      setloading(false)
+
             console.log("error ==========================", Error);
             seterror(error.data.message)
         }
+      setloading(false)
+
     }
     console.log("state22", initialValues1);
     // console.log("rwspomse+++++", error.data.message);
@@ -194,8 +202,8 @@ function TraderForm() {
     ]);
     console.log("CATTT", cattless);
 
-    function handleSelectChange(i, event, name) {
-        console.log("llllllllll", event);
+    function  handleSelectChange(i, event, name) {
+        console.log("llllllllll", i);
 
         if (i < cropDistribution.length) {
             const val = cropDistribution[i].crops;
@@ -215,7 +223,7 @@ function TraderForm() {
         initialValues1.cropsDiss = values;
         initialValues1.cattles = catt;
         setcropDistribution(values);
-        console.log("cropsdis-----------", catt);
+        console.log("cropsdis-----------", cattless);
     }
 
     const handleChange = (e) => {
@@ -277,11 +285,14 @@ function TraderForm() {
                 Cattles: ""
             },
         ]);
+
     }
     const removeCattle = (index) => {
         const List = [...cattless];
         List.splice(index, 1);
         setcattless(List);
+
+
     };
     useEffect(() => { }, [cropDistribution]);
     useEffect(() => { }, [cattless]);
@@ -319,6 +330,7 @@ function TraderForm() {
                     response={res}
                     handleSubmit={handleSubmit}
                     error={error}
+                    loading={loading}
                 />
             );
         case "3":

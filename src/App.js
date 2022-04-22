@@ -38,7 +38,7 @@ function App() {
     
      <>
      {/* <OTP/> */}
-     <Router>
+     {/* <Router> */}
      <Routes>
           
          
@@ -59,7 +59,7 @@ function App() {
             
           
         </Routes>
-         </Router>
+         {/* </Router> */}
   </>
   );
 }

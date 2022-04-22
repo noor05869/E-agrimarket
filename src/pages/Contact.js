@@ -96,7 +96,7 @@ function ContactForm() {
                         type="text"
                         value={initialvalues.name}
                        
-                        placeholder="Name"
+                        placeholder="Name - نام"
                       />
                     </Form.Item>
                   </Col>
@@ -154,7 +154,7 @@ function ContactForm() {
                       }
                     >
                       <TextArea
-                      placeholder="Message"
+                      placeholder="Message - پیغام"
                         className="contact"
                         name="message"
                         rows={4}

@@ -13,7 +13,8 @@ import {
   DatePicker,
   Button,
   Switch,
-  Alert
+  Alert,
+  Spin
 } from "antd";
 import Header from "../header";
 import { MinusCircleOutlined, PlusCircleOutlined } from "@ant-design/icons";
@@ -22,6 +23,7 @@ function CropsDistribution({
   handleStep,
   initialValues,
   handleChange,
+  loading,
   error,
   cropDistribution,
   handleDistributionAdd,
@@ -72,6 +74,8 @@ function CropsDistribution({
   return (
     <div>
       <Header />
+      <Spin size="large" spinning={loading}>
+
       <Row style={{ marginBottom: "100px" }} justify="center">
         <Col xs={24} lg={22} xl={17} className="mb-24">
           <Form onFinish={handleSubmit}>
@@ -170,7 +174,7 @@ function CropsDistribution({
                           }
                         >
                           <Select
-                            // mode="multiple"
+                            mode="multiple"
 
                             placeholder="Select Commodities - اشیاء "
                             name={`${i}commodities`}
@@ -208,12 +212,10 @@ function CropsDistribution({
 
 
                     <Row justify="center">
-                      {/* <Col span={7} md={0} lg={0} xl={0}></Col> */}
                       <Col xs={24} span={7} sm={20} md={14} lg={14} xl={14}>
 
                         <hr />
                       </Col>
-                      {/* <Col xs={0} span={7} sm={0} lg={9} xl={9}></Col> */}
                     </Row>
 
                     <Row justify="center" gutter={[24, 0]}>
@@ -243,8 +245,7 @@ function CropsDistribution({
                           )}
                         </Col>
                       ) : (
-                        <
-                          ></>
+                        < ></>
                       )}
                       {/* <Col xs={23} span={7} sm={20} md={0} lg={9}
                       ></Col> */}
@@ -252,12 +253,12 @@ function CropsDistribution({
                   </>
                 ))}
               <Row gutter={[24, 0]}></Row>
-              <div className="mt-5 mb-4">
+              <div className="mt-0 mb-4">
                 <Row justify="center" className="">
                   <Col span={14} xs={23} sm={20} md={14}>
                     <div className="d-flex">
-                      <h5 className="text-center align-self-center mb-0">Cattles</h5>
-                      <div className='ms-5 d-flex'>
+                      {/* <h5 className="text-center align-self-center mb-0">Cattles</h5> */}
+                      {/* <div className='ms-5 d-flex'>
                         <Label eLabel="Do you " ulabel="  تعداد" className="ms-3" />
 
 
@@ -271,11 +272,11 @@ function CropsDistribution({
                             min={1}
                             size="large" />
                         </Form.Item>
-                      </div>
+                      </div> */}
                     </div>
                   </Col>
                 </Row>
-                {initialValues.LiveStock && cattless.map((data, i) => (
+                { cattless.map((data, i) => (
                   <>
                     <Row justify="left" gutter={[24, 0]}>
 
@@ -284,13 +285,17 @@ function CropsDistribution({
                       <Col xs={23} span={7} sm={20} md={7} className="p-0"
                       >
                         {i < 1 &&
-                          <Label eLabel="Cattles " ulabel=" مویشی" index={i} />
+                         <p className="mb-0" style={{marginLeft:"13px"}}> <Label  eLabel="Cattles " ulabel=" مویشی" /></p>
                         }
                         <Form.Item
-                          className="username"
+                          className="username formitemcattles"
                           name={`${i}cattle`}
+                         
+
                         >
                           <Select
+
+                          mode="multiple"
                             className="userName"
                             placeholder="Select Cattles - مویشی"
                             value={data.Cattles}
@@ -303,9 +308,9 @@ function CropsDistribution({
                           >
                             <Option key="Buffalo">Buffalo</Option>
                             <Option key="Goat">Goat</Option>
-                            <Option key="Goat">Sheep</Option>
-                            <Option key="Goat">Camel</Option>
-                            <Option key="Goat">Others</Option>
+                            <Option key="Sheep">Sheep</Option>
+                            <Option key="Camel">Camel</Option>
+                            <Option key="Others">Others</Option>
                           </Select>
                         </Form.Item>
                       </Col>
@@ -401,6 +406,8 @@ function CropsDistribution({
           </Form>
         </Col>
       </Row>
+      </Spin>
+
     </div>
   );
 }

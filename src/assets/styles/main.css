@@ -1659,7 +1659,7 @@ img {
 }
 
 .gradent {
-  background: url("../images/info-card-2.jpg") no-repeat center top;
+  /* background: url("../images/info-card-2.jpg") no-repeat center top; */
   background-size: cover;
   padding: 15px;
   border-radius: 15px;
@@ -2287,7 +2287,7 @@ body {
   background-size: cover;
   background-position: 50%;
   text-align: center;
-  background: url("../images/bg-signup.jpg") no-repeat center top;
+  /* background: url("../images/bg-signup.jpg") no-repeat center top; */
 }
 
 .header-col.header-brand {
@@ -2862,7 +2862,7 @@ section.ant-layout.layout-content .ant-layout-content.content-ant {
 }
 
 .card-credit {
-  background-image: url("../images/info-card-3.jpg");
+  /* background-image: url("../images/info-card-3.jpg"); */
   background-position: 50%;
   background-size: cover;
   border: none;
@@ -3726,7 +3726,7 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile .header-
 
 }
 
-.bg-1 {
+/* .bg-1 {
   background-image: url("../Rectangle3.png");
 }
 
@@ -3736,7 +3736,7 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile .header-
 
 .bg-3 {
   background-image: url("../Rectangle4.png");
-}
+} */
 
 
 
@@ -3984,7 +3984,7 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile .header-
 }
 
 .Register {
-  background-image: url("https://eagri-images.s3.ap-southeast-1.amazonaws.com/Register.png");
+  background-image: url("../Untitled\ design\ \(2\)\ \(1\).png");
   /* height: 319px; */
   background-size: cover;
 }
@@ -4004,18 +4004,17 @@ section.ant-layout.ant-layout-has-sider.layout-dashboard.layout-profile .header-
   /* identical to box height */
 
   /* margin-left: 182px; */
-  color: white;
+  color: #256834;
 
 }
 
 .regp {
-  font-weight: 400;
-  font-size: 20px;
+ 
   line-height: 38px;
   margin-bottom: 50px;
   text-align: center;
 
-  color: white;
+  color: #256834;
 }
 
 .regbtndiv {

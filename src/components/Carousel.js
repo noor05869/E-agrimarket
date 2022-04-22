@@ -1,8 +1,5 @@
 import React from "react";
 import { Carousel } from "antd";
-import image from "../assets/Rectangle3.png";
-import image1 from "../assets/Rectangle2.png";
-import image2 from "../assets/Rectangle4.png";
 
 function Slider() {
   return (

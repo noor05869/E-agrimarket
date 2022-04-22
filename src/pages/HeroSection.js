@@ -10,10 +10,10 @@ import grp2 from "../assets/Group2.png";
 import grp3 from "../assets/Group3.png";
 import grp4 from "../assets/Group4.png";
 import vector from "../assets/Vector.png";
+
 import App from "../assets/Apps.png";
 
 import Gplay from "../assets/Gplay.png";
-import vimage from "../assets/vimage.png";
 import { useState } from "react";
 import handimage from "../assets/Wood-Hand.png";
 import { Input, Form, Button } from "antd";

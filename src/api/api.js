@@ -4,6 +4,7 @@ const api = axios.create({
 })
 
 export function postFarmerdata(data){
+  console.log("persom=nla info-==========",data)
   return api.post("v1/personalinof", {...data})
 }
 

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import "./required.css";
-import { Tehsils } from "../utility/tehsil";
+import "../required.css";
+import { Tehsils } from "../../utility/tehsil";
 import { Row, Col, Card, Input, Select, Form, Button } from "antd";
 import { useNavigate } from 'react-router-dom';
-import Header from "./header";
-import Label from "../components/label";
+import Header from "../header";
+import Label from "../../components/label";
 import { ContactsFilled, ContactsOutlined, PhoneOutlined } from "@ant-design/icons";
 
 function FormScreen({
@@ -131,7 +131,7 @@ navigate("/contactUs")
                 <Col xs={19} span={7} lg={6} sm={20} md={6}>
                   <Label eLabel="Secondary Phone" ulabel="فون نمبر" />
 
-                  <Form.Item name="contact">
+                  <Form.Item name="contact2">
                     <Input
                       className="contact"
                       id="optionalContact"
@@ -141,6 +141,7 @@ navigate("/contactUs")
                       minLength="11"
                       placeholder="03xx - 0000000"
                       value={contact2}
+                      defaultChecked={contact2}
                       onChange={handleChange}
                     />
                   </Form.Item>

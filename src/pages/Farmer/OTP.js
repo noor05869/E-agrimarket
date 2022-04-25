@@ -1,7 +1,7 @@
 import { Row, Col, Input, Form, Button, Card } from "antd";
 import axios from "axios";
 import { message } from "antd";
-import Header from "./header";
+import Header from "../header";
 import React, { useState } from "react";
 // import "./otp.css";
 function OTP({ number, handleStep,handleOTPsubmit }) {

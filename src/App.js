@@ -15,14 +15,13 @@
 import "antd/dist/antd.css";
 import "./assets/styles/main.css";
 import "./assets/styles/responsive.css";
-import Form from "./pages/form";
+import Form from "./pages/Farmer/form";
 import TraderForm from "./pages/TraderForm";
 import {
   BrowserRouter as Router,
   Route,
   Routes,
 } from "react-router-dom";
-import OTP from "./pages/OTP";
 import LandingPage from "./pages/LandingPage";
 import ThankyouPage from "./pages/ThankyouPage";
 import ContactForm from "./pages/Contact.js";

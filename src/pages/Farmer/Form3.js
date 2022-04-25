@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Label from "../components/label";
+import Label from "../../components/label";
 import {
   Row,
   Col,
@@ -12,10 +12,10 @@ import {
   Space,
   Spin,
 } from "antd";
-import { Tehsils } from "../utility/tehsil";
+import { Tehsils } from "../../utility/tehsil";
 import { useNavigate } from "react-router-dom";
-import { Machines } from "../utility/utility";
-import Header from "./header";
+import { Machines } from "../../utility/utility";
+import Header from "../header";
 import { PhoneOutlined } from "@ant-design/icons";
 function Form3({
   handleStep,

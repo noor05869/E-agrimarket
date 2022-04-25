@@ -2,8 +2,8 @@ import React from "react";
 import { useState, useEffect } from "react";
 import moment from "moment";
 import { useNavigate } from 'react-router-dom';
-import { Cattles } from "../utility/utility";
-import "./required.css";
+import { Cattles } from "../../utility/utility";
+import "../required.css";
 import {
   Row,
   Col,
@@ -15,9 +15,9 @@ import {
   DatePicker,
   Button,
 } from "antd";
-import Header from "./header";
+import Header from "../header";
 import { MinusCircleFilled, MinusCircleOutlined, PhoneOutlined, PlusCircleFilled, PlusCircleOutlined } from "@ant-design/icons";
-import Label from "../components/label";
+import Label from "../../components/label";
 function CropsDistribution({
   handleStep,
   initialValues,
@@ -389,7 +389,7 @@ navigate("/contactUs")
                         <Form.Item
                           name={`${i}month`}
                           rules={
-                            !data.startDate && i === 0
+                            !data.month && i === 0
                               ? [
                                   {
                                     required: true,
@@ -402,7 +402,7 @@ navigate("/contactUs")
                           <RangePicker
                             className="inputnumber"
                             style={{ width: "100%" }}
-                            defaultValue={data.startDate}
+                            defaultValue={data.month}
                             // defaultValue={initialValues.month}
                             value={data.month}
                             size="large"

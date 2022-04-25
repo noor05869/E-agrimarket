@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
-import CropsDistribution from "./CropsDistribution";
-import Form3 from "./Form3";
+import CropsDistribution from "../Farmer/CropsDistribution";
+import Form3 from "../Farmer/Form3";
 import { message } from "antd";
-import FormScreen from "./formScreen";
-import OTP from "./OTP";
+import FormScreen from "../Farmer/formScreen";
+import OTP from "../Farmer/OTP";
 import moment from "moment";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import * as api from "../api/api";
-import useApi from "../Hooks/useApi";
+import * as api from "../../api/api";
+import useApi from "../../Hooks/useApi";
 import {
   Punjab,
   sindh,
@@ -24,7 +24,7 @@ import {
   ForageCrops,
   FiberCrops,
   KPK,
-} from "../utility/utility";
+} from "../../utility/utility";
 const steps = [{ id: "1" }, { id: "2" }, { id: "3" }];
 function Form() {
   const [Steps, setSteps] = useState("1");
@@ -58,6 +58,7 @@ function Form() {
       min_yield: "",
       startDate: "",
       endDate: "",
+      month:""
     },
   ]);
   const navigate = useNavigate();
@@ -96,16 +97,31 @@ function Form() {
       console.log(
         initialValues1.cropsDiss,
         "res =======================================",
-        initialValues1.cropsDiss
+        cropDistribution
       );
+  
+      // console.log("newArray",Object.keys(newArray[1]).length === 0)
+     
 
-      let newArray = initialValues1.cropsDiss.filter((element, index) => {
+  var  myprop = cropDistribution.filter(function (props) {
+        delete props.month;
+        return true;
+    });
+    console.log(myprop);
+
+      let newcrops = myprop.filter((element, index) => {
         if (!Object.values(element).includes("")) {
-          return element;
-        }
-      });
 
+          return element;
+        // console.log("newArray",element  )
+
+        }
+     
+      }
+      );
       // for cattles
+      console.log("newArray",newcrops )
+      
 
       let ctdata = cattless.filter((element, index) => {
         console.log("------------->>", element);
@@ -114,6 +130,8 @@ function Form() {
           return element;
         }
       });
+console.log("Cateeeleee",ctdata )
+
       setloading(true)
 
       const { data } = await request({
@@ -136,7 +154,7 @@ function Form() {
           Seed: initialValues1.seed.value,
           CropsAdvisory: JSON.stringify(initialValues1.cropAdvisory),
         },
-        crops: newArray,
+        crops: newcrops,
         cattle: ctdata,
       })
       setRes(data);
@@ -250,7 +268,10 @@ function Form() {
       values[i].area = event;
     } else if (name === "month") {
       // initialValues1.month = event;
-      values[i].startDate = event;
+      values[i].startDate = moment(event[0]._d).format("MM/DD/YYYY");
+      values[i].endDate = moment(event[1]._d).format("MM/DD/YYYY");
+      values[i].month=event;
+
     } else if (name === "min_yield") {
       values[i].min_yield = event;
     } else if (name === "max_yield") {
@@ -293,6 +314,7 @@ function Form() {
         min_yield: "",
         startDate: "",
         endDate: "",
+        month:""
       },
     ]);
   }

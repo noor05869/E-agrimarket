@@ -116,7 +116,7 @@ function FormScreen({
                   </Form.Item>
                 </Col>
                 <Col xs={23} span={7} lg={6} sm={20} md={7}>
-                  <Label eLabel="Secondary Phone" ulabel="فون نمبر" index={1} />
+                  <Label eLabel="Secondary Phone" ulabel="فون نمبر" />
 
                   <Form.Item name="contact2">
                     <Input

@@ -504,7 +504,7 @@ function HeroSection() {
 
                
                 </div>
-                <div className="col-lg-4 col-sm-6   mt-3">
+                <div className="col-lg-4 col-sm-6 mb-3  mt-3">
                     <Button
                       htmlType="submit"
                       type="primary"

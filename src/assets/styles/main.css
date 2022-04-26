@@ -169,7 +169,9 @@
     overflow-x: hidden;
     /* background-repeat: no-repeat; */
   }
-
+  .servicescards h5{
+    font-size: 12px !important; 
+  }
   .bgimage1 {
     display: none !important;
   }
@@ -2190,7 +2192,11 @@ ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-light.left-nav li.ant-menu-it
   .ant-col.col-img img {
     height: 196px;
   }
-
+  .folinks{
+    font-size: 14px !important;
+    padding-left: 5px;
+    color: white;
+  }
   /* .bar-chart {
     max-width: 438px;
   } */
@@ -2397,7 +2403,7 @@ body {
   margin-left: 30px;
 }
 .folinks{
-  font-size: 14px;
+  font-size: 14px !important;
   padding-left: 5px;
   color: white;
 }
@@ -2680,7 +2686,10 @@ background: #FFA22E;
   .mobilediv {
     display: none !important;
   }
-
+  .folinks {
+    font-size: 9px !important;
+   
+  }
 
   .textArea {
     margin-top: 180px !important;
@@ -2737,7 +2746,18 @@ background: #FFA22E;
   .sign-img img {
     margin: 0;
   }
-
+  .servicescards h5{
+    font-size: 12px !important; 
+  }
+  .np {
+   
+    font-size: 12px !important;
+   
+}
+.folinks {
+  font-size: 9px !important;
+ 
+}
   .mobilecontent {
     display: grid;
     justify-content: center;
@@ -4857,7 +4877,11 @@ text-align: center;
     max-height: 567px !important;
     background: #B2DA9F;
   }
-
+  .folinks{
+    font-size: 14px !important;
+    padding-left: 5px;
+    color: white;
+  }
   .mobilediv {
     top: -475px !important;
     display: block !important;

@@ -3,13 +3,18 @@ import logo from "../assets/LogoH.png";
 import logo3 from "../assets/LogoHeader.png";
 import Final from "../assets/Final.gif";
 
-
 import Slider from "../components/Carousel";
 import grp1 from "../assets/Group1.png";
+import grplast from "../assets/Group 83.png";
+
 import grp2 from "../assets/Group2.png";
 import grp3 from "../assets/Group3.png";
 import grp4 from "../assets/Group4.png";
 import vector from "../assets/Vector.png";
+import frame from "../assets/Frame.png";
+import vedio from "../assets/vedios.wmv";
+
+
 
 import App from "../assets/Apps.png";
 
@@ -23,7 +28,15 @@ import useApi from "../Hooks/useApi";
 
 import { Navigate, useNavigate } from "react-router-dom";
 import FormItem from "antd/lib/form/FormItem";
-import { CaretUpOutlined, FacebookFilled, InstagramFilled, LinkedinFilled } from "@ant-design/icons";
+import {
+  CaretUpOutlined,
+  EnvironmentFilled,
+  FacebookFilled,
+  InstagramFilled,
+  LinkedinFilled,
+  MessageFilled,
+  PhoneFilled,
+} from "@ant-design/icons";
 function HeroSection() {
   const { TextArea } = Input;
   const navigate = useNavigate();
@@ -53,25 +66,23 @@ function HeroSection() {
         },
       });
       // navigate("/contactSubmission");
-    } catch { }
+    } catch {}
 
     // setloading(false);
   }
   const [showButton, setShowButton] = useState(false);
   const [shownav, setShownav] = useState(false);
 
-
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.pageYOffset > 300) {
         setShowButton(true);
-        setShownav(true)
+        setShownav(true);
       } else {
         setShowButton(false);
-        setShownav(false)
+        setShownav(false);
       }
     });
-
   }, []);
   function handlefarmer() {
     navigate("/farmerdata");
@@ -90,9 +101,12 @@ function HeroSection() {
           <CaretUpOutlined className="hypericon" />
         </div>
       )}
-      <header id="header" class={`fixed-top header-scrolled ${shownav && "headerafter"}`}>
+      <header
+        id="header"
+        class={` header-scrolled ${shownav && "headerafter"}`}
+      >
         <nav class="navbar navbar-expand-lg navbar-light">
-          <a class="navbar-brand navlogo" >
+          <a class="navbar-brand navlogo">
             <img className="footerimg" src={logo3} />
             <button
               class="navbar-toggler collapsed"
@@ -108,7 +122,6 @@ function HeroSection() {
               <span></span>
             </button>
           </a>
-
 
           <div
             class="collapse navbar-collapse navlidiv "
@@ -132,13 +145,27 @@ function HeroSection() {
               </li>
 
               <li class="nav-item dropdown navli">
-                <a class="nav-link navlink dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a
+                  class="nav-link navlink dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
                   REGISTER
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="">
-                  <li><a class="dropdown-item" href="/Farmerdata">FARMER</a></li>
-                  <li><a class="dropdown-item" href="/Trader">TRADER</a></li>
-
+                  <li>
+                    <a class="dropdown-item" href="/Farmerdata">
+                      FARMER
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/Trader">
+                      TRADER
+                    </a>
+                  </li>
                 </ul>
               </li>
               <li class="nav-item dropdown navli ">
@@ -152,143 +179,70 @@ function HeroSection() {
                   CONTACT US
                 </a>
               </li>
-
+              <li>
+              <button className="getin mt-lg-4" > 
+                Register Now
+              </button>
+                  </li>
             </ul>
-
           </div>
-        </nav></header>
-      {/* <header id="header" class="fixed-top header-scrolled">
-        <div class="container d-flex align-items-center">
-         
-          <nav id="navbar" class="navbar navbar-expand-lg navbar-light ">
-            <a class="navbar-brand navlogo" href="#">
-          <img className="footerimg  "  src={logo3}  />
-        </a>{" "}
-              
-         
-          <button
-          class="navbar-toggler collapsed"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-          <span></span>
-          <span></span>
-        </button>
-
-        <div
-          class="collapse navbar-collapse  "
-          id="navbarSupportedContent"
-        >
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active navli">
-                <a class="nav-link navlink" href="#">
-                  Home{" "}
-                </a>
-              </li>
-              <li class="nav-item navli">
-                <a class="nav-link navlink" href="#">
-                  About Us
-                </a>
-              </li>
-              <li class="nav-item dropdown navli">
-                <a class="nav-link navlink" href="#">
-                  Our Services
-                </a>
-              </li>
-              <li class="nav-item dropdown navli">
-                <a class="nav-link navlink" href="#">
-                  Register
-                </a>
-              </li>
-              <li class="nav-item dropdown navli ">
-                <a 
-                  onClick={() => {
-                    navigate("./contactUs");
-                  }}
-                  class="nav-link navlink "
-                  href="#"
-                >
-                  Contact us
-                </a>
-              </li>
-         
-            </ul>{" "}
-        </div>
-          </nav>
-        </div>
-      </header> */}
+        </nav>
+      </header>
+   
       <Slider />
       {/* <video width="80%" playsinline="true" autoplay="autoplay" muted="muted" loop="loop" type="video/mp4" src="https://agrimp-prod.s3.amazonaws.com/public/OVP_Video.mp4"></video> */}
 
       {/* Services */}
       {/* <div  className="container-fluid" > */}
-      <div className="servicesdiv  p-3 p-md-4 p-lg-5" id="ourServices">
-        <div className="row justify-content-center">
-          <div className="col-md-6 sercol servicesleft">
-            <div className="row serow justify-content-center">
-              <div className="col-lg-6 col-sm-4 col-md-6 flexcenter ">
-                <h2 className="serviceHead font-bold Headings">Our Services</h2></div>
-              <div className="heading">
-                <p className="serp col-lg-11  disText  ">
-                  eAgriMarket is smart trading platform for all Agriculture
-                  stakeholders.
-                  We empower farmers with technology and provide all Agri
-                  stakeholders a platform for trading.
-                </p>
-              </div>
-              {/* <button className="serbtn">Learn More</button> */}
+      <div style={{ background: "white" }}>
+        <div className="servicesdiv  p-3 p-md-4 p-lg-5" id="ourServices">
+          <div className=" serow justify-content-center">
+            <div className="flexcenter mb-5 ">
+              <h2 className="serviceHead font-bold Headings">Our Services</h2>
+              <p className="serp  disText mb-5  ">
+                eAgriMarket is smart trading platform for all Agriculture
+                stakeholders. We empower farmers with
+                <br /> technology and provide all Agri stakeholders a platform
+                for trading.
+              </p>
             </div>
+
+            {/* <button className="serbtn">Learn More</button> */}
           </div>
-          <div className="col-md-6 mt-3 mt-md-0">
-            <div className="d-flex align-items-center">
-              <img className="grp1img" src={grp1} />
-              {/* <img className="grp1img" src={grp4} /> */}
-
-              <div className="paradiv">
-              <h2 className="serviceHead ms-3 ms-md-4 font-bold Headings f-23 mb-2 mb-md-0 ">E-Mandi</h2>
-                <p className="serp2 ms-3 ms-md-4 disText" >
-                  Platform for Sale and Purchase of Agri commodities
+          <div className="row  justify-content-center">
+            <div className="col-md-2 mb-5">
+              <div className="servicescards mt-5 ">
+                <img className="sericon" src={grp1} />
+                <h5>E-mandi</h5>
+                <p className="np mt-5 mb-5">
+                  Platform for Sale and Purchase of Agri commodities.
                 </p>
               </div>
             </div>
-            <div className="othergrp align-items-center">
-              <img className="grp1img" src={grp2} />
-              {/* <img className="grp1img" src={grp4} /> */}
-              <div className="paradiv">
-              <h2 className="serviceHead ms-3 ms-md-4 font-bold Headings f-23 mb-2 mb-md-0 ">Input Marketplace</h2>
-                <p className="serp2 ms-3 ms-md-4 disText">
-                  Online marketplace for Agro Chemicals and Fertilizers
-                  {/* <br />
-                  Sed in tempus libero ornare */}
+            <div className="col-md-2 mb-5">
+              <div className="servicescards mt-5 ">
+                <img className="sericon" src={grp2} />
+                <h5>Input Marketplace </h5>
+                <p className="np mt-5 mb-5">
+                  Platform for Sale and Purchase of Agri commodities.
                 </p>
               </div>
-            </div>
-            <div className="othergrp align-items-center">
-              <img className="grp1img" src={grp3} />
-              {/* <img className="grp1img" src={grp2} /> */}
-              <div className="paradiv">
-              <h2 className="serviceHead ms-3 ms-md-4 font-bold Headings f-23 mb-2 mb-md-0 ">Machinery Marketplace</h2>
-                <p className="serp2 ms-3 ms-md-4 disText">
-                  Online Marketplace for Agri Machinery and Tools
-                  {/* <br />
-                  Sed in tempus libero ornare */}
+            </div>{" "}
+            <div className="   col-md-2 mb-5">
+              <div className="servicescards mt-5 ">
+                <img className="sericon" src={grp3} />
+                <h5>Machinery Marketplace</h5>
+                <p className="np mt-5 mb-5">
+                  Platform for Sale and Purchase of Agri commodities.
                 </p>
               </div>
-            </div>
-            <div className="othergrp align-items-center">
-              <img className="grp1img" src={grp4} />
-
-              <div className="paradiv">
-              <h2 className="serviceHead ms-3 ms-md-4 font-bold Headings f-23 mb-2 mb-md-0 ">Crop Advisory</h2>
-                <p className="serp2 ms-3 ms-md-4 disText">
-                  Expert Agri advisory services for Farmers
-                  {/* <br />
-                  Sed in tempus libero ornare */}
+            </div>{" "}
+            <div className="col-md-2 mb-5">
+              <div className="servicescards mt-5 ">
+                <img className="sericon" src={grp4} />
+                <h5>Crop Advisory</h5>
+                <p className="np mt-5 mb-5">
+                  Platform for Sale and Purchase of Agri commodities.
                 </p>
               </div>
             </div>
@@ -299,8 +253,11 @@ function HeroSection() {
       {/* Products */}
       <div className="Products p-3 p-md-4 p-lg-5" id="Products">
         <div className="head">
-          <div className="heading">
-            <h2 className="prdhead Headings">Our Products</h2>
+          <div className="heading ">
+            <h2 className="prdhead Headings">Our Products
+           
+            <hr className="spline mt-lg-3"></hr>
+            </h2>
           </div>
           <p className="prdp  mb-3 mb-md-4 mb-lg-5 disText">
             Online Trading and Information platform for all Agriculture
@@ -309,13 +266,16 @@ function HeroSection() {
             platform.
           </p>
         </div>
-        <div className="row justify-content-end">
-          <div className="mainprod ">
-            <div style={{ display: "grid" }} className="row">
-              <div className="col-lg-9">
+        <div className="row ">
+          <div className=" ">
+            <div className="row d-flex justify-content-around">
+              <div className="col-lg-5">
                 <div className="mobilecontent p-3 p-md-4 p-lg-3   ">
-                  <h2 className="mobileapph flexcenter Headings">E-Agri Mobile App</h2>
-                  <p className="paragra disText heading">
+                  <h2 className="mobileapph  Headings">
+                    E-Agri Mobile App
+                    
+                  </h2>
+                  <p className="paragra disText ">
                     Online Trading and Information platform for all Agriculture
                     stakeholders. Get market insights of all Agri products
                     across country and trade with ease by exploring your desired
@@ -335,36 +295,59 @@ function HeroSection() {
                         <img className="ticksimg" src={vector} />
                         <p className="marking disText">Input Marketplace </p>
                       </p>
-                    </div>
-                    <div className="mark2">
-                      <p className="ticksp2">
+                      <p className="ticksp1">
                         <img className="ticksimg" src={vector} />
-                        <p className="marking disText">Machinery Marketplace </p>
+                        <p className="marking disText">
+                          Machinery Marketplace{" "}
+                        </p>
                       </p>
-                      <p className="ticksp2">
+                      <p className="ticksp1">
                         <img className="ticksimg" src={vector} />
                         <p className="marking disText"> Advisory Portal</p>
+                     
                       </p>
+                      <div className="tickspimages mt-5">   <img
+                  className="playimg "
+                  src={Gplay}
+                  width="90%"
+           
+                />
+                <img className="playimg" src={App} width="80%" />  </div>
                     </div>
+                  
                   </div>
                 </div>
               </div>
-              <div className=" col-lg-3 col-xl-2 col-sm-4 col-md-2 playbtns p-3 p-md-4   ">
-                <img className="playimg " src={Gplay} width="100%" height="100%" />
-                <img className="playimg" src={App} width="100%" />
-              </div>
-            </div>
+              <div className="col-lg-3">
 
+              <img className=""  height="90%" src={handimage} />
+                
+              </div>
+              {/* <div className=" col-lg-3 col-xl-2 col-sm-4 col-md-2 playbtns p-3 p-md-4   ">
+                <img
+                  className="playimg "
+                  src={Gplay}
+                  width="100%"
+                  height="100%"
+                />
+                <img className="playimg" src={App} width="100%" />
+              </div> */}
+            </div>
+{/* 
             <div className="mobilediv">
               <img className="mobileimg" src={handimage} />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
       <div className="Proposition">
         <div className="head">
           <div className="heading">
-            <h2 className="prdhead Headings">Our Value Proposition</h2>
+            <h2 className="prdhead Headings flexcenter mt-3">Our Value Proposition
+           
+            <hr className="spline mt-lg-3"></hr>
+            </h2>
+
           </div>
           <p className="prdp disText">
             eAgriMarket help Farmers to directly market their produce to Traders
@@ -382,18 +365,21 @@ function HeroSection() {
             autoplay="autoplay"
             muted="muted"
             loop="loop"
-            type="video/mp4"
-            src={vedio}
+            type="video/wmv"
+            src="https://eagri-images.s3.ap-southeast-1.amazonaws.com/Value.gif"
           ></video> */}
-            <img src={Final} className="gif" alt="...loading" />
+            <img src="https://eagri-images.s3.ap-southeast-1.amazonaws.com/Value.gif" className="gif" alt="...loading" />
             {/* <img className="vimage" src={vimage} /> */}
-          </div></div>
+          </div>
+        </div>
       </div>
       <div className="Register " id="Register">
         <div className="reginner p-2 p-md-4 p-lg-3">
           <div className="head">
             <div className="heading">
-              <h2 className="regcontent Headings">Register Yourself</h2>
+              <h2 className="regcontent Headings flexcenter">Register Yourself
+            <hr className="spline mt-lg-3"></hr>
+              </h2>
             </div>
             <p className="regp disText">
               eAgriMarket help Farmers to directly market their produce to
@@ -402,7 +388,7 @@ function HeroSection() {
               eAgriMarket and our partner network
             </p>
           </div>
-          <div className="regbtndiv ">
+          <div className="regbtndiv mb-3 ">
             <button className="regbtn">
               <a className="farmera" href="/farmerdata">
                 {" "}
@@ -419,28 +405,21 @@ function HeroSection() {
         </div>
       </div>
 
-      {/* <div className="footer p-3 p-md-4 p-lg-5 ">
-        <div className="row  ">
-          <div className="col-lg-5 ">
-            <div className="footerdiv row justify-content-center">
-              <img className="footerimg col-7 col-md-5 " src={logo} />
-              <ul className="footerul col-lg-6  p-3">
-                <li className="text-centerfooterli1">Home </li>
-                <li className="footerli">About Us </li>
-                <li className="footerli">Our Services </li>
-                <li className="footerli">Register </li>
-              </ul>
-            </div>
-          </div>
-          <div className="col-lg-7">
-            <Form onFinish={handleSubmit}>
-              <div className="footer1">
-                <div className="row justify-content-center">
-                  <div className="col-lg-5">
-                    <div className="footerin">
-                      <h3 className="foh">Get in touch</h3>
-                      <p className="fop">we have to hear from you</p>
-                    </div>
+    
+      <div class="footer-top" id="Contact">
+        <div className=" container contactsection" >
+        <Form onFinish={handleSubmit}>
+          <div className="row d-flex justify-content-around ">
+            
+          <div class="col-lg-5 col-md-6 footer-links footermargin   ">
+                <div className=" ">
+                  <h3 className="foh Headings ">Get in touch
+            <hr className="spline mt-lg-3"></hr>
+                  </h3>
+                  <p className="fop">We Love to hear from you</p>
+                </div>
+                <div className=" row d-flex">
+                  <div className="col-lg-6">
                     <FormItem
                       name="name"
                       rules={
@@ -462,10 +441,13 @@ function HeroSection() {
                         id="name"
                         type="text"
                         value={initialvalues.name}
-                        placeholder="Enter Name Here"
+                        placeholder="Name - نام"
                         className="nameinput1"
                       />
                     </FormItem>
+                  </div>
+                  <div className="col-lg-6">
+                    {" "}
                     <FormItem
                       name="contact"
                       rules={
@@ -481,17 +463,22 @@ function HeroSection() {
                     >
                       <Input
                         id="fname"
+                        //   value={fname}
                         onChange={handleChange}
                         name="contact"
                         maxLength="11"
                         minLength="11"
                         placeholder="03xx-0000000"
+                        // placeholder="Enter Phone Number"
                         className="nameinput"
                       />
                     </FormItem>
                   </div>
-                  <div className="col-lg-5 textArea">
+                </div>
+                <div className="row">
+                  <div className="col-lg-12">
                     <FormItem
+                      className="mb-0"
                       name="message"
                       rules={
                         !initialvalues.message
@@ -505,73 +492,103 @@ function HeroSection() {
                       }
                     >
                       <TextArea
-                        rows={5}
+                        className="resize-none"
+                        rows={4}
                         name="message"
                         onChange={handleChange}
+                        placeholder="Message - پیغام"
                       />
                     </FormItem>
+                  </div>
+                  {/* <div class="col-lg-1 col-md-6 footer-links textArea "> */}
+
+               
+                </div>
+                <div className="col-lg-4 col-sm-6   mt-3">
                     <Button
                       htmlType="submit"
                       type="primary"
                       // onClick={handleSubmit}
-                      className="sendbtn"
+                      className="sendbtn h-100"
                     >
-                      Send Message
+                      Send
                     </Button>
                   </div>
-                </div>
+                {/* </div> */}
               </div>
-            </Form>
-          </div>
+              <div className="col-lg-2 mt-4">
+
+                <img  className=" contactimage " src={frame} />
+              </div>
+          </div>  </Form>
         </div>
-      </div> */}
-      <div class="footer-top" id="Contact">
-        <div class="container">
-          <Form onFinish={handleSubmit}>
-            <div class="row">
-              <div class="col-lg-3 col-md-6  footer-contact footermargin">
-                <img className="  " src={logo} width="96%" />
+        <div class="container-fluid footercon ">
+          <div className="container">
+          
+            <div class="row justify-content-between">
+              <div class="col-lg-4 col-md-6  footer-contact footermargin">
+                <img className="  " src={grplast}  />
 
-                <p className="footerp disText heading mb-0">
-                  Sustainable & Smart Agriculture Trading Platform
-                  Empowering Farmers with Technology
-
-                  Making Farm to Fork a Reality</p>
-                <div class="credits flexcenter">
+                <p className="footerp disText  mb-3">
+                  Sustainable & Smart Agriculture Trading Platform Empowering
+                  Farmers with Technology Making Farm to Fork a Reality
+                </p>
+                {/* <div class="credits flexcenter">
                   {" "}
-                  <a className="footericon" href="https://www.facebook.com/eagrimart"> <FacebookFilled /></a>
-                  <a className="footericon" href="https://www.instagram.com/eagrimart/"> <InstagramFilled /></a>
-                  <a className="footericon" href="https://www.linkedin.com/company/eagrimarket/">  <LinkedinFilled /></a>
-                </div>
+                  <a
+                    className="footericon"
+                    href="https://www.facebook.com/eagrimart"
+                  >
+                    {" "}
+                    <FacebookFilled />
+                  </a>
+                  <a
+                    className="footericon"
+                    href="https://www.instagram.com/eagrimart/"
+                  >
+                    {" "}
+                    <InstagramFilled />
+                  </a>
+                  <a
+                    className="footericon"
+                    href="https://www.linkedin.com/company/eagrimarket/"
+                  >
+                    {" "}
+                    <LinkedinFilled />
+                  </a>
+                </div> */}
               </div>
-              <div class="col-lg-3 col-md-6 footer-links footermargin">
+              
+              <div class="col-lg-2 col-md-4 footer-links footermargin">
                 {/* <h4 className="footerh4">Useful Links</h4> */}
+                <div class="vl">
                 <ul className="footerUl d-flex flex-column justify-content-around h-100 p-0">
-                  <li className="text-center">
+
+                  <li className="textleft">
                     <i class="bx bx-chevron-right footeri"></i>{" "}
                     <a className="footera disText" href="#">
                       Home
                     </a>
                   </li>
-                  <li className="text-center">
+                  <li className="textleft">
                     <i class="bx bx-chevron-right footeri"></i>{" "}
                     <a className="footera disText" href="#Products">
                       About Us
                     </a>
                   </li>
-                  <li className="text-center">
+                  <li className="textleft">
                     <i class="bx bx-chevron-right footeri"></i>{" "}
                     <a className="footera disText" href="#ourServices">
                       Our Services
                     </a>
                   </li>
-                  <li className="text-center">
+                  <li className="textleft">
                     <i class="bx bx-chevron-right footeri"></i>{" "}
                     <a className="footera disText" href="#Register">
                       Register
                     </a>
                   </li>
-                  <li className="text-center">
+                  <li className="textleft">
                     <i class="bx bx-chevron-right footeri"></i>{" "}
                     <a className="footera disText" href="/contactUs">
                       Contact Us
@@ -579,117 +596,87 @@ function HeroSection() {
                   </li>
                 </ul>
               </div>
-
-              <div class="col-lg-5 col-md-6 footer-links footermargin  ">
-                <div className=" ">
-                  <h3 className="foh">Get in touch</h3>
-                  <p className="fop">We Love to hear from you</p>
-                </div>
-                <div className=" row d-flex">
-                  <div className="col-lg-6">
-                    <FormItem
-                      name="name"
-                      rules={
-                        !initialvalues.name
-                          ? [
-                            {
-                              required: true,
-                              message: "Please Fill",
-                            },
-                          ]
-                          : ""
-                      }
-                      className="formitem"
-                    >
-                      <Input
-                        //  className="contact"
-
-                        onChange={handleChange}
-                        id="name"
-                        type="text"
-                        value={initialvalues.name}
-                        placeholder="Name - نام"
-                        className="nameinput1"
-                      />
-                    </FormItem></div>
-                  <div className="col-lg-6">  <FormItem
-                    name="contact"
-                    rules={
-                      !initialvalues.contact
-                        ? [
-                          {
-                            required: true,
-                            message: "Please Fill",
-                          },
-                        ]
-                        : ""
-                    }
-                  >
-                    <Input
-                      id="fname"
-                      //   value={fname}
-                      onChange={handleChange}
-                      name="contact"
-                      maxLength="11"
-                      minLength="11"
-                      placeholder="03xx-0000000"
-                      // placeholder="Enter Phone Number"
-                      className="nameinput"
-                    />
-                  </FormItem></div></div>
-                <div className="row">
-                  <div className="col-lg-9">
-                    <FormItem
-                    className="mb-0"
-                      name="message"
-                      rules={
-                        !initialvalues.message
-                          ? [
-                            {
-                              required: true,
-                              message: "Please Fill",
-                            },
-                          ]
-                          : ""
-                      }
-                    >
-                      <TextArea className="resize-none" rows={2} name="message" onChange={handleChange} placeholder="Message - پیغام" />
-                    </FormItem></div>
-                  {/* <div class="col-lg-1 col-md-6 footer-links textArea "> */}
-
-                  <div className="col-lg-3 col-sm-6  my-3 my-lg-0">
-
-                    <Button
-                      htmlType="submit"
-                      type="primary"
-                      
-                      // onClick={handleSubmit}
-                      className="sendbtn h-100"
-                    >
-                      Send
-                    </Button>
-                  </div>
-                </div>
-                {/* </div> */}
               </div>
+              <div class="col-lg-2 col-md-6 footer-links footermargin  ">
+               
+               
+                <h5>Find Us</h5>
+                <div class="credits ">
+                  {" "}
+                  <a
+                    className="footericon"
+                    href="https://www.facebook.com/eagrimart"
+                  >
+                    {" "}
+                    <FacebookFilled />
+                    <a className="folinks" >facebook.com/eagrimart</a>
+                  </a>
+                  <a
+                    className="footericon"
+                    href="https://www.instagram.com/eagrimart/"
+                  >
+                    {" "}
+                    <InstagramFilled />
+                    <a className="folinks" >instagram.com/eagrimart</a>
+                  </a>
+                  <a
+                    className="footericon"
+                    href="https://www.linkedin.com/company/eagrimarket/"
+                  >
+                    {" "}
+                    <LinkedinFilled />
+                    <a className="folinks" >Linkedin.com/eagrimart</a>
+                  </a>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-6 footer-links footermargin mb-5 ">
+               
+               
+               <h5>Contact Us</h5>
+               <div class="credits ">
+                 {" "}
+                 <a
+                   className="footericon"
+                   href="https://www.facebook.com/eagrimart"
+                 >
+                   {" "}
+                   <EnvironmentFilled/>
+                   <a className="folinks" >385 Noah Place Suite 878</a>
+                 </a>
+                 <a
+                   className="footericon"
+                   href="https://www.instagram.com/eagrimart/"
+                 >
+                   {" "}
+                   <PhoneFilled />
+                   <a className="folinks" >877-255-7945</a>
+                 </a>
+                 <a
+                   className="footericon"
+                   href="https://www.linkedin.com/company/eagrimarket/"
+                 >
+                   {" "}
+                   <MessageFilled/>
+                   <a className="folinks" >info@form.com</a>
+                 </a>
+               </div>
+             </div>
             </div>
-
-
-
-          </Form>
+        
         </div>
       </div>
-      <div class="container-fluid footer-bottom clearfix">
+      <div class="container-fluid footer-bottom clearfix ">
         <div className="container footerlastdiv">
+          <span>Terms And Condition</span>
           <div class="copyright">
             {" "}
-            © Copyright  2022,{" "}
+            © Copyright 2022,{" "}
             <strong>
               <span>eAgriMarket</span>
             </strong>
             . All Rights Reserved
           </div>
-
+          </div>
         </div>
       </div>
     </div>

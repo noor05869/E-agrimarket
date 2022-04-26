@@ -410,7 +410,7 @@ navigate("/contactUs")
                             picker="month"
                             // format="YYYY/MM/DD"
                             onChange={(event) =>
-                              handleSelectChange(i, event, "month")
+                              handleSelectChange(i, event, "  ")
                             }
                           />
                         </Form.Item>

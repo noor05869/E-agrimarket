@@ -2,6 +2,7 @@ import React from "react";
 import { Carousel } from "antd";
 import group from "../assets/Group.png";
 import group1 from "../assets/seconds.png";
+import group2 from "../assets/grp3.png";
 
 function Slider() {
   return (
@@ -74,7 +75,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in{" "}
               </p> */}
             </div>
             <div>
-              <img className="bgimage1" width="85%" src={group} />
+              <img className="bgimage1" width="85%" src={group2} />
             </div>
           </div>
         </div>

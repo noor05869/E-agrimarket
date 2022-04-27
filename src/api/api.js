@@ -4,6 +4,7 @@ const api = axios.create({
 })
 
 export function postFarmerdata(data){
+  console.log("persom=nla info-==========",data)
   return api.post("v1/personalinof", {...data})
 }
 
@@ -12,4 +13,13 @@ export function postOtp(data){
 
   return api.post("v1/verify",{...data})
 
+}
+export function postContact(data){
+  console.log("final--------",data)
+
+  return api.post("v1/contact",{...data})
+
+}
+export function postTraderdata(data){
+  return api.post("v1/trader/submit", {...data})
 }

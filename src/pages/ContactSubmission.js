@@ -4,7 +4,7 @@ import Header from './header'
 import logo from "../assets/logo3.png"
 import "./landing.css"
 import { Link } from 'react-router-dom'
-function ThankyouPage() {
+function ContactSubmissiom() {
   return (
     <div>
 
@@ -23,7 +23,7 @@ function ThankyouPage() {
         
         </Row> 
         <Row justify="center">
-        <Col xs={21} lg={10} className="mb-24">
+        <Col xs={24} lg={10} className="mb-24">
           <Card
             style={{ background: "#e7e7e7", borderRadius: "20px" }}
             className="header-solid h-full ant-card-p-0 formBody"
@@ -46,14 +46,11 @@ function ThankyouPage() {
             
            >
              <Row justify="center">
-        <h5 className='message'>Your data has been submitted successfully.  </h5></Row>
-     <Row justify="center">  
-      <Link to="/" >
-        
-        <h2 className='link Bold homeScreenLink1'  >Dashboard</h2></Link>
-      <Link to="/farmerdata" ><h2 className='link Bold homeScreenLink2'  >Add Another</h2></Link>
-
-      </Row>
+        <h5 className='message'>Your query has been submitted successfully.  </h5></Row>
+     <Row justify="center"> 
+       <Link to="/" ><h2 className='link Bold homeScreenLink'  >Go to back to dashboard</h2></Link>
+       
+       </Row>
      <Row justify="center">
  </Row></Card></Col></Row>
     </div>
@@ -63,4 +60,4 @@ function ThankyouPage() {
   )
 }
 
-export default ThankyouPage
+export default ContactSubmissiom

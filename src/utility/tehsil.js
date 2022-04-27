@@ -125,7 +125,6 @@ export const Tehsils = [
   { value: "Bhalwal", label: "Bhalwal" },
   { value: "Bhera", label: "Bhera" },
   { value: "KotMomin", label: "Kot Momin" },
-  { value: "Sahiwal", label: "Sahiwal" },
   { value: "Sargodha", label: "Sargodha" },
   { value: "Shahpur", label: "Shahpur" },
   { value: "Sillanwali", label: "Sillanwali" },

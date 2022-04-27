@@ -15,50 +15,50 @@
 import "antd/dist/antd.css";
 import "./assets/styles/main.css";
 import "./assets/styles/responsive.css";
-import Form from "./pages/form";
-import CropsDistribution from "./pages/CropsDistribution";
-import Form3 from "./pages/Form3";
-import axios from 'axios'
-
+import Form from "./pages/Farmer/form";
+import TraderForm from "./pages/TraderForm";
 import {
   BrowserRouter as Router,
   Route,
   Routes,
 } from "react-router-dom";
-import OTP from "./pages/OTP";
 import LandingPage from "./pages/LandingPage";
 import ThankyouPage from "./pages/ThankyouPage";
+import ContactForm from "./pages/Contact.js";
+import ContactSubmissiom from "./pages/ContactSubmission";
+import HeroSection from "./pages/HeroSection";
 
 
 function App() {
 
-// axios.defaults.baseURL = '13.228.234.94:8080/v1/'
 
-// axios.defaults.headers =
-// {
-//   'x-auth-token': localStorage.getItem('token'),
-//   'Content-Type': 'application/json'
-// }
 
   return (
     
      <>
      {/* <OTP/> */}
-     <Router>
+     {/* <Router> */}
      <Routes>
           
          
             
          
-          <Route path="/" element={<LandingPage/>}/>
+          <Route path="/" element={<HeroSection/>}/>
           <Route path="/farmerdata" element={<Form/>}/>
           <Route path="/thankyou" element={<ThankyouPage/>}/>
+          <Route path="/contactUs" element={<ContactForm/>}/>
+          <Route path="/contactSubmission" element={<ContactSubmissiom/>}/>
+          <Route path="/home" element={<HeroSection/>}/>
+
+          <Route path="/Trader" element={<TraderForm />} />
+
+
 
 
             
           
         </Routes>
-         </Router>
+         {/* </Router> */}
   </>
   );
 }

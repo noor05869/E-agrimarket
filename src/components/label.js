@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Label({eLabel,ulabel,index}) {
+function Label({eLabel,ulabel,index ,sterric}) {
   return (
     <div
     className='inputLabel'
@@ -13,9 +13,15 @@ function Label({eLabel,ulabel,index}) {
       >
         {" "}
         *
-      </span>:""}
+      </span>:<span
+      className='labelStrric'
+       
+      >
+        {" "}
+        
+      </span>}
     </span>
-    <span className='inputLabel'>
+    {/* <span className='inputuLabel'>
       {" "}
      {index===0? <span
        className='labelStrric'
@@ -24,7 +30,7 @@ function Label({eLabel,ulabel,index}) {
         *
       </span>:""}{" "}
    { ulabel}
-    </span>
+    </span> */}
 
     {/* </label>  */}
   </div>

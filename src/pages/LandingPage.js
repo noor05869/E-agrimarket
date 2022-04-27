@@ -23,7 +23,7 @@ function LandingPage() {
             
             </Row> 
             <Row justify="center">
-            <Col xs={24} lg={10} className="mb-24">
+            <Col xs={22} lg={10} className="mb-24">
               <Card
                 style={{ background: "#e7e7e7", borderRadius: "20px" }}
                 // className="payment-method-card"
@@ -47,16 +47,12 @@ function LandingPage() {
                 
                >
                  <Row justify="center">
-            <h5 style={{fontWeight:"bold",color:"black",marginTop:"48px",fontSize:"1.2rem"}} >We'll launch soon, please keep visiting the site  </h5></Row>
-         <Row justify="center">   <Link to="/farmerdata" ><h2 className='link Bold'  style={{color:"black", marginTop:"40px",fontSize:"0.6rem"}}>Go to Farmer Screen</h2></Link></Row>
+            <h5 className='message' >We'll launch soon, please keep visiting the site  </h5></Row>
+         <Row justify="center">   <Link to="/farmerdata" ><h2 className='link Bold homeScreenLink' >Go to Farmer Screen</h2></Link></Row>
          <Row justify="center">
      </Row></Card></Col></Row>
         </div>
-        {/* <Row justify="center">
-            <h1 style={{fontWeight:"bold",color:"black",marginTop:"200px",fontSize:"4rem"}} >Thank You </h1></Row>
-         <Row justify="center">   <Link to="/farmerdata" ><h2 className='link'  style={{fontWeight:"bold",color:"black",marginTop:"40px",fontSize:"3rem"}}>Go to Home Screen</h2></Link></Row>
-         <Row justify="center">
-     </Row> */}
+      
      
      </div></div>
        

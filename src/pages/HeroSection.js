@@ -157,19 +157,19 @@ const executeScroll = () => myRef.current.scrollIntoView()
                       REGISTER
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="">
-                      <li>
-                        <a class="dropdown-item" href="/Farmerdata">
+                      <li className="" >
+                        <a class="dropdown-item regli" href="/Farmerdata">
                           FARMER
                         </a>
                       </li>
                       <li>
-                        <a class="dropdown-item" href="/Trader">
+                        <a class="dropdown-item regli" href="/Trader">
                           TRADER
                         </a>
                       </li>
                     </ul>
                   </li>
-                  <li class="nav-item dropdown navli ">
+                  {/* <li class="nav-item dropdown navli ">
                     <a
                       onClick={() => {
                         navigate("./contactUs");
@@ -179,8 +179,8 @@ const executeScroll = () => myRef.current.scrollIntoView()
                     >
                       CONTACT US
                     </a>
-                  </li>
-                  <li>
+                  </li> */}
+                  <li class="nav-item dropdown navli ">
                     <a href="#Getin" className="getin">Get in touch</a>
                   </li>
                 </ul>
@@ -221,7 +221,7 @@ const executeScroll = () => myRef.current.scrollIntoView()
                 <div className="h-100">
                   <h5>E-mandi</h5>
                   <p className="np my-4">
-                    Platform for Sale and Purchase of Agri commodities.
+                  Platform for Sale and Purchase of Agri commodities
                   </p>
                 </div>
               </div>
@@ -234,7 +234,7 @@ const executeScroll = () => myRef.current.scrollIntoView()
                 <div className="h-100">
                   <h5>Input Marketplace </h5>
                   <p className="np my-4">
-                    Platform for Sale and Purchase of Agri commodities.
+                  Online marketplace for Agro Chemicals and Fertilizers
                   </p>
                 </div>
               </div>
@@ -247,7 +247,7 @@ const executeScroll = () => myRef.current.scrollIntoView()
                 <div className="h-100">
                   <h5>Machinery Marketplace</h5>
                   <p className="np my-4">
-                    Platform for Sale and Purchase of Agri commodities.
+                  Online Marketplace for Agri Machinery and Tools
                   </p>
                 </div>
               </div>
@@ -260,7 +260,7 @@ const executeScroll = () => myRef.current.scrollIntoView()
                 <div className="h-100">
                   <h5>Crop Advisory</h5>
                   <p className="np my-4">
-                    Platform for Sale and Purchase of Agri commodities.
+                  Expert Agri advisory services for Farmers
                   </p>
                 </div>
               </div>
@@ -270,7 +270,7 @@ const executeScroll = () => myRef.current.scrollIntoView()
       </div>
       {/* </div> */}
       {/* Products */}
-      <div className="Products p-3 p-md-4 p-lg-5" id="Products">
+      <div className="Products p-3 p-md-4 p-lg-5 " id="Products">
         <div className="head">
           <div className="heading ">
             <h2 className="prdhead Headings flexcenter">
@@ -288,7 +288,7 @@ const executeScroll = () => myRef.current.scrollIntoView()
         <div className="row ">
           <div className=" ">
             <div className="row d-flex justify-content-around">
-              <div className="col-lg-5 col-md-5">
+              <div className="col-lg-5 col-md-5 ">
                 <div className="mobilecontent p-3 p-md-4 p-lg-3   ">
                   <h2 className="mobileapph  Headings">E-Agri Mobile App</h2>
                   <p className="paragra disText ">
@@ -330,7 +330,7 @@ const executeScroll = () => myRef.current.scrollIntoView()
                   </div>
                 </div>
               </div>
-              <div className="col-lg-3 col-md-4">
+              <div className="col-lg-3 col-md-4 col-sm-3">
                 <img className="mobileimage" height="90%" src={handimage} />
               </div>
               {/* <div className=" col-lg-3 col-xl-2 col-sm-4 col-md-2 playbtns p-3 p-md-4   ">
@@ -423,7 +423,7 @@ const executeScroll = () => myRef.current.scrollIntoView()
         <div className=" container contactsection">
           <Form onFinish={handleSubmit}>
             <div className="row d-flex justify-content-around mx-3 ">
-              <div class="col-lg-5 col-md-6 footer-links footermargin   ">
+              <div class="col-lg-5 col-md-6 col-sm-9 footer-links footermargin   ">
                 <div className=" ">
                   <h3 className="foh Headings ">
                     Get in touch
@@ -527,7 +527,7 @@ const executeScroll = () => myRef.current.scrollIntoView()
                 </div>
                 {/* </div> */}
               </div>
-              <div className="col-lg-2 col-md-3 mt-4">
+              <div className="col-lg-2 col-md-3 col-sm-3 mt-4">
                 <img className=" contactimage " src={frame} />
               </div>
             </div>{" "}
@@ -538,7 +538,7 @@ const executeScroll = () => myRef.current.scrollIntoView()
             <div className="col-11 mx-auto">
 
               <div class="row justify-content-between">
-                <div class="col-lg-4 col-md-6  footer-contact footermargin">
+                <div class="col-lg-3 col-md-6  footer-contact footermargin">
                   <img className="  " src={grplast} />
 
                   <p className="footerp credits mb-3">
@@ -608,7 +608,7 @@ const executeScroll = () => myRef.current.scrollIntoView()
                     </ul>
                   </div>
                 </div>
-                <div class="col-lg-2 col-md-6 footer-links footer-contact  footermargin  ">
+                <div class="col-lg-3 col-md-6 footer-links footer-contact  footermargin  ">
                   <h5>Find Us</h5>
                   <div class="credits d-grid ">
                     {" "}
@@ -634,25 +634,26 @@ const executeScroll = () => myRef.current.scrollIntoView()
                     >
                       {" "}
                       <LinkedinFilled />
-                      <a className="folinks">Linkedin.com/eagrimart</a>
+                      <a className="folinks">linkedin.com/company/eagrimarket</a>
                     </a>
                   </div>
                 </div>
-                <div class="col-lg-2 col-md-6 footer-links footer-contact  footermargin mb-5 ">
+                <div class="col-lg-3 col-md-6 footer-links footer-contact  footermargin mb-5 ">
                   <h5>Contact Us</h5>
                   <div class="credits d-grid">
                     {" "}
                     <a
                       className="footericon"
-                      href="https://www.facebook.com/eagrimart"
+                      href=""
                     >
                       {" "}
                       <EnvironmentFilled />
-                      <a className="folinks">385 Noah Place Suite 878</a>
+                      <a className="folinks">Kickstart,
+Building 62 Block C2 Guldberg 3, Lahore</a>
                     </a>
                     <a
                       className="footericon"
-                      href="https://www.instagram.com/eagrimart/"
+                      href=""
                     >
                       {" "}
                       <PhoneFilled />
@@ -660,11 +661,11 @@ const executeScroll = () => myRef.current.scrollIntoView()
                     </a>
                     <a
                       className="footericon"
-                      href="https://www.linkedin.com/company/eagrimarket/"
+                      href=""
                     >
                       {" "}
                       <MessageFilled />
-                      <a className="folinks">info@form.com</a>
+                      <a className="folinks">eagriculturemarket@gmail.com</a>
                     </a>
                   </div>
                 </div>

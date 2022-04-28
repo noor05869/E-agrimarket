@@ -2676,10 +2676,12 @@ body {
   .mobilediv {
     display: none !important;
   }
-
-  .credits {
-    font-size: 1.5vw !important;
+.mobileimage {
+    display: none;
   }
+  /* .credits {
+    font-size: 1.5vw !important;
+  } */
 
   .textArea {
     margin-top: 180px !important;
@@ -2695,6 +2697,8 @@ body {
     font-size: 30px;
     line-height: 50px;
     position: relative;
+    display: flex;
+    flex-direction: column;
     left: 29px;
   }
 
@@ -2734,73 +2738,7 @@ body {
   }
 }
 
-@media (min-width: 768px) {
-  .sign-img img {
-    margin: 0;
-  }
 
-  .credits {
-    font-size: 1.5vw !important;
-  }
-
-  .mobilecontent {
-    display: grid;
-    justify-content: center;
-    margin-left: 0px !important;
-  }
-
-  .sendbtn {
-    /* top: 5793px; */
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 38px;
-    color: #ffffff;
-    border: none;
-    border-radius: 60px;
-
-    /* margin-top: 13px; */
-    background: #256834;
-    border-radius: 60px;
-  }
-
-  .mobilediv {
-    display: none !important;
-  }
-
-  .bgimage1 {
-    display: block !important;
-    margin-left: 50px;
-  }
-
-  .bgimage2 {
-    display: block !important;
-    margin-left: 50px;
-  }
-
-  .caruselp {
-    font-size: 30px;
-    line-height: 50px;
-    position: relative;
-    /* bottom: 312px; */
-    left: 29px;
-  }
-
-  .bgimage3 {
-    display: block !important;
-    margin-left: 50px;
-  }
-
-  /* .textArea{
-    margin-top: 0px !important;
-  } */
-  .card-signup {
-    margin-bottom: 120px;
-  }
-
-  .card-signup .sign-up-gateways .ant-btn {
-    width: 100px;
-  }
-}
 
 /* end sign up */
 
@@ -4577,7 +4515,7 @@ justify-content: space-around;
   padding: 10px;
   background: #256834;
   border-radius: 60px;
-}
+margin-top: 80px !important;}
 
 .gif {
   padding-bottom: 40px;
@@ -4656,7 +4594,7 @@ justify-content: space-around;
   }
 
   .credits {
-    font-size: 0.9vw !important;
+    font-size: 0.8vw !important;
     padding-left: 5px;
     color: white;
   }
@@ -4685,7 +4623,13 @@ justify-content: space-around;
     line-height: 35px;
   }
 }
+.regli{
 
+}
+.regli:hover{
+  color:white !important;
+ background-color: #256834 ; 
+}
 @media (max-width: 576px) {
   .sendbtn {
     /* top: 5793px; */
@@ -4708,6 +4652,7 @@ justify-content: space-around;
     padding: 10px;
     background: #256834;
     border-radius: 60px;
+    margin-top: 30px !important;
   }
 
   .footerUl {
@@ -4918,5 +4863,75 @@ justify-content: space-around;
     flex-direction: column;
     text-align: center;
     align-items: center;
+  }
+}
+@media (min-width: 768px) {
+  .sign-img img {
+    margin: 0;
+  }
+  
+
+  /* .credits {
+    font-size: 1.5vw !important;
+  } */
+
+  .mobilecontent {
+    display: grid;
+    justify-content: center;
+    margin-left: 0px !important;
+  }
+
+  .sendbtn {
+    /* top: 5793px; */
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 38px;
+    color: #ffffff;
+    border: none;
+    border-radius: 60px;
+
+    /* margin-top: 13px; */
+    background: #256834;
+    border-radius: 60px;
+  }
+
+  .mobilediv {
+    display: none !important;
+  }
+
+  .bgimage1 {
+    display: block !important;
+    margin-left: 50px;
+  }
+
+  .bgimage2 {
+    display: block !important;
+    margin-left: 50px;
+  }
+
+  .caruselp {
+    font-size: 30px;
+    line-height: 50px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* bottom: 312px; */
+    left: 29px;
+  }
+
+  .bgimage3 {
+    display: block !important;
+    margin-left: 50px;
+  }
+
+  /* .textArea{
+    margin-top: 0px !important;
+  } */
+  .card-signup {
+    margin-bottom: 120px;
+  }
+
+  .card-signup .sign-up-gateways .ant-btn {
+    width: 100px;
   }
 }

@@ -4693,7 +4693,7 @@ margin-top: 80px !important;}
   }
 
   .footerlastdiv {
-    display: grid !important;
+    /* display: grid !important; */
   }
 
   .Register {
@@ -4723,7 +4723,9 @@ margin-top: 80px !important;}
   background: rgba(178, 218, 159, 0.3);;
 
   }
- 
+  .Headings{
+    font-size: 30px;
+  }
   .Contact {
     display: block;
   }

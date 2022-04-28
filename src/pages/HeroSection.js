@@ -204,8 +204,8 @@ const executeScroll = () => myRef.current.scrollIntoView()
               <h2 className="serviceHead font-bold Headings">Our Services</h2>
               <p className="serp  disText mb-0 fs-20 ">
                 eAgriMarket is smart trading platform for all Agriculture
-                stakeholders. We empower farmers with
-                <br /> technology and provide all Agri stakeholders a platform
+                stakeholders. We empower <br />farmers with
+                 technology and provide all Agri stakeholders a platform
                 for trading.
               </p>
             </div>
@@ -280,7 +280,7 @@ const executeScroll = () => myRef.current.scrollIntoView()
           </div>
           <p className="prdp  mb-3 mb-md-4 mb-lg-5 disText">
             Online Trading and Information platform for all Agriculture
-            stakeholders. Get market insights of all Agri products across
+            stakeholders. Get market insights  of all <br /> Agri products across
             country and trade with ease by exploring your desired product on our
             platform.
           </p>
@@ -651,14 +651,14 @@ const executeScroll = () => myRef.current.scrollIntoView()
                       <a className="folinks">Kickstart,
 Building 62 Block C2 Guldberg 3, Lahore</a>
                     </a>
-                    <a
+                    {/* <a
                       className="footericon"
                       href=""
                     >
                       {" "}
                       <PhoneFilled />
                       <a className="folinks"></a>
-                    </a>
+                    </a> */}
                     <a
                       className="footericon"
                       href=""

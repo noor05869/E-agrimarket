@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect ,useRef} from "react";
 import logo from "../assets/LogoH.png";
 import logo3 from "../assets/LogoHeader.png";
 import Final from "../assets/Final.gif";
@@ -13,8 +13,6 @@ import grp4 from "../assets/Group4.png";
 import vector from "../assets/Vector.png";
 import frame from "../assets/Frame.png";
 import vedio from "../assets/vedios.wmv";
-
-
 
 import App from "../assets/Apps.png";
 
@@ -46,7 +44,8 @@ function HeroSection() {
     message: "",
   });
   const { error, request } = useApi(api.postContact);
-
+const myRef=useRef(null)
+const executeScroll = () => myRef.current.scrollIntoView() 
   const handleChange = (e) => {
     const { value, name, id } = e.target;
     console.log(e.target.value);
@@ -66,7 +65,7 @@ function HeroSection() {
         },
       });
       // navigate("/contactSubmission");
-    } catch {}
+    } catch { }
 
     // setloading(false);
   }
@@ -105,91 +104,95 @@ function HeroSection() {
         id="header"
         class={` header-scrolled ${shownav && "headerafter"}`}
       >
-        <nav class="navbar navbar-expand-lg navbar-light">
-          <a class="navbar-brand navlogo">
-            <img className="footerimg" src={logo3} />
-            <button
-              class="navbar-toggler collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-              <span></span>
-              <span></span>
-            </button>
-          </a>
-
-          <div
-            class="collapse navbar-collapse navlidiv "
-            id="navbarSupportedContent"
-          >
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active navli">
-                <a class="nav-link navlink" href="#">
-                  HOME
-                </a>
-              </li>
-              <li class="nav-item dropdown navli">
-                <a class="nav-link navlink" href="#ourServices">
-                  OUR SERVICES
-                </a>
-              </li>
-              <li class="nav-item navli">
-                <a class="nav-link navlink" href="#Products">
-                  ABOUT US
-                </a>
-              </li>
-
-              <li class="nav-item dropdown navli">
-                <a
-                  class="nav-link navlink dropdown-toggle"
-                  href="#"
-                  id="navbarDropdown"
-                  role="button"
-                  data-bs-toggle="dropdown"
+        <div className="row">
+          <div className="col-11 mx-auto">
+            <nav class="navbar navbar-expand-lg navbar-light">
+              <a class="navbar-brand navlogo">
+                <img className="footerimg" src={logo3} />
+                <button
+                  class="navbar-toggler collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent"
                   aria-expanded="false"
+                  aria-label="Toggle navigation"
                 >
-                  REGISTER
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="">
-                  <li>
-                    <a class="dropdown-item" href="/Farmerdata">
-                      FARMER
+                  <span class="navbar-toggler-icon"></span>
+                  <span></span>
+                  <span></span>
+                </button>
+              </a>
+
+              <div
+                class="collapse navbar-collapse navlidiv "
+                id="navbarSupportedContent"
+              >
+                <ul class="navbar-nav mr-auto w-100 justify-content-between align-items-center ">
+                  <li class="nav-item active navli">
+                    <a class="nav-link navlink" href="#">
+                      HOME
+                    </a>
+                  </li>
+                  <li class="nav-item dropdown navli">
+                    <a class="nav-link navlink" href="#ourServices">
+                      OUR SERVICES
+                    </a>
+                  </li>
+                  <li class="nav-item navli">
+                    <a class="nav-link navlink" href="#Products">
+                      ABOUT US
+                    </a>
+                  </li>
+
+                  <li class="nav-item dropdown navli">
+                    <a
+                      class="nav-link navlink dropdown-toggle"
+                      href="#"
+                      id="navbarDropdown"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      REGISTER
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="">
+                      <li>
+                        <a class="dropdown-item" href="/Farmerdata">
+                          FARMER
+                        </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="/Trader">
+                          TRADER
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown navli ">
+                    <a
+                      onClick={() => {
+                        navigate("./contactUs");
+                      }}
+                      class="nav-link navlink "
+                      href="#Contact"
+                    >
+                      CONTACT US
                     </a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="/Trader">
-                      TRADER
-                    </a>
+                    <a href="#Getin" className="getin">Get in touch</a>
                   </li>
                 </ul>
-              </li>
-              <li class="nav-item dropdown navli ">
-                <a
-                  onClick={() => {
-                    navigate("./contactUs");
-                  }}
-                  class="nav-link navlink "
-                  href="#Contact"
-                >
-                  CONTACT US
-                </a>
-              </li>
-              <li>
-              <button className="getin mt-lg-4" > 
-                Register Now
-              </button>
-                  </li>
-            </ul>
+              </div>
+            </nav>
           </div>
-        </nav>
+        </div>
       </header>
-   
-      <Slider />
+
+      <Slider
+      executeScroll={executeScroll}
+      />
       {/* <video width="80%" playsinline="true" autoplay="autoplay" muted="muted" loop="loop" type="video/mp4" src="https://agrimp-prod.s3.amazonaws.com/public/OVP_Video.mp4"></video> */}
 
       {/* Services */}
@@ -199,7 +202,7 @@ function HeroSection() {
           <div className=" serow justify-content-center">
             <div className="flexcenter mb-5 ">
               <h2 className="serviceHead font-bold Headings">Our Services</h2>
-              <p className="serp  disText mb-5  ">
+              <p className="serp  disText mb-0 fs-20 ">
                 eAgriMarket is smart trading platform for all Agriculture
                 stakeholders. We empower farmers with
                 <br /> technology and provide all Agri stakeholders a platform
@@ -210,40 +213,56 @@ function HeroSection() {
             {/* <button className="serbtn">Learn More</button> */}
           </div>
           <div className="row  justify-content-center">
-            <div className="col-md-2 mb-5">
-              <div className="servicescards mt-5 ">
-                <img className="sericon" src={grp1} />
-                <h5>E-mandi</h5>
-                <p className="np mt-5 mb-5">
-                  Platform for Sale and Purchase of Agri commodities.
-                </p>
+            <div className="col-md-3 col-lg-2 mb-5">
+              <div className="servicescards px-3 h-100 ">
+                <div className="mx-auto img">
+                  <img className="sericon" src={grp1} />
+                </div>
+                <div className="h-100">
+                  <h5>E-mandi</h5>
+                  <p className="np my-4">
+                    Platform for Sale and Purchase of Agri commodities.
+                  </p>
+                </div>
               </div>
             </div>
-            <div className="col-md-2 mb-5">
-              <div className="servicescards mt-5 ">
-                <img className="sericon" src={grp2} />
-                <h5>Input Marketplace </h5>
-                <p className="np mt-5 mb-5">
-                  Platform for Sale and Purchase of Agri commodities.
-                </p>
+            <div className="col-md-3 col-lg-2 mb-5">
+              <div className="servicescards px-3 h-100 ">
+                <div className="mx-auto img">
+                  <img className="sericon" src={grp2} />
+                </div>
+                <div className="h-100">
+                  <h5>Input Marketplace </h5>
+                  <p className="np my-4">
+                    Platform for Sale and Purchase of Agri commodities.
+                  </p>
+                </div>
               </div>
             </div>{" "}
-            <div className="   col-md-2 mb-5">
-              <div className="servicescards mt-5 ">
-                <img className="sericon" src={grp3} />
-                <h5>Machinery Marketplace</h5>
-                <p className="np mt-5 mb-5">
-                  Platform for Sale and Purchase of Agri commodities.
-                </p>
+            <div className="   col-md-3 col-lg-2 mb-5">
+              <div className="servicescards px-3 h-100 ">
+                <div className="mx-auto img">
+                  <img className="sericon" src={grp3} />
+                </div>
+                <div className="h-100">
+                  <h5>Machinery Marketplace</h5>
+                  <p className="np my-4">
+                    Platform for Sale and Purchase of Agri commodities.
+                  </p>
+                </div>
               </div>
-            </div>{" "}
-            <div className="col-md-2 mb-5">
-              <div className="servicescards mt-5 ">
-                <img className="sericon" src={grp4} />
-                <h5>Crop Advisory</h5>
-                <p className="np mt-5 mb-5">
-                  Platform for Sale and Purchase of Agri commodities.
-                </p>
+            </div>
+            <div className="col-md-3 col-lg-2 mb-5">
+              <div className="servicescards px-3 h-100 ">
+                <div className="mx-auto img">
+                  <img className="sericon" src={grp4} />
+                </div>
+                <div className="h-100">
+                  <h5>Crop Advisory</h5>
+                  <p className="np my-4">
+                    Platform for Sale and Purchase of Agri commodities.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -254,9 +273,9 @@ function HeroSection() {
       <div className="Products p-3 p-md-4 p-lg-5" id="Products">
         <div className="head">
           <div className="heading ">
-            <h2 className="prdhead Headings">Our Products
-           
-            <hr className="spline mt-lg-3"></hr>
+            <h2 className="prdhead Headings flexcenter">
+              Our Products
+              <hr className="spline mt-lg-3"></hr>
             </h2>
           </div>
           <p className="prdp  mb-3 mb-md-4 mb-lg-5 disText">
@@ -269,12 +288,9 @@ function HeroSection() {
         <div className="row ">
           <div className=" ">
             <div className="row d-flex justify-content-around">
-              <div className="col-lg-5">
+              <div className="col-lg-5 col-md-5">
                 <div className="mobilecontent p-3 p-md-4 p-lg-3   ">
-                  <h2 className="mobileapph  Headings">
-                    E-Agri Mobile App
-                    
-                  </h2>
+                  <h2 className="mobileapph  Headings">E-Agri Mobile App</h2>
                   <p className="paragra disText ">
                     Online Trading and Information platform for all Agriculture
                     stakeholders. Get market insights of all Agri products
@@ -304,24 +320,18 @@ function HeroSection() {
                       <p className="ticksp1">
                         <img className="ticksimg" src={vector} />
                         <p className="marking disText"> Advisory Portal</p>
-                     
                       </p>
-                      <div className="tickspimages mt-5">   <img
-                  className="playimg "
-                  src={Gplay}
-                  width="90%"
-           
-                />
-                <img className="playimg" src={App} width="80%" />  </div>
+                      <div className="tickspimages mt-5">
+                        {" "}
+                        <img className="playimg p-lg-2 " src={Gplay} width="90%" />
+                        <img className="playimg p-lg-2" src={App} width="80%" />{" "}
+                      </div>
                     </div>
-                  
                   </div>
                 </div>
               </div>
-              <div className="col-lg-3">
-
-              <img className=""  height="90%" src={handimage} />
-                
+              <div className="col-lg-3 col-md-4">
+                <img className="mobileimage" height="90%" src={handimage} />
               </div>
               {/* <div className=" col-lg-3 col-xl-2 col-sm-4 col-md-2 playbtns p-3 p-md-4   ">
                 <img
@@ -333,23 +343,22 @@ function HeroSection() {
                 <img className="playimg" src={App} width="100%" />
               </div> */}
             </div>
-{/* 
+            {/* 
             <div className="mobilediv">
               <img className="mobileimg" src={handimage} />
             </div> */}
           </div>
         </div>
       </div>
-      <div className="Proposition">
+      <div className="py-3 py-lg-4 Proposition">
         <div className="head">
           <div className="heading">
-            <h2 className="prdhead Headings flexcenter mt-3">Our Value Proposition
-           
-            <hr className="spline mt-lg-3"></hr>
+            <h2 className="prdhead Headings flexcenter mt-3">
+              Our Value Proposition
+              <hr className="spline mt-lg-3"></hr>
             </h2>
-
           </div>
-          <p className="prdp disText">
+          <p className="prdp disText px-5">
             eAgriMarket help Farmers to directly market their produce to Traders
             and Agro-Industry. <br />
             All immediate supply chain stages are covered by eAgriMarket and our
@@ -368,17 +377,22 @@ function HeroSection() {
             type="video/wmv"
             src="https://eagri-images.s3.ap-southeast-1.amazonaws.com/Value.gif"
           ></video> */}
-            <img src="https://eagri-images.s3.ap-southeast-1.amazonaws.com/Value.gif" className="gif" alt="...loading" />
+            <img
+              src="https://eagri-images.s3.ap-southeast-1.amazonaws.com/Value.gif"
+              className="gif"
+              alt="...loading"
+            />
             {/* <img className="vimage" src={vimage} /> */}
           </div>
         </div>
       </div>
-      <div className="Register " id="Register">
+      <div className="Register " ref={myRef} id="Register">
         <div className="reginner p-2 p-md-4 p-lg-3">
           <div className="head">
             <div className="heading">
-              <h2 className="regcontent Headings flexcenter">Register Yourself
-            <hr className="spline mt-lg-3"></hr>
+              <h2 className="regcontent Headings flexcenter">
+                Register Yourself
+                <hr className="spline mt-lg-3"></hr>
               </h2>
             </div>
             <p className="regp disText">
@@ -405,16 +419,15 @@ function HeroSection() {
         </div>
       </div>
 
-    
-      <div class="footer-top" id="Contact">
-        <div className=" container contactsection" >
-        <Form onFinish={handleSubmit}>
-          <div className="row d-flex justify-content-around ">
-            
-          <div class="col-lg-5 col-md-6 footer-links footermargin   ">
+      <div class="footer-top" id="Getin">
+        <div className=" container contactsection">
+          <Form onFinish={handleSubmit}>
+            <div className="row d-flex justify-content-around mx-3 ">
+              <div class="col-lg-5 col-md-6 footer-links footermargin   ">
                 <div className=" ">
-                  <h3 className="foh Headings ">Get in touch
-            <hr className="spline mt-lg-3"></hr>
+                  <h3 className="foh Headings ">
+                    Get in touch
+                    <hr className="spline mt-lg-3"></hr>
                   </h3>
                   <p className="fop">We Love to hear from you</p>
                 </div>
@@ -425,11 +438,11 @@ function HeroSection() {
                       rules={
                         !initialvalues.name
                           ? [
-                              {
-                                required: true,
-                                message: "Please Fill",
-                              },
-                            ]
+                            {
+                              required: true,
+                              message: "Please Fill",
+                            },
+                          ]
                           : ""
                       }
                       className="formitem"
@@ -453,11 +466,11 @@ function HeroSection() {
                       rules={
                         !initialvalues.contact
                           ? [
-                              {
-                                required: true,
-                                message: "Please Fill",
-                              },
-                            ]
+                            {
+                              required: true,
+                              message: "Please Fill",
+                            },
+                          ]
                           : ""
                       }
                     >
@@ -483,11 +496,11 @@ function HeroSection() {
                       rules={
                         !initialvalues.message
                           ? [
-                              {
-                                required: true,
-                                message: "Please Fill",
-                              },
-                            ]
+                            {
+                              required: true,
+                              message: "Please Fill",
+                            },
+                          ]
                           : ""
                       }
                     >
@@ -501,39 +514,38 @@ function HeroSection() {
                     </FormItem>
                   </div>
                   {/* <div class="col-lg-1 col-md-6 footer-links textArea "> */}
-
-               
                 </div>
                 <div className="col-lg-4 col-sm-6 mb-3  mt-3">
-                    <Button
-                      htmlType="submit"
-                      type="primary"
-                      // onClick={handleSubmit}
-                      className="sendbtn h-100"
-                    >
-                      Send
-                    </Button>
-                  </div>
+                  <Button
+                    htmlType="submit"
+                    type="primary"
+                    // onClick={handleSubmit}
+                    className="sendbtn h-100"
+                  >
+                    Send
+                  </Button>
+                </div>
                 {/* </div> */}
               </div>
-              <div className="col-lg-2 mt-4">
-
-                <img  className=" contactimage " src={frame} />
+              <div className="col-lg-2 col-md-3 mt-4">
+                <img className=" contactimage " src={frame} />
               </div>
-          </div>  </Form>
+            </div>{" "}
+          </Form>
         </div>
         <div class="container-fluid footercon ">
-          <div className="container">
-          
-            <div class="row justify-content-between">
-              <div class="col-lg-4 col-md-6  footer-contact footermargin">
-                <img className="  " src={grplast}  />
+          <div className="row">
+            <div className="col-11 mx-auto">
 
-                <p className="footerp disText  mb-3">
-                  Sustainable & Smart Agriculture Trading Platform Empowering
-                  Farmers with Technology Making Farm to Fork a Reality
-                </p>
-                {/* <div class="credits flexcenter">
+              <div class="row justify-content-between">
+                <div class="col-lg-4 col-md-6  footer-contact footermargin">
+                  <img className="  " src={grplast} />
+
+                  <p className="footerp credits mb-3">
+                    Sustainable & Smart Agriculture Trading Platform Empowering
+                    Farmers with Technology Making Farm to Fork a Reality
+                  </p>
+                  {/* <div class="credits flexcenter">
                   {" "}
                   <a
                     className="footericon"
@@ -557,125 +569,120 @@ function HeroSection() {
                     <LinkedinFilled />
                   </a>
                 </div> */}
-              </div>
-              
-              <div class="col-lg-2 col-md-4 footer-links footermargin">
-                {/* <h4 className="footerh4">Useful Links</h4> */}
-                <div class="vl">
-                <ul className="footerUl d-flex flex-column justify-content-around h-100 p-0">
+                </div>
 
-                  <li className="textleft">
-                    <i class="bx bx-chevron-right footeri"></i>{" "}
-                    <a className="footera disText" href="#">
-                      Home
-                    </a>
-                  </li>
-                  <li className="textleft">
-                    <i class="bx bx-chevron-right footeri"></i>{" "}
-                    <a className="footera disText" href="#Products">
-                      About Us
-                    </a>
-                  </li>
-                  <li className="textleft">
-                    <i class="bx bx-chevron-right footeri"></i>{" "}
-                    <a className="footera disText" href="#ourServices">
-                      Our Services
-                    </a>
-                  </li>
-                  <li className="textleft">
-                    <i class="bx bx-chevron-right footeri"></i>{" "}
-                    <a className="footera disText" href="#Register">
-                      Register
-                    </a>
-                  </li>
-                  <li className="textleft">
-                    <i class="bx bx-chevron-right footeri"></i>{" "}
-                    <a className="footera disText" href="/contactUs">
-                      Contact Us
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              </div>
-              <div class="col-lg-2 col-md-6 footer-links footermargin  ">
-               
-               
-                <h5>Find Us</h5>
-                <div class="credits ">
-                  {" "}
-                  <a
-                    className="footericon"
-                    href="https://www.facebook.com/eagrimart"
-                  >
+                <div class="col-lg-2 col-md-4 footer-links  footer-contact footermargin">
+                  {/* <h4 className="footerh4">Useful Links</h4> */}
+                  <div class="vl">
+                    <ul className="footerUl d-flex flex-column justify-content-around h-100 p-0">
+                      <li className="textleft">
+                        <i class="bx bx-chevron-right footeri"></i>{" "}
+                        <a className="credits" href="#">
+                          Home
+                        </a>
+                      </li>
+                      <li className="textleft">
+                        <i class="bx bx-chevron-right footeri"></i>{" "}
+                        <a className="credits" href="#Products">
+                          About Us
+                        </a>
+                      </li>
+                      <li className="textleft">
+                        <i class="bx bx-chevron-right footeri"></i>{" "}
+                        <a className="credits" href="#ourServices">
+                          Our Services
+                        </a>
+                      </li>
+                      <li className="textleft">
+                        <i class="bx bx-chevron-right footeri"></i>{" "}
+                        <a className="credits" href="#Register">
+                          Register
+                        </a>
+                      </li>
+                      <li className="textleft">
+                        <i class="bx bx-chevron-right footeri"></i>{" "}
+                        <a className="credits" href="/contactUs">
+                          Contact Us
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-lg-2 col-md-6 footer-links footer-contact  footermargin  ">
+                  <h5>Find Us</h5>
+                  <div class="credits d-grid ">
                     {" "}
-                    <FacebookFilled />
-                    <a className="folinks" >facebook.com/eagrimart</a>
-                  </a>
-                  <a
-                    className="footericon"
-                    href="https://www.instagram.com/eagrimart/"
-                  >
+                    <a
+                      className="footericon"
+                      href="https://www.facebook.com/eagrimart"
+                    >
+                      {" "}
+                      <FacebookFilled />
+                      <a className="folinks">facebook.com/eagrimart</a>
+                    </a>
+                    <a
+                      className="footericon"
+                      href="https://www.instagram.com/eagrimart/"
+                    >
+                      {" "}
+                      <InstagramFilled />
+                      <a className="folinks">instagram.com/eagrimart</a>
+                    </a>
+                    <a
+                      className="footericon"
+                      href="https://www.linkedin.com/company/eagrimarket/"
+                    >
+                      {" "}
+                      <LinkedinFilled />
+                      <a className="folinks">Linkedin.com/eagrimart</a>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-lg-2 col-md-6 footer-links footer-contact  footermargin mb-5 ">
+                  <h5>Contact Us</h5>
+                  <div class="credits d-grid">
                     {" "}
-                    <InstagramFilled />
-                    <a className="folinks" >instagram.com/eagrimart</a>
-                  </a>
-                  <a
-                    className="footericon"
-                    href="https://www.linkedin.com/company/eagrimarket/"
-                  >
-                    {" "}
-                    <LinkedinFilled />
-                    <a className="folinks" >Linkedin.com/eagrimart</a>
-                  </a>
+                    <a
+                      className="footericon"
+                      href="https://www.facebook.com/eagrimart"
+                    >
+                      {" "}
+                      <EnvironmentFilled />
+                      <a className="folinks">385 Noah Place Suite 878</a>
+                    </a>
+                    <a
+                      className="footericon"
+                      href="https://www.instagram.com/eagrimart/"
+                    >
+                      {" "}
+                      <PhoneFilled />
+                      <a className="folinks">877-255-7945</a>
+                    </a>
+                    <a
+                      className="footericon"
+                      href="https://www.linkedin.com/company/eagrimarket/"
+                    >
+                      {" "}
+                      <MessageFilled />
+                      <a className="folinks">info@form.com</a>
+                    </a>
+                  </div>
                 </div>
               </div>
-              <div class="col-lg-2 col-md-6 footer-links footermargin mb-5 ">
-               
-               
-               <h5>Contact Us</h5>
-               <div class="credits ">
-                 {" "}
-                 <a
-                   className="footericon"
-                   href="https://www.facebook.com/eagrimart"
-                 >
-                   {" "}
-                   <EnvironmentFilled/>
-                   <a className="folinks" >385 Noah Place Suite 878</a>
-                 </a>
-                 <a
-                   className="footericon"
-                   href="https://www.instagram.com/eagrimart/"
-                 >
-                   {" "}
-                   <PhoneFilled />
-                   <a className="folinks" >877-255-7945</a>
-                 </a>
-                 <a
-                   className="footericon"
-                   href="https://www.linkedin.com/company/eagrimarket/"
-                 >
-                   {" "}
-                   <MessageFilled/>
-                   <a className="folinks" >info@form.com</a>
-                 </a>
-               </div>
-             </div>
             </div>
-        
-        </div>
-      </div>
-      <div class="container-fluid footer-bottom clearfix ">
-        <div className="container footerlastdiv">
-          <span>Terms And Condition</span>
-          <div class="copyright">
-            {" "}
-            © Copyright 2022,{" "}
-            <strong>
-              <span>eAgriMarket</span>
-            </strong>
-            . All Rights Reserved
           </div>
+        </div>
+        <div class="container-fluid footer-bottom clearfix ">
+          <div className="container footerlastdiv credits ">
+            <span>Terms And Condition</span>
+            <div class="credits ">
+              {" "}
+              © Copyright 2022,{" "}
+              <strong>
+                <span>eAgriMarket</span>
+              </strong>
+              . All Rights Reserved
+            </div>
           </div>
         </div>
       </div>
@@ -684,3 +691,4 @@ function HeroSection() {
 }
 
 export default HeroSection;
+

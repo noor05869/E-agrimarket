@@ -402,14 +402,14 @@ const executeScroll = () => myRef.current.scrollIntoView()
               eAgriMarket and our partner network
             </p>
           </div>
-          <div className="regbtndiv mb-3 ">
-            <button className="regbtn">
-              <a className="farmera" href="/farmerdata">
+          <div className="regbtndiv mb-3  ">
+            <button className="regbtn my-2">
+              <a className="farmera " href="/farmerdata">
                 {" "}
                 Farmer
               </a>
             </button>
-            <button className="regbtn ">
+            <button className="regbtn regbtnmarginb  ">
               <a className="farmera" href="/Trader">
                 {" "}
                 Trader
@@ -657,7 +657,7 @@ Building 62 Block C2 Guldberg 3, Lahore</a>
                     >
                       {" "}
                       <PhoneFilled />
-                      <a className="folinks">877-255-7945</a>
+                      <a className="folinks"></a>
                     </a>
                     <a
                       className="footericon"

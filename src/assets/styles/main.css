@@ -4698,18 +4698,32 @@ margin-top: 80px !important;}
 
   .Register {
     height: auto;
+    background-image: url("../mobileewg.png") !important;
+    background-size: cover;
+
   }
 
   .regbtndiv {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 11px;
   }
-
+  .regbtn{
+    width: 255px;
+    height: 50px;
+  }
+  .regbtnmarginb{
+    
+    margin-bottom: 425px;
+  }
   .reginner {
     height: auto;
-  }
+  background: rgba(178, 218, 159, 0.3);;
 
+  }
+ 
   .Contact {
     display: block;
   }
@@ -4825,7 +4839,7 @@ margin-top: 80px !important;}
   }
 
   .playimg {
-    width: 30%;
+    width: 43%;
     height: fit-content;
   }
 
@@ -4861,8 +4875,8 @@ margin-top: 80px !important;}
     display: flex;
     justify-content: center;
     flex-direction: column;
-    text-align: center;
-    align-items: center;
+    text-align: start;
+    align-items: self-start;
   }
 }
 @media (min-width: 768px) {

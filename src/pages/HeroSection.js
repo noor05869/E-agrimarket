@@ -61,7 +61,7 @@ function HeroSection() {
       setinitialvalues({ name: "", contact: "", message: "" });
       // form.setFieldsValue({ name: "", contact: "", message: "" };
       message.success({
-        content: "Form Submit succsessfully",
+        content: "Message send successfully we will keep in touch with you",
         className: "custom-class",
         style: {
           marginTop: "74vh",
@@ -135,7 +135,8 @@ function HeroSection() {
                 class="collapse navbar-collapse navlidiv "
                 id="navbarSupportedContent"
               >
-                <ul class="navbar-nav mr-auto w-100  navwidth justify-content-between align-items-center ">
+                {/* <div className="navwidth"> */}
+                <ul class="navbar-nav mr-auto w-75  justify-content-between align-items-center ">
                   <li class="nav-item active navli">
                     <a class="nav-link navlink" href="#">
                       HOME
@@ -194,6 +195,7 @@ function HeroSection() {
                   </li>
                 </ul>
               </div>
+              {/* </div> */}
             </nav>
           </div>
         </div>
@@ -285,7 +287,7 @@ function HeroSection() {
               <hr className="spline mt-lg-3"></hr>
             </h2>
           </div>
-          <p className="prdp  mb-3 mb-md-4 mb-lg-5 disText">
+          <p className="prdp  mb-3 mb-md-4 mb-lg-5  disText fs-20">
             Online Trading and Information platform for all Agriculture
             stakeholders. Get market insights of all <br /> Agri products across
             country and trade with ease by exploring your desired product on our
@@ -308,11 +310,11 @@ function HeroSection() {
                     <div>
                       <p className="ticksp">
                         <img className="ticksimg" src={vector} />
-                        <p className="marking disText">e-Mandi</p>
+                        <p className="marking disText fs-20">e-Mandi</p>
                       </p>
                       <p className="ticksp1">
                         <img className="ticksimg" src={vector} />
-                        <p className="marking disText">Farmers Portal </p>
+                        <p className="marking disText ">Farmers Portal </p>
                       </p>{" "}
                       <p className="ticksp1">
                         <img className="ticksimg" src={vector} />
@@ -369,7 +371,7 @@ function HeroSection() {
               <hr className="spline mt-lg-3"></hr>
             </h2>
           </div>
-          <p className="prdp disText px-5">
+          <p className="prdp disText px-5 fs-20">
             eAgriMarket help Farmers to directly market their produce to Traders
             and Agro-Industry. <br />
             All immediate supply chain stages are covered by eAgriMarket and our
@@ -406,7 +408,7 @@ function HeroSection() {
                 <hr className="spline mt-lg-3"></hr>
               </h2>
             </div>
-            <p className="regp disText">
+            <p className="regp disText fs-20">
               eAgriMarket help Farmers to directly market their produce to
               Traders and Agro-Industry.
               <br /> All immediate supply chain stages are covered by
@@ -421,7 +423,7 @@ function HeroSection() {
             </a>
             {/* </button> */}
             {/* <button className="regbtn regbtnmarginb  "> */}
-            <a className="farmera regbtn regbtnmarginb" href="/Trader">
+            <a className="farmera regbtn regbtnmarginb mt-2" href="/Trader">
               {" "}
               Trader
             </a>
@@ -653,7 +655,7 @@ function HeroSection() {
                     </a>
                   </div>
                 </div>
-                <div class="col-lg-3 col-md-6 footer-links footer-contact  footermargin mb-5 ">
+                <div class="col-lg-4 col-md-6 footer-links footer-contact  footermargin mb-5 ">
                   <h5>Contact Us</h5>
                   <div class="credits d-grid">
                     {" "}

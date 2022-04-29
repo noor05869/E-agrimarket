@@ -4,7 +4,7 @@ import group from "../assets/Group.png";
 import group1 from "../assets/seconds.png";
 import group2 from "../assets/grp3.png";
 
-function Slider() {
+function Slider({executeScroll}) {
   return (
     <div className="antCarousel">
       <Carousel effect="fade">
@@ -15,12 +15,12 @@ function Slider() {
                 Sustainable & Smart Agriculture
                 <br />
                 Trading Platform
-                <hr className="spline mt-lg-5"></hr>
+                {/* <hr className="spline mt-lg-5"></hr> */}
                 {/* <p className="carouselptag normalp pt-lg-4">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in{" "}
                 <br /> tempus libero ornare nulla aenean vulputate malesuada.
               </p> */}
-                <button className="registerNow mt-lg-4">Register Now</button>
+                <button onClick={executeScroll} className="registerNow mt-lg-4">Register Now</button>
               </h2>
             </div>
 
@@ -35,7 +35,7 @@ function Slider() {
               <h2 style={{ color: "#256834" }} className="caruselp mb-3 ">
                 Empowering Farmers <br />
                 with Technology
-                <hr className="spline mt-lg-5"></hr>
+                {/* <hr className="spline mt-lg-5"></hr> */}
                 {/* <p className="carouselptag normalp pt-lg-4">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in{" "}
                 <br /> tempus libero ornare nulla aenean vulputate malesuada.
@@ -61,12 +61,12 @@ function Slider() {
               <h2 className="caruselp mb-3 ">
                 Making Farm to Fork a <br />
                 Reality
-                <hr className="spline mt-lg-5"></hr>
+                {/* <hr className="spline mt-lg-5"></hr> */}
                 {/* <p className="carouselptag normalp pt-lg-4">
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in{" "}
 <br /> tempus libero ornare nulla aenean vulputate malesuada.
 </p> */}
-                <button className="registerNow mt-lg-4">Register Now</button>
+                <button className="registerNow  ">Register Now</button>
               </h2>
 
               {/* <p className="carouselptag">

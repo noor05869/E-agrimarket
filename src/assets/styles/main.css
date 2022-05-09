@@ -1751,8 +1751,8 @@ span.ismobile {
   }
 
   .ant-row {
-    margin-left: -12px;
-    margin-right: -12px;
+    /* margin-left: -12px; */
+    /* margin-right: -12px; */
   }
 
   span.ismobile {
@@ -4014,6 +4014,7 @@ justify-content: space-around;
 .regbtndiv {
   display: flex;
   justify-content: center;
+  align-items: baseline;
 }
 
 .regbtn {
@@ -4021,15 +4022,22 @@ justify-content: space-around;
   height: 43px;
   margin-left: 70px;
   background: #227b51;
+  text-align: center;
   border-radius: 43.5px;
   font-weight: 700;
   font-size: 17px;
-  line-height: 38px;
+  line-height: 42px;
   border: none;
   padding-bottom: 7px;
   color: #ffffff;
 }
-
+.regbtn:hover{
+  
+    /* background-color: #2EE59D; */
+    box-shadow: 0px 15px 20px rgba(22, 92, 64, 0.4);
+    color: #fff;
+  
+}
 .footerimg {
   /* height: 180px; */
   width: 62% !important;
@@ -4055,7 +4063,9 @@ justify-content: space-around;
 
   color: black;
 }
-
+.dropdown-menu{
+  width: auto;
+}
 .footerli1 {
   font-weight: 700;
   font-size: 24px;
@@ -4358,6 +4368,7 @@ justify-content: space-around;
   /* display: flex; */
   list-style: none;
   align-items: baseline;
+  /* width: 590px!important; */
 }
 
 .navbar li {
@@ -4524,7 +4535,9 @@ margin-top: 80px !important;}
   /* image-rendering: crisp-edges;
   image-rendering: pixelated; */
 }
-
+.navwidth{
+  width: 550 !important;
+}
 @media (min-width: 1200px) {
   .textArea {
     margin-top: 148px !important;
@@ -4562,7 +4575,7 @@ margin-top: 80px !important;}
 
 .disText {
   font-weight: 400 !important;
-  font-size: 17px !important;
+  font-size: 20px !important;
   line-height: 30px !important;
   color: #000;
 }
@@ -4714,10 +4727,10 @@ margin-top: 80px !important;}
     width: 255px;
     height: 50px;
   }
-  .regbtnmarginb{
+  /* .regbtnmarginb{
     
     margin-bottom: 425px;
-  }
+  } */
   .reginner {
     height: auto;
   background: rgba(178, 218, 159, 0.3);;

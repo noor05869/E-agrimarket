@@ -1,5 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { Row, Col, Card, Input, Select, Form, Button, Switch, InputNumber } from "antd";
+import {
+  Row,
+  Col,
+  Card,
+  Input,
+  Select,
+  Form,
+  Button,
+  Switch,
+  InputNumber,
+} from "antd";
 
 import Label from "../../components/label";
 import Header from "../header";
@@ -54,9 +64,7 @@ function FormScreen({
             >
               <Row> </Row>
               <Row gutter={[24, 0]} justify="center">
-                <Col span={7} md={0} lg={0}>
-
-                </Col>
+                <Col span={7} md={0} lg={0}></Col>
 
                 <Col xs={23} span={7} lg={11} sm={20} md={7}>
                   <Label eLabel="Name" ulabel="نام" index={0} />
@@ -65,11 +73,11 @@ function FormScreen({
                     rules={
                       !fname
                         ? [
-                          {
-                            required: true,
-                            message: "Please Fill",
-                          },
-                        ]
+                            {
+                              required: true,
+                              message: "Please Fill",
+                            },
+                          ]
                         : ""
                     }
                   >
@@ -94,11 +102,11 @@ function FormScreen({
                     rules={
                       !contact
                         ? [
-                          {
-                            required: true,
-                            message: "Please Fill",
-                          },
-                        ]
+                            {
+                              required: true,
+                              message: "Please Fill",
+                            },
+                          ]
                         : ""
                     }
                   >
@@ -145,11 +153,11 @@ function FormScreen({
                     rules={
                       !province.children
                         ? [
-                          {
-                            required: true,
-                            message: "Please Select",
-                          },
-                        ]
+                            {
+                              required: true,
+                              message: "Please Select",
+                            },
+                          ]
                         : ""
                     }
                   >
@@ -172,7 +180,6 @@ function FormScreen({
                       {Provinces.map((data) => (
                         <Option key={data.label}>
                           <div>
-
                             <p>{data.label}</p>
                           </div>
                         </Option>
@@ -188,11 +195,11 @@ function FormScreen({
                     rules={
                       !city
                         ? [
-                          {
-                            required: true,
-                            message: "Please Fill",
-                          },
-                        ]
+                            {
+                              required: true,
+                              message: "Please Fill",
+                            },
+                          ]
                         : ""
                     }
                   >
@@ -211,26 +218,27 @@ function FormScreen({
               </Row>
 
               <Row gutter={[24, 0]}></Row>
-              <Row justify="left" >
+              <Row justify="left">
                 <Col xs={1} sm={2} lg={1}></Col>
                 <Col xs={22} lg={11} sm={20} md={14}>
                   <Row justify="left">
                     <Col xs={23} sm={23} md={22}>
                       <div className="d-flex">
-
                         <h5 className="align-self-center">Commision shop</h5>
                         <div className="ms-auto">
-
-                          <Label eLabel="Do you Own?" ulabel="کیا آپ مالک ہیں؟" />
-                          <Form.Item name='commision'
-                            valuePropName="checked">
+                          <Label
+                            eLabel="Do you Own?"
+                            ulabel="کیا آپ مالک ہیں؟"
+                          />
+                          <Form.Item name="commision" valuePropName="checked">
                             <Switch
-                              name='commision'
+                              name="commision"
                               className="ms-auto d-block"
-                              onChange={(e) => handleSelect('commision', e)}
+                              onChange={(e) => handleSelect("commision", e)}
                               value={commision}
                               min={1}
-                              size="large" />
+                              size="large"
+                            />
                           </Form.Item>
                         </div>
                       </div>
@@ -238,50 +246,59 @@ function FormScreen({
                       <Row justify="left" gutter={[24, 0]}>
                         {/* <Col span={7} md={0} lg={0} xl={0}></Col> */}
 
-
                         {/* <Col xs={0} span={0} lg={1} md={0}></Col> */}
-                        {commision && <>
-                          <Col xs={24} sm={12} span={7} className="px-0 pe-sm-3 ps-sm-0">
-                            <Label eLabel="Commision Shop Name" ulabel="دکان کا نام" />
-
-                            <Form.Item
-                              name="shop"
+                        {commision && (
+                          <>
+                            <Col
+                              xs={24}
+                              sm={12}
+                              span={7}
+                              className="px-0 pe-sm-3 ps-sm-0"
                             >
-                              <Input
-                                className="contact"
-                                id="shop"
-                                defaultValue={shop}
-                                name="shop"
-                                placeholder="Shop - دکان"
-                                value={shop}
-                                onChange={handleChange}
+                              <Label
+                                eLabel="Commision Shop Name"
+                                ulabel="دکان کا نام"
                               />
-                            </Form.Item>
-                          </Col>
-                          <Col xs={24} sm={12} span={7} className="px-0 ps-sm-3 pe-sm-0">
-                            <Label eLabel="Mandi" ulabel="منڈی" />
 
-                            <Form.Item name="mandi">
-                              <Input
-                                className="contact"
-                                id="mandi"
-                                defaultValue=""
-                                name="mandi"
-                                placeholder="Mandi - منڈی"
-                                value={mandi}
-                                onChange={handleChange}
-                              />
-                            </Form.Item>
-                          </Col>
-                        </>}
+                              <Form.Item name="shop">
+                                <Input
+                                  className="contact"
+                                  id="shop"
+                                  defaultValue={shop}
+                                  name="shop"
+                                  placeholder="Shop - دکان"
+                                  value={shop}
+                                  onChange={handleChange}
+                                />
+                              </Form.Item>
+                            </Col>
+                            <Col
+                              xs={24}
+                              sm={12}
+                              span={7}
+                              className="px-0 ps-sm-3 pe-sm-0"
+                            >
+                              <Label eLabel="Mandi" ulabel="منڈی" />
 
+                              <Form.Item name="mandi">
+                                <Input
+                                  className="contact"
+                                  id="mandi"
+                                  defaultValue=""
+                                  name="mandi"
+                                  placeholder="Mandi - منڈی"
+                                  value={mandi}
+                                  onChange={handleChange}
+                                />
+                              </Form.Item>
+                            </Col>
+                          </>
+                        )}
                       </Row>
                     </Col>
                   </Row>
                 </Col>
               </Row>
-
-
 
               <Row gutter={[24, 0]} justify="center">
                 <Col span={6} md={0} lg={0}></Col>
@@ -323,3 +340,4 @@ function FormScreen({
 }
 
 export default FormScreen;
+

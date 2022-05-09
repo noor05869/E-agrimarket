@@ -1,4 +1,4 @@
-import React, { useEffect ,useRef} from "react";
+import React, { useEffect, useRef } from "react";
 import logo from "../assets/LogoH.png";
 import logo3 from "../assets/LogoHeader.png";
 import Final from "../assets/Final.gif";
@@ -36,6 +36,7 @@ import {
   PhoneFilled,
 } from "@ant-design/icons";
 function HeroSection() {
+  const [form] = Form.useForm();
   const { TextArea } = Input;
   const navigate = useNavigate();
   const [initialvalues, setinitialvalues] = useState({
@@ -44,8 +45,8 @@ function HeroSection() {
     message: "",
   });
   const { error, request } = useApi(api.postContact);
-const myRef=useRef(null)
-const executeScroll = () => myRef.current.scrollIntoView() 
+  const myRef = useRef(null);
+  const executeScroll = () => myRef.current.scrollIntoView();
   const handleChange = (e) => {
     const { value, name, id } = e.target;
     console.log(e.target.value);
@@ -55,20 +56,26 @@ const executeScroll = () => myRef.current.scrollIntoView()
     console.log("submit", values);
     // setloading(true);
     try {
-      const { data } = await request(values);
+      const { data } = await request(initialvalues);
       console.log("ressssssss", data);
+      setinitialvalues({ name: "", contact: "", message: "" });
+      // form.setFieldsValue({ name: "", contact: "", message: "" };
       message.success({
-        content: "Form Submit succsessfully",
+        content: "Message sent successfully we will keep in touch with you",
         className: "custom-class",
         style: {
           marginTop: "74vh",
         },
       });
+      form.resetFields();
       // navigate("/contactSubmission");
-    } catch { }
+      console.log("afterfffff", initialvalues);
+    } catch {}
 
     // setloading(false);
   }
+  useEffect(() => {}, [initialvalues]);
+
   const [showButton, setShowButton] = useState(false);
   const [shownav, setShownav] = useState(false);
 
@@ -128,7 +135,8 @@ const executeScroll = () => myRef.current.scrollIntoView()
                 class="collapse navbar-collapse navlidiv "
                 id="navbarSupportedContent"
               >
-                <ul class="navbar-nav mr-auto w-100 justify-content-between align-items-center ">
+                {/* <div className="navwidth"> */}
+                <ul class="navbar-nav mr-auto w-75  justify-content-between align-items-center ">
                   <li class="nav-item active navli">
                     <a class="nav-link navlink" href="#">
                       HOME
@@ -157,7 +165,7 @@ const executeScroll = () => myRef.current.scrollIntoView()
                       REGISTER
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="">
-                      <li className="" >
+                      <li className="">
                         <a class="dropdown-item regli" href="/Farmerdata">
                           FARMER
                         </a>
@@ -181,18 +189,19 @@ const executeScroll = () => myRef.current.scrollIntoView()
                     </a>
                   </li> */}
                   <li class="nav-item dropdown navli ">
-                    <a href="#Getin" className="getin">Get in touch</a>
+                    <a href="#Getin" className="getin">
+                      Get in touch
+                    </a>
                   </li>
                 </ul>
               </div>
+              {/* </div> */}
             </nav>
           </div>
         </div>
       </header>
 
-      <Slider
-      executeScroll={executeScroll}
-      />
+      <Slider executeScroll={executeScroll} />
       {/* <video width="80%" playsinline="true" autoplay="autoplay" muted="muted" loop="loop" type="video/mp4" src="https://agrimp-prod.s3.amazonaws.com/public/OVP_Video.mp4"></video> */}
 
       {/* Services */}
@@ -204,9 +213,9 @@ const executeScroll = () => myRef.current.scrollIntoView()
               <h2 className="serviceHead font-bold Headings">Our Services</h2>
               <p className="serp  disText mb-0 fs-20 ">
                 eAgriMarket is smart trading platform for all Agriculture
-                stakeholders. We empower <br />farmers with
-                 technology and provide all Agri stakeholders a platform
-                for trading.
+                stakeholders. We empower <br />
+                farmers with technology and provide all Agri stakeholders a
+                platform for trading.
               </p>
             </div>
 
@@ -221,7 +230,7 @@ const executeScroll = () => myRef.current.scrollIntoView()
                 <div className="h-100">
                   <h5>E-mandi</h5>
                   <p className="np my-4">
-                  Platform for Sale and Purchase of Agri commodities
+                    Platform for Sale and Purchase of Agri commodities
                   </p>
                 </div>
               </div>
@@ -234,7 +243,7 @@ const executeScroll = () => myRef.current.scrollIntoView()
                 <div className="h-100">
                   <h5>Input Marketplace </h5>
                   <p className="np my-4">
-                  Online marketplace for Agro Chemicals and Fertilizers
+                    Online marketplace for Agro Chemicals and Fertilizers
                   </p>
                 </div>
               </div>
@@ -247,7 +256,7 @@ const executeScroll = () => myRef.current.scrollIntoView()
                 <div className="h-100">
                   <h5>Machinery Marketplace</h5>
                   <p className="np my-4">
-                  Online Marketplace for Agri Machinery and Tools
+                    Online Marketplace for Agri Machinery and Tools
                   </p>
                 </div>
               </div>
@@ -260,7 +269,7 @@ const executeScroll = () => myRef.current.scrollIntoView()
                 <div className="h-100">
                   <h5>Crop Advisory</h5>
                   <p className="np my-4">
-                  Expert Agri advisory services for Farmers
+                    Expert Agri advisory services for Farmers
                   </p>
                 </div>
               </div>
@@ -278,9 +287,9 @@ const executeScroll = () => myRef.current.scrollIntoView()
               <hr className="spline mt-lg-3"></hr>
             </h2>
           </div>
-          <p className="prdp  mb-3 mb-md-4 mb-lg-5 disText">
+          <p className="prdp  mb-3 mb-md-4 mb-lg-5  disText fs-20">
             Online Trading and Information platform for all Agriculture
-            stakeholders. Get market insights  of all <br /> Agri products across
+            stakeholders. Get market insights of all <br /> Agri products across
             country and trade with ease by exploring your desired product on our
             platform.
           </p>
@@ -291,21 +300,21 @@ const executeScroll = () => myRef.current.scrollIntoView()
               <div className="col-lg-5 col-md-5 ">
                 <div className="mobilecontent p-3 p-md-4 p-lg-3   ">
                   <h2 className="mobileapph  Headings">E-Agri Mobile App</h2>
-                  <p className="paragra disText ">
+                  {/* <p className="paragra disText ">
                     Online Trading and Information platform for all Agriculture
                     stakeholders. Get market insights of all Agri products
                     across country and trade with ease by exploring your desired
                     product on our platform.
-                  </p>
+                  </p> */}
                   <div className="markkk">
                     <div>
                       <p className="ticksp">
                         <img className="ticksimg" src={vector} />
-                        <p className="marking disText">e-Mandi</p>
+                        <p className="marking disText fs-20">e-Mandi</p>
                       </p>
                       <p className="ticksp1">
                         <img className="ticksimg" src={vector} />
-                        <p className="marking disText">Farmers Portal </p>
+                        <p className="marking disText ">Farmers Portal </p>
                       </p>{" "}
                       <p className="ticksp1">
                         <img className="ticksimg" src={vector} />
@@ -323,7 +332,11 @@ const executeScroll = () => myRef.current.scrollIntoView()
                       </p>
                       <div className="tickspimages mt-5">
                         {" "}
-                        <img className="playimg p-lg-2 " src={Gplay} width="90%" />
+                        <img
+                          className="playimg p-lg-2 "
+                          src={Gplay}
+                          width="90%"
+                        />
                         <img className="playimg p-lg-2" src={App} width="80%" />{" "}
                       </div>
                     </div>
@@ -358,7 +371,7 @@ const executeScroll = () => myRef.current.scrollIntoView()
               <hr className="spline mt-lg-3"></hr>
             </h2>
           </div>
-          <p className="prdp disText px-5">
+          <p className="prdp disText px-5 fs-20">
             eAgriMarket help Farmers to directly market their produce to Traders
             and Agro-Industry. <br />
             All immediate supply chain stages are covered by eAgriMarket and our
@@ -395,7 +408,7 @@ const executeScroll = () => myRef.current.scrollIntoView()
                 <hr className="spline mt-lg-3"></hr>
               </h2>
             </div>
-            <p className="regp disText">
+            <p className="regp disText fs-20">
               eAgriMarket help Farmers to directly market their produce to
               Traders and Agro-Industry.
               <br /> All immediate supply chain stages are covered by
@@ -403,25 +416,25 @@ const executeScroll = () => myRef.current.scrollIntoView()
             </p>
           </div>
           <div className="regbtndiv mb-3  ">
-            <button className="regbtn my-2">
-              <a className="farmera " href="/farmerdata">
-                {" "}
-                Farmer
-              </a>
-            </button>
-            <button className="regbtn regbtnmarginb  ">
-              <a className="farmera" href="/Trader">
-                {" "}
-                Trader
-              </a>
-            </button>
+            {/* <button className="regbtn my-2"> */}
+            <a className="farmera regbtn my-2  " href="/farmerdata">
+              {" "}
+              Farmer
+            </a>
+            {/* </button> */}
+            {/* <button className="regbtn regbtnmarginb  "> */}
+            <a className="farmera regbtn regbtnmarginb mt-2" href="/Trader">
+              {" "}
+              Trader
+            </a>
+            {/* </button> */}
           </div>
         </div>
       </div>
 
       <div class="footer-top" id="Getin">
         <div className=" container contactsection">
-          <Form onFinish={handleSubmit}>
+          <Form form={form} onFinish={handleSubmit}>
             <div className="row d-flex justify-content-around mx-3 ">
               <div class="col-lg-5 col-md-6 col-sm-9 footer-links footermargin   ">
                 <div className=" ">
@@ -438,21 +451,22 @@ const executeScroll = () => myRef.current.scrollIntoView()
                       rules={
                         !initialvalues.name
                           ? [
-                            {
-                              required: true,
-                              message: "Please Fill",
-                            },
-                          ]
+                              {
+                                required: true,
+                                message: "Please Fill",
+                              },
+                            ]
                           : ""
                       }
                       className="formitem"
                     >
                       <Input
                         //  className="contact"
-
+                        name="name"
                         onChange={handleChange}
                         id="name"
                         type="text"
+                        defaultValue={initialvalues.name}
                         value={initialvalues.name}
                         placeholder="Name - نام"
                         className="nameinput1"
@@ -466,22 +480,23 @@ const executeScroll = () => myRef.current.scrollIntoView()
                       rules={
                         !initialvalues.contact
                           ? [
-                            {
-                              required: true,
-                              message: "Please Fill",
-                            },
-                          ]
+                              {
+                                required: true,
+                                message: "Please Fill",
+                              },
+                            ]
                           : ""
                       }
                     >
                       <Input
-                        id="fname"
+                        // id="fname"
                         //   value={fname}
                         onChange={handleChange}
                         name="contact"
                         maxLength="11"
                         minLength="11"
                         placeholder="03xx-0000000"
+                        value={initialvalues.contact}
                         // placeholder="Enter Phone Number"
                         className="nameinput"
                       />
@@ -496,11 +511,11 @@ const executeScroll = () => myRef.current.scrollIntoView()
                       rules={
                         !initialvalues.message
                           ? [
-                            {
-                              required: true,
-                              message: "Please Fill",
-                            },
-                          ]
+                              {
+                                required: true,
+                                message: "Please Fill",
+                              },
+                            ]
                           : ""
                       }
                     >
@@ -509,6 +524,7 @@ const executeScroll = () => myRef.current.scrollIntoView()
                         rows={4}
                         name="message"
                         onChange={handleChange}
+                        value={initialvalues.message}
                         placeholder="Message - پیغام"
                       />
                     </FormItem>
@@ -536,7 +552,6 @@ const executeScroll = () => myRef.current.scrollIntoView()
         <div class="container-fluid footercon ">
           <div className="row">
             <div className="col-11 mx-auto">
-
               <div class="row justify-content-between">
                 <div class="col-lg-3 col-md-6  footer-contact footermargin">
                   <img className="  " src={grplast} />
@@ -634,22 +649,22 @@ const executeScroll = () => myRef.current.scrollIntoView()
                     >
                       {" "}
                       <LinkedinFilled />
-                      <a className="folinks">linkedin.com/company/eagrimarket</a>
+                      <a className="folinks">
+                        linkedin.com/company/eagrimarket
+                      </a>
                     </a>
                   </div>
                 </div>
-                <div class="col-lg-3 col-md-6 footer-links footer-contact  footermargin mb-5 ">
+                <div class="col-lg-4 col-md-6 footer-links footer-contact  footermargin mb-5 ">
                   <h5>Contact Us</h5>
                   <div class="credits d-grid">
                     {" "}
-                    <a
-                      className="footericon"
-                      href=""
-                    >
+                    <a className="footericon" href="">
                       {" "}
                       <EnvironmentFilled />
-                      <a className="folinks">Kickstart,
-Building 62 Block C2 Guldberg 3, Lahore</a>
+                      <a className="folinks">
+                        Kickstart, Building 62 Block C2 Guldberg 3, Lahore
+                      </a>
                     </a>
                     {/* <a
                       className="footericon"
@@ -659,10 +674,7 @@ Building 62 Block C2 Guldberg 3, Lahore</a>
                       <PhoneFilled />
                       <a className="folinks"></a>
                     </a> */}
-                    <a
-                      className="footericon"
-                      href=""
-                    >
+                    <a className="footericon" href="">
                       {" "}
                       <MessageFilled />
                       <a className="folinks">eagriculturemarket@gmail.com</a>
@@ -692,4 +704,3 @@ Building 62 Block C2 Guldberg 3, Lahore</a>
 }
 
 export default HeroSection;
-

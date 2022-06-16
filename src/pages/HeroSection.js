@@ -177,17 +177,7 @@ function HeroSection() {
                       </li>
                     </ul>
                   </li>
-                  {/* <li class="nav-item dropdown navli ">
-                    <a
-                      onClick={() => {
-                        navigate("./contactUs");
-                      }}
-                      class="nav-link navlink "
-                      href="#Contact"
-                    >
-                      CONTACT US
-                    </a>
-                  </li> */}
+                
                   <li class="nav-item dropdown navli ">
                     <a href="#Getin" className="getin">
                       Get in touch
@@ -195,17 +185,14 @@ function HeroSection() {
                   </li>
                 </ul>
               </div>
-              {/* </div> */}
+            
             </nav>
           </div>
         </div>
       </header>
 
       <Slider executeScroll={executeScroll} />
-      {/* <video width="80%" playsinline="true" autoplay="autoplay" muted="muted" loop="loop" type="video/mp4" src="https://agrimp-prod.s3.amazonaws.com/public/OVP_Video.mp4"></video> */}
-
-      {/* Services */}
-      {/* <div  className="container-fluid" > */}
+    
       <div style={{ background: "white" }}>
         <div className="servicesdiv  p-3 p-md-4 p-lg-5" id="ourServices">
           <div className=" serow justify-content-center">
@@ -300,12 +287,7 @@ function HeroSection() {
               <div className="col-lg-5 col-md-5 ">
                 <div className="mobilecontent p-3 p-md-4 p-lg-3   ">
                   <h2 className="mobileapph  Headings">E-Agri Mobile App</h2>
-                  {/* <p className="paragra disText ">
-                    Online Trading and Information platform for all Agriculture
-                    stakeholders. Get market insights of all Agri products
-                    across country and trade with ease by exploring your desired
-                    product on our platform.
-                  </p> */}
+                
                   <div className="markkk">
                     <div>
                       <p className="ticksp">
@@ -346,20 +328,9 @@ function HeroSection() {
               <div className="col-lg-3 col-md-4 col-sm-3">
                 <img className="mobileimage" height="90%" src={handimage} />
               </div>
-              {/* <div className=" col-lg-3 col-xl-2 col-sm-4 col-md-2 playbtns p-3 p-md-4   ">
-                <img
-                  className="playimg "
-                  src={Gplay}
-                  width="100%"
-                  height="100%"
-                />
-                <img className="playimg" src={App} width="100%" />
-              </div> */}
+          
             </div>
-            {/* 
-            <div className="mobilediv">
-              <img className="mobileimg" src={handimage} />
-            </div> */}
+         
           </div>
         </div>
       </div>
@@ -380,16 +351,7 @@ function HeroSection() {
         </div>
         <div className="container vediocontainer">
           <div className="   justify-content-center">
-            {/* <video
-            className="vedios"
-            width="80%"
-            playsinline="true"
-            autoplay="autoplay"
-            muted="muted"
-            loop="loop"
-            type="video/wmv"
-            src="https://eagri-images.s3.ap-southeast-1.amazonaws.com/Value.gif"
-          ></video> */}
+           
             <img
               src="https://eagri-images.s3.ap-southeast-1.amazonaws.com/Value.gif"
               className="gif"
@@ -416,18 +378,17 @@ function HeroSection() {
             </p>
           </div>
           <div className="regbtndiv mb-3  ">
-            {/* <button className="regbtn my-2"> */}
+           
             <a className="farmera regbtn my-2  " href="/farmerdata">
               {" "}
               Farmer
             </a>
-            {/* </button> */}
-            {/* <button className="regbtn regbtnmarginb  "> */}
+           
             <a className="farmera regbtn regbtnmarginb mt-2" href="/Trader">
               {" "}
               Trader
             </a>
-            {/* </button> */}
+           
           </div>
         </div>
       </div>
@@ -489,8 +450,7 @@ function HeroSection() {
                       }
                     >
                       <Input
-                        // id="fname"
-                        //   value={fname}
+                      
                         onChange={handleChange}
                         name="contact"
                         maxLength="11"
@@ -560,30 +520,7 @@ function HeroSection() {
                     Sustainable & Smart Agriculture Trading Platform Empowering
                     Farmers with Technology Making Farm to Fork a Reality
                   </p>
-                  {/* <div class="credits flexcenter">
-                  {" "}
-                  <a
-                    className="footericon"
-                    href="https://www.facebook.com/eagrimart"
-                  >
-                    {" "}
-                    <FacebookFilled />
-                  </a>
-                  <a
-                    className="footericon"
-                    href="https://www.instagram.com/eagrimart/"
-                  >
-                    {" "}
-                    <InstagramFilled />
-                  </a>
-                  <a
-                    className="footericon"
-                    href="https://www.linkedin.com/company/eagrimarket/"
-                  >
-                    {" "}
-                    <LinkedinFilled />
-                  </a>
-                </div> */}
+                 
                 </div>
 
                 <div class="col-lg-2 col-md-4 footer-links  footer-contact footermargin">
